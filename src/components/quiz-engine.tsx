@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { Check, X } from "lucide-react";
 import { Quiz } from "@/lib/content/types";
 
 export function QuizEngine({ quiz }: { quiz: Quiz }) {
@@ -99,20 +100,33 @@ export function QuizEngine({ quiz }: { quiz: Quiz }) {
           let stateClasses =
             "border-border bg-surface hover:bg-surface-muted";
           if (showResult && option.correct) {
-            stateClasses = "border-positive bg-positive-light";
+            stateClasses = "border-2 border-foreground bg-positive-light";
           } else if (showResult && isSelected && !option.correct) {
-            stateClasses = "border-warning bg-warning-light";
+            stateClasses =
+              "border-2 border-dashed border-foreground/60 bg-warning-light";
           }
           return (
             <button
               key={i}
               onClick={() => selectOption(i)}
               disabled={selectedOption !== null}
-              className={`w-full rounded-xl border p-4 text-left text-sm font-medium text-foreground transition-colors ${stateClasses} ${
+              className={`flex w-full items-center justify-between gap-3 rounded-xl border p-4 text-left text-sm font-medium text-foreground transition-colors ${stateClasses} ${
                 selectedOption === null ? "cursor-pointer" : "cursor-default"
               }`}
             >
-              {option.text}
+              <span>{option.text}</span>
+              {showResult && option.correct && (
+                <span className="flex shrink-0 items-center gap-1 text-xs font-semibold">
+                  <Check className="h-4 w-4" aria-hidden="true" />
+                  Correct
+                </span>
+              )}
+              {showResult && isSelected && !option.correct && (
+                <span className="flex shrink-0 items-center gap-1 text-xs font-semibold text-muted">
+                  <X className="h-4 w-4" aria-hidden="true" />
+                  Fout
+                </span>
+              )}
             </button>
           );
         })}

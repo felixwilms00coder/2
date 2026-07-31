@@ -91,8 +91,8 @@ export function Callout({
     <div
       className={`rounded-xl border p-4 my-5 ${
         isTip
-          ? "border-positive/30 bg-positive-light"
-          : "border-warning/30 bg-warning-light"
+          ? "border-foreground/20 bg-positive-light"
+          : "border-dashed border-foreground/40 bg-warning-light"
       }`}
     >
       <p

@@ -16,7 +16,7 @@ export default function Home() {
             Financiële educatie voor Vlaamse starters
           </p>
           <h1 className="mt-4 font-display text-4xl sm:text-5xl font-bold max-w-2xl leading-tight">
-            Je eerste loon, je eerste keuzes. Startgeld legt het gewoon uit.
+            Je eerste loon, je eerste keuzes. FinEdu legt het gewoon uit.
           </h1>
           <p className="mt-5 text-lg text-white/80 max-w-xl">
             Duidelijke uitleg over loon, sparen, beleggen, verzekeringen,
@@ -123,7 +123,7 @@ export default function Home() {
             <CategoryIcon name="shield" className="h-6 w-6 text-primary-light" />
             <p className="font-semibold">Onafhankelijk</p>
             <p className="text-sm text-muted">
-              Startgeld verkoopt geen financiële producten en werkt niet
+              FinEdu verkoopt geen financiële producten en werkt niet
               samen met banken of verzekeraars.
             </p>
           </div>

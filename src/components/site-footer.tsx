@@ -7,7 +7,7 @@ export function SiteFooter() {
         <div className="grid gap-8 sm:grid-cols-3">
           <div>
             <p className="font-display text-lg font-bold text-primary">
-              Startgeld
+              FinEdu
             </p>
             <p className="mt-2 text-sm text-muted max-w-xs">
               Financieel wegwijs vanaf je eerste job. Onafhankelijke,
@@ -39,7 +39,7 @@ export function SiteFooter() {
               Goed om te weten
             </p>
             <p className="mt-2 text-sm text-muted max-w-xs">
-              Startgeld geeft algemene, educatieve informatie en is geen
+              FinEdu geeft algemene, educatieve informatie en is geen
               persoonlijk financieel advies. Bedragen, tarieven en
               belastingschijven wijzigen jaarlijks: controleer officiële
               bronnen zoals FOD Financiën, RSZ en{" "}
@@ -49,7 +49,7 @@ export function SiteFooter() {
           </div>
         </div>
         <p className="mt-8 border-t border-border pt-6 text-xs text-muted">
-          © {new Date().getFullYear()} Startgeld. Gemaakt als educatief
+          © {new Date().getFullYear()} FinEdu. Gemaakt als educatief
           platform, geïnspireerd door Wikifin.
         </p>
       </div>

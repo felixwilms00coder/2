@@ -12,11 +12,11 @@ export function SiteHeader() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between gap-6">
           <Link href="/" className="flex items-center gap-2 font-display">
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-accent font-bold text-sm">
-              SG
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white font-bold text-sm">
+              FE
             </span>
             <span className="text-lg font-bold tracking-tight text-primary">
-              Startgeld
+              FinEdu
             </span>
           </Link>
           <nav className="hidden sm:flex items-center gap-1">

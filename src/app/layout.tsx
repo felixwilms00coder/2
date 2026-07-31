@@ -5,11 +5,11 @@ import { SiteFooter } from "@/components/site-footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "Startgeld — financieel wegwijs vanaf je eerste job",
-    template: "%s — Startgeld",
+    default: "FinEdu — financieel wegwijs vanaf je eerste job",
+    template: "%s — FinEdu",
   },
   description:
-    "Startgeld helpt jonge starters op de Vlaamse arbeidsmarkt wegwijs te raken in loon, sparen, beleggen, verzekeringen en pensioen. Duidelijke uitleg, handige rekentools en een korte quiz.",
+    "FinEdu helpt jonge starters op de Vlaamse arbeidsmarkt wegwijs te raken in loon, sparen, beleggen, verzekeringen en pensioen. Duidelijke uitleg, handige rekentools en een korte quiz.",
 };
 
 export default function RootLayout({

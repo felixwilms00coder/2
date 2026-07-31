@@ -1,6 +1,6 @@
-# Startgeld
+# FinEdu
 
-Startgeld is a financial education platform for young people starting their
+FinEdu is a financial education platform for young people starting their
 first job in Flanders (Belgium), inspired by
 [Wikifin](https://www.wikifin.be), the Belgian financial education website
 run by the FSMA. It focuses on the topics first-time employees run into
@@ -73,7 +73,7 @@ src/
 
 ## Disclaimer
 
-Startgeld provides general, educational information and is not personal
+FinEdu provides general, educational information and is not personal
 financial advice. Amounts, tax brackets and rates are indexed annually —
 always verify exact figures with official sources before making financial
 decisions.

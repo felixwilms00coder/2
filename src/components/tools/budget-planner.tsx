@@ -17,21 +17,21 @@ const categories = [
     label: "Noden",
     hint: "Huur, energie, boodschappen, verzekeringen, vervoer",
     percentage: 50,
-    barClass: "bg-primary-light",
+    barClass: "bg-neutral-900 dark:bg-neutral-100",
   },
   {
     key: "wensen" as const,
     label: "Wensen",
     hint: "Restaurant, hobby's, kleding, streamingdiensten",
     percentage: 30,
-    barClass: "bg-accent",
+    barClass: "bg-neutral-500",
   },
   {
     key: "sparen" as const,
     label: "Sparen & schulden aflossen",
     hint: "Noodbuffer, spaardoelen, extra aflossingen",
     percentage: 20,
-    barClass: "bg-positive",
+    barClass: "bg-neutral-300",
   },
 ];
 
