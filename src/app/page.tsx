@@ -11,6 +11,7 @@ import {
 } from "@/components/ui";
 import { CategoryIcon } from "@/components/icon";
 import { SearchBox } from "@/components/search-box";
+import { LogoMark } from "@/components/logo";
 import { NewsletterForm } from "@/components/newsletter-form";
 import { homeSuggestions } from "@/lib/content/suggestions";
 import { HomeFaqJsonLd } from "@/components/json-ld";
@@ -32,15 +33,17 @@ export default function Home() {
   return (
     <>
       <HomeFaqJsonLd suggestions={homeSuggestions} />
-      <div className="relative overflow-hidden bg-primary text-white">
+      <div className="relative overflow-hidden bg-[#0a0a0a] text-white">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute left-1/2 top-[38%] h-[560px] w-[560px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/[0.06] blur-3xl"
+          className="pointer-events-none absolute inset-0 bg-[url('/hero-skyline.svg')] bg-cover bg-bottom bg-no-repeat"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_58%_46%_at_50%_36%,rgba(8,8,8,0.88),rgba(8,8,8,0.55)_58%,rgba(8,8,8,0.12))]"
         />
         <Container className="relative flex min-h-[calc(100svh-4rem)] flex-col items-center justify-center py-16 text-center">
-          <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-lg font-bold">
-            FE
-          </span>
+          <LogoMark className="h-12 w-12 text-white/[0.14]" />
           <h1 className="mt-6 max-w-xl font-display text-2xl font-bold leading-tight sm:text-4xl">
             Wat wil je weten over je geld?
           </h1>
@@ -56,7 +59,7 @@ export default function Home() {
               <Link
                 key={s.href}
                 href={s.href}
-                className="rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1.5 text-sm text-white/70 hover:border-white/20 hover:bg-white/10 hover:text-white transition-colors"
+                className="rounded-full border border-white/12 bg-black/40 px-3.5 py-1.5 text-sm text-white/75 backdrop-blur-sm hover:border-white/25 hover:bg-black/60 hover:text-white transition-colors"
               >
                 {s.question}
               </Link>
@@ -64,7 +67,7 @@ export default function Home() {
           </div>
           <Link
             href="/leerstof"
-            className="mt-10 text-sm font-medium text-white/40 hover:text-white/80 transition-colors"
+            className="mt-10 text-sm font-medium text-white/55 [text-shadow:0_1px_8px_rgba(0,0,0,0.8)] hover:text-white transition-colors"
           >
             of blader door alle thema&apos;s →
           </Link>

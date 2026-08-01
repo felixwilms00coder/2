@@ -8,6 +8,7 @@ import { getArticle } from "@/lib/content/articles";
 import { featuredArticleByCategory } from "@/lib/content/featured";
 import { Container, ContentCard } from "@/components/ui";
 import { SearchBox } from "@/components/search-box";
+import { Logo } from "@/components/logo";
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -54,17 +55,8 @@ export function SiteHeader() {
     >
       <Container>
         <div className="flex h-16 items-center justify-between gap-4">
-          <Link
-            href="/"
-            onClick={closeAll}
-            className="flex items-center gap-2 font-display"
-          >
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white font-bold text-sm">
-              FE
-            </span>
-            <span className="text-lg font-bold tracking-tight text-primary">
-              FinEdu
-            </span>
+          <Link href="/" onClick={closeAll} aria-label="FinEdu — naar home">
+            <Logo markClassName="h-8 w-8 text-primary" />
           </Link>
 
           <div className="flex items-center gap-2">

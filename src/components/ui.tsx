@@ -26,8 +26,16 @@ export function PageHero({
   description: string;
 }) {
   return (
-    <div className="bg-primary text-white">
-      <Container className="py-14 sm:py-16">
+    <div className="relative overflow-hidden bg-primary text-white">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[url('/hero-skyline.svg')] bg-cover bg-bottom bg-no-repeat opacity-45"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(10,10,10,0.95)_0%,rgba(10,10,10,0.8)_55%,rgba(10,10,10,0.35)_100%)]"
+      />
+      <Container className="relative py-14 sm:py-16">
         <p className="text-sm font-semibold uppercase tracking-wide text-accent">
           {eyebrow}
         </p>

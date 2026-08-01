@@ -27,22 +27,13 @@ export default function OpengraphImage() {
             marginBottom: 40,
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              width: 64,
-              height: 64,
-              borderRadius: 16,
-              background: "#ffffff",
-              color: "#111111",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 28,
-              fontWeight: 700,
-            }}
-          >
-            FE
-          </div>
+          <svg width="64" height="64" viewBox="0 0 32 32">
+            <rect width="32" height="32" rx="9" fill="#ffffff" />
+            <path
+              d="M6 25.5V20h5.5v-5.5H17V9h5.5v16.5H6Z"
+              fill="#111111"
+            />
+          </svg>
           <div style={{ fontSize: 40, fontWeight: 700 }}>FinEdu</div>
         </div>
         <div style={{ fontSize: 56, fontWeight: 700, maxWidth: 900 }}>

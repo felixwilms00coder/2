@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { categories } from "@/lib/content/categories";
+import { Logo } from "@/components/logo";
 
 export function SiteFooter() {
   return (
@@ -7,10 +8,8 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid gap-8 sm:grid-cols-3">
           <div>
-            <p className="font-display text-lg font-bold text-primary">
-              FinEdu
-            </p>
-            <p className="mt-2 text-sm text-muted max-w-xs">
+            <Logo markClassName="h-8 w-8 text-primary" />
+            <p className="mt-3 text-sm text-muted max-w-xs">
               Financieel wegwijs vanaf je eerste job. Onafhankelijke,
               praktische uitleg voor starters op de Vlaamse arbeidsmarkt.
             </p>

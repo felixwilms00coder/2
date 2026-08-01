@@ -55,11 +55,32 @@ npm run lint    # eslint
 ```
 src/
   app/                 routes (home, leerstof, tools, quiz)
-  components/          shared UI, calculators, quiz engine
+  components/          shared UI, calculators, quiz engine, logo
   lib/
     content/            typed content: categories, articles, tools, quizzes
     calculations/        pure calculation functions used by the tools
+public/
+  hero-skyline.svg     hero background artwork
 ```
+
+## Branding and artwork
+
+The logo mark (`src/components/logo.tsx`) is a silhouette that reads both as
+a Flemish stepped gable (*trapgevel*) and as an ascending bar chart —
+regional identity plus financial growth. The same shape is used for the
+favicon (`src/app/icon.svg`) and the OG image
+(`src/app/opengraph-image.tsx`); keep those three in sync if you change it.
+
+`public/hero-skyline.svg` is a hand-built, monochrome dusk skyline used
+behind the homepage hero and the page headers. It is original artwork, so
+there are no stock-photo licensing constraints.
+
+**Swapping in a real photograph:** drop your image in `public/` and change
+the `bg-[url('/hero-skyline.svg')]` reference in `src/app/page.tsx`,
+`src/components/ui.tsx` (`PageHero`), and
+`src/app/leerstof/[category]/[slug]/page.tsx`. The dark scrim layer sitting
+above it already guarantees text contrast, so a photo can be dropped in
+without touching the type. Make sure you have the rights to the image.
 
 ## Extending the content
 

@@ -67,8 +67,16 @@ export default async function ArticlePage({
           { name: article.title, href },
         ]}
       />
-      <div className="bg-primary text-white">
-        <Container className="py-12">
+      <div className="relative overflow-hidden bg-primary text-white">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[url('/hero-skyline.svg')] bg-cover bg-bottom bg-no-repeat opacity-45"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(10,10,10,0.95)_0%,rgba(10,10,10,0.8)_55%,rgba(10,10,10,0.35)_100%)]"
+        />
+        <Container className="relative py-12">
           <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-white/70">
             <Link href="/leerstof" className="hover:text-white">
               Leerstof
