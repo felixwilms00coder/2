@@ -10,6 +10,8 @@ import {
   Users,
   ScrollText,
   Home,
+  ScanLine,
+  LineChart,
   type LucideIcon,
 } from "lucide-react";
 
@@ -25,6 +27,8 @@ const iconMap: Record<string, LucideIcon> = {
   users: Users,
   "scroll-text": ScrollText,
   home: Home,
+  scan: ScanLine,
+  "line-chart": LineChart,
 };
 
 export function CategoryIcon({

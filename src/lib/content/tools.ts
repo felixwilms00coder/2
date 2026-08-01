@@ -2,6 +2,14 @@ import { ToolSummary } from "./types";
 
 export const tools: ToolSummary[] = [
   {
+    slug: "geldscan",
+    title: "Geldscan",
+    short: "Waar gaat je geld eigenlijk naartoe?",
+    description:
+      "Plak je rekeningoverzicht en krijg een indeling van je uitgaven, je terugkerende abonnementen en concrete plekken waar ruimte zit. Alles blijft in je browser.",
+    icon: "scan",
+  },
+  {
     slug: "nettoloon",
     title: "Bruto-nettoloon calculator",
     short: "Wat blijft er over van je brutoloon?",
@@ -16,6 +24,14 @@ export const tools: ToolSummary[] = [
     description:
       "Vul je nettoloon in en zie meteen een voorstel van budget voor noden, wensen en sparen, plus vergelijking met je eigen uitgaven.",
     icon: "chart",
+  },
+  {
+    slug: "beleggingsplan",
+    title: "Beleggingsplan-simulator",
+    short: "Wat levert maandelijks beleggen op termijn op?",
+    description:
+      "Simuleer periodiek beleggen over meerdere jaren en zie hoeveel je kosten van je eindresultaat afhalen. Een rekenmodel, geen advies.",
+    icon: "line-chart",
   },
   {
     slug: "spaardoel",

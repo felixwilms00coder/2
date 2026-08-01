@@ -14,7 +14,15 @@ responsibly, insurance, pensions, and taxes — all in Dutch.
   interactive blocks (`check` for an inline multiple-choice question,
   `reveal` for a guess-then-answer card, `figure` for a pulled-out number)
   defined in `src/lib/content/types.ts`.
-- **Rekentools (`/tools`)** — three interactive calculators:
+- **Rekentools (`/tools`)** — five interactive calculators:
+  - Geldscan — paste or upload a bank CSV export; it categorises your
+    transactions, spots recurring subscriptions, compares your split against
+    50/30/20 and generates concrete savings suggestions. Runs **entirely in
+    the browser**: nothing is uploaded, stored or sent anywhere.
+  - Beleggingsplan-simulator — models periodic investing over a long horizon
+    and shows what ongoing charges cost you. It is a calculator only: FinEdu
+    places no orders and gives no recommendations (see
+    `docs/automatisering.md` for why).
   - Bruto-nettoloon calculator — estimates net salary from a gross monthly
     salary (RSZ contribution + a simplified progressive-tax estimate).
   - 50/30/20 budgetplanner — splits net income into noden/wensen/sparen and
@@ -93,6 +101,14 @@ without touching the type. Make sure you have the rights to the image.
 - Add a new tool: add calculation logic under `src/lib/calculations/`, a
   client component under `src/components/tools/`, and a route under
   `src/app/tools/<slug>/page.tsx`.
+
+## Automation and regulation
+
+`docs/automatisering.md` documents what would be required to go further:
+FSMA/MiFID II licensing for automated investing, the PSD2/AIS route for
+direct bank access, the API situation at Bolero versus Saxo, and why the
+suggestion engine is deterministic rather than LLM-driven. Read it before
+promising any broker integration.
 
 ## Disclaimer
 
