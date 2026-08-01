@@ -47,7 +47,7 @@ export function NettoloonCalculator() {
           step={50}
           value={bruto}
           onChange={(e) => setBruto(Number(e.target.value) || 0)}
-          className="w-full max-w-[220px] rounded-lg border border-border bg-surface px-3 py-2 text-2xl font-bold text-foreground focus:outline-none focus:ring-2 focus:ring-primary-light"
+          className="min-h-14 w-full max-w-[220px] rounded-lg border border-border bg-surface px-3 text-2xl font-bold text-foreground focus:border-accent"
         />
         <span className="text-sm text-muted">/ maand</span>
       </div>
@@ -58,7 +58,7 @@ export function NettoloonCalculator() {
         step={50}
         value={bruto}
         onChange={(e) => setBruto(Number(e.target.value))}
-        className="mt-4 w-full accent-[var(--color-primary-light)]"
+        className="mt-4 w-full accent-[var(--color-accent)]"
         aria-label="Brutomaandloon schuifregelaar"
       />
 

@@ -15,10 +15,10 @@ export function SiteFooter() {
             </p>
           </div>
           <div>
-            <p className="text-sm font-semibold text-foreground">Thema&apos;s</p>
+            <p className="font-display text-sm font-bold text-foreground">Thema&apos;s</p>
             <ul className="mt-2 space-y-1.5 text-sm text-muted">
               <li>
-                <Link href="/tools" className="hover:text-foreground">
+                <Link href="/tools" className="inline-flex min-h-9 items-center hover:text-accent">
                   Alle rekentools, tips en checklists
                 </Link>
               </li>
@@ -26,21 +26,21 @@ export function SiteFooter() {
                 <li key={cat.slug}>
                   <Link
                     href={`/leerstof/${cat.slug}`}
-                    className="hover:text-foreground"
+                    className="inline-flex min-h-9 items-center hover:text-accent"
                   >
                     {cat.title}
                   </Link>
                 </li>
               ))}
               <li>
-                <Link href="/quiz" className="hover:text-foreground">
+                <Link href="/quiz" className="inline-flex min-h-9 items-center hover:text-accent">
                   Quiz
                 </Link>
               </li>
             </ul>
           </div>
           <div>
-            <p className="text-sm font-semibold text-foreground">
+            <p className="font-display text-sm font-bold text-foreground">
               Goed om te weten
             </p>
             <p className="mt-2 text-sm text-muted max-w-xs">
@@ -56,12 +56,12 @@ export function SiteFooter() {
         <div className="mt-8 flex flex-col gap-4 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
           <ul className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted">
             <li>
-              <Link href="/over" className="hover:text-foreground">
+              <Link href="/over" className="inline-flex min-h-9 items-center hover:text-accent">
                 Over FinEdu
               </Link>
             </li>
             <li>
-              <Link href="/disclaimer" className="hover:text-foreground">
+              <Link href="/disclaimer" className="inline-flex min-h-9 items-center hover:text-accent">
                 Disclaimer
               </Link>
             </li>

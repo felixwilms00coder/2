@@ -32,7 +32,7 @@ export default function BudgetplannerPage() {
               Meer weten over budgetteren als starter?{" "}
               <Link
                 href="/leerstof/budget-betalen-lenen-en-verzekeren/50-30-20-regel"
-                className="font-semibold text-primary-light hover:underline"
+                className="font-semibold text-accent hover:underline"
               >
                 Lees het volledige artikel
               </Link>

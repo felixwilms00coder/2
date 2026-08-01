@@ -17,21 +17,21 @@ const categories = [
     label: "Noden",
     hint: "Huur, energie, boodschappen, verzekeringen, vervoer",
     percentage: 50,
-    barClass: "bg-neutral-900 dark:bg-neutral-100",
+    barClass: "bg-accent",
   },
   {
     key: "wensen" as const,
     label: "Wensen",
     hint: "Restaurant, hobby's, kleding, streamingdiensten",
     percentage: 30,
-    barClass: "bg-neutral-500",
+    barClass: "bg-accent/60",
   },
   {
     key: "sparen" as const,
     label: "Sparen & schulden aflossen",
     hint: "Noodbuffer, spaardoelen, extra aflossingen",
     percentage: 20,
-    barClass: "bg-neutral-300",
+    barClass: "bg-accent/30",
   },
 ];
 
@@ -60,7 +60,7 @@ export function BudgetPlanner() {
           step={50}
           value={netto}
           onChange={(e) => setNetto(Number(e.target.value) || 0)}
-          className="w-full max-w-[220px] rounded-lg border border-border bg-surface px-3 py-2 text-2xl font-bold text-foreground focus:outline-none focus:ring-2 focus:ring-primary-light"
+          className="min-h-14 w-full max-w-[220px] rounded-lg border border-border bg-surface px-3 text-2xl font-bold text-foreground focus:border-accent"
         />
       </div>
 
@@ -116,7 +116,7 @@ export function BudgetPlanner() {
                       [cat.key]: Number(e.target.value) || 0,
                     }))
                   }
-                  className="w-full rounded-lg border border-border bg-surface px-2 py-1.5 text-sm font-semibold text-foreground focus:outline-none focus:ring-2 focus:ring-primary-light"
+                  className="min-h-11 w-full rounded-lg border border-border bg-surface px-3 text-sm font-semibold text-foreground focus:border-accent"
                 />
               </div>
             </div>

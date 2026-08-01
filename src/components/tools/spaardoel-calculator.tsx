@@ -56,7 +56,7 @@ export function SpaardoelCalculator() {
               step={50}
               value={doel}
               onChange={(e) => setDoel(Number(e.target.value) || 0)}
-              className="w-full rounded-lg border border-border bg-surface px-2 py-2 font-semibold text-foreground focus:outline-none focus:ring-2 focus:ring-primary-light"
+              className="min-h-11 w-full rounded-lg border border-border bg-surface px-3 font-semibold text-foreground focus:border-accent"
             />
           </div>
         </div>
@@ -76,7 +76,7 @@ export function SpaardoelCalculator() {
               step={50}
               value={huidig}
               onChange={(e) => setHuidig(Number(e.target.value) || 0)}
-              className="w-full rounded-lg border border-border bg-surface px-2 py-2 font-semibold text-foreground focus:outline-none focus:ring-2 focus:ring-primary-light"
+              className="min-h-11 w-full rounded-lg border border-border bg-surface px-3 font-semibold text-foreground focus:border-accent"
             />
           </div>
         </div>
@@ -96,7 +96,7 @@ export function SpaardoelCalculator() {
               step={10}
               value={maandelijks}
               onChange={(e) => setMaandelijks(Number(e.target.value) || 0)}
-              className="w-full rounded-lg border border-border bg-surface px-2 py-2 font-semibold text-foreground focus:outline-none focus:ring-2 focus:ring-primary-light"
+              className="min-h-11 w-full rounded-lg border border-border bg-surface px-3 font-semibold text-foreground focus:border-accent"
             />
           </div>
         </div>
@@ -117,11 +117,11 @@ export function SpaardoelCalculator() {
         {months !== null && months > 0 && targetDate && (
           <p className="text-foreground">
             Tegen dit spaarritme haal je je doel over{" "}
-            <span className="font-bold text-primary-light">
+            <span className="font-bold text-accent">
               {months} {months === 1 ? "maand" : "maanden"}
             </span>
             , rond{" "}
-            <span className="font-bold text-primary-light">
+            <span className="font-bold text-accent">
               {formatMonthYear(targetDate)}
             </span>
             .
@@ -141,7 +141,9 @@ export function SpaardoelCalculator() {
             max={60}
             value={gewensteMaanden}
             onChange={(e) => setGewensteMaanden(Number(e.target.value))}
-            className="w-full accent-[var(--color-primary-light)]"
+            aria-label="Gewenste termijn in maanden"
+            aria-valuetext={`${gewensteMaanden} maanden`}
+            className="w-full accent-[var(--color-accent)]"
           />
           <span className="w-28 shrink-0 text-sm font-semibold text-foreground">
             {gewensteMaanden} maanden

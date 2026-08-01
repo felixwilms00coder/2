@@ -32,7 +32,7 @@ export default function SpaardoelPage() {
               Nog geen noodbuffer?{" "}
               <Link
                 href="/leerstof/sparen-en-beleggen/noodbuffer-hoeveel-sparen"
-                className="font-semibold text-primary-light hover:underline"
+                className="font-semibold text-accent hover:underline"
               >
                 Lees eerst hoeveel je nodig hebt
               </Link>

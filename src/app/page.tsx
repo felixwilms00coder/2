@@ -1,12 +1,14 @@
 import Link from "next/link";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { categories } from "@/lib/content/categories";
 import { tools } from "@/lib/content/tools";
 import { quizzes } from "@/lib/content/quizzes";
 import { getArticle } from "@/lib/content/articles";
 import {
+  ButtonLink,
   Container,
-  EntityCard,
   ContentCard,
+  EntityCard,
   SectionHeading,
 } from "@/components/ui";
 import { CategoryIcon } from "@/components/icon";
@@ -22,6 +24,24 @@ const featuredSlugs: [string, string][] = [
   ["erven", "erven-als-starter"],
 ];
 
+const promises = [
+  {
+    icon: "wallet",
+    title: "100% gratis",
+    text: "Geen registratie, geen verborgen kosten. Alles is vrij toegankelijk.",
+  },
+  {
+    icon: "shield",
+    title: "Onafhankelijk",
+    text: "We verkopen geen financiële producten en werken niet samen met banken.",
+  },
+  {
+    icon: "clock",
+    title: "In 5 minuten wijzer",
+    text: "Korte stukken in gewone taal, geschreven voor de Belgische context.",
+  },
+];
+
 export default function Home() {
   const featured = featuredSlugs
     .map(([categorySlug, slug]) => ({
@@ -33,59 +53,94 @@ export default function Home() {
   return (
     <>
       <HomeFaqJsonLd suggestions={homeSuggestions} />
-      <div className="relative overflow-hidden bg-[#0a0a0a] text-white">
+
+      {/* ---- Hero: search first ---- */}
+      <div className="on-dark relative overflow-hidden bg-[#0e0d0b] text-white">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 bg-[url('/hero-skyline.svg')] bg-cover bg-bottom bg-no-repeat"
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_58%_46%_at_50%_36%,rgba(8,8,8,0.88),rgba(8,8,8,0.55)_58%,rgba(8,8,8,0.12))]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_58%_46%_at_50%_36%,rgba(10,10,9,0.9),rgba(10,10,9,0.6)_58%,rgba(10,10,9,0.18))]"
         />
         <Container className="relative flex min-h-[calc(100svh-4rem)] flex-col items-center justify-center py-16 text-center">
           <LogoMark className="h-12 w-12 text-white/[0.14]" />
-          <h1 className="mt-6 max-w-xl font-display text-2xl font-bold leading-tight sm:text-4xl">
+
+          <h1 className="mt-6 max-w-2xl font-display text-3xl font-extrabold leading-[1.15] tracking-tight sm:text-5xl">
             Wat wil je weten over je geld?
           </h1>
-          <p className="mt-3 max-w-md text-sm text-white/50 sm:text-base">
+          <p className="mt-4 max-w-md text-sm text-white/65 sm:text-base">
             Budget, sparen, beleggen, verzekeren, wonen, pensioen en
             belastingen — uitgelegd voor starters.
           </p>
+
           <div className="mt-8 w-full max-w-2xl">
-            <SearchBox variant="hero" autoFocus />
+            <SearchBox variant="hero" />
           </div>
-          <div className="mt-5 flex max-w-2xl flex-wrap justify-center gap-2">
+
+          <p className="mt-6 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-accent-bright">
+            <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
+            Veelgestelde vragen
+          </p>
+          <ul className="mt-3 flex max-w-2xl flex-wrap justify-center gap-2">
             {homeSuggestions.map((s) => (
-              <Link
-                key={s.href}
-                href={s.href}
-                className="rounded-full border border-white/12 bg-black/40 px-3.5 py-1.5 text-sm text-white/75 backdrop-blur-sm hover:border-white/25 hover:bg-black/60 hover:text-white transition-colors"
-              >
-                {s.question}
-              </Link>
+              <li key={s.href}>
+                <Link
+                  href={s.href}
+                  className="flex min-h-11 items-center rounded-full border border-white/15 bg-black/40 px-4 text-sm text-white/80 backdrop-blur-sm transition-colors hover:border-accent-bright/60 hover:bg-black/65 hover:text-white"
+                >
+                  {s.question}
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
+
           <Link
             href="/leerstof"
-            className="mt-10 text-sm font-medium text-white/55 [text-shadow:0_1px_8px_rgba(0,0,0,0.8)] hover:text-white transition-colors"
+            className="mt-10 inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-white/60 [text-shadow:0_1px_8px_rgba(0,0,0,0.85)] transition-colors hover:text-white"
           >
-            of blader door alle thema&apos;s →
+            of blader door alle thema&apos;s
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
         </Container>
       </div>
 
+      {/* ---- Promises ---- */}
+      <div className="border-b border-border bg-accent-soft/60">
+        <Container className="grid gap-6 py-8 sm:grid-cols-3">
+          {promises.map((p) => (
+            <div key={p.title} className="flex items-start gap-3">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent text-accent-contrast">
+                <CategoryIcon name={p.icon} className="h-5 w-5" />
+              </span>
+              <div>
+                <p className="font-display text-sm font-bold text-foreground">
+                  {p.title}
+                </p>
+                <p className="mt-0.5 text-sm leading-relaxed text-muted">
+                  {p.text}
+                </p>
+              </div>
+            </div>
+          ))}
+        </Container>
+      </div>
+
+      {/* ---- Tools ---- */}
       <Container className="py-16">
-        <div className="flex items-end justify-between gap-4 flex-wrap">
+        <div className="flex flex-wrap items-end justify-between gap-4">
           <SectionHeading
             kicker="Rekentools"
-            title="Populaire rekentools"
-            description="Reken het meteen na voor je eigen situatie."
+            title="Reken het na voor jouw situatie"
+            description="Geen theorie, maar een concreet cijfer voor jouw loon, budget of spaardoel."
           />
           <Link
             href="/tools"
-            className="text-sm font-semibold text-primary-light hover:underline whitespace-nowrap"
+            className="inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-accent hover:underline"
           >
-            Alle rekentools, tips en checklists →
+            Alle rekentools
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
@@ -96,14 +151,20 @@ export default function Home() {
               icon={tool.icon}
               title={tool.title}
               description={tool.short}
+              meta="Bereken"
             />
           ))}
         </div>
       </Container>
 
+      {/* ---- Featured content ---- */}
       <div className="bg-surface-muted">
         <Container className="py-16">
-          <SectionHeading kicker="Uitgelicht" title="Net voor jou geschreven" />
+          <SectionHeading
+            kicker="Uitgelicht"
+            title="Net voor jou geschreven"
+            description="De stukken waar starters het vaakst mee beginnen."
+          />
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {featured.map(({ categorySlug, article }) => (
               <ContentCard
@@ -112,25 +173,21 @@ export default function Home() {
                 kind={article!.kind}
                 title={article!.title}
                 description={article!.summary}
+                readMinutes={article!.readMinutes}
               />
             ))}
           </div>
         </Container>
       </div>
 
+      {/* ---- Themes ---- */}
       <Container className="py-16">
-        <div className="flex items-end justify-between gap-4 flex-wrap">
+        <div className="flex flex-wrap items-end justify-between gap-4">
           <SectionHeading
             kicker="Leerstof"
             title="Kies een thema"
-            description="Zeven thema's rond geld, van je eerste loon tot later plannen."
+            description="Zeven thema's rond geld, van je eerste loonstrookje tot later plannen."
           />
-          <Link
-            href="/leerstof"
-            className="text-sm font-semibold text-primary-light hover:underline whitespace-nowrap"
-          >
-            Alle thema&apos;s →
-          </Link>
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {categories.map((cat) => (
@@ -140,71 +197,53 @@ export default function Home() {
               icon={cat.icon}
               title={cat.title}
               description={cat.short}
+              meta="Lees meer"
             />
           ))}
         </div>
       </Container>
 
+      {/* ---- Quiz CTA ---- */}
       <div className="bg-surface-muted">
         <Container className="py-16">
-          <div className="rounded-3xl bg-primary text-white p-8 sm:p-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
-            <div className="max-w-xl">
-              <p className="text-sm font-semibold uppercase tracking-wide text-accent">
-                Test jezelf
-              </p>
-              <h2 className="mt-2 font-display text-2xl sm:text-3xl font-bold">
-                {quizzes[0].title}
-              </h2>
-              <p className="mt-3 text-white/80">{quizzes[0].description}</p>
+          <div className="on-dark relative overflow-hidden rounded-3xl bg-primary p-8 text-white sm:p-12">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/25 blur-3xl"
+            />
+            <div className="relative flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
+              <div className="max-w-xl">
+                <p className="text-sm font-bold uppercase tracking-[0.14em] text-accent-bright">
+                  Test jezelf
+                </p>
+                <h2 className="mt-2.5 font-display text-2xl font-extrabold tracking-tight sm:text-3xl">
+                  {quizzes[0].title}
+                </h2>
+                <p className="mt-3 text-white/80">{quizzes[0].description}</p>
+              </div>
+              <ButtonLink
+                href={`/quiz/${quizzes[0].slug}`}
+                variant="accent"
+                className="shrink-0"
+              >
+                Start de quiz
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </ButtonLink>
             </div>
-            <Link
-              href={`/quiz/${quizzes[0].slug}`}
-              className="inline-flex shrink-0 items-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-primary hover:bg-accent-dark transition-colors"
-            >
-              Start de quiz
-            </Link>
           </div>
         </Container>
       </div>
 
+      {/* ---- Newsletter ---- */}
       <Container className="py-16">
-        <div className="rounded-2xl border border-border p-8 sm:p-10">
+        <div className="rounded-3xl border border-border bg-surface p-8 sm:p-10">
           <SectionHeading
             kicker="Nieuwsbrief"
             title="Blijf op de hoogte"
-            description="Schrijf je in voor updates met nieuwe artikels, tools en tips over geld."
+            description="Af en toe een mail met nieuwe artikels, tools en tips over geld."
           />
           <div className="mt-6">
             <NewsletterForm />
-          </div>
-        </div>
-      </Container>
-
-      <Container className="pb-20">
-        <div className="grid gap-6 sm:grid-cols-3 text-center sm:text-left">
-          <div className="flex flex-col items-center sm:items-start gap-2">
-            <CategoryIcon name="wallet" className="h-6 w-6 text-primary-light" />
-            <p className="font-semibold">100% gratis</p>
-            <p className="text-sm text-muted">
-              Geen registratie, geen verborgen kosten. Educatieve inhoud,
-              vrij toegankelijk voor iedereen.
-            </p>
-          </div>
-          <div className="flex flex-col items-center sm:items-start gap-2">
-            <CategoryIcon name="shield" className="h-6 w-6 text-primary-light" />
-            <p className="font-semibold">Onafhankelijk</p>
-            <p className="text-sm text-muted">
-              FinEdu verkoopt geen financiële producten en werkt niet
-              samen met banken of verzekeraars.
-            </p>
-          </div>
-          <div className="flex flex-col items-center sm:items-start gap-2">
-            <CategoryIcon name="clock" className="h-6 w-6 text-primary-light" />
-            <p className="font-semibold">Voor Vlaamse starters</p>
-            <p className="text-sm text-muted">
-              Geschreven vanuit de Belgische context: RSZ, personenbelasting,
-              pensioenpijlers en Belgische spaarproducten.
-            </p>
           </div>
         </div>
       </Container>

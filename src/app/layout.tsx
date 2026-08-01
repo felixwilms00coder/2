@@ -1,9 +1,23 @@
 import type { Metadata } from "next";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { WebsiteJsonLd } from "@/components/json-ld";
 import { SITE_URL } from "@/lib/site";
+
+const body = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const heading = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  variable: "--font-heading",
+  display: "swap",
+});
 
 const title = "FinEdu — financieel wegwijs vanaf je eerste job";
 const description =
@@ -40,11 +54,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="nl-BE" className="h-full antialiased">
+    <html
+      lang="nl-BE"
+      className={`${body.variable} ${heading.variable} h-full antialiased`}
+    >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <WebsiteJsonLd />
+        <a href="#hoofdinhoud" className="skip-link">
+          Naar de hoofdinhoud
+        </a>
         <SiteHeader />
-        <main className="flex-1">{children}</main>
+        <main id="hoofdinhoud" tabIndex={-1} className="flex-1">
+          {children}
+        </main>
         <SiteFooter />
       </body>
     </html>

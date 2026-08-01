@@ -35,11 +35,11 @@ export function NewsletterForm() {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="jouw@email.be"
-        className="w-full max-w-xs rounded-full border border-border bg-surface px-4 py-2.5 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-primary-light"
+        className="min-h-11 w-full max-w-xs rounded-full border border-border bg-surface px-4 text-sm text-foreground placeholder:text-muted focus:border-accent"
       />
       <button
         type="submit"
-        className="shrink-0 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-light transition-colors"
+        className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-full bg-accent px-5 text-sm font-semibold text-accent-contrast transition-colors hover:bg-accent-strong"
       >
         Inschrijven
       </button>

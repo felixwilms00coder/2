@@ -45,7 +45,7 @@ export default async function ZoekenPage({
             zoekwoord, of bekijk{" "}
             <Link
               href="/leerstof"
-              className="font-semibold text-primary-light hover:underline"
+              className="font-semibold text-accent hover:underline"
             >
               alle leerstof
             </Link>

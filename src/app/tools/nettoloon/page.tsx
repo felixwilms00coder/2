@@ -37,7 +37,7 @@ export default function NettoloonPage() {
               betekent?{" "}
               <Link
                 href="/leerstof/belasting-werk-en-inkomen/loonstrookje-ontcijferd"
-                className="font-semibold text-primary-light hover:underline"
+                className="font-semibold text-accent hover:underline"
               >
                 Lees onze uitleg over het loonstrookje
               </Link>
