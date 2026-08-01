@@ -7,6 +7,10 @@ import {
   Shield,
   Clock,
   FileText,
+  Users,
+  ScrollText,
+  Home,
+  Search,
   type LucideIcon,
 } from "lucide-react";
 
@@ -19,6 +23,10 @@ const iconMap: Record<string, LucideIcon> = {
   shield: Shield,
   clock: Clock,
   "file-text": FileText,
+  users: Users,
+  "scroll-text": ScrollText,
+  home: Home,
+  search: Search,
 };
 
 export function CategoryIcon({

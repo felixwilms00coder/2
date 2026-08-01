@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Quiz",
   description:
     "Test je financiële kennis als starter met een korte, interactieve quiz over loon, sparen, lenen en verzekeren.",
+  alternates: { canonical: "/quiz" },
 };
 
 export default function QuizOverviewPage() {

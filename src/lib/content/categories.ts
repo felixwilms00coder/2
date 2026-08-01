@@ -2,71 +2,119 @@ import { Category } from "./types";
 
 export const categories: Category[] = [
   {
-    slug: "loon",
-    title: "Loon & loonstrookje",
-    short: "Snap wat er op je loonstrookje staat",
+    slug: "budget-betalen-lenen-en-verzekeren",
+    title: "Budget, betalen, lenen en verzekeren",
+    short: "Grip op je geld, dag na dag",
     description:
-      "Van bruto naar netto: ontdek waar je geld naartoe gaat en wat al die codes op je loonstrookje betekenen.",
-    icon: "wallet",
-  },
-  {
-    slug: "budgetteren",
-    title: "Budgetteren",
-    short: "Grip op je inkomsten en uitgaven",
-    description:
-      "Leer je maandbudget opstellen, vaste en variabele kosten onderscheiden en voorkom dat je geld sneller op is dan je loon.",
-    icon: "chart",
-  },
-  {
-    slug: "sparen",
-    title: "Sparen",
-    short: "Bouw een buffer op voor onverwachte kosten",
-    description:
-      "Waarom je een noodbuffer nodig hebt, hoeveel is genoeg, en welke spaarrekeningen in België je daarvoor kan gebruiken.",
-    icon: "piggy-bank",
-  },
-  {
-    slug: "beleggen",
-    title: "Beleggen",
-    short: "De eerste stappen richting beleggen",
-    description:
-      "Wat beleggen precies is, welke risico's erbij horen, en hoe je met kleine bedragen aan de slag kan als starter.",
-    icon: "trending-up",
-  },
-  {
-    slug: "lenen",
-    title: "Lenen & krediet",
-    short: "Verantwoord lenen, schulden vermijden",
-    description:
-      "Het verschil tussen goede en slechte schulden, hoe kredietopeningen werken, en waarom kleine leningen duur uitpakken.",
+      "Alles over je dagelijkse geldzaken: een budget opstellen, verantwoord lenen, en de verzekeringen die je als starter echt nodig hebt.",
     icon: "credit-card",
+    subcategories: [
+      { slug: "budget-en-budgetbeheer", title: "Budget en budgetbeheer" },
+      { slug: "lening-en-krediet", title: "Lening en krediet" },
+      { slug: "verzekeren", title: "Verzekeren" },
+      { slug: "zichtrekening", title: "Zichtrekening" },
+      { slug: "betaalkaarten", title: "Betaalkaarten" },
+    ],
   },
   {
-    slug: "verzekeringen",
-    title: "Verzekeringen",
-    short: "Welke verzekeringen heb je echt nodig?",
+    slug: "familie",
+    title: "Familie",
+    short: "Studeren, samenwonen en financiële opvoeding",
     description:
-      "Van hospitalisatieverzekering tot familiale verzekering: wat is verplicht, wat is slim, en wat kan je overslaan als starter.",
-    icon: "shield",
+      "Van studieschulden tot je eerste keer samenwonen: hoe familiale keuzes je budget als starter beïnvloeden.",
+    icon: "users",
+    subcategories: [
+      { slug: "studeren", title: "Studeren" },
+      { slug: "financiele-opvoeding", title: "Financiële opvoeding" },
+      {
+        slug: "trouwen-samenwonen",
+        title: "Trouwen, wettelijk of feitelijk samenwonen",
+      },
+      { slug: "kinderen-krijgen", title: "Kinderen krijgen" },
+    ],
   },
   {
-    slug: "pensioen",
-    title: "Pensioen",
+    slug: "sparen-en-beleggen",
+    title: "Sparen en beleggen",
+    short: "Van je eerste buffer tot je eerste belegging",
+    description:
+      "Een noodbuffer opbouwen en de basisprincipes van beleggen, uitgelegd voor wie er nog nooit mee bezig was.",
+    icon: "piggy-bank",
+    subcategories: [
+      { slug: "spaarrekening", title: "Spaarrekening" },
+      {
+        slug: "beleggen-en-risicospreiding",
+        title: "Hoe beleggen en risicospreiding",
+      },
+      { slug: "beleggingsproducten", title: "Beleggingsproducten" },
+      { slug: "fraude-bij-beleggen", title: "Fraude en oplichting bij beleggen" },
+    ],
+  },
+  {
+    slug: "erven",
+    title: "Erven",
+    short: "Waarom dit ook als starter al meetelt",
+    description:
+      "Erven en schenken lijken ver weg als je net begint te werken, maar een paar basisbegrippen kennen kan later veel uitleggen schelen.",
+    icon: "scroll-text",
+    subcategories: [
+      { slug: "erven-en-successierechten", title: "Erven en successierechten" },
+      { slug: "erfenis-plannen", title: "Erfenis plannen" },
+      { slug: "schenking", title: "Schenking" },
+    ],
+  },
+  {
+    slug: "pensioen-en-pensioenvoorbereiding",
+    title: "Pensioen en pensioen­voorbereiding",
     short: "Waarom nu al aan later denken",
     description:
-      "Hoe het Belgische pensioensysteem in elkaar zit (pijler 1, 2 en 3) en waarom vroeg beginnen zoveel verschil maakt.",
+      "Hoe het Belgische pensioensysteem in elkaar zit en waarom vroeg beginnen zoveel verschil maakt voor je latere pensioen.",
     icon: "clock",
+    subcategories: [
+      { slug: "drie-pensioenpijlers", title: "Drie pensioenpijlers" },
+      { slug: "wettelijk-pensioen", title: "Wettelijk pensioen" },
+      { slug: "pensioensparen", title: "Pensioensparen" },
+      { slug: "aanvullend-pensioen", title: "Aanvullend pensioen" },
+    ],
   },
   {
-    slug: "belastingen",
-    title: "Belastingen",
-    short: "Je eerste belastingaangifte overleven",
+    slug: "belasting-werk-en-inkomen",
+    title: "Belasting, werk en inkomen",
+    short: "Je loonstrookje en je belastingaangifte",
     description:
-      "Wat de personenbelasting inhoudt, welke uitgaven fiscaal voordeel opleveren, en hoe je jouw aangifte voorbereidt.",
+      "Wat er op je loonstrookje staat, hoe je eerste belastingaangifte werkt, en wat er verandert bij je eerste job.",
     icon: "file-text",
+    subcategories: [
+      { slug: "belastingaangifte", title: "Belastingaangifte" },
+      { slug: "inkomen-en-loon", title: "Inkomen en loon" },
+      { slug: "eerste-job", title: "Eerste job" },
+      { slug: "ziekte-en-werkloosheid", title: "Ziekte en werkloosheid" },
+    ],
+  },
+  {
+    slug: "woning-en-hypothecaire-lening",
+    title: "Woning en hypo­thecaire lening",
+    short: "Huren of kopen: je eerste stappen",
+    description:
+      "Van je eerste huurcontract tot de basis van een hypothecaire lening voor als je later een woning koopt.",
+    icon: "home",
+    subcategories: [
+      { slug: "woning-huren-verhuren", title: "Woning huren, verhuren" },
+      { slug: "hypothecaire-lening", title: "Hypothecaire lening" },
+      {
+        slug: "woning-kopen-bouwen-verbouwen",
+        title: "Woning kopen, bouwen, verbouwen",
+      },
+    ],
   },
 ];
 
 export function getCategory(slug: string): Category | undefined {
   return categories.find((c) => c.slug === slug);
+}
+
+export function getSubcategory(categorySlug: string, subcategorySlug: string) {
+  return getCategory(categorySlug)?.subcategories.find(
+    (s) => s.slug === subcategorySlug,
+  );
 }

@@ -77,6 +77,59 @@ export function EntityCard({
   );
 }
 
+const kindLabels: Record<string, string> = {
+  artikel: "Artikel",
+  tips: "Tips",
+  checklist: "Checklist",
+  tool: "Tool",
+  quiz: "Quiz",
+};
+
+export function KindBadge({
+  kind,
+  inverse = false,
+}: {
+  kind: string;
+  inverse?: boolean;
+}) {
+  return (
+    <span
+      className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide ${
+        inverse
+          ? "border-white/30 text-white/80"
+          : "border-border text-muted"
+      }`}
+    >
+      {kindLabels[kind] ?? kind}
+    </span>
+  );
+}
+
+export function ContentCard({
+  href,
+  kind,
+  title,
+  description,
+}: {
+  href: string;
+  kind: string;
+  title: string;
+  description: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="group flex flex-col gap-2 rounded-2xl border border-border bg-surface p-5 transition-all hover:-translate-y-0.5 hover:shadow-md"
+    >
+      <KindBadge kind={kind} />
+      <h3 className="font-semibold text-foreground group-hover:text-primary-light transition-colors">
+        {title}
+      </h3>
+      <p className="text-sm text-muted">{description}</p>
+    </Link>
+  );
+}
+
 export function Callout({
   tone,
   title,

@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Rekentools",
   description:
     "Bereken je nettoloon, stel een 50/30/20-budget op of bereken hoe lang het duurt voor je een spaardoel haalt.",
+  alternates: { canonical: "/tools" },
 };
 
 export default function ToolsPage() {

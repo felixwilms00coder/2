@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { categories } from "@/lib/content/categories";
 
 export function SiteFooter() {
   return (
@@ -15,18 +16,23 @@ export function SiteFooter() {
             </p>
           </div>
           <div>
-            <p className="text-sm font-semibold text-foreground">Verkennen</p>
+            <p className="text-sm font-semibold text-foreground">Thema&apos;s</p>
             <ul className="mt-2 space-y-1.5 text-sm text-muted">
               <li>
-                <Link href="/leerstof" className="hover:text-foreground">
-                  Leerstof
-                </Link>
-              </li>
-              <li>
                 <Link href="/tools" className="hover:text-foreground">
-                  Rekentools
+                  Alle rekentools, tips en checklists
                 </Link>
               </li>
+              {categories.map((cat) => (
+                <li key={cat.slug}>
+                  <Link
+                    href={`/leerstof/${cat.slug}`}
+                    className="hover:text-foreground"
+                  >
+                    {cat.title}
+                  </Link>
+                </li>
+              ))}
               <li>
                 <Link href="/quiz" className="hover:text-foreground">
                   Quiz
@@ -48,10 +54,24 @@ export function SiteFooter() {
             </p>
           </div>
         </div>
-        <p className="mt-8 border-t border-border pt-6 text-xs text-muted">
-          © {new Date().getFullYear()} FinEdu. Gemaakt als educatief
-          platform, geïnspireerd door Wikifin.
-        </p>
+        <div className="mt-8 flex flex-col gap-4 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <ul className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted">
+            <li>
+              <Link href="/over" className="hover:text-foreground">
+                Over FinEdu
+              </Link>
+            </li>
+            <li>
+              <Link href="/disclaimer" className="hover:text-foreground">
+                Disclaimer
+              </Link>
+            </li>
+          </ul>
+          <p className="text-xs text-muted">
+            © {new Date().getFullYear()} FinEdu. Gemaakt als educatief
+            platform, geïnspireerd door Wikifin.
+          </p>
+        </div>
       </div>
     </footer>
   );

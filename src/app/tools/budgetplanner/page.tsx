@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "50/30/20 budgetplanner",
   description:
     "Verdeel je nettoloon over noden, wensen en sparen volgens de 50/30/20-regel, en vergelijk met je eigen uitgaven.",
+  alternates: { canonical: "/tools/budgetplanner" },
 };
 
 export default function BudgetplannerPage() {
@@ -30,7 +31,7 @@ export default function BudgetplannerPage() {
             <p className="mt-6 text-sm text-muted">
               Meer weten over budgetteren als starter?{" "}
               <Link
-                href="/leerstof/budgetteren/50-30-20-regel"
+                href="/leerstof/budget-betalen-lenen-en-verzekeren/50-30-20-regel"
                 className="font-semibold text-primary-light hover:underline"
               >
                 Lees het volledige artikel

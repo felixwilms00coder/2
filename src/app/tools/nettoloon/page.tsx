@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Bruto-nettoloon calculator",
   description:
     "Bereken een schatting van je nettoloon op basis van je brutomaandloon: RSZ-bijdrage, bedrijfsvoorheffing en nettoloon.",
+  alternates: { canonical: "/tools/nettoloon" },
 };
 
 export default function NettoloonPage() {
@@ -35,7 +36,7 @@ export default function NettoloonPage() {
               Wil je eerst begrijpen wat elk onderdeel van je loonstrookje
               betekent?{" "}
               <Link
-                href="/leerstof/loon/loonstrookje-ontcijferd"
+                href="/leerstof/belasting-werk-en-inkomen/loonstrookje-ontcijferd"
                 className="font-semibold text-primary-light hover:underline"
               >
                 Lees onze uitleg over het loonstrookje

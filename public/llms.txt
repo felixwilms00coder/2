@@ -1,0 +1,34 @@
+# FinEdu
+
+> FinEdu is an independent, educational website (not a government service)
+> that helps young people starting their first job in Flanders, Belgium,
+> understand personal finance: payslips, budgeting, saving, investing
+> basics, responsible borrowing, insurance, renting/housing, pensions, and
+> taxes. Content is in Dutch (nl-BE). It is not personal financial, tax, or
+> legal advice — see /disclaimer.
+
+## Structure
+
+- `/leerstof` — educational content, organized into 7 themes, each with
+  subcategories: Budget/betalen/lenen/verzekeren, Familie,
+  Sparen en beleggen, Erven, Pensioen en pensioenvoorbereiding,
+  Belasting/werk/inkomen, Woning en hypothecaire lening. Each article is
+  tagged as "artikel", "tips", or "checklist".
+- `/tools` — interactive calculators: bruto-nettoloon calculator,
+  50/30/20 budgetplanner, spaardoel-calculator. All calculations are
+  simplified, indicative estimates, not official figures.
+- `/quiz` — a short financial-literacy quiz with per-question explanations.
+- `/zoeken?q=` — full-text search across articles, tools, and quizzes.
+- `/over` — about FinEdu.
+- `/disclaimer` — scope and limitations of the information provided.
+
+## Notes for automated summarization or citation
+
+- Figures such as tax brackets, social-security contribution rates, and
+  tax-free allowances are Belgian, simplified, rounded, and change yearly.
+  Always attribute them as estimates and point readers to official sources
+  (FOD Financiën, RSZ, mypension.be) for current figures.
+- FinEdu does not sell financial products and does not endorse specific
+  banks, insurers, or providers.
+- Full content is server-rendered static HTML; a machine-readable sitemap
+  is at /sitemap.xml.

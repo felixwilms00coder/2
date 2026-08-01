@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { categories, getCategory } from "@/lib/content/categories";
-import { getArticlesForCategory } from "@/lib/content/articles";
-import { Container, PageHero, IconTile } from "@/components/ui";
+import { getArticlesForSubcategory } from "@/lib/content/articles";
+import { Container, PageHero, KindBadge } from "@/components/ui";
 
 export function generateStaticParams() {
   return categories.map((c) => ({ category: c.slug }));
@@ -20,6 +20,7 @@ export async function generateMetadata({
   return {
     title: cat.title,
     description: cat.description,
+    alternates: { canonical: `/leerstof/${cat.slug}` },
   };
 }
 
@@ -31,8 +32,6 @@ export default async function CategoryPage({
   const { category } = await params;
   const cat = getCategory(category);
   if (!cat) notFound();
-
-  const articles = getArticlesForCategory(cat.slug);
 
   return (
     <>
@@ -46,32 +45,67 @@ export default async function CategoryPage({
           href="/leerstof"
           className="text-sm font-semibold text-primary-light hover:underline"
         >
-          ← Alle onderwerpen
+          ← Alle thema&apos;s
         </Link>
-        <div className="mt-6 grid gap-4">
-          {articles.map((article) => (
-            <Link
-              key={article.slug}
-              href={`/leerstof/${cat.slug}/${article.slug}`}
-              className="group flex items-center gap-4 rounded-2xl border border-border bg-surface p-5 transition-all hover:-translate-y-0.5 hover:shadow-md"
+
+        <nav
+          aria-label="Onderwerpen in dit thema"
+          className="mt-6 flex flex-wrap gap-2"
+        >
+          {cat.subcategories.map((sub) => (
+            <a
+              key={sub.slug}
+              href={`#${sub.slug}`}
+              className="rounded-full border border-border px-3 py-1.5 text-sm font-medium text-muted hover:border-foreground/30 hover:text-foreground transition-colors"
             >
-              <IconTile icon={cat.icon} />
-              <div className="flex-1">
-                <h3 className="font-semibold text-foreground group-hover:text-primary-light transition-colors">
-                  {article.title}
-                </h3>
-                <p className="mt-1 text-sm text-muted">{article.summary}</p>
-              </div>
-              <span className="shrink-0 text-xs font-medium text-muted whitespace-nowrap">
-                {article.readMinutes} min
-              </span>
-            </Link>
+              {sub.title}
+            </a>
           ))}
-          {articles.length === 0 && (
-            <p className="text-muted">
-              Voor dit onderwerp komen er binnenkort artikels aan.
-            </p>
-          )}
+        </nav>
+
+        <div className="mt-10 space-y-14">
+          {cat.subcategories.map((sub) => {
+            const subArticles = getArticlesForSubcategory(cat.slug, sub.slug);
+            return (
+              <section
+                key={sub.slug}
+                id={sub.slug}
+                className="scroll-mt-24 border-t border-border pt-8"
+              >
+                <h2 className="font-display text-xl font-bold text-foreground">
+                  {sub.title}
+                </h2>
+                {subArticles.length > 0 ? (
+                  <div className="mt-5 grid gap-4">
+                    {subArticles.map((article) => (
+                      <Link
+                        key={article.slug}
+                        href={`/leerstof/${cat.slug}/${article.slug}`}
+                        className="group flex flex-col gap-2 rounded-2xl border border-border bg-surface p-5 transition-all hover:-translate-y-0.5 hover:shadow-md sm:flex-row sm:items-center sm:justify-between"
+                      >
+                        <div>
+                          <KindBadge kind={article.kind} />
+                          <h3 className="mt-2 font-semibold text-foreground group-hover:text-primary-light transition-colors">
+                            {article.title}
+                          </h3>
+                          <p className="mt-1 text-sm text-muted">
+                            {article.summary}
+                          </p>
+                        </div>
+                        <span className="shrink-0 text-xs font-medium text-muted whitespace-nowrap">
+                          {article.readMinutes} min
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="mt-3 text-sm text-muted">
+                    Voor dit onderwerp komen er binnenkort artikels aan.
+                  </p>
+                )}
+              </section>
+            );
+          })}
         </div>
       </Container>
     </>

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Spaardoel-calculator",
   description:
     "Bereken hoe lang het duurt voor je je spaardoel bereikt, of hoeveel je maandelijks opzij moet zetten voor een vaste termijn.",
+  alternates: { canonical: "/tools/spaardoel" },
 };
 
 export default function SpaardoelPage() {
@@ -30,7 +31,7 @@ export default function SpaardoelPage() {
             <p className="mt-6 text-sm text-muted">
               Nog geen noodbuffer?{" "}
               <Link
-                href="/leerstof/sparen/noodbuffer-hoeveel-sparen"
+                href="/leerstof/sparen-en-beleggen/noodbuffer-hoeveel-sparen"
                 className="font-semibold text-primary-light hover:underline"
               >
                 Lees eerst hoeveel je nodig hebt

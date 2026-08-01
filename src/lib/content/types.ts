@@ -1,9 +1,15 @@
+export type Subcategory = {
+  slug: string;
+  title: string;
+};
+
 export type Category = {
   slug: string;
   title: string;
   short: string;
   description: string;
   icon: string;
+  subcategories: Subcategory[];
 };
 
 export type ArticleBlock =
@@ -13,9 +19,13 @@ export type ArticleBlock =
   | { type: "callout"; tone: "tip" | "warning"; title: string; text: string }
   | { type: "steps"; items: string[] };
 
+export type ArticleKind = "artikel" | "tips" | "checklist";
+
 export type Article = {
   slug: string;
   categorySlug: string;
+  subcategorySlug: string;
+  kind: ArticleKind;
   title: string;
   summary: string;
   readMinutes: number;

@@ -3,7 +3,9 @@ import { Article } from "./types";
 export const articles: Article[] = [
   {
     slug: "loonstrookje-ontcijferd",
-    categorySlug: "loon",
+    categorySlug: "belasting-werk-en-inkomen",
+    subcategorySlug: "eerste-job",
+    kind: "artikel",
     title: "Je eerste loonstrookje ontcijferd",
     summary:
       "Bruto, netto, RSZ, bedrijfsvoorheffing... je loonstrookje lijkt een vreemde taal. Hier lees je wat elk onderdeel betekent.",
@@ -52,7 +54,9 @@ export const articles: Article[] = [
   },
   {
     slug: "50-30-20-regel",
-    categorySlug: "budgetteren",
+    categorySlug: "budget-betalen-lenen-en-verzekeren",
+    subcategorySlug: "budget-en-budgetbeheer",
+    kind: "artikel",
     title: "De 50/30/20-regel: je eerste budget opstellen",
     summary:
       "Een simpele vuistregel om je nettoloon te verdelen over noden, wensen en sparen, zonder ingewikkelde spreadsheets.",
@@ -95,7 +99,9 @@ export const articles: Article[] = [
   },
   {
     slug: "noodbuffer-hoeveel-sparen",
-    categorySlug: "sparen",
+    categorySlug: "sparen-en-beleggen",
+    subcategorySlug: "spaarrekening",
+    kind: "tips",
     title: "Je noodbuffer: hoeveel spaargeld heb je nodig als starter?",
     summary:
       "Een noodbuffer is je financiële vangnet voor onverwachte kosten. Ontdek hoeveel je nodig hebt en waar je het best opzij zet.",
@@ -135,7 +141,9 @@ export const articles: Article[] = [
   },
   {
     slug: "beleggen-de-basis",
-    categorySlug: "beleggen",
+    categorySlug: "sparen-en-beleggen",
+    subcategorySlug: "beleggen-en-risicospreiding",
+    kind: "artikel",
     title: "Beleggen voor beginners: de basis in 10 minuten",
     summary:
       "Wat is het verschil tussen sparen en beleggen, welke risico's zijn er, en hoe begin je met kleine bedragen?",
@@ -181,7 +189,9 @@ export const articles: Article[] = [
   },
   {
     slug: "verantwoord-lenen",
-    categorySlug: "lenen",
+    categorySlug: "budget-betalen-lenen-en-verzekeren",
+    subcategorySlug: "lening-en-krediet",
+    kind: "artikel",
     title: "Verantwoord lenen: het verschil tussen goede en slechte schulden",
     summary:
       "Niet elke schuld is slecht, maar sommige leningen zijn véél duurder dan ze lijken. Zo herken je het verschil.",
@@ -222,7 +232,9 @@ export const articles: Article[] = [
   },
   {
     slug: "verzekeringen-voor-starters",
-    categorySlug: "verzekeringen",
+    categorySlug: "budget-betalen-lenen-en-verzekeren",
+    subcategorySlug: "verzekeren",
+    kind: "checklist",
     title: "Welke verzekeringen heb je nodig als starter?",
     summary:
       "Niet elke verzekering is even relevant als je net alleen gaat wonen of aan je carrière begint. Dit is waar je prioriteit aan geeft.",
@@ -268,7 +280,9 @@ export const articles: Article[] = [
   },
   {
     slug: "waarom-nu-al-pensioen",
-    categorySlug: "pensioen",
+    categorySlug: "pensioen-en-pensioenvoorbereiding",
+    subcategorySlug: "drie-pensioenpijlers",
+    kind: "artikel",
     title: "Waarom je nu al aan je pensioen moet denken",
     summary:
       "Pensioen lijkt ver weg als je net begint te werken, maar hoe vroeger je begint, hoe groter het verschil dat je opbouwt.",
@@ -306,7 +320,9 @@ export const articles: Article[] = [
   },
   {
     slug: "eerste-belastingaangifte",
-    categorySlug: "belastingen",
+    categorySlug: "belasting-werk-en-inkomen",
+    subcategorySlug: "belastingaangifte",
+    kind: "artikel",
     title: "Je eerste belastingaangifte: een stap-voor-stap gids",
     summary:
       "De personenbelasting lijkt ingewikkeld, maar met een paar basisbegrippen en een systematische aanpak kom je een heel eind.",
@@ -350,10 +366,121 @@ export const articles: Article[] = [
       },
     ],
   },
+  {
+    slug: "eerste-keer-huren",
+    categorySlug: "woning-en-hypothecaire-lening",
+    subcategorySlug: "woning-huren-verhuren",
+    kind: "tips",
+    title: "Voor het eerst een woning huren: waar moet je op letten?",
+    summary:
+      "Je eerste huurcontract tekenen is spannend. Deze tips helpen je financiële verrassingen te vermijden.",
+    readMinutes: 5,
+    blocks: [
+      {
+        type: "p",
+        text: "Je eerste eigen kot of appartement huren is een grote stap, ook financieel. Naast de maandelijkse huur komen er nog kosten bij die je makkelijk over het hoofd ziet.",
+      },
+      { type: "h2", text: "Waar moet je op letten?" },
+      {
+        type: "list",
+        items: [
+          "Huurwaarborg: meestal twee of drie maanden huur, te storten op een geblokkeerde huurwaarborgrekening op jouw naam, niet zomaar op de rekening van de verhuurder.",
+          "Plaatsbeschrijving: laat bij intrede altijd een gedetailleerde, tegensprekelijke plaatsbeschrijving opmaken, anders riskeer je bij het einde van je huur oneterecht schade aangerekend te krijgen.",
+          "Kosten en lasten: check wat wel en niet inbegrepen is in de huurprijs (water, verwarming, gemeenschappelijke kosten) en vraag dit na voor je tekent.",
+          "Registratie van het huurcontract: dit is verplicht en gratis, en gebeurt normaal door de verhuurder. Vraag na of dit in orde is, want dit beschermt jou als huurder.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Budgetteer de opstartkosten apart",
+        text: "Huurwaarborg, eerste maand huur, en soms een makelaarskost: reken op een opstartbudget van al snel drie tot vier maanden huur voor je de sleutel krijgt.",
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Onderteken niets onder tijdsdruk",
+        text: "Een huurcontract is een juridisch bindend document. Neem de tijd om het te lezen, en twijfel je? Vraag gratis advies bij een huurdersbond voor je tekent.",
+      },
+    ],
+  },
+  {
+    slug: "studieschulden-naast-eerste-loon",
+    categorySlug: "familie",
+    subcategorySlug: "studeren",
+    kind: "artikel",
+    title: "Nog studieschulden? Zo combineer je die met je eerste loon",
+    summary:
+      "Een studielening of achterstallige studiekosten lopen niet vanzelf weg zodra je begint te werken. Zo pak je het gestructureerd aan.",
+    readMinutes: 5,
+    blocks: [
+      {
+        type: "p",
+        text: "Niet elke starter begint met een schone lei: een studielening bij de bank, een afbetalingsplan voor het studentenkot, of nog openstaande facturen van je studies. Dat hoeft geen probleem te zijn zolang je het gestructureerd aanpakt naast je nieuwe, regelmatige inkomen.",
+      },
+      { type: "h2", text: "Zo pak je het aan" },
+      {
+        type: "steps",
+        items: [
+          "Zet al je openstaande schulden op een rijtje: bedrag, rentevoet en maandelijkse afbetaling.",
+          "Betaal eerst de duurste schuld (hoogste rente) sneller af, en betaal van de andere het minimum verder af.",
+          "Bouw parallel een kleine noodbuffer op, ook al is die klein: zo moet je niet opnieuw lenen bij de volgende tegenslag.",
+          "Neem contact op met je kredietverstrekker als een afbetaling even niet lukt, in plaats van gewoon niet te betalen: een aangepast plan is vaak mogelijk.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Gebruik de 50/30/20-regel als kader",
+        text: "Verwerk je resterende studieschulden in het 'sparen en schulden aflossen'-deel van je budget, zodat je aflossing een vast, voorspelbaar onderdeel van je maand wordt.",
+      },
+    ],
+  },
+  {
+    slug: "erven-als-starter",
+    categorySlug: "erven",
+    subcategorySlug: "erfenis-plannen",
+    kind: "artikel",
+    title: "Moet je als starter al aan erfenissen denken?",
+    summary:
+      "Erven en schenken lijkt iets voor later, maar een paar basisbegrippen kennen kan al vroeg nuttig zijn.",
+    readMinutes: 4,
+    blocks: [
+      {
+        type: "p",
+        text: "Als starter sta je waarschijnlijk niet vaak stil bij erven of schenken. Toch kan het geen kwaad om de basis te kennen, bijvoorbeeld als je ouders je willen helpen bij een grote uitgave zoals een woning.",
+      },
+      { type: "h2", text: "Twee begrippen om te kennen" },
+      {
+        type: "list",
+        items: [
+          "Schenking: geld of goederen die je tijdens iemands leven krijgt, bijvoorbeeld als hulp bij een aankoop. Afhankelijk van de vorm (hand- of bankgift versus notariële schenking) gelden andere regels en eventueel schenkbelasting.",
+          "Erfenis: wat je krijgt na iemands overlijden, verdeeld volgens het erfrecht of een testament. Hierop zijn successierechten verschuldigd, die verschillen naargelang de verwantschap en de regio.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Krijg je hulp van familie?",
+        text: "Laat een schenking altijd (laten) vastleggen, ook informeel binnen de familie. Dat voorkomt discussies later en kan bij een latere erfenis van belang zijn.",
+      },
+    ],
+  },
 ];
 
 export function getArticlesForCategory(categorySlug: string): Article[] {
   return articles.filter((a) => a.categorySlug === categorySlug);
+}
+
+export function getArticlesForSubcategory(
+  categorySlug: string,
+  subcategorySlug: string,
+): Article[] {
+  return articles.filter(
+    (a) =>
+      a.categorySlug === categorySlug &&
+      a.subcategorySlug === subcategorySlug,
+  );
 }
 
 export function getArticle(

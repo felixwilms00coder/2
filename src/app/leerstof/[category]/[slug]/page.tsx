@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getCategory } from "@/lib/content/categories";
+import { getCategory, getSubcategory } from "@/lib/content/categories";
 import { articles, getArticle, getArticlesForCategory } from "@/lib/content/articles";
-import { Container } from "@/components/ui";
+import { Container, KindBadge } from "@/components/ui";
 import { ArticleBody } from "@/components/article-body";
+import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/json-ld";
 
 export function generateStaticParams() {
   return articles.map((a) => ({
@@ -21,9 +22,17 @@ export async function generateMetadata({
   const { category, slug } = await params;
   const article = getArticle(category, slug);
   if (!article) return {};
+  const href = `/leerstof/${category}/${slug}`;
   return {
     title: article.title,
     description: article.summary,
+    alternates: { canonical: href },
+    openGraph: {
+      type: "article",
+      title: article.title,
+      description: article.summary,
+      url: href,
+    },
   };
 }
 
@@ -37,21 +46,53 @@ export default async function ArticlePage({
   const article = getArticle(category, slug);
   if (!cat || !article) notFound();
 
+  const subcategory = getSubcategory(cat.slug, article.subcategorySlug);
   const siblings = getArticlesForCategory(cat.slug);
   const currentIndex = siblings.findIndex((a) => a.slug === article.slug);
   const next = siblings[currentIndex + 1];
+  const href = `/leerstof/${cat.slug}/${article.slug}`;
 
   return (
     <div className="bg-surface">
+      <ArticleJsonLd
+        title={article.title}
+        description={article.summary}
+        href={href}
+        readMinutes={article.readMinutes}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Leerstof", href: "/leerstof" },
+          { name: cat.title, href: `/leerstof/${cat.slug}` },
+          { name: article.title, href },
+        ]}
+      />
       <div className="bg-primary text-white">
         <Container className="py-12">
-          <Link
-            href={`/leerstof/${cat.slug}`}
-            className="text-sm font-medium text-white/70 hover:text-white"
-          >
-            ← {cat.title}
-          </Link>
-          <h1 className="mt-4 font-display text-3xl sm:text-4xl font-bold max-w-2xl">
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-white/70">
+            <Link href="/leerstof" className="hover:text-white">
+              Leerstof
+            </Link>
+            <span>/</span>
+            <Link href={`/leerstof/${cat.slug}`} className="hover:text-white">
+              {cat.title}
+            </Link>
+            {subcategory && (
+              <>
+                <span>/</span>
+                <Link
+                  href={`/leerstof/${cat.slug}#${subcategory.slug}`}
+                  className="hover:text-white"
+                >
+                  {subcategory.title}
+                </Link>
+              </>
+            )}
+          </div>
+          <div className="mt-4">
+            <KindBadge kind={article.kind} inverse />
+          </div>
+          <h1 className="mt-3 font-display text-3xl sm:text-4xl font-bold max-w-2xl">
             {article.title}
           </h1>
           <p className="mt-3 text-white/80 max-w-2xl">{article.summary}</p>

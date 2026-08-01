@@ -6,7 +6,8 @@ import { Container, PageHero, EntityCard } from "@/components/ui";
 export const metadata: Metadata = {
   title: "Leerstof",
   description:
-    "Alle onderwerpen op een rij: loon, budgetteren, sparen, beleggen, lenen, verzekeringen, pensioen en belastingen, uitgelegd voor starters.",
+    "Alle thema's op een rij: budget, familie, sparen en beleggen, erven, pensioen, belasting en werk, en wonen, uitgelegd voor starters.",
+  alternates: { canonical: "/leerstof" },
 };
 
 export default function LeerstofPage() {
@@ -14,8 +15,8 @@ export default function LeerstofPage() {
     <>
       <PageHero
         eyebrow="Leerstof"
-        title="Kies een onderwerp om mee te starten"
-        description="Acht thema's die bijna elke starter op de arbeidsmarkt tegenkomt. Kort, praktisch, zonder overbodig jargon."
+        title="Kies een thema om mee te starten"
+        description="Zeven thema's die bijna elke starter op de arbeidsmarkt tegenkomt. Kort, praktisch, zonder overbodig jargon."
       />
       <Container className="py-14">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
