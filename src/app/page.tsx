@@ -32,47 +32,42 @@ export default function Home() {
   return (
     <>
       <HomeFaqJsonLd suggestions={homeSuggestions} />
-      <div className="bg-primary text-white">
-        <Container className="flex flex-col items-center py-16 text-center sm:py-24">
-          <p className="text-sm font-semibold uppercase tracking-wide text-accent">
-            Voor jouw vragen over geld
-          </p>
-          <h1 className="mt-4 max-w-2xl font-display text-3xl font-bold leading-tight sm:text-5xl">
-            Je eerste loon, je eerste keuzes. FinEdu legt het gewoon uit.
+      <div className="relative overflow-hidden bg-primary text-white">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute left-1/2 top-[38%] h-[560px] w-[560px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/[0.06] blur-3xl"
+        />
+        <Container className="relative flex min-h-[calc(100svh-4rem)] flex-col items-center justify-center py-16 text-center">
+          <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-lg font-bold">
+            FE
+          </span>
+          <h1 className="mt-6 max-w-xl font-display text-2xl font-bold leading-tight sm:text-4xl">
+            Wat wil je weten over je geld?
           </h1>
-          <p className="mt-5 max-w-xl text-lg text-white/80">
-            Duidelijke uitleg over budget, sparen, beleggen, verzekeren,
-            wonen, pensioen en belastingen — geschreven voor wie net op de
-            arbeidsmarkt is gestart.
+          <p className="mt-3 max-w-md text-sm text-white/50 sm:text-base">
+            Budget, sparen, beleggen, verzekeren, wonen, pensioen en
+            belastingen — uitgelegd voor starters.
           </p>
-          <div className="mt-8 w-full max-w-2xl rounded-2xl bg-white/10 p-2">
-            <SearchBox />
+          <div className="mt-8 w-full max-w-2xl">
+            <SearchBox variant="hero" autoFocus />
           </div>
-          <div className="mt-6 flex max-w-2xl flex-wrap justify-center gap-2">
+          <div className="mt-5 flex max-w-2xl flex-wrap justify-center gap-2">
             {homeSuggestions.map((s) => (
               <Link
                 key={s.href}
                 href={s.href}
-                className="rounded-full border border-white/25 px-3.5 py-1.5 text-sm text-white/85 hover:bg-white/10 hover:text-white transition-colors"
+                className="rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1.5 text-sm text-white/70 hover:border-white/20 hover:bg-white/10 hover:text-white transition-colors"
               >
                 {s.question}
               </Link>
             ))}
           </div>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link
-              href="/leerstof"
-              className="inline-flex items-center rounded-full bg-accent px-5 py-3 text-sm font-semibold text-primary hover:bg-accent-dark transition-colors"
-            >
-              Begin met leren
-            </Link>
-            <Link
-              href="/tools"
-              className="inline-flex items-center rounded-full border border-white/30 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
-            >
-              Bekijk rekentools
-            </Link>
-          </div>
+          <Link
+            href="/leerstof"
+            className="mt-10 text-sm font-medium text-white/40 hover:text-white/80 transition-colors"
+          >
+            of blader door alle thema&apos;s →
+          </Link>
         </Container>
       </div>
 

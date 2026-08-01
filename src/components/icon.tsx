@@ -10,7 +10,6 @@ import {
   Users,
   ScrollText,
   Home,
-  Search,
   type LucideIcon,
 } from "lucide-react";
 
@@ -26,7 +25,6 @@ const iconMap: Record<string, LucideIcon> = {
   users: Users,
   "scroll-text": ScrollText,
   home: Home,
-  search: Search,
 };
 
 export function CategoryIcon({
