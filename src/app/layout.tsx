@@ -4,6 +4,7 @@ import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { WebsiteJsonLd } from "@/components/json-ld";
+import { ProgressProvider } from "@/components/progress-provider";
 import { SITE_URL } from "@/lib/site";
 
 const body = Inter({
@@ -60,14 +61,16 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <WebsiteJsonLd />
-        <a href="#hoofdinhoud" className="skip-link">
-          Naar de hoofdinhoud
-        </a>
-        <SiteHeader />
-        <main id="hoofdinhoud" tabIndex={-1} className="flex-1">
-          {children}
-        </main>
-        <SiteFooter />
+        <ProgressProvider>
+          <a href="#hoofdinhoud" className="skip-link">
+            Naar de hoofdinhoud
+          </a>
+          <SiteHeader />
+          <main id="hoofdinhoud" tabIndex={-1} className="flex-1">
+            {children}
+          </main>
+          <SiteFooter />
+        </ProgressProvider>
       </body>
     </html>
   );

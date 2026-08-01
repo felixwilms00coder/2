@@ -9,9 +9,11 @@ responsibly, insurance, pensions, and taxes — all in Dutch.
 
 ## What's in here
 
-- **Leerstof (`/leerstof`)** — eight categories with short, practical
-  articles written for starters: loon, budgetteren, sparen, beleggen, lenen,
-  verzekeringen, pensioen, belastingen.
+- **Leerstof (`/leerstof`)** — seven themes with short, practical articles
+  written for starters. Articles are not walls of text: they carry
+  interactive blocks (`check` for an inline multiple-choice question,
+  `reveal` for a guess-then-answer card, `figure` for a pulled-out number)
+  defined in `src/lib/content/types.ts`.
 - **Rekentools (`/tools`)** — three interactive calculators:
   - Bruto-nettoloon calculator — estimates net salary from a gross monthly
     salary (RSZ contribution + a simplified progressive-tax estimate).

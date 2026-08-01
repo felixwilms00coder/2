@@ -17,7 +17,18 @@ export type ArticleBlock =
   | { type: "h2"; text: string }
   | { type: "list"; items: string[] }
   | { type: "callout"; tone: "tip" | "warning"; title: string; text: string }
-  | { type: "steps"; items: string[] };
+  | { type: "steps"; items: string[] }
+  /** Inline knowledge check: breaks up reading with a question. */
+  | {
+      type: "check";
+      question: string;
+      options: { text: string; correct: boolean }[];
+      explanation: string;
+    }
+  /** "Guess first, then reveal" — makes the reader commit before the answer. */
+  | { type: "reveal"; prompt: string; answer: string }
+  /** A single number worth remembering. */
+  | { type: "figure"; value: string; label: string; source?: string };
 
 export type ArticleKind = "artikel" | "tips" | "checklist";
 

@@ -1,5 +1,10 @@
 import { ArticleBlock } from "@/lib/content/types";
 import { Callout } from "@/components/ui";
+import {
+  InlineCheck,
+  KeyFigure,
+  RevealCard,
+} from "@/components/article-interactives";
 
 export function ArticleBody({ blocks }: { blocks: ArticleBlock[] }) {
   return (
@@ -20,10 +25,10 @@ export function ArticleBody({ blocks }: { blocks: ArticleBlock[] }) {
             );
           case "steps":
             return (
-              <ol key={i} className="mb-4 space-y-3">
+              <ol key={i} className="mb-5 space-y-3">
                 {block.items.map((item, j) => (
-                  <li key={j} className="flex gap-3">
-                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-white text-xs font-bold">
+                  <li key={j} className="flex gap-3.5">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-bold text-accent-contrast">
                       {j + 1}
                     </span>
                     <span className="pt-0.5 leading-relaxed">{item}</span>
@@ -36,6 +41,28 @@ export function ArticleBody({ blocks }: { blocks: ArticleBlock[] }) {
               <Callout key={i} tone={block.tone} title={block.title}>
                 {block.text}
               </Callout>
+            );
+          case "check":
+            return (
+              <InlineCheck
+                key={i}
+                question={block.question}
+                options={block.options}
+                explanation={block.explanation}
+              />
+            );
+          case "reveal":
+            return (
+              <RevealCard key={i} prompt={block.prompt} answer={block.answer} />
+            );
+          case "figure":
+            return (
+              <KeyFigure
+                key={i}
+                value={block.value}
+                label={block.label}
+                source={block.source}
+              />
             );
           default:
             return null;

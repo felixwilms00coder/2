@@ -37,6 +37,16 @@ export function SiteFooter() {
                   Quiz
                 </Link>
               </li>
+              <li>
+                <Link href="/spel" className="inline-flex min-h-9 items-center hover:text-accent">
+                  Keuzespel
+                </Link>
+              </li>
+              <li>
+                <Link href="/voortgang" className="inline-flex min-h-9 items-center hover:text-accent">
+                  Jouw voortgang
+                </Link>
+              </li>
             </ul>
           </div>
           <div>

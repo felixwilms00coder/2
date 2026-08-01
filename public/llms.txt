@@ -18,6 +18,11 @@
   50/30/20 budgetplanner, spaardoel-calculator. All calculations are
   simplified, indicative estimates, not official figures.
 - `/quiz` — a short financial-literacy quiz with per-question explanations.
+- `/spel` — an interactive decision game about the first year of working
+  life; choices affect an emergency buffer, monthly fixed costs and quality
+  of life, and are scored after seven rounds.
+- `/voortgang` — the reader's own progress (read articles, XP, level),
+  stored only in their browser's localStorage.
 - `/zoeken?q=` — full-text search across articles, tools, and quizzes.
 - `/over` — about FinEdu.
 - `/disclaimer` — scope and limitations of the information provided.

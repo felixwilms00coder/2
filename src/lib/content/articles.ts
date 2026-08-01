@@ -28,6 +28,24 @@ export const articles: Article[] = [
         type: "p",
         text: "Wat overblijft na deze twee inhoudingen, is je nettoloon: het bedrag dat effectief op je rekening wordt gestort. Bij de meeste starterslonen komt dit neer op ruwweg 65 tot 75% van het brutoloon, maar dat percentage hangt af van je loonhoogte en persoonlijke situatie.",
       },
+      {
+        type: "figure",
+        value: "13,07%",
+        label: "van je brutoloon gaat naar de RSZ",
+        source: "Werknemersbijdrage sociale zekerheid, België",
+      },
+      {
+        type: "check",
+        question:
+          "Je brutoloon is 2.800 euro. Ongeveer hoeveel hou je netto over?",
+        options: [
+          { text: "Ongeveer 2.600 euro", correct: false },
+          { text: "Ongeveer 2.150 euro", correct: true },
+          { text: "Ongeveer 1.500 euro", correct: false },
+        ],
+        explanation:
+          "Na de RSZ-bijdrage en de bedrijfsvoorheffing hou je bij dit loon ruwweg 2.100 tot 2.200 euro over. Reken je eigen situatie na met de bruto-nettoloon calculator.",
+      },
       { type: "h2", text: "Andere codes die je kan tegenkomen" },
       {
         type: "list",
@@ -79,6 +97,25 @@ export const articles: Article[] = [
         type: "p",
         text: "Dit zijn richtpercentages, geen wet van Meden en Perzen. Woon je in een dure regio of pendel je ver, dan kan het aandeel 'noden' hoger liggen. Belangrijk is dat je weet waar je geld naartoe gaat en dat er elke maand bewust iets opzij gaat voor later.",
       },
+      {
+        type: "check",
+        question:
+          "Je verdient 2.000 euro netto. Hoeveel gaat er volgens deze regel naar sparen?",
+        options: [
+          { text: "200 euro", correct: false },
+          { text: "400 euro", correct: true },
+          { text: "600 euro", correct: false },
+        ],
+        explanation:
+          "20% van 2.000 euro is 400 euro. Dat bedrag gebruik je om je noodbuffer op te bouwen of om schulden versneld af te lossen.",
+      },
+      {
+        type: "reveal",
+        prompt:
+          "Denk even na: welke uitgave van jou zit eigenlijk bij 'wensen', terwijl je ze als 'noden' beschouwt?",
+        answer:
+          "Veelgenoemde twijfelgevallen zijn streamingdiensten, een duurder telefoonabonnement dan nodig, dagelijkse koffie onderweg, en abonnementen die je vergeten bent op te zeggen. Ze voelen als vaste kosten, maar je kan ze aanpassen. Dat maakt ze wensen, en dus de plek waar je het snelst ruimte vindt.",
+      },
       { type: "h2", text: "Zo begin je" },
       {
         type: "steps",
@@ -115,6 +152,11 @@ export const articles: Article[] = [
       {
         type: "p",
         text: "Een courante vuistregel is drie tot zes maanden aan noodzakelijke uitgaven (huur, energie, eten, verzekeringen). Als starter met een vast contract en weinig mensen ten laste kan drie maanden een realistisch startpunt zijn. Werk je als zelfstandige of freelancer, dan is een buffer aan de hoge kant van die vork veiliger.",
+      },
+      {
+        type: "figure",
+        value: "3-6",
+        label: "maanden aan noodzakelijke uitgaven als richtbedrag",
       },
       { type: "h2", text: "Waar zet je die buffer opzij?" },
       {
@@ -169,6 +211,24 @@ export const articles: Article[] = [
           "Kosten: instapkosten, beheerskosten en transactiekosten kunnen je rendement flink drukken op lange termijn.",
         ],
       },
+      {
+        type: "check",
+        question:
+          "Een belegging belooft een hoog rendement zonder enig risico. Wat is hier aan de hand?",
+        options: [
+          {
+            text: "Dat kan kloppen als je lang genoeg belegt",
+            correct: false,
+          },
+          {
+            text: "Dit bestaat niet — hoger rendement gaat altijd samen met meer risico",
+            correct: true,
+          },
+          { text: "Alleen banken mogen dat aanbieden", correct: false },
+        ],
+        explanation:
+          "Hoog rendement zonder risico bestaat niet. Zo'n belofte is een klassiek kenmerk van beleggingsfraude. Check bij twijfel altijd of de aanbieder vergund is bij de FSMA.",
+      },
       { type: "h2", text: "Hoe begin je als starter?" },
       {
         type: "steps",
@@ -205,6 +265,13 @@ export const articles: Article[] = [
       {
         type: "p",
         text: "Het JKP (jaarlijks kostenpercentage) geeft de totale kostprijs van een krediet weer op jaarbasis, inclusief rente en kosten. Vergelijk altijd het JKP tussen verschillende aanbieders in plaats van enkel naar de maandelijkse afbetaling te kijken: een lage maandelijkse afbetaling kan verbergen dat je over een langere looptijd veel meer terugbetaalt.",
+      },
+      {
+        type: "reveal",
+        prompt:
+          "Lening A: 60 euro per maand, 48 maanden. Lening B: 90 euro per maand, 30 maanden. Welke is goedkoper?",
+        answer:
+          "Lening B. Je betaalt in totaal 2.700 euro terug (90 x 30), tegenover 2.880 euro bij lening A (60 x 48). De lagere maandelijkse afbetaling van A oogt aantrekkelijker, maar door de langere looptijd betaal je uiteindelijk meer. Kijk daarom altijd naar het JKP en naar de totale terugbetaalde som.",
       },
       { type: "h2", text: "Veelvoorkomende valkuilen" },
       {
@@ -252,6 +319,18 @@ export const articles: Article[] = [
           "Brandverzekering (woningverzekering): vaak verplicht opgelegd door je verhuurder of hypotheekverstrekker, en dekt brand-, water- en stormschade aan je woning en inboedel.",
           "Autoverzekering burgerlijke aansprakelijkheid: wettelijk verplicht als je een auto bezit of bestuurt.",
         ],
+      },
+      {
+        type: "check",
+        question:
+          "Je fietst tegen een geparkeerde auto en veroorzaakt 3.000 euro schade. Welke verzekering dekt dit?",
+        options: [
+          { text: "Je hospitalisatieverzekering", correct: false },
+          { text: "Je familiale verzekering", correct: true },
+          { text: "Geen enkele, je betaalt zelf", correct: false },
+        ],
+        explanation:
+          "De familiale verzekering dekt schade die je in je privéleven per ongeluk aan anderen toebrengt. Voor een paar tientallen euro's per jaar dek je zo risico's die in de duizenden euro's kunnen lopen.",
       },
       { type: "h2", text: "Vaak zinvol, afhankelijk van je situatie" },
       {
@@ -301,6 +380,11 @@ export const articles: Article[] = [
           "Pijler 3: individueel pensioensparen dat je zelf afsluit, met een fiscaal voordeel binnen bepaalde jaarlijkse grenzen.",
         ],
       },
+      {
+        type: "figure",
+        value: "3",
+        label: "pensioenpijlers in België: wettelijk, via je werkgever, en zelf",
+      },
       { type: "h2", text: "Wat kan je nu al doen?" },
       {
         type: "steps",
@@ -341,6 +425,13 @@ export const articles: Article[] = [
           "Belastingschijven: de personenbelasting werkt met progressieve schijven; hoe hoger je inkomen, hoe hoger het tarief op het bovenste deel van dat inkomen (niet op je hele inkomen).",
           "Bedrijfsvoorheffing: het voorschot dat je werkgever al inhield. De aangifte bepaalt of je nog moet bijbetalen of geld terugkrijgt.",
         ],
+      },
+      {
+        type: "reveal",
+        prompt:
+          "Je verdient meer en schuift op naar een hogere belastingschijf. Betaal je nu over je hele inkomen dat hogere tarief?",
+        answer:
+          "Nee. De personenbelasting werkt met progressieve schijven: het hogere tarief geldt alleen op het deel van je inkomen dat boven de grens uitkomt, niet op alles wat je verdient. Opslag krijgen betekent dus nooit dat je er netto op achteruit gaat.",
       },
       { type: "h2", text: "Zo pak je het aan" },
       {

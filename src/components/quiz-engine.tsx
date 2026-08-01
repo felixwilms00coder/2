@@ -1,20 +1,32 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { ArrowRight, Check, RotateCcw, X } from "lucide-react";
+import { ArrowRight, Check, Flame, RotateCcw, X } from "lucide-react";
 import { Quiz } from "@/lib/content/types";
 import { ButtonLink } from "@/components/ui";
+import { useProgress } from "@/components/progress-provider";
 
 export function QuizEngine({ quiz }: { quiz: Quiz }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [answers, setAnswers] = useState<boolean[]>([]);
+  const { recordQuiz } = useProgress();
 
   const total = quiz.questions.length;
   const question = quiz.questions[currentIndex];
   const isLast = currentIndex === total - 1;
   const finished = answers.length === total;
   const score = useMemo(() => answers.filter(Boolean).length, [answers]);
+
+  // Current run of consecutive correct answers.
+  const streak = useMemo(() => {
+    let n = 0;
+    for (let i = answers.length - 1; i >= 0; i--) {
+      if (!answers[i]) break;
+      n++;
+    }
+    return n;
+  }, [answers]);
 
   function selectOption(optionIndex: number) {
     if (selectedOption !== null) return;
@@ -23,6 +35,10 @@ export function QuizEngine({ quiz }: { quiz: Quiz }) {
   }
 
   function next() {
+    if (isLast) {
+      recordQuiz(quiz.slug, score);
+      return;
+    }
     setSelectedOption(null);
     setCurrentIndex((i) => i + 1);
   }
@@ -84,7 +100,15 @@ export function QuizEngine({ quiz }: { quiz: Quiz }) {
         <span className="font-semibold text-foreground">
           Vraag {currentIndex + 1} van {total}
         </span>
-        <span className="text-muted">{score} correct</span>
+        <span className="flex items-center gap-2 text-muted">
+          {streak >= 2 && (
+            <span className="inline-flex items-center gap-1 rounded-full bg-accent-soft px-2 py-0.5 text-xs font-bold text-accent">
+              <Flame className="h-3.5 w-3.5" aria-hidden="true" />
+              {streak} op rij
+            </span>
+          )}
+          {score} correct
+        </span>
       </div>
 
       <div

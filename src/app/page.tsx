@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Gamepad2, Sparkles } from "lucide-react";
 import { categories } from "@/lib/content/categories";
 import { tools } from "@/lib/content/tools";
 import { quizzes } from "@/lib/content/quizzes";
@@ -203,32 +203,62 @@ export default function Home() {
         </div>
       </Container>
 
-      {/* ---- Quiz CTA ---- */}
+      {/* ---- Learn by doing ---- */}
       <div className="bg-surface-muted">
         <Container className="py-16">
-          <div className="on-dark relative overflow-hidden rounded-3xl bg-primary p-8 text-white sm:p-12">
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/25 blur-3xl"
-            />
-            <div className="relative flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
-              <div className="max-w-xl">
-                <p className="text-sm font-bold uppercase tracking-[0.14em] text-accent-bright">
-                  Test jezelf
+          <SectionHeading
+            kicker="Leren door te doen"
+            title="Niet alleen lezen"
+            description="Maak keuzes, zie de gevolgen, en test wat je onthouden hebt."
+          />
+          <div className="mt-8 grid gap-4 lg:grid-cols-2">
+            {/* Game */}
+            <div className="on-dark relative overflow-hidden rounded-3xl bg-primary p-8 text-white">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/30 blur-3xl"
+              />
+              <div className="relative flex h-full flex-col">
+                <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.14em] text-accent-bright">
+                  <Gamepad2 className="h-4 w-4" aria-hidden="true" />
+                  Keuzespel
                 </p>
-                <h2 className="mt-2.5 font-display text-2xl font-extrabold tracking-tight sm:text-3xl">
-                  {quizzes[0].title}
-                </h2>
-                <p className="mt-3 text-white/80">{quizzes[0].description}</p>
+                <h3 className="mt-2.5 font-display text-2xl font-extrabold tracking-tight">
+                  Je eerste jaar als starter
+                </h3>
+                <p className="mt-3 text-white/80">
+                  Zeven echte situaties: een kapotte wasmachine, je
+                  vakantiegeld, op jezelf gaan wonen. Elke keuze telt. Waar sta
+                  je na twaalf maanden?
+                </p>
+                <div className="mt-6 pt-2">
+                  <ButtonLink href="/spel" variant="accent">
+                    Speel het spel
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </ButtonLink>
+                </div>
               </div>
-              <ButtonLink
-                href={`/quiz/${quizzes[0].slug}`}
-                variant="accent"
-                className="shrink-0"
-              >
-                Start de quiz
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </ButtonLink>
+            </div>
+
+            {/* Quiz */}
+            <div className="flex h-full flex-col rounded-3xl border border-border bg-surface p-8">
+              <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.14em] text-accent">
+                <Sparkles className="h-4 w-4" aria-hidden="true" />
+                Quiz
+              </p>
+              <h3 className="mt-2.5 font-display text-2xl font-extrabold tracking-tight text-foreground">
+                {quizzes[0].title}
+              </h3>
+              <p className="mt-3 text-muted">{quizzes[0].description}</p>
+              <div className="mt-6 pt-2">
+                <ButtonLink
+                  href={`/quiz/${quizzes[0].slug}`}
+                  variant="outline"
+                >
+                  Start de quiz
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </ButtonLink>
+              </div>
             </div>
           </div>
         </Container>

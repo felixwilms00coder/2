@@ -6,6 +6,7 @@ import { getCategory, getSubcategory } from "@/lib/content/categories";
 import { articles, getArticle, getArticlesForCategory } from "@/lib/content/articles";
 import { Container, KindBadge, ContentCard } from "@/components/ui";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { MarkReadButton } from "@/components/progress-widgets";
 import { ArticleBody } from "@/components/article-body";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/json-ld";
 
@@ -120,6 +121,7 @@ export default async function ArticlePage({
           <ArticleBody blocks={article.blocks} />
         </div>
         <div className="mx-auto mt-10 flex max-w-2xl flex-wrap items-center gap-4 border-t border-border pt-6">
+          <MarkReadButton categorySlug={cat.slug} slug={article.slug} />
           <Link
             href={`/leerstof/${cat.slug}`}
             className="inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-accent hover:underline"

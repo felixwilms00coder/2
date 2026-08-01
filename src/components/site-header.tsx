@@ -10,9 +10,11 @@ import { featuredArticleByCategory } from "@/lib/content/featured";
 import { Container, ContentCard } from "@/components/ui";
 import { SearchBox } from "@/components/search-box";
 import { Logo } from "@/components/logo";
+import { LevelPill } from "@/components/progress-widgets";
 
 const directLinks = [
   { href: "/tools", label: "Rekentools" },
+  { href: "/spel", label: "Keuzespel" },
   { href: "/quiz", label: "Quiz" },
 ];
 
@@ -135,6 +137,7 @@ export function SiteHeader() {
           </nav>
 
           <div className="flex items-center gap-1.5">
+            <LevelPill />
             <button
               onClick={() => {
                 setSearchOpen((v) => !v);
@@ -292,7 +295,7 @@ export function SiteHeader() {
                 })}
               </ul>
               <ul className="mt-3 flex flex-col border-t border-border pt-3">
-                {[...directLinks, { href: "/over", label: "Over FinEdu" }].map(
+                {[...directLinks, { href: "/voortgang", label: "Jouw voortgang" }, { href: "/over", label: "Over FinEdu" }].map(
                   (item) => (
                     <li key={item.href}>
                       <Link
