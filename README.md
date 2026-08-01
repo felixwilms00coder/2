@@ -29,6 +29,14 @@ responsibly, insurance, pensions, and taxes — all in Dutch.
     lets you compare against your own spending.
   - Spaardoel-calculator — estimates how long it takes to reach a savings
     goal, or how much you need to save monthly for a target date.
+- **Beleggingsagent (`/agent`)** — a self-managed automation agent. The user
+  writes their own buy rules (instrument, amount, cadence, per-order and
+  monthly caps), and the agent executes them against a broker of their
+  choosing. Ships with a fully working paper-trading broker; the Saxo OpenAPI
+  adapter is present but **has never been tested against the live API**.
+  Rules, log and tokens stay on the user's device — there is no FinEdu server
+  in the order path, which is what keeps this software rather than a
+  regulated investment service. See `docs/automatisering.md`.
 - **Quiz (`/quiz`)** — a 10-question financial literacy quiz with instant
   per-question explanations and a final score.
 

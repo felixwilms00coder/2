@@ -11,6 +11,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/leerstof",
     "/tools",
     "/quiz",
+    "/spel",
+    "/agent",
+    "/voortgang",
     "/over",
     "/disclaimer",
   ].map((path) => ({

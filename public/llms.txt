@@ -23,6 +23,10 @@
 - `/spel` — an interactive decision game about the first year of working
   life; choices affect an emergency buffer, monthly fixed costs and quality
   of life, and are scored after seven rounds.
+- `/agent` — a self-managed investment automation agent. The user defines
+  their own rules and connects their own broker account; FinEdu recommends
+  nothing, exercises no discretion, and never routes orders. Includes a
+  working paper-trading mode.
 - `/voortgang` — the reader's own progress (read articles, XP, level),
   stored only in their browser's localStorage.
 - `/zoeken?q=` — full-text search across articles, tools, and quizzes.

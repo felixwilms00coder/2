@@ -8,12 +8,58 @@ een advocaat gespecialiseerd in financieel recht voor je iets lanceert.**
 
 ## Samenvatting
 
-| Functie | Status vandaag | Blokkade |
+| Functie | Status vandaag | Opmerking |
 | --- | --- | --- |
 | Uitgaven analyseren via CSV-import | **Gebouwd** (`/tools/geldscan`) | Geen |
 | Uitgaven analyseren via banktoegang | Niet gebouwd | PSD2/AIS-vergunning of licensed aggregator |
 | Beleggingsplan simuleren | **Gebouwd** (`/tools/beleggingsplan`) | Geen |
-| Automatisch orders plaatsen | Niet gebouwd | MiFID II-vergunning FSMA + geen bruikbare API bij Bolero |
+| Zelfbeheerde aankoopagent | **Gebouwd** (`/agent`) | Werkt volledig in simulatie; Saxo-adapter ongetest |
+| Aankopen in naam van de gebruiker | Bewust niet gebouwd | Zou vermogensbeheer zijn |
+
+## De zelfbeheerde agent: waarom deze vorm wél kan
+
+`/agent` laat de gebruiker zijn eigen automatische aankopen instellen. De
+regelgevende positie hangt volledig aan de architectuur, dus die is bewust zo
+gebouwd:
+
+- **De gebruiker bepaalt alles.** Instrument, bedrag, ritme en limieten worden
+  door hem ingevuld. FinEdu stelt geen instrument voor, filtert of rangschikt
+  niets, en beoordeelt niet of iets bij hem past. Zonder persoonlijke
+  aanbeveling is er geen beleggingsadvies.
+- **Geen discretie.** De agent voert uitsluitend uit wat de gebruiker vooraf
+  letterlijk heeft vastgelegd. Er is geen enkele beslissing die FinEdu neemt,
+  dus geen vermogensbeheer.
+- **Geen orderstroom via FinEdu.** Orders gaan rechtstreeks van de browser van
+  de gebruiker naar zijn eigen brokeraccount, met zijn eigen token. Er is geen
+  FinEdu-server in dat pad. FinEdu ontvangt, bundelt of verstuurt geen orders,
+  en houdt geen gelden of instrumenten aan.
+
+In die vorm levert FinEdu **software**, en is de gebruiker zelf de
+opdrachtgever tegenover zijn vergunde broker. Dat is dezelfde positie als
+iemand die zijn eigen script tegen de API van zijn broker draait.
+
+**Waar de grens ligt.** Deze redenering houdt alleen stand zolang aan élk van
+die punten voldaan is. Zodra er iets bijkomt zoals: een server die orders in
+naam van gebruikers verstuurt, een lijst met "aanbevolen" of voorgeselecteerde
+ETF's, een standaardportefeuille, een geschiktheidsvraag met een uitkomst, of
+het aanhouden van klantentokens aan jullie kant — dan verschuift het richting
+een gereglementeerde beleggingsdienst. Laat de definitieve inschatting maken
+door een advocaat financieel recht voordat dit live gaat met echte rekeningen.
+
+### Wat er technisch nog moet gebeuren
+
+- **De Saxo-adapter (`src/lib/agent/brokers/saxo.ts`) is nooit tegen de echte
+  API getest.** Hij volgt de gedocumenteerde OpenAPI-vorm, maar moet eerst
+  tegen Saxo's simulatie-omgeving gevalideerd worden.
+- **Tokenbeheer is nu handmatig.** De gebruiker plakt zelf een access token,
+  dat alleen in `sessionStorage` van dat tabblad staat. Voor productie hoort
+  daar een OAuth 2.0-flow met PKCE en refresh-tokens bij, met een eigen
+  geregistreerde applicatie bij Saxo.
+- **Bolero blijft onmogelijk**: geen publieke API voor derden. Dat is een
+  feitelijke beperking, geen keuze.
+- **Uitvoering vereist een open tabblad.** Er draait bewust geen achtergrond-
+  proces. Wie uitvoering wil die ook zonder hem doorloopt, gebruikt het
+  periodieke beleggingsplan van de broker zelf.
 
 ---
 
@@ -56,6 +102,8 @@ Beide sluiten "even snel koppelen" uit.
 
 ### Wat wél kan zonder vergunning
 
+0. **Een zelfbeheerde agent leveren** — zie de sectie hierboven. Dit is de
+   route die dit project gekozen heeft.
 1. **Doorverwijzen naar de periodieke beleggingsplannen van de broker zelf.**
    De meeste Belgische brokers laten gebruikers zelf een terugkerende order
    instellen. De automatisering gebeurt dan bij de vergunde partij, en de
@@ -152,5 +200,10 @@ naar de leerstof.
 2. Verbeter de categorisatie op basis van echte feedback (een "klopt dit
    niet?"-knop per transactie kost weinig en maakt de regels beter).
 3. Beslis pas daarna of banktoegang de kost en de compliance waard is.
-4. Beschouw automatisch beleggen als een apart bedrijf met een eigen
-   vergunning, niet als een feature van het educatieve platform.
+4. Valideer de Saxo-adapter tegen hun simulatie-omgeving en vervang het
+   handmatige token door een echte OAuth-flow voor je iemand met een live
+   rekening laat koppelen.
+5. Laat de zelfbeheerde opzet juridisch bevestigen voor de live-schakelaar
+   aangaat. Blijf weg van alles wat naar selectie of aanbeveling neigt: dat is
+   precies waar het onderscheid met vergunningsplichtige dienstverlening
+   verdwijnt.

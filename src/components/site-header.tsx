@@ -15,6 +15,7 @@ import { LevelPill } from "@/components/progress-widgets";
 const directLinks = [
   { href: "/tools", label: "Rekentools" },
   { href: "/spel", label: "Keuzespel" },
+  { href: "/agent", label: "Agent" },
   { href: "/quiz", label: "Quiz" },
 ];
 
