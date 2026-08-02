@@ -3,12 +3,22 @@ export type Subcategory = {
   title: string;
 };
 
+export type CategoryColor =
+  | "blue"
+  | "rose"
+  | "green"
+  | "amber"
+  | "violet"
+  | "orange"
+  | "cyan";
+
 export type Category = {
   slug: string;
   title: string;
   short: string;
   description: string;
   icon: string;
+  color: CategoryColor;
   subcategories: Subcategory[];
 };
 

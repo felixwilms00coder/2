@@ -20,6 +20,7 @@ export default function LeerstofPage() {
         description="Zeven thema's die bijna elke starter op de arbeidsmarkt tegenkomt. Kort, praktisch, zonder overbodig jargon."
       />
       <Container className="py-14">
+        <h2 className="sr-only">Alle thema&apos;s</h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {categories.map((cat) => {
             const inTheme = getArticlesForCategory(cat.slug);
@@ -32,6 +33,7 @@ export default function LeerstofPage() {
                   description={`${cat.description} (${inTheme.length} artikel${
                     inTheme.length === 1 ? "" : "en"
                   })`}
+                  color={cat.color}
                 />
                 <span className="pointer-events-none absolute right-4 top-4">
                   <ThemeProgressRing

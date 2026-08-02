@@ -29,6 +29,21 @@
   --color-surface-muted: #f5f2ed;
   --color-border: #e7e2d9;
   --color-muted: #5c574f; /* 7.2:1 on white */
+
+  /* Per-thema kleuren: onderscheiden de 7 leerstof-thema's visueel,
+     los van het merkaccent. Elke kleur is gekozen op >=4.5:1 op wit. */
+  --cat-blue: #1d4ed8;
+  --cat-blue-soft: #e9eefc;
+  --cat-rose: #be123c;
+  --cat-rose-soft: #fbe9ed;
+  --cat-amber: #92400e;
+  --cat-amber-soft: #f9ecdc;
+  --cat-violet: #6d28d9;
+  --cat-violet-soft: #f0eafc;
+  --cat-orange: #9a3412;
+  --cat-orange-soft: #fbeadf;
+  --cat-cyan: #0e7490;
+  --cat-cyan-soft: #e3f2f5;
 }
 
 @theme inline {
@@ -49,6 +64,18 @@
   --color-surface-muted: var(--color-surface-muted);
   --color-border: var(--color-border);
   --color-muted: var(--color-muted);
+  --color-cat-blue: var(--cat-blue);
+  --color-cat-blue-soft: var(--cat-blue-soft);
+  --color-cat-rose: var(--cat-rose);
+  --color-cat-rose-soft: var(--cat-rose-soft);
+  --color-cat-amber: var(--cat-amber);
+  --color-cat-amber-soft: var(--cat-amber-soft);
+  --color-cat-violet: var(--cat-violet);
+  --color-cat-violet-soft: var(--cat-violet-soft);
+  --color-cat-orange: var(--cat-orange);
+  --color-cat-orange-soft: var(--cat-orange-soft);
+  --color-cat-cyan: var(--cat-cyan);
+  --color-cat-cyan-soft: var(--cat-cyan-soft);
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-heading), var(--font-body), ui-sans-serif,
     system-ui, sans-serif;
@@ -77,7 +104,29 @@
     --color-surface-muted: #232120;
     --color-border: #35312c;
     --color-muted: #b0aaa1;
+
+    --cat-blue: #8fb1f7;
+    --cat-blue-soft: #182644;
+    --cat-rose: #fb84a0;
+    --cat-rose-soft: #35181f;
+    --cat-amber: #e3ad6c;
+    --cat-amber-soft: #2f2314;
+    --cat-violet: #bda0f2;
+    --cat-violet-soft: #251c3c;
+    --cat-orange: #f39d71;
+    --cat-orange-soft: #321f14;
+    --cat-cyan: #7bd2e4;
+    --cat-cyan-soft: #12282c;
   }
+}
+
+/* ---- Decoratieve textuur --------------------------------------------- */
+
+/* Subtiel stippenraster voor wat diepte op verder vlakke secties. Puur
+   decoratief: altijd aria-hidden, nooit onder tekst met contrasteis. */
+.bg-dot-grid {
+  background-image: radial-gradient(currentColor 1px, transparent 1px);
+  background-size: 22px 22px;
 }
 
 body {

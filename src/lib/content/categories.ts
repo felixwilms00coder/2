@@ -8,6 +8,7 @@ export const categories: Category[] = [
     description:
       "Alles over je dagelijkse geldzaken: een budget opstellen, verantwoord lenen, en de verzekeringen die je als starter echt nodig hebt.",
     icon: "credit-card",
+    color: "blue",
     subcategories: [
       { slug: "budget-en-budgetbeheer", title: "Budget en budgetbeheer" },
       { slug: "lening-en-krediet", title: "Lening en krediet" },
@@ -23,6 +24,7 @@ export const categories: Category[] = [
     description:
       "Van studieschulden tot je eerste keer samenwonen: hoe familiale keuzes je budget als starter beïnvloeden.",
     icon: "users",
+    color: "rose",
     subcategories: [
       { slug: "studeren", title: "Studeren" },
       { slug: "financiele-opvoeding", title: "Financiële opvoeding" },
@@ -40,6 +42,7 @@ export const categories: Category[] = [
     description:
       "Een noodbuffer opbouwen en de basisprincipes van beleggen, uitgelegd voor wie er nog nooit mee bezig was.",
     icon: "piggy-bank",
+    color: "green",
     subcategories: [
       { slug: "spaarrekening", title: "Spaarrekening" },
       {
@@ -57,6 +60,7 @@ export const categories: Category[] = [
     description:
       "Erven en schenken lijken ver weg als je net begint te werken, maar een paar basisbegrippen kennen kan later veel uitleggen schelen.",
     icon: "scroll-text",
+    color: "amber",
     subcategories: [
       { slug: "erven-en-successierechten", title: "Erven en successierechten" },
       { slug: "erfenis-plannen", title: "Erfenis plannen" },
@@ -70,6 +74,7 @@ export const categories: Category[] = [
     description:
       "Hoe het Belgische pensioensysteem in elkaar zit en waarom vroeg beginnen zoveel verschil maakt voor je latere pensioen.",
     icon: "clock",
+    color: "violet",
     subcategories: [
       { slug: "drie-pensioenpijlers", title: "Drie pensioenpijlers" },
       { slug: "wettelijk-pensioen", title: "Wettelijk pensioen" },
@@ -84,6 +89,7 @@ export const categories: Category[] = [
     description:
       "Wat er op je loonstrookje staat, hoe je eerste belastingaangifte werkt, en wat er verandert bij je eerste job.",
     icon: "file-text",
+    color: "orange",
     subcategories: [
       { slug: "belastingaangifte", title: "Belastingaangifte" },
       { slug: "inkomen-en-loon", title: "Inkomen en loon" },
@@ -98,6 +104,7 @@ export const categories: Category[] = [
     description:
       "Van je eerste huurcontract tot de basis van een hypothecaire lening voor als je later een woning koopt.",
     icon: "home",
+    color: "cyan",
     subcategories: [
       { slug: "woning-huren-verhuren", title: "Woning huren, verhuren" },
       { slug: "hypothecaire-lening", title: "Hypothecaire lening" },

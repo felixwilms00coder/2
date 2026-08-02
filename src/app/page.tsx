@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Gamepad2, Sparkles } from "lucide-react";
-import { categories } from "@/lib/content/categories";
+import { categories, getCategory } from "@/lib/content/categories";
 import { tools } from "@/lib/content/tools";
 import { quizzes } from "@/lib/content/quizzes";
 import { getArticle } from "@/lib/content/articles";
@@ -64,6 +64,18 @@ export default function Home() {
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_58%_46%_at_50%_36%,rgba(10,10,9,0.9),rgba(10,10,9,0.6)_58%,rgba(10,10,9,0.18))]"
         />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-[#5b8def]/25 blur-[110px]"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-24 top-1/4 h-80 w-80 rounded-full bg-accent-bright/20 blur-[110px]"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-24 left-1/3 h-72 w-72 rounded-full bg-[#fb7185]/15 blur-[120px]"
+        />
         <Container className="relative flex min-h-[calc(100svh-4rem)] flex-col items-center justify-center py-16 text-center">
           <LogoMark className="h-12 w-12 text-white/[0.14]" />
 
@@ -107,8 +119,12 @@ export default function Home() {
       </div>
 
       {/* ---- Promises ---- */}
-      <div className="border-b border-border bg-accent-soft/60">
-        <Container className="grid gap-6 py-8 sm:grid-cols-3">
+      <div className="relative overflow-hidden border-b border-border bg-accent-soft/60">
+        <div
+          aria-hidden="true"
+          className="bg-dot-grid pointer-events-none absolute inset-0 text-accent/[0.07]"
+        />
+        <Container className="relative grid gap-6 py-8 sm:grid-cols-3">
           {promises.map((p) => (
             <div key={p.title} className="flex items-start gap-3">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent text-accent-contrast">
@@ -174,6 +190,7 @@ export default function Home() {
                 title={article!.title}
                 description={article!.summary}
                 readMinutes={article!.readMinutes}
+                color={getCategory(categorySlug)?.color}
               />
             ))}
           </div>
@@ -198,6 +215,7 @@ export default function Home() {
               title={cat.title}
               description={cat.short}
               meta="Lees meer"
+              color={cat.color}
             />
           ))}
         </div>
@@ -241,8 +259,12 @@ export default function Home() {
             </div>
 
             {/* Quiz */}
-            <div className="flex h-full flex-col rounded-3xl border border-border bg-surface p-8">
-              <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.14em] text-accent">
+            <div className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-surface p-8">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -left-16 -bottom-16 h-64 w-64 rounded-full bg-cat-violet/10 blur-3xl"
+              />
+              <p className="relative flex items-center gap-2 text-sm font-bold uppercase tracking-[0.14em] text-accent">
                 <Sparkles className="h-4 w-4" aria-hidden="true" />
                 Quiz
               </p>
@@ -266,14 +288,20 @@ export default function Home() {
 
       {/* ---- Newsletter ---- */}
       <Container className="py-16">
-        <div className="rounded-3xl border border-border bg-surface p-8 sm:p-10">
-          <SectionHeading
-            kicker="Nieuwsbrief"
-            title="Blijf op de hoogte"
-            description="Af en toe een mail met nieuwe artikels, tools en tips over geld."
+        <div className="relative overflow-hidden rounded-3xl border border-border bg-surface p-8 sm:p-10">
+          <div
+            aria-hidden="true"
+            className="bg-dot-grid pointer-events-none absolute inset-0 text-accent/[0.05]"
           />
-          <div className="mt-6">
-            <NewsletterForm />
+          <div className="relative">
+            <SectionHeading
+              kicker="Nieuwsbrief"
+              title="Blijf op de hoogte"
+              description="Af en toe een mail met nieuwe artikels, tools en tips over geld."
+            />
+            <div className="mt-6">
+              <NewsletterForm />
+            </div>
           </div>
         </div>
       </Container>

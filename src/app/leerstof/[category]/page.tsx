@@ -5,6 +5,29 @@ import { categories, getCategory } from "@/lib/content/categories";
 import { getArticlesForSubcategory } from "@/lib/content/articles";
 import { Container, PageHero, ContentCard } from "@/components/ui";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import type { CategoryColor } from "@/lib/content/types";
+
+const pillColorStyles: Record<CategoryColor, string> = {
+  blue: "hover:border-cat-blue hover:bg-cat-blue-soft hover:text-cat-blue",
+  rose: "hover:border-cat-rose hover:bg-cat-rose-soft hover:text-cat-rose",
+  green: "hover:border-accent hover:bg-accent-soft hover:text-accent",
+  amber: "hover:border-cat-amber hover:bg-cat-amber-soft hover:text-cat-amber",
+  violet:
+    "hover:border-cat-violet hover:bg-cat-violet-soft hover:text-cat-violet",
+  orange:
+    "hover:border-cat-orange hover:bg-cat-orange-soft hover:text-cat-orange",
+  cyan: "hover:border-cat-cyan hover:bg-cat-cyan-soft hover:text-cat-cyan",
+};
+
+const dotColorStyles: Record<CategoryColor, string> = {
+  blue: "bg-cat-blue",
+  rose: "bg-cat-rose",
+  green: "bg-accent",
+  amber: "bg-cat-amber",
+  violet: "bg-cat-violet",
+  orange: "bg-cat-orange",
+  cyan: "bg-cat-cyan",
+};
 
 export function generateStaticParams() {
   return categories.map((c) => ({ category: c.slug }));
@@ -62,7 +85,7 @@ export default async function CategoryPage({
               <a
                 key={sub.slug}
                 href={`#${sub.slug}`}
-                className="inline-flex min-h-11 items-center gap-2 rounded-full border border-border bg-surface px-4 text-sm font-medium text-foreground/80 transition-colors hover:border-accent hover:bg-accent-soft hover:text-accent"
+                className={`inline-flex min-h-11 items-center gap-2 rounded-full border border-border bg-surface px-4 text-sm font-medium text-foreground/80 transition-colors ${pillColorStyles[cat.color]}`}
               >
                 {sub.title}
                 <span className="rounded-full bg-surface-muted px-1.5 py-0.5 text-xs font-bold text-muted">
@@ -82,7 +105,11 @@ export default async function CategoryPage({
                 id={sub.slug}
                 className="scroll-mt-24 border-t border-border pt-8"
               >
-                <h2 className="font-display text-xl font-extrabold tracking-tight text-foreground">
+                <h2 className="flex items-center gap-2.5 font-display text-xl font-extrabold tracking-tight text-foreground">
+                  <span
+                    aria-hidden="true"
+                    className={`h-2 w-2 shrink-0 rounded-full ${dotColorStyles[cat.color]}`}
+                  />
                   {sub.title}
                 </h2>
                 {subArticles.length > 0 ? (
@@ -95,6 +122,7 @@ export default async function CategoryPage({
                         title={article.title}
                         description={article.summary}
                         readMinutes={article.readMinutes}
+                        color={cat.color}
                       />
                     ))}
                   </div>
