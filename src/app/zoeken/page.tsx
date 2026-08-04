@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Container, PageHero, ContentCard, KindBadge } from "@/components/ui";
 import { SearchBox } from "@/components/search-box";
+import { AiAnswer } from "@/components/ai-answer";
 import { searchContent } from "@/lib/search";
 
 export const metadata: Metadata = {
@@ -33,10 +34,16 @@ export default async function ZoekenPage({
           <SearchBox initialValue={q} />
         </div>
 
+        {q && (
+          <div className="mt-8">
+            <AiAnswer query={q} />
+          </div>
+        )}
+
         {directAnswer && (
           <Link
             href={directAnswer.href}
-            className="group mt-8 flex flex-col gap-3 rounded-2xl border border-accent/30 bg-accent-soft p-6 transition-colors hover:border-accent/60"
+            className="group mt-4 flex flex-col gap-3 rounded-2xl border border-accent/30 bg-accent-soft p-6 transition-colors hover:border-accent/60"
           >
             <div className="flex items-center gap-2">
               <span className="text-xs font-semibold uppercase tracking-wide text-accent-strong">

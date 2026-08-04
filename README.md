@@ -39,6 +39,11 @@ responsibly, insurance, pensions, and taxes — all in Dutch.
   regulated investment service. See `docs/automatisering.md`.
 - **Quiz (`/quiz`)** — a 10-question financial literacy quiz with instant
   per-question explanations and a final score.
+- **Zoeken (`/zoeken`)** — local keyword search across all content, plus an
+  optional AI-generated answer from an open-weight model (Llama 3.3 via
+  Groq). The AI answer is clearly labeled as experimental and never
+  personal advice; see "AI search answer" below to configure it, and
+  `docs/automatisering.md` for the regulatory tradeoffs.
 
 All calculators are clearly labeled as indicative estimates, not official
 figures — tax brackets and social contributions are simplified and change
@@ -62,6 +67,19 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
+
+### AI search answer (optional)
+
+`/zoeken` can show an AI-generated answer above the regular search results,
+powered by an open-weight model (Llama 3.3) hosted on
+[Groq](https://console.groq.com). It's optional: without a key, the site
+works exactly as before and the AI block shows a "not configured" message
+instead of crashing.
+
+```bash
+cp .env.example .env.local
+# then fill in GROQ_API_KEY=... in .env.local
+```
 
 ```bash
 npm run build   # production build

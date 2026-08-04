@@ -29,7 +29,11 @@
   working paper-trading mode.
 - `/voortgang` — the reader's own progress (read articles, XP, level),
   stored only in their browser's localStorage.
-- `/zoeken?q=` — full-text search across articles, tools, and quizzes.
+- `/zoeken?q=` — full-text search across articles, tools, and quizzes, plus
+  an optional AI-generated answer from an open-weight language model
+  (Llama 3.3). The AI answer is labeled as experimental and is not personal
+  financial advice; it does not use any of the reader's personal or account
+  data.
 - `/over` — about FinEdu.
 - `/disclaimer` — scope and limitations of the information provided.
 

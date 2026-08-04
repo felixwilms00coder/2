@@ -14,6 +14,7 @@ een advocaat gespecialiseerd in financieel recht voor je iets lanceert.**
 | Uitgaven analyseren via banktoegang | Niet gebouwd | PSD2/AIS-vergunning of licensed aggregator |
 | Beleggingsplan simuleren | **Gebouwd** (`/tools/beleggingsplan`) | Geen |
 | Zelfbeheerde aankoopagent | **Gebouwd** (`/agent`) | Werkt volledig in simulatie; Saxo-adapter ongetest |
+| AI-antwoord op zoekvragen | **Gebouwd** (`/zoeken`) | Vrij LLM-antwoord (Groq/Llama 3.3), zie update in sectie 3 |
 | Aankopen in naam van de gebruiker | Bewust niet gebouwd | Zou vermogensbeheer zijn |
 
 ## De zelfbeheerde agent: waarom deze vorm wél kan
@@ -190,6 +191,42 @@ Wil je later toch een LLM inzetten, dan is de veiligste vorm: het model laat
 de cijfers met rust en helpt enkel met *uitleg* van begrippen, met de
 berekende cijfers als vaste context, en met een duidelijke bronvermelding
 naar de leerstof.
+
+### Update: er staat nu tóch een LLM op `/zoeken`
+
+Op expliciet verzoek is er een open-weight taalmodel (Llama 3.3, gehost via
+Groq's API) aan de zoekpagina toegevoegd, met **vrije** antwoorden — dus niet
+beperkt tot herformulering van de bestaande leerstof zoals hierboven als
+veiligste vorm werd aanbevolen. Dat is een bewuste afwijking van de eerdere
+conclusie in dit document, dus met open kaart:
+
+- **Wat wél is meegenomen.** De systeemprompt verbiedt het model expliciet om
+  concrete producten, aandelen, fondsen of banken aan te bevelen, en dwingt
+  het om bij Belgische cijfers (belastingschijven, RSZ, pensioenleeftijd)
+  naar officiële bronnen te verwijzen in plaats van zelf een exact getal op
+  te geven. Elk antwoord toont een vast label ("AI-antwoord, experimenteel")
+  en een disclaimer dat het geen persoonlijk advies is.
+- **Wat níét is opgelost.** Een systeemprompt is geen garantie, enkel een
+  sterke aanwijzing — het model kan de instructie negeren of een verkeerd
+  cijfer verzinnen zonder dat te melden. Er zit geen filter tussen de
+  modeloutput en het scherm die dat detecteert.
+- **Architectuurwijziging.** Dit voegt een server-route toe
+  (`src/app/api/ai-answer/route.ts`) die de FinEdu-server nu wél laat
+  communiceren met een externe partij (Groq) — de eerdere belofte
+  "alles blijft client-side" geldt dus niet meer voor deze specifieke
+  functie (de rest van de site, inclusief Geldscan, blijft dat wel).
+  De zoekvraag zelf wordt doorgestuurd; er gaan geen rekeninggegevens mee,
+  want die verzamelt de site nergens.
+- **Kost.** Elke aanroep kost geld bij Groq (te configureren via de
+  `GROQ_API_KEY`-omgevingsvariabele). Er zit geen rate limiting op de route;
+  bij publieke lancering is dat de eerste hardening die nog moet gebeuren.
+
+**Advies ongewijzigd:** laat een advocaat financieel recht dit expliciet mee
+beoordelen voor dit met een echt publiek live gaat. Vrije LLM-antwoorden over
+"wat moet ik met mijn geld doen"-achtige vragen liggen dichter bij de grens
+met financieel advies dan de rest van dit platform, en die grens hangt af van
+hoe het antwoord in de praktijk klinkt — iets wat een systeemprompt niet met
+zekerheid afdwingt.
 
 ---
 
