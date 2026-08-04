@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans, Fraunces } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -17,6 +17,15 @@ const heading = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["600", "700", "800"],
   variable: "--font-heading",
+  display: "swap",
+});
+
+/** Editorial serif for the big display headlines (hero, section titles). */
+const serif = Fraunces({
+  subsets: ["latin"],
+  weight: ["500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-serif-display",
   display: "swap",
 });
 
@@ -57,7 +66,7 @@ export default function RootLayout({
   return (
     <html
       lang="nl-BE"
-      className={`${body.variable} ${heading.variable} h-full antialiased`}
+      className={`${body.variable} ${heading.variable} ${serif.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <WebsiteJsonLd />

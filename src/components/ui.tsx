@@ -80,10 +80,10 @@ export function PageHero({
         className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(14,13,11,0.96)_0%,rgba(14,13,11,0.82)_55%,rgba(14,13,11,0.35)_100%)]"
       />
       <Container className="relative py-14 sm:py-16">
-        <p className="text-sm font-semibold uppercase tracking-[0.14em] text-accent-bright">
+        <span className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.1em] text-accent-bright backdrop-blur-sm">
           {eyebrow}
-        </p>
-        <h1 className="mt-3 max-w-2xl font-display text-3xl font-extrabold tracking-[-0.02em] sm:text-4xl lg:text-5xl">
+        </span>
+        <h1 className="mt-4 max-w-2xl font-serif text-4xl font-semibold tracking-[-0.02em] sm:text-5xl lg:text-6xl">
           {title}
         </h1>
         <p className="mt-4 max-w-2xl text-base text-white/85 sm:text-lg">
@@ -343,7 +343,7 @@ export function SectionHeading({
           {kicker}
         </p>
       )}
-      <h2 className="mt-2.5 font-display text-2xl font-extrabold tracking-[-0.02em] text-foreground sm:text-3xl lg:text-4xl">
+      <h2 className="mt-2.5 font-serif text-3xl font-semibold tracking-[-0.02em] text-foreground sm:text-4xl">
         {title}
       </h2>
       {description && (
