@@ -31,9 +31,17 @@
   stored only in their browser's localStorage.
 - `/zoeken?q=` — full-text search across articles, tools, and quizzes, plus
   an optional AI-generated answer from an open-weight language model
-  (Llama 3.3). The AI answer is labeled as experimental and is not personal
-  financial advice; it does not use any of the reader's personal or account
-  data.
+  (Llama 3.3). The AI answer is labeled as experimental; it may explain and
+  apply relevant Belgian/Flemish legislation in plain language, grounded in
+  the curated list at `/wetgeving`, and always ends legal explanations with
+  a referral to a notary or lawyer for a binding answer. It does not use
+  any of the reader's personal or account data.
+- `/wetgeving` — a curated, plain-language summary of the legislation
+  relevant to FinEdu's topics (inheritance, gifting, renting, consumer
+  credit, income tax, social security, investment-advice licensing), each
+  with a link to the official consolidated legal text and the date an
+  editor last checked it against that text. Not a live feed — Belgian and
+  Flemish government sources do not offer one.
 - `/over` — about FinEdu.
 - `/disclaimer` — scope and limitations of the information provided.
 
@@ -47,5 +55,9 @@
   banks, insurers, or providers. It does not place orders, manage
   portfolios, or provide investment advice; those are regulated activities
   in Belgium requiring an FSMA licence.
+- For notarial matters (inheritance, gifting, buying/selling property),
+  FinEdu points readers to notaris.be and to a notary for a binding answer.
+  Legal explanations on this site are general information, not binding
+  legal advice.
 - Full content is server-rendered static HTML; a machine-readable sitemap
   is at /sitemap.xml.

@@ -44,6 +44,13 @@ responsibly, insurance, pensions, and taxes — all in Dutch.
   Groq). The AI answer is clearly labeled as experimental and never
   personal advice; see "AI search answer" below to configure it, and
   `docs/automatisering.md` for the regulatory tradeoffs.
+- **Wetgeving (`/wetgeving`)** — a curated, plain-language summary of the
+  legislation behind FinEdu's topics (`src/lib/content/legislation.ts`),
+  each entry linked to the official consolidated text and dated with when
+  an editor last checked it. This is also what grounds the AI answer's
+  legal explanations (`src/lib/legal-context.ts`) — there is no live feed
+  from any Belgian or Flemish government source, so this list needs manual
+  upkeep; see `docs/automatisering.md` section 4.
 
 All calculators are clearly labeled as indicative estimates, not official
 figures — tax brackets and social contributions are simplified and change

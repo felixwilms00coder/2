@@ -52,6 +52,11 @@ export function SiteFooter() {
                   Jouw voortgang
                 </Link>
               </li>
+              <li>
+                <Link href="/wetgeving" className="inline-flex min-h-9 items-center hover:text-accent">
+                  Wetgeving
+                </Link>
+              </li>
             </ul>
           </div>
           <div>

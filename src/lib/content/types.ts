@@ -79,3 +79,31 @@ export type Quiz = {
   description: string;
   questions: QuizQuestion[];
 };
+
+export type Jurisdiction = "vlaams" | "federaal" | "eu";
+
+/**
+ * Curated, plain-language summary of één wetgevend kader. Geen vervanging
+ * van de officiële tekst — telkens met een link naar de geconsolideerde
+ * bron en een datum waarop een redacteur de samenvatting laatst nakeek.
+ * Wordt gebruikt om het AI-antwoord te gronden (zie src/lib/legal-context.ts)
+ * en om broncitaten in de UI te tonen.
+ */
+export type LegislationEntry = {
+  slug: string;
+  title: string;
+  officialTitle: string;
+  jurisdiction: Jurisdiction;
+  topics: string[];
+  summary: string;
+  sourceUrl: string;
+  lastVerified: string;
+};
+
+export type OfficialSource = {
+  slug: string;
+  name: string;
+  url: string;
+  description: string;
+  topics: string[];
+};

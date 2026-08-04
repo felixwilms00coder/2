@@ -90,8 +90,10 @@ export function AiAnswer({ query }: { query: string }) {
             {state.answer}
           </p>
           <p className="text-xs text-muted">
-            Gegenereerd door een open-source taalmodel, geen persoonlijk advies.
-            Verifieer belangrijke cijfers altijd bij officiële bronnen.
+            Gegenereerd door een open-source taalmodel — geen persoonlijk
+            financieel of bindend juridisch advies. Verifieer cijfers en
+            juridische stappen altijd bij een officiële bron, notaris of
+            advocaat.
           </p>
         </>
       )}

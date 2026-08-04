@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/quiz",
     "/spel",
     "/agent",
+    "/wetgeving",
     "/voortgang",
     "/over",
     "/disclaimer",

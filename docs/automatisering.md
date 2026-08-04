@@ -15,6 +15,7 @@ een advocaat gespecialiseerd in financieel recht voor je iets lanceert.**
 | Beleggingsplan simuleren | **Gebouwd** (`/tools/beleggingsplan`) | Geen |
 | Zelfbeheerde aankoopagent | **Gebouwd** (`/agent`) | Werkt volledig in simulatie; Saxo-adapter ongetest |
 | AI-antwoord op zoekvragen | **Gebouwd** (`/zoeken`) | Vrij LLM-antwoord (Groq/Llama 3.3), zie update in sectie 3 |
+| Wetgeving uitleggen + toepassen op gebruikerssituatie | **Gebouwd** (`/zoeken`, `/wetgeving`) | Curated bronnenlijst, geen live overheids-API; juridische toetsing nog nodig, zie sectie 4 |
 | Aankopen in naam van de gebruiker | Bewust niet gebouwd | Zou vermogensbeheer zijn |
 
 ## De zelfbeheerde agent: waarom deze vorm wél kan
@@ -230,7 +231,70 @@ zekerheid afdwingt.
 
 ---
 
-## 4. Aanbevolen volgorde
+## 4. Wetgeving uitleggen — en toepassen op de situatie van de gebruiker
+
+Op expliciet verzoek gaat het AI-antwoord op `/zoeken` nu verder dan enkel
+financiële uitleg: het mag ook wetgeving uitleggen én toepassen op de
+concrete situatie die de gebruiker beschrijft (bv. "ik erf samen met mijn
+broer een huis, wat betekent dat voor de erfbelasting?"). Dat is een nieuw
+regelgevingsdomein bovenop het financiële-advies-vraagstuk hierboven:
+**onbevoegde rechtspraktijk / juridisch advies geven** is in België een apart
+afgebakend domein, los van de FSMA-vergunningsplicht voor beleggingsadvies.
+
+### Wat er gebouwd is
+
+- **`src/lib/content/legislation.ts`** — een curated lijst van acht
+  wetgevende kaders (erven, schenken, huren, consumentenkrediet,
+  personenbelasting, RSZ, MiFID II) in gewone taal samengevat, telkens met
+  de officiële titel, een link naar de geconsolideerde tekst op Justel/de
+  Vlaamse Codex, en een `lastVerified`-datum.
+- **`src/lib/content/sources.ts`** — geverifieerde officiële instanties
+  (notaris.be, FOD Financiën, RSZ, VLABEL, FSMA, MyPension.be, Justel,
+  Vlaanderen.be Wonen) met url en onderwerp. **Geen van deze partijen biedt
+  een publieke API voor derden aan** — "integratie" betekent hier dus
+  bronvermelding en doorverwijzing, geen live datakoppeling.
+- **`src/lib/legal-context.ts`** — vouwt beide lijsten samen tot een vaste
+  contextblok in de systeemprompt van `/api/ai-answer`. Het model krijgt de
+  instructie om zich uitsluitend op deze lijst te baseren voor juridische
+  claims, de titel te citeren, en eerlijk te zeggen wanneer een onderwerp er
+  niet in staat — in plaats van zelf een wetsartikel te verzinnen.
+- **`/wetgeving`** — een publieke pagina die dezelfde lijst toont, zodat een
+  gebruiker kan nalezen waarop het AI-antwoord zich baseert zonder eerst een
+  vraag te moeten stellen.
+- Elk antwoord dat wetgeving toepast op de situatie van de gebruiker moet
+  van het model zelf eindigen met een verwijzing naar de bevoegde instantie
+  (notaris, FOD Financiën, VLABEL, ...) en de zin "Dit is algemene
+  juridische duiding op basis van de wet, geen bindend advies — laat je
+  concrete dossier bevestigen door een notaris of advocaat."
+
+### Wat dit niet oplost
+
+- **De curated lijst is klein en handmatig.** Er is geen automatische
+  monitoring van wetswijzigingen — geen enkele Belgische overheidsbron biedt
+  daar een feed of API voor. `lastVerified` is een datum waarop een
+  redacteur de samenvatting naast de officiële tekst legde, niet een
+  garantie dat de wet sindsdien niet gewijzigd is. Dit moet minstens
+  jaarlijks herhaald worden, en telkens na een bekende wetswijziging in een
+  van de onderwerpen.
+- **Grondig ≠ onfeilbaar.** De systeemprompt dwingt het model om zich op de
+  lijst te baseren, maar kan niet garanderen dat het model nooit toch een
+  detail verkeerd samenvat of de grens tussen "uitleg" en "advies" verkeerd
+  inschat. Er zit geen filter tussen modeloutput en scherm die dat
+  detecteert — zelfde beperking als bij het financiële AI-antwoord hierboven.
+- **De schade bij een fout kan groter zijn dan bij financiële uitleg.** Een
+  verkeerd begrepen opzegtermijn, schenkingstermijn of erfrechtelijke regel
+  kan tot een gemist deadline of een dure vergissing leiden — dat weegt
+  zwaarder dan een te optimistisch rendementsvoorbeeld.
+
+**Advies:** laat dit specifieke onderdeel (wetgeving toepassen op de
+situatie van de gebruiker) door een advocaat beoordelen voor het met een
+echt publiek live gaat — dit is een nieuwe, aparte risicocategorie
+bovenop de FSMA-kwestie uit sectie 3, en verdient een eigen juridische
+toetsing, niet enkel een verwijzing naar het advies daarboven.
+
+---
+
+## 5. Aanbevolen volgorde
 
 1. Houd de Geldscan gratis en client-side. Dat is vandaag al de meeste waarde
    voor de gebruiker, zonder juridische last.
