@@ -67,7 +67,7 @@ export function SiteHeader() {
   const themesActive = pathname.startsWith("/leerstof");
 
   const navLinkClass = (active: boolean) =>
-    `relative flex min-h-11 items-center rounded-lg px-3 text-sm font-semibold transition-colors ${
+    `ease-smooth relative flex min-h-11 items-center rounded-lg px-3 text-sm font-semibold transition-colors duration-200 ${
       active
         ? "text-accent"
         : "text-foreground/75 hover:bg-surface-muted hover:text-foreground"
@@ -76,7 +76,7 @@ export function SiteHeader() {
   return (
     <header
       ref={headerRef}
-      className="sticky top-0 z-40 border-b border-border bg-surface/95 backdrop-blur supports-[backdrop-filter]:bg-surface/85"
+      className="sticky top-0 z-40 border-b border-border/70 bg-surface/95 backdrop-blur-xl supports-[backdrop-filter]:bg-surface/70"
     >
       <Container>
         <div className="flex h-16 items-center justify-between gap-3">
@@ -155,7 +155,7 @@ export function SiteHeader() {
 
             <Link
               href="/quiz"
-              className="hidden min-h-11 items-center rounded-full bg-accent px-4 text-sm font-semibold text-accent-contrast transition-colors hover:bg-accent-strong sm:inline-flex"
+              className="ease-smooth hidden min-h-11 items-center rounded-full bg-accent px-4 text-sm font-semibold text-accent-contrast transition-all duration-200 hover:bg-accent-strong active:scale-[0.97] sm:inline-flex"
             >
               Doe de quiz
             </Link>

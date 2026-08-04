@@ -110,7 +110,7 @@ export default async function ArticlePage({
               {article.readMinutes} minuten lezen
             </span>
           </div>
-          <h1 className="mt-3 max-w-2xl font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <h1 className="mt-3 max-w-2xl font-display text-3xl font-extrabold tracking-[-0.02em] sm:text-4xl">
             {article.title}
           </h1>
           <p className="mt-3 max-w-2xl text-white/85">{article.summary}</p>

@@ -18,6 +18,7 @@ export default function ToolsPage() {
         description="Drie eenvoudige tools die je meteen een concreet antwoord geven. Alle berekeningen zijn indicatief."
       />
       <Container className="py-14">
+        <h2 className="sr-only">Alle rekentools</h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {tools.map((tool) => (
             <EntityCard

@@ -23,7 +23,7 @@ export function Container({
 type ButtonVariant = "accent" | "solid" | "outline" | "ghost" | "onDark";
 
 const buttonBase =
-  "inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 text-sm font-semibold transition-colors";
+  "ease-smooth inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 text-sm font-semibold transition-all duration-200 active:scale-[0.97]";
 
 const buttonVariants: Record<ButtonVariant, string> = {
   accent:
@@ -83,7 +83,7 @@ export function PageHero({
         <p className="text-sm font-semibold uppercase tracking-[0.14em] text-accent-bright">
           {eyebrow}
         </p>
-        <h1 className="mt-3 max-w-2xl font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+        <h1 className="mt-3 max-w-2xl font-display text-3xl font-extrabold tracking-[-0.02em] sm:text-4xl lg:text-5xl">
           {title}
         </h1>
         <p className="mt-4 max-w-2xl text-base text-white/85 sm:text-lg">
@@ -145,17 +145,17 @@ const tileColorStyles: Record<CategoryColor, string> = {
 };
 
 const cardColorStyles: Record<CategoryColor, string> = {
-  blue: "hover:border-cat-blue/40 hover:shadow-[0_16px_36px_-16px_rgba(29,78,216,0.45)]",
-  rose: "hover:border-cat-rose/40 hover:shadow-[0_16px_36px_-16px_rgba(190,18,60,0.4)]",
+  blue: "hover:border-cat-blue/30 hover:shadow-[0_22px_44px_-20px_rgba(29,78,216,0.32)]",
+  rose: "hover:border-cat-rose/30 hover:shadow-[0_22px_44px_-20px_rgba(190,18,60,0.28)]",
   green:
-    "hover:border-accent/40 hover:shadow-[0_16px_36px_-16px_rgba(15,122,95,0.4)]",
+    "hover:border-accent/30 hover:shadow-[0_22px_44px_-20px_rgba(15,122,95,0.28)]",
   amber:
-    "hover:border-cat-amber/40 hover:shadow-[0_16px_36px_-16px_rgba(146,64,14,0.4)]",
+    "hover:border-cat-amber/30 hover:shadow-[0_22px_44px_-20px_rgba(146,64,14,0.28)]",
   violet:
-    "hover:border-cat-violet/40 hover:shadow-[0_16px_36px_-16px_rgba(109,40,217,0.4)]",
+    "hover:border-cat-violet/30 hover:shadow-[0_22px_44px_-20px_rgba(109,40,217,0.28)]",
   orange:
-    "hover:border-cat-orange/40 hover:shadow-[0_16px_36px_-16px_rgba(154,52,18,0.4)]",
-  cyan: "hover:border-cat-cyan/40 hover:shadow-[0_16px_36px_-16px_rgba(14,116,144,0.4)]",
+    "hover:border-cat-orange/30 hover:shadow-[0_22px_44px_-20px_rgba(154,52,18,0.28)]",
+  cyan: "hover:border-cat-cyan/30 hover:shadow-[0_22px_44px_-20px_rgba(14,116,144,0.28)]",
 };
 
 const titleColorStyles: Record<CategoryColor, string> = {
@@ -214,7 +214,7 @@ export function EntityCard({
   return (
     <Link
       href={href}
-      className={`group relative flex flex-col gap-3 rounded-2xl border border-border bg-surface p-5 transition-all hover:-translate-y-1 ${cardColorStyles[color]}`}
+      className={`ease-smooth group relative flex flex-col gap-3 rounded-[1.75rem] border border-border bg-surface p-5 transition-all duration-300 hover:-translate-y-1.5 ${cardColorStyles[color]}`}
     >
       <IconTile icon={icon} color={color} />
       <div>
@@ -258,7 +258,7 @@ export function ContentCard({
   return (
     <Link
       href={href}
-      className={`group flex flex-col gap-2.5 rounded-2xl border border-border bg-surface p-5 transition-all hover:-translate-y-1 ${cardColorStyles[color]}`}
+      className={`ease-smooth group flex flex-col gap-2.5 rounded-[1.75rem] border border-border bg-surface p-5 transition-all duration-300 hover:-translate-y-1.5 ${cardColorStyles[color]}`}
     >
       <div className="flex items-center gap-2">
         <KindBadge kind={kind} />
@@ -343,7 +343,7 @@ export function SectionHeading({
           {kicker}
         </p>
       )}
-      <h2 className="mt-2.5 font-display text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
+      <h2 className="mt-2.5 font-display text-2xl font-extrabold tracking-[-0.02em] text-foreground sm:text-3xl lg:text-4xl">
         {title}
       </h2>
       {description && (

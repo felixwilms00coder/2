@@ -79,7 +79,7 @@ export default function Home() {
         <Container className="relative flex min-h-[calc(100svh-4rem)] flex-col items-center justify-center py-16 text-center">
           <LogoMark className="h-12 w-12 text-white/[0.14]" />
 
-          <h1 className="mt-6 max-w-2xl font-display text-3xl font-extrabold leading-[1.15] tracking-tight sm:text-5xl">
+          <h1 className="mt-6 max-w-2xl font-display text-4xl font-extrabold leading-[1.1] tracking-[-0.03em] sm:text-6xl">
             Wat wil je weten over je geld?
           </h1>
           <p className="mt-4 max-w-md text-sm text-white/65 sm:text-base">
@@ -100,7 +100,7 @@ export default function Home() {
               <li key={s.href}>
                 <Link
                   href={s.href}
-                  className="flex min-h-11 items-center rounded-full border border-white/15 bg-black/40 px-4 text-sm text-white/80 backdrop-blur-sm transition-colors hover:border-accent-bright/60 hover:bg-black/65 hover:text-white"
+                  className="ease-smooth flex min-h-11 items-center rounded-full border border-white/15 bg-black/40 px-4 text-sm text-white/80 backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-accent-bright/60 hover:bg-black/65 hover:text-white active:scale-[0.97]"
                 >
                   {s.question}
                 </Link>
@@ -144,7 +144,7 @@ export default function Home() {
       </div>
 
       {/* ---- Tools ---- */}
-      <Container className="py-16">
+      <Container className="py-20 sm:py-24">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <SectionHeading
             kicker="Rekentools"
@@ -175,7 +175,7 @@ export default function Home() {
 
       {/* ---- Featured content ---- */}
       <div className="bg-surface-muted">
-        <Container className="py-16">
+        <Container className="py-20 sm:py-24">
           <SectionHeading
             kicker="Uitgelicht"
             title="Net voor jou geschreven"
@@ -198,7 +198,7 @@ export default function Home() {
       </div>
 
       {/* ---- Themes ---- */}
-      <Container className="py-16">
+      <Container className="py-20 sm:py-24">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <SectionHeading
             kicker="Leerstof"
@@ -223,7 +223,7 @@ export default function Home() {
 
       {/* ---- Learn by doing ---- */}
       <div className="bg-surface-muted">
-        <Container className="py-16">
+        <Container className="py-20 sm:py-24">
           <SectionHeading
             kicker="Leren door te doen"
             title="Niet alleen lezen"
@@ -287,7 +287,7 @@ export default function Home() {
       </div>
 
       {/* ---- Newsletter ---- */}
-      <Container className="py-16">
+      <Container className="py-20 sm:py-24">
         <div className="relative overflow-hidden rounded-3xl border border-border bg-surface p-8 sm:p-10">
           <div
             aria-hidden="true"
