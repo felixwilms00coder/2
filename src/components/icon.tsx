@@ -12,6 +12,8 @@ import {
   Home,
   ScanLine,
   LineChart,
+  Scale,
+  Umbrella,
   type LucideIcon,
 } from "lucide-react";
 
@@ -29,6 +31,8 @@ const iconMap: Record<string, LucideIcon> = {
   home: Home,
   scan: ScanLine,
   "line-chart": LineChart,
+  scale: Scale,
+  umbrella: Umbrella,
 };
 
 export function CategoryIcon({

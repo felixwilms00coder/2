@@ -41,6 +41,22 @@ export const tools: ToolSummary[] = [
       "Bereken hoeveel je maandelijks opzij moet zetten om een spaardoel te bereiken, of hoe lang het duurt tegen jouw huidig spaarritme.",
     icon: "piggy-bank",
   },
+  {
+    slug: "spaarrekening-vergelijker",
+    title: "Spaarrekening-vergelijker",
+    short: "Vergelijk zelf ingevulde spaartarieven",
+    description:
+      "Vul de basisrente en getrouwheidspremie van rekeningen in die je zelf gevonden hebt, en zie het verschil na verloop van tijd. Geen eigen rentetabel, geen aanbeveling.",
+    icon: "scale",
+  },
+  {
+    slug: "verzekering-vergelijker",
+    title: "Verzekeringsoffertes vergelijken",
+    short: "Premie én vrijstelling samen bekijken",
+    description:
+      "Vul je eigen offertes in en zie de verwachte totale jaarkost, niet enkel de premie. Geen eigen polissen, geen rangschikking van verzekeraars.",
+    icon: "umbrella",
+  },
 ];
 
 export function getTool(slug: string): ToolSummary | undefined {

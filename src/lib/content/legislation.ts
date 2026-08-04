@@ -111,6 +111,29 @@ export const legislation: LegislationEntry[] = [
     sourceUrl: "https://www.ejustice.just.fgov.be/eli/wet/2002/08/02/2002003392/justel",
     lastVerified: "2026-08-04",
   },
+  {
+    slug: "depositogarantiestelsel",
+    title: "Je spaargeld is beschermd tot een bepaald bedrag per bank, mocht die omvallen",
+    officialTitle:
+      "Wet van 25 april 2014 op het statuut van en het toezicht op kredietinstellingen (omzetting EU-richtlijn depositogarantiestelsels)",
+    jurisdiction: "eu",
+    topics: ["sparen"],
+    summary:
+      "Geld op een spaar- of zichtrekening bij een bank met een Belgische of Europese vergunning is via het depositogarantiestelsel beschermd tot een vast bedrag per persoon per bank, mocht de bank failliet gaan. Heb je spaargeld verspreid over meerdere banken, dan geldt die bescherming per bank apart — bij dezelfde bank stapelt het niet op als je er meerdere rekeningen hebt. Het exacte beschermde bedrag ligt wettelijk vast maar wijzigt zelden; controleer het actuele bedrag bij het Garantiefonds voor financiële diensten.",
+    sourceUrl: "https://www.ejustice.just.fgov.be/eli/wet/2014/04/25/2014003195/justel",
+    lastVerified: "2026-08-04",
+  },
+  {
+    slug: "verzekeringsbemiddeling-vergunning",
+    title: "Wie verzekeringen voorstelt, aanbeveelt of vergelijkt als dienst, heeft daarvoor een FSMA-registratie nodig",
+    officialTitle: "Wet van 4 april 2014 betreffende de verzekeringen (omzetting IDD — Insurance Distribution Directive)",
+    jurisdiction: "eu",
+    topics: ["verzekeren"],
+    summary:
+      "Verzekeringsbemiddeling — het voorstellen, aanbevelen, vergelijken of voorbereidend werk doen richting het afsluiten van een verzekeringscontract — is in België een gereglementeerde activiteit. Wie dat als dienst aanbiedt, ook zonder commissie te ontvangen, moet geregistreerd zijn bij de FSMA als verzekeringstussenpersoon. Consumenten kunnen die registratie nakijken via het openbaar register op fsma.be voor ze op een aanbeveling ingaan.",
+    sourceUrl: "https://www.ejustice.just.fgov.be/eli/wet/2014/04/04/2014011240/justel",
+    lastVerified: "2026-08-04",
+  },
 ];
 
 export function getLegislationForTopics(topics: string[]): LegislationEntry[] {

@@ -72,6 +72,14 @@ export const officialSources: OfficialSource[] = [
       "Vlaamse overheidsinformatie over huren en verhuren, de Vlaamse huurwaarborglening en premies voor eigenaars.",
     topics: ["woning"],
   },
+  {
+    slug: "garantiefonds",
+    name: "Garantiefonds voor financiële diensten",
+    url: "https://www.garantiefonds.belgium.be",
+    description:
+      "Beheert het Belgisch depositogarantiestelsel: hoeveel van je spaargeld beschermd is als een bank failliet gaat, en hoe je een schadeclaim indient.",
+    topics: ["sparen"],
+  },
 ];
 
 export function getSourcesForTopic(topic: string): OfficialSource[] {

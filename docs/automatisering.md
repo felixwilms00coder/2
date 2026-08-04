@@ -294,7 +294,71 @@ toetsing, niet enkel een verwijzing naar het advies daarboven.
 
 ---
 
-## 5. Aanbevolen volgorde
+## 5. "Goedkoopste" spaarrekening of verzekering — waarom dit een rekentool werd, geen ranking
+
+Er kwam een expliciet verzoek om spaarrekeningen en verzekeringen per tak te
+laten vergelijken op prijs, inclusief dagelijkse updates, met FinEdu die zelf
+aangeeft welke het goedkoopst is. Dat is bewust **niet** gebouwd — ook niet in
+een afgezwakte vorm — en het is de moeite waard om hier vast te leggen waarom,
+want het onderscheid met de rekentools die er wél kwamen is smal.
+
+### Waarom een rankingfunctie niet kan
+
+- **Financiële/verzekeringsbemiddeling is in België een vergunningsplichtige
+  activiteit** (Wet van 4 april 2014 betreffende de verzekeringen, boek II;
+  MiFID II voor beleggingsproducten — zie sectie 3). Een derde partij die
+  producten van verschillende aanbieders naast elkaar zet en er een "beste"
+  of "goedkoopste" uit aanwijst, oefent daarmee bemiddeling uit, ongeacht of
+  er geld voor de vergelijking zelf gevraagd wordt. FinEdu heeft geen FSMA-
+  vergunning en positioneert zich uitdrukkelijk als "geen advies, geen
+  productverkoop" (zie Samenvatting hierboven) — een rankingfunctie zou die
+  positionering rechtstreeks tegenspreken.
+- **Er is geen brondata.** Geen enkele Belgische bank of verzekeraar biedt een
+  publieke API met actuele tarieven aan (dezelfde beperking als bij de
+  officiële bronnen in sectie 4). "Dagelijkse updates" zou ofwel handmatige
+  invoer door FinEdu zijn — met alle aansprakelijkheid van een foutieve of
+  verouderde "goedkoopste"-claim — ofwel scraping van bankwebsites, wat tegen
+  de gebruiksvoorwaarden van die sites ingaat en evengoed geen vergunning
+  omzeilt.
+- **Dit weegt zwaarder dan bij de andere onderdelen van dit document.** Een
+  fout in een rendementsvoorbeeld (sectie 3) of een verkeerd samengevatte
+  wetstekst (sectie 4) is een risico op misleiding. Een expliciete
+  "goedkoopste"-aanduiding zonder vergunning is een direct strafbaar feit,
+  los van of het model gelijk had.
+
+### Wat er in de plaats kwam
+
+- **`src/lib/calculations/spaarvergelijker.ts`** en
+  **`src/lib/calculations/verzekeringsvergelijker.ts`** — pure rekenfuncties
+  zonder enige productdata. De gebruiker vult zelf de tarieven of offertes in
+  die hij al ergens anders vond; FinEdu rekent enkel na (samengestelde
+  interest met basisrente + getrouwheidspremie; totale verwachte jaarkost als
+  premie + vrijstelling × verwacht aantal schadegevallen).
+- **`/tools/spaarrekening-vergelijker`** en **`/tools/verzekering-vergelijker`**
+  — de bijbehorende pagina's, met dezelfde disclaimer-opbouw als de
+  Beleggingsplan-simulator (sectie hierboven, "plant, voert niet uit"): een
+  waarschuwing vóór de tool dat dit geen eigen rentetabel of polissenlijst is,
+  en een "Wat deze tool niet doet"-blok erna.
+  Geen enkel bank- of verzekeraarsnaam komt uit FinEdu zelf; het label
+  "beste van deze vergelijking" verschijnt enkel op basis van cijfers die de
+  gebruiker net zelf intikte, over de opties die de gebruiker zelf toevoegde.
+- **`/api/ai-answer`** kreeg een aparte regel (zie `buildSystemPrompt` in
+  `src/app/api/ai-answer/route.ts`) die het model verbiedt om ooit een
+  concrete bank, verzekeraar of product als "goedkoopst" of "beste" te
+  noemen, en die in plaats daarvan doorverwijst naar deze twee rekentools en
+  naar fsma.be om de vergunning van een tussenpersoon te checken.
+
+### Wat dit niet oplost
+
+- Dit lost het achterliggende gebruikersprobleem niet volledig op: de
+  gebruiker moet nog altijd zelf tarieven of offertes verzamelen, FinEdu doet
+  dat niet voor hem. Dat is een bewuste keuze, geen tussenstap naar een
+  toekomstige rankingfunctie — zie hierboven waarom die grens niet
+  verschuift naarmate de tool "beter" wordt.
+
+---
+
+## 6. Aanbevolen volgorde
 
 1. Houd de Geldscan gratis en client-side. Dat is vandaag al de meeste waarde
    voor de gebruiker, zonder juridische last.

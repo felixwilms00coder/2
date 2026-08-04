@@ -14,7 +14,7 @@ responsibly, insurance, pensions, and taxes — all in Dutch.
   interactive blocks (`check` for an inline multiple-choice question,
   `reveal` for a guess-then-answer card, `figure` for a pulled-out number)
   defined in `src/lib/content/types.ts`.
-- **Rekentools (`/tools`)** — five interactive calculators:
+- **Rekentools (`/tools`)** — seven interactive calculators:
   - Geldscan — paste or upload a bank CSV export; it categorises your
     transactions, spots recurring subscriptions, compares your split against
     50/30/20 and generates concrete savings suggestions. Runs **entirely in
@@ -29,6 +29,14 @@ responsibly, insurance, pensions, and taxes — all in Dutch.
     lets you compare against your own spending.
   - Spaardoel-calculator — estimates how long it takes to reach a savings
     goal, or how much you need to save monthly for a target date.
+  - Spaarrekening-vergelijker — compares up to four savings accounts on
+    compound growth, using only the base rate and fidelity premium the user
+    enters themselves. No rate table of its own, no recommended bank.
+  - Verzekeringsoffertes vergelijken — compares up to four insurance quotes
+    on expected total yearly cost (premium + deductible × expected claims),
+    not premium alone. No policy data or insurer ranking of its own — see
+    `docs/automatisering.md` (§5) for why this stayed a calculator instead
+    of a price-comparison ranking.
 - **Beleggingsagent (`/agent`)** — a self-managed automation agent. The user
   writes their own buy rules (instrument, amount, cadence, per-order and
   monthly caps), and the agent executes them against a broker of their
