@@ -194,9 +194,9 @@ export function Beleggingsplan() {
 
         {/* Chart */}
         <div className="mt-8">
-          <h3 className="font-display font-bold text-foreground">
+          <h2 className="font-display font-bold text-foreground">
             Verloop over de jaren
-          </h3>
+          </h2>
           <div
             className="mt-4 flex h-44 items-end gap-1"
             role="img"

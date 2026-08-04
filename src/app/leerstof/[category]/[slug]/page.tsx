@@ -78,18 +78,13 @@ export default async function ArticlePage({
           { name: article.title, href },
         ]}
       />
-      <div className="on-dark relative overflow-hidden bg-primary text-white">
+      <div className="relative overflow-hidden border-b border-border bg-surface-muted">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[url('/hero-skyline.svg')] bg-cover bg-bottom bg-no-repeat opacity-45"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(14,13,11,0.96)_0%,rgba(14,13,11,0.82)_55%,rgba(14,13,11,0.35)_100%)]"
+          className="bg-dot-grid pointer-events-none absolute inset-0 text-accent/[0.06]"
         />
         <Container className="relative py-12">
           <Breadcrumbs
-            onDark
             items={[
               { name: "Leerstof", href: "/leerstof" },
               { name: cat.title, href: `/leerstof/${cat.slug}` },
@@ -105,15 +100,15 @@ export default async function ArticlePage({
             ]}
           />
           <div className="mt-5 flex flex-wrap items-center gap-3">
-            <KindBadge kind={article.kind} inverse />
-            <span className="text-sm font-medium text-accent-bright">
+            <KindBadge kind={article.kind} />
+            <span className="text-sm font-medium text-accent">
               {article.readMinutes} minuten lezen
             </span>
           </div>
-          <h1 className="mt-3 max-w-2xl font-serif text-4xl font-semibold tracking-[-0.02em] sm:text-5xl">
+          <h1 className="mt-3 max-w-2xl font-serif text-4xl font-semibold tracking-[-0.02em] text-foreground sm:text-5xl">
             {article.title}
           </h1>
-          <p className="mt-3 max-w-2xl text-white/85">{article.summary}</p>
+          <p className="mt-3 max-w-2xl text-muted">{article.summary}</p>
         </Container>
       </div>
       <Container className="py-12">

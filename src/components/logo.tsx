@@ -14,14 +14,21 @@ export function LogoMark({ className = "" }: { className?: string }) {
       aria-label="FinEdu"
       fill="none"
     >
-      <rect width="32" height="32" rx="9" fill="currentColor" />
+      <rect
+        width="32"
+        height="32"
+        rx="9"
+        fill="currentColor"
+        stroke="var(--color-border)"
+        strokeWidth="1"
+      />
       <path
         d="M6 25.5V20h5.5v-5.5H17V9h5.5v16.5H6Z"
-        fill="var(--logo-ink, #ffffff)"
+        fill="var(--logo-ink, #1c1a17)"
       />
       <path
         d="M22.5 9V6.5M22.5 6.5h3.5M22.5 6.5 26 3"
-        stroke="var(--logo-ink, #ffffff)"
+        stroke="var(--logo-ink, #1c1a17)"
         strokeWidth="1.6"
         strokeLinecap="round"
         strokeLinejoin="round"

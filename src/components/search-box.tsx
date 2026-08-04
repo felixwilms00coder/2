@@ -33,7 +33,7 @@ export function SearchBox({
       <Search
         aria-hidden="true"
         className={`pointer-events-none absolute top-1/2 -translate-y-1/2 ${
-          isHero ? "left-5 h-5 w-5 text-white/55" : "left-4 h-4 w-4 text-muted"
+          isHero ? "left-5 h-5 w-5 text-muted" : "left-4 h-4 w-4 text-muted"
         }`}
       />
       <input
@@ -45,18 +45,16 @@ export function SearchBox({
         autoFocus={autoFocus}
         className={
           isHero
-            ? "w-full rounded-full border border-white/15 bg-white/[0.07] py-4 pl-14 pr-16 text-base text-white placeholder:text-white/45 backdrop-blur-sm transition-colors hover:border-white/25 focus:border-accent-bright focus:bg-white/10 sm:py-5 sm:text-lg"
+            ? "w-full rounded-full border border-border bg-surface py-4 pl-14 pr-16 text-base text-foreground placeholder:text-muted shadow-[0_12px_40px_-16px_rgba(28,26,23,0.18)] transition-colors hover:border-foreground/20 focus:border-accent sm:py-5 sm:text-lg"
             : "w-full min-h-11 rounded-full border border-border bg-surface py-2.5 pl-11 pr-14 text-sm text-foreground placeholder:text-muted transition-colors hover:border-foreground/25 focus:border-accent"
         }
       />
       <button
         type="submit"
         aria-label="Zoeken"
-        className={
-          isHero
-            ? "absolute right-2.5 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-accent-bright text-[#06231b] transition-colors hover:bg-white"
-            : "absolute right-1.5 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-accent text-accent-contrast transition-colors hover:bg-accent-strong"
-        }
+        className={`absolute top-1/2 flex -translate-y-1/2 items-center justify-center rounded-full bg-accent text-accent-contrast transition-colors hover:bg-accent-strong ${
+          isHero ? "right-2.5 h-11 w-11" : "right-1.5 h-9 w-9"
+        }`}
       >
         <ArrowRight className={isHero ? "h-5 w-5" : "h-4 w-4"} />
       </button>

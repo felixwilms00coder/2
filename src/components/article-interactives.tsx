@@ -125,14 +125,16 @@ export function KeyFigure({
   source?: string;
 }) {
   return (
-    <div className="my-8 flex items-center gap-5 rounded-2xl bg-primary p-5 text-white">
-      <span className="font-display text-4xl font-extrabold text-accent-bright">
+    <div className="my-8 flex items-center gap-5 rounded-2xl border border-accent/20 bg-accent-soft p-5">
+      <span className="font-display text-4xl font-extrabold text-accent">
         {value}
       </span>
       <span>
-        <span className="block text-sm font-semibold">{label}</span>
+        <span className="block text-sm font-semibold text-foreground">
+          {label}
+        </span>
         {source && (
-          <span className="mt-0.5 block text-xs text-white/55">{source}</span>
+          <span className="mt-0.5 block text-xs text-muted">{source}</span>
         )}
       </span>
     </div>

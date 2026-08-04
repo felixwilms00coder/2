@@ -55,40 +55,32 @@ export default function Home() {
       <HomeFaqJsonLd suggestions={homeSuggestions} />
 
       {/* ---- Hero: search first ---- */}
-      <div className="on-dark relative overflow-hidden bg-[#0e0d0b] text-white">
+      <div className="relative overflow-hidden bg-gradient-to-b from-accent-soft/70 via-surface to-surface">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[url('/hero-skyline.svg')] bg-cover bg-bottom bg-no-repeat"
+          className="bg-dot-grid pointer-events-none absolute inset-0 text-accent/[0.07]"
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_58%_46%_at_50%_36%,rgba(10,10,9,0.9),rgba(10,10,9,0.6)_58%,rgba(10,10,9,0.18))]"
+          className="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-accent/20 blur-[110px]"
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-[#5b8def]/25 blur-[110px]"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-24 top-1/4 h-80 w-80 rounded-full bg-accent-bright/20 blur-[110px]"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -bottom-24 left-1/3 h-72 w-72 rounded-full bg-[#fb7185]/15 blur-[120px]"
+          className="pointer-events-none absolute -right-24 top-1/4 h-80 w-80 rounded-full bg-cat-rose/15 blur-[110px]"
         />
         <Container className="relative flex min-h-[calc(100svh-4rem)] flex-col items-center justify-center py-16 text-center">
-          <LogoMark className="h-12 w-12 text-white/[0.14]" />
+          <LogoMark className="h-12 w-12 text-accent/10" />
 
-          <span className="mt-6 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-xs font-semibold text-white/85 backdrop-blur-sm">
-            <Sparkles className="h-3.5 w-3.5 text-accent-bright" aria-hidden="true" />
+          <span className="mt-6 inline-flex items-center gap-1.5 rounded-full border border-border bg-surface px-3.5 py-1.5 text-xs font-semibold text-foreground shadow-sm">
+            <Sparkles className="h-3.5 w-3.5 text-accent" aria-hidden="true" />
             Onafhankelijk &amp; 100% gratis
           </span>
 
-          <h1 className="mt-5 max-w-2xl font-serif text-4xl font-semibold leading-[1.08] tracking-[-0.02em] sm:text-6xl">
+          <h1 className="mt-5 max-w-2xl font-serif text-4xl font-semibold leading-[1.08] tracking-[-0.02em] text-foreground sm:text-6xl">
             Wat wil je weten over{" "}
-            <span className="text-accent-bright italic">je geld?</span>
+            <span className="text-accent italic">je geld?</span>
           </h1>
-          <p className="mt-4 max-w-md text-sm text-white/65 sm:text-base">
+          <p className="mt-4 max-w-md text-sm text-muted sm:text-base">
             Budget, sparen, beleggen, verzekeren, wonen, pensioen en
             belastingen — uitgelegd voor starters.
           </p>
@@ -97,7 +89,7 @@ export default function Home() {
             <SearchBox variant="hero" />
           </div>
 
-          <p className="mt-6 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-accent-bright">
+          <p className="mt-6 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-accent">
             <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
             Veelgestelde vragen
           </p>
@@ -106,7 +98,7 @@ export default function Home() {
               <li key={s.href}>
                 <Link
                   href={s.href}
-                  className="ease-smooth flex min-h-11 items-center rounded-full border border-white/15 bg-black/40 px-4 text-sm text-white/80 backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-accent-bright/60 hover:bg-black/65 hover:text-white active:scale-[0.97]"
+                  className="ease-smooth flex min-h-11 items-center rounded-full border border-border bg-surface px-4 text-sm text-foreground/80 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:bg-accent-soft hover:text-accent active:scale-[0.97]"
                 >
                   {s.question}
                 </Link>
@@ -116,7 +108,7 @@ export default function Home() {
 
           <Link
             href="/leerstof"
-            className="ease-smooth mt-10 inline-flex min-h-11 items-center gap-1.5 rounded-full border border-white/20 px-5 text-sm font-semibold text-white/85 transition-all duration-200 hover:border-white/40 hover:bg-white/10 hover:text-white active:scale-[0.97]"
+            className="ease-smooth mt-10 inline-flex min-h-11 items-center gap-1.5 rounded-full border border-border px-5 text-sm font-semibold text-foreground transition-all duration-200 hover:border-foreground/30 hover:bg-surface-muted active:scale-[0.97]"
           >
             Bekijk alle thema&apos;s
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -237,20 +229,20 @@ export default function Home() {
           />
           <div className="mt-8 grid gap-4 lg:grid-cols-2">
             {/* Game */}
-            <div className="on-dark relative overflow-hidden rounded-3xl bg-primary p-8 text-white">
+            <div className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-accent/20 bg-accent-soft p-8">
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/30 blur-3xl"
+                className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/20 blur-3xl"
               />
               <div className="relative flex h-full flex-col">
-                <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.14em] text-accent-bright">
+                <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.14em] text-accent">
                   <Gamepad2 className="h-4 w-4" aria-hidden="true" />
                   Keuzespel
                 </p>
-                <h3 className="mt-2.5 font-display text-2xl font-extrabold tracking-tight">
+                <h3 className="mt-2.5 font-display text-2xl font-extrabold tracking-tight text-foreground">
                   Je eerste jaar als starter
                 </h3>
-                <p className="mt-3 text-white/80">
+                <p className="mt-3 text-foreground/80">
                   Zeven echte situaties: een kapotte wasmachine, je
                   vakantiegeld, op jezelf gaan wonen. Elke keuze telt. Waar sta
                   je na twaalf maanden?

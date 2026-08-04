@@ -66,7 +66,6 @@ export default async function CategoryPage({
       >
         <div className="mt-6">
           <Breadcrumbs
-            onDark
             items={[
               { name: "Leerstof", href: "/leerstof" },
               { name: cat.title },

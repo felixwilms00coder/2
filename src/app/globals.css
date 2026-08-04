@@ -1,27 +1,27 @@
 @import "tailwindcss";
 
 /*
- * Palette: warm neutral base + a single green accent.
- * Green carries "growth / money" without the coldness of pure greys.
+ * Palette: warm neutral base + a single light-blue accent.
  * All text pairings below meet WCAG AA (>= 4.5:1); most reach AAA.
  */
 :root {
   --background: #fcfbf9;
   --foreground: #1c1a17;
 
-  --color-primary: #1c1a17;
-  --color-primary-light: #3b3630;
+  --color-primary: #ffffff;
+  --color-primary-light: #f2efe9;
+  --logo-ink: var(--foreground);
 
   /* Single brand accent */
-  --color-accent: #0f7a5f; /* 5.3:1 on white  */
-  --color-accent-strong: #0b5f4a; /* hover / pressed */
-  --color-accent-soft: #e6f3ee; /* tinted surface  */
-  --color-accent-bright: #3ddcae; /* for dark surfaces */
+  --color-accent: #0369a1; /* 5.9:1 on white  */
+  --color-accent-strong: #075985; /* hover / pressed */
+  --color-accent-soft: #e0f2fe; /* tinted surface  */
+  --color-accent-bright: #38bdf8; /* for dark surfaces */
   --color-accent-contrast: #ffffff;
 
   /* Semantic states (deliberately not brand colours) */
-  --color-positive: #0f7a5f;
-  --color-positive-light: #e6f3ee;
+  --color-positive: #0369a1;
+  --color-positive-light: #e0f2fe;
   --color-warning: #8a5216; /* 5.4:1 on white */
   --color-warning-light: #fbf0e2;
 
@@ -90,14 +90,14 @@
     --color-primary: #23211d;
     --color-primary-light: #423d35;
 
-    --color-accent: #3ddcae;
-    --color-accent-strong: #63e8c2;
-    --color-accent-soft: #10281f;
-    --color-accent-bright: #3ddcae;
-    --color-accent-contrast: #06231b;
+    --color-accent: #38bdf8;
+    --color-accent-strong: #7dd3fc;
+    --color-accent-soft: #0c2a3d;
+    --color-accent-bright: #38bdf8;
+    --color-accent-contrast: #06283a;
 
-    --color-positive: #3ddcae;
-    --color-positive-light: #10281f;
+    --color-positive: #38bdf8;
+    --color-positive-light: #0c2a3d;
     --color-warning: #e8ab63;
     --color-warning-light: #2b1f12;
 

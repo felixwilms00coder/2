@@ -28,7 +28,8 @@ const buttonBase =
 const buttonVariants: Record<ButtonVariant, string> = {
   accent:
     "bg-accent text-accent-contrast hover:bg-accent-strong",
-  solid: "bg-primary text-white hover:bg-primary-light",
+  solid:
+    "border border-border bg-primary text-foreground hover:bg-primary-light",
   outline:
     "border border-border bg-surface text-foreground hover:border-foreground/30 hover:bg-surface-muted",
   ghost: "text-foreground hover:bg-surface-muted",
@@ -70,23 +71,23 @@ export function PageHero({
   children?: ReactNode;
 }) {
   return (
-    <div className="on-dark relative overflow-hidden bg-primary text-white">
+    <div className="relative overflow-hidden border-b border-border bg-surface-muted">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[url('/hero-skyline.svg')] bg-cover bg-bottom bg-no-repeat opacity-45"
+        className="bg-dot-grid pointer-events-none absolute inset-0 text-accent/[0.06]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(14,13,11,0.96)_0%,rgba(14,13,11,0.82)_55%,rgba(14,13,11,0.35)_100%)]"
+        className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-accent/15 blur-[110px]"
       />
       <Container className="relative py-14 sm:py-16">
-        <span className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.1em] text-accent-bright backdrop-blur-sm">
+        <span className="inline-flex items-center rounded-full border border-accent/25 bg-accent-soft px-3 py-1 text-xs font-semibold uppercase tracking-[0.1em] text-accent">
           {eyebrow}
         </span>
-        <h1 className="mt-4 max-w-2xl font-serif text-4xl font-semibold tracking-[-0.02em] sm:text-5xl lg:text-6xl">
+        <h1 className="mt-4 max-w-2xl font-serif text-4xl font-semibold tracking-[-0.02em] text-foreground sm:text-5xl lg:text-6xl">
           {title}
         </h1>
-        <p className="mt-4 max-w-2xl text-base text-white/85 sm:text-lg">
+        <p className="mt-4 max-w-2xl text-base text-muted sm:text-lg">
           {description}
         </p>
         {children}

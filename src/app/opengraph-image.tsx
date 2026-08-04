@@ -14,8 +14,8 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          background: "#111111",
-          color: "#ffffff",
+          background: "#fcfbf9",
+          color: "#1c1a17",
           fontFamily: "sans-serif",
         }}
       >
@@ -28,10 +28,10 @@ export default function OpengraphImage() {
           }}
         >
           <svg width="64" height="64" viewBox="0 0 32 32">
-            <rect width="32" height="32" rx="9" fill="#ffffff" />
+            <rect width="32" height="32" rx="9" fill="#ffffff" stroke="#e7e2d9" strokeWidth="1" />
             <path
               d="M6 25.5V20h5.5v-5.5H17V9h5.5v16.5H6Z"
-              fill="#111111"
+              fill="#1c1a17"
             />
           </svg>
           <div style={{ fontSize: 40, fontWeight: 700 }}>FinEdu</div>
@@ -39,7 +39,7 @@ export default function OpengraphImage() {
         <div style={{ fontSize: 56, fontWeight: 700, maxWidth: 900 }}>
           Financieel wegwijs vanaf je eerste job
         </div>
-        <div style={{ fontSize: 28, color: "#a3a3a3", marginTop: 24 }}>
+        <div style={{ fontSize: 28, color: "#5c574f", marginTop: 24 }}>
           Budget, sparen, beleggen, wonen, pensioen en belastingen &mdash;
           uitgelegd voor starters
         </div>

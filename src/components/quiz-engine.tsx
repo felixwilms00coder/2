@@ -81,7 +81,7 @@ export function QuizEngine({ quiz }: { quiz: Quiz }) {
         <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
           <button
             onClick={restart}
-            className="inline-flex min-h-11 items-center gap-2 rounded-full bg-primary px-5 text-sm font-semibold text-white transition-colors hover:bg-primary-light"
+            className="inline-flex min-h-11 items-center gap-2 rounded-full bg-accent px-5 text-sm font-semibold text-accent-contrast transition-colors hover:bg-accent-strong"
           >
             <RotateCcw className="h-4 w-4" aria-hidden="true" />
             Opnieuw proberen
