@@ -3,8 +3,13 @@ import { buildLegalContext } from "@/lib/legal-context";
 
 export const runtime = "nodejs";
 
-/** Open-weight model (Llama 3.3), gehost via Groq's OpenAI-compatible API. */
-const GROQ_MODEL = "llama-3.3-70b-versatile";
+/**
+ * Open-weight model, gehost via Groq's OpenAI-compatible API. Groq
+ * deprecateerde llama-3.3-70b-versatile op 17 juni 2026; dit is hun
+ * aanbevolen vervanger. Check https://console.groq.com/docs/deprecations
+ * als dit model ooit zelf gedeprecateerd wordt.
+ */
+const GROQ_MODEL = "openai/gpt-oss-120b";
 const GROQ_ENDPOINT = "https://api.groq.com/openai/v1/chat/completions";
 const MAX_QUERY_LENGTH = 300;
 

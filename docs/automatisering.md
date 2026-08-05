@@ -14,7 +14,7 @@ een advocaat gespecialiseerd in financieel recht voor je iets lanceert.**
 | Uitgaven analyseren via banktoegang | Niet gebouwd | PSD2/AIS-vergunning of licensed aggregator |
 | Beleggingsplan simuleren | **Gebouwd** (`/tools/beleggingsplan`) | Geen |
 | Zelfbeheerde aankoopagent | **Gebouwd** (`/agent`) | Werkt volledig in simulatie; Saxo-adapter ongetest |
-| AI-antwoord op zoekvragen | **Gebouwd** (`/zoeken`) | Vrij LLM-antwoord (Groq/Llama 3.3), zie update in sectie 3 |
+| AI-antwoord op zoekvragen | **Gebouwd** (`/zoeken`) | Vrij LLM-antwoord (Groq, gpt-oss-120b), zie update in sectie 3 |
 | Wetgeving uitleggen + toepassen op gebruikerssituatie | **Gebouwd** (`/zoeken`, `/wetgeving`) | Curated bronnenlijst, geen live overheids-API; juridische toetsing nog nodig, zie sectie 4 |
 | Aankopen in naam van de gebruiker | Bewust niet gebouwd | Zou vermogensbeheer zijn |
 
@@ -195,8 +195,10 @@ naar de leerstof.
 
 ### Update: er staat nu tóch een LLM op `/zoeken`
 
-Op expliciet verzoek is er een open-weight taalmodel (Llama 3.3, gehost via
-Groq's API) aan de zoekpagina toegevoegd, met **vrije** antwoorden — dus niet
+Op expliciet verzoek is er een open-weight taalmodel (gehost via Groq's API;
+momenteel `openai/gpt-oss-120b`, na Groq's deprecatie van het oorspronkelijke
+llama-3.3-70b-versatile op 17 juni 2026 — zie `src/app/api/ai-answer/route.ts`)
+aan de zoekpagina toegevoegd, met **vrije** antwoorden — dus niet
 beperkt tot herformulering van de bestaande leerstof zoals hierboven als
 veiligste vorm werd aanbevolen. Dat is een bewuste afwijking van de eerdere
 conclusie in dit document, dus met open kaart:
@@ -221,6 +223,14 @@ conclusie in dit document, dus met open kaart:
 - **Kost.** Elke aanroep kost geld bij Groq (te configureren via de
   `GROQ_API_KEY`-omgevingsvariabele). Er zit geen rate limiting op de route;
   bij publieke lancering is dat de eerste hardening die nog moet gebeuren.
+- **Onderhoud: modellen bij Groq worden gedeprecateerd.** Op 5 augustus 2026
+  bleek de site al een tijdje stuk te staan omdat Groq het oorspronkelijke
+  model (llama-3.3-70b-versatile) op 17 juni 2026 had gedeprecateerd — de
+  `GROQ_API_KEY` zelf was in orde, maar het model bestond niet meer. Er is
+  geen alarm dat dit meldt; de enige zichtbare fout is de generieke "Het
+  model gaf een fout terug"-boodschap in de zoekbalk. Check periodiek
+  https://console.groq.com/docs/deprecations tegen `GROQ_MODEL` in
+  `src/app/api/ai-answer/route.ts`.
 
 **Advies ongewijzigd:** laat een advocaat financieel recht dit expliciet mee
 beoordelen voor dit met een echt publiek live gaat. Vrije LLM-antwoorden over

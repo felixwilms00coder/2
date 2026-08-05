@@ -35,7 +35,7 @@
   stored only in their browser's localStorage.
 - `/zoeken?q=` — full-text search across articles, tools, and quizzes, plus
   an optional AI-generated answer from an open-weight language model
-  (Llama 3.3). The AI answer is labeled as experimental; it may explain and
+  (currently gpt-oss-120b). The AI answer is labeled as experimental; it may explain and
   apply relevant Belgian/Flemish legislation in plain language, grounded in
   the curated list at `/wetgeving`, and always ends legal explanations with
   a referral to a notary or lawyer for a binding answer. It does not use

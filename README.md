@@ -48,7 +48,7 @@ responsibly, insurance, pensions, and taxes — all in Dutch.
 - **Quiz (`/quiz`)** — a 10-question financial literacy quiz with instant
   per-question explanations and a final score.
 - **Zoeken (`/zoeken`)** — local keyword search across all content, plus an
-  optional AI-generated answer from an open-weight model (Llama 3.3 via
+  optional AI-generated answer from an open-weight model (gpt-oss-120b via
   Groq). The AI answer is clearly labeled as experimental and never
   personal advice; see "AI search answer" below to configure it, and
   `docs/automatisering.md` for the regulatory tradeoffs.
@@ -86,10 +86,15 @@ Open [http://localhost:3000](http://localhost:3000).
 ### AI search answer (optional)
 
 `/zoeken` can show an AI-generated answer above the regular search results,
-powered by an open-weight model (Llama 3.3) hosted on
+powered by an open-weight model (currently `openai/gpt-oss-120b`) hosted on
 [Groq](https://console.groq.com). It's optional: without a key, the site
 works exactly as before and the AI block shows a "not configured" message
-instead of crashing.
+instead of crashing. Groq periodically deprecates models (it dropped the
+model this used to call, llama-3.3-70b-versatile, in June 2026) — if AI
+answers start failing, check `GROQ_MODEL` in
+`src/app/api/ai-answer/route.ts` against
+[console.groq.com/docs/deprecations](https://console.groq.com/docs/deprecations)
+before assuming the API key is wrong.
 
 ```bash
 cp .env.example .env.local
