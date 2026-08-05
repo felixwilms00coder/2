@@ -20,6 +20,31 @@ export default function SpaarrekeningVergelijkerPage() {
       />
       <Container className="py-14">
         <div className="mx-auto max-w-3xl space-y-10">
+          <Callout tone="tip" title="Op zoek naar de rente van vandaag?">
+            FinEdu houdt zelf geen actuele rentetabel bij. Voor een
+            gerangschikt overzicht van huidige spaarrekeningen kan je
+            terecht bij de{" "}
+            <a
+              href="https://www.wikifin.be/nl/sparen-en-beleggen/vergelijkingstool-spaarrekeningen"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-accent hover:underline"
+            >
+              officiële Wikifin-vergelijkingstool van de FSMA
+            </a>{" "}
+            of het commerciële platform{" "}
+            <a
+              href="https://www.spaargids.be/sparen/spaartarieven.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-accent hover:underline"
+            >
+              Spaargids.be
+            </a>
+            . Vul de cijfers die je daar vindt hieronder in om zelf na te
+            rekenen wat ze voor jouw bedrag en termijn betekenen.
+          </Callout>
+
           <SpaarrekeningVergelijker />
 
           <section aria-labelledby="waarom-zelf">

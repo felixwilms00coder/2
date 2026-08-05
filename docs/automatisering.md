@@ -348,6 +348,40 @@ want het onderscheid met de rekentools die er wél kwamen is smal.
   noemen, en die in plaats daarvan doorverwijst naar deze twee rekentools en
   naar fsma.be om de vergunning van een tussenpersoon te checken.
 
+### Nuance: spaarrekeningen zijn geen bemiddeling, maar kregen toch geen eigen tarieventabel
+
+Bovenstaande vergunningsredenering (Wet 4 april 2014 / MiFID II) geldt voor
+verzekeringen en beleggingsproducten, maar **niet** op dezelfde manier voor
+gereglementeerde spaarrekeningen: een spaardeposito is expliciet geen
+"financieel instrument" onder MiFID II, en er bestaat geen equivalent van
+verzekerings- of kredietbemiddeling voor spaarrekeningen. De FSMA beheert
+zelf een publieke "Vergelijkingstool spaarrekeningen" op wikifin.be die
+rekeningen rangschikt op basisrente en getrouwheidspremie — als de
+toezichthouder dat zelf doet, is een rangschikking van spaartarieven op zich
+dus geen vergunningsplichtige activiteit.
+
+Er kwam voor spaarrekeningen dan ook **geen eigen FinEdu-tarieventabel**, maar
+om een andere, praktische reden: FinEdu heeft geen technische manier om
+bankrentes zelf op te halen of te verifiëren (geen API, en het scrapen van
+vergelijkingssites zoals spaargids.be wordt door hun eigen bot-bescherming
+geblokkeerd — dat is ook expliciet getest). Een handmatig ingevulde tabel zou
+dus ofwel snel verouderen, ofwel het risico lopen op foutieve cijfers waarop
+een gebruiker zich baseert. In plaats daarvan verwijst
+`/tools/spaarrekening-vergelijker` nu prominent door naar twee externe
+bronnen (toegevoegd aan `src/lib/content/sources.ts`):
+
+- de officiële **Wikifin-vergelijkingstool** (FSMA) — altijd actueel, want
+  door de toezichthouder zelf beheerd;
+- **Spaargids.be** (DPG Media) — een gevestigd, privaat vergelijkingsplatform
+  sinds 2006, met het voorbehoud dat het in de loop van 2026 geleidelijk
+  overgeheveld wordt naar Mijnvergelijker.be en dat FinEdu de cijfers erop
+  niet zelf verifieert.
+
+De FinEdu-rekentool blijft daarna bruikbaar om de cijfers die een gebruiker
+op een van die twee sites vindt, na te rekenen voor zijn eigen bedrag en
+termijn — precies zoals bij de verzekeringstool, maar dan met een duidelijke
+eerste-stap-verwijzing voor wie nog geen cijfers heeft.
+
 ### Wat dit niet oplost
 
 - Dit lost het achterliggende gebruikersprobleem niet volledig op: de
@@ -355,6 +389,9 @@ want het onderscheid met de rekentools die er wél kwamen is smal.
   dat niet voor hem. Dat is een bewuste keuze, geen tussenstap naar een
   toekomstige rankingfunctie — zie hierboven waarom die grens niet
   verschuift naarmate de tool "beter" wordt.
+- De Spaargids.be-link kan tijdens 2026 breken of verhuizen door de
+  aangekondigde migratie naar Mijnvergelijker.be — dit moet opnieuw
+  gecontroleerd worden zodra die migratie de spaarrekeningtool bereikt.
 
 ---
 
