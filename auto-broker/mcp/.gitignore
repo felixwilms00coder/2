@@ -1,0 +1,10 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.env
+.env.local
+
+# Local credential/session store, in case AUTOBROKER_MCP_HOME is pointed in here.
+# The default location is outside the repo (~/.auto-broker-mcp), but this
+# is a second line of defence if someone overrides it into the project.
+.auto-broker-mcp/
