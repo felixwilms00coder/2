@@ -82,6 +82,20 @@ figures — tax brackets and social contributions are simplified and change
 yearly, so the UI points users to official sources (FOD Financiën, RSZ,
 mypension.be) for exact numbers.
 
+## Installing as an app (PWA)
+
+FinEdu is installable to a phone or desktop home screen (`src/app/manifest.ts`,
+`src/app/apple-icon.tsx`, `src/app/icon-192/`, `src/app/icon-512/`). This
+covers the educational content and tools — `/agent` and `/pilots` still work
+from an installed copy (Saxo, the simulation broker, and Pilots are all
+plain HTTPS calls), except the IBKR adapter, which needs its Client Portal
+Gateway on `localhost` and so only works from the same machine the gateway
+runs on, installed app or not. There's deliberately no service worker or
+offline caching yet, and no push notifications — see the [Next.js PWA
+guide](https://nextjs.org/docs/app/guides/progressive-web-apps) if either of
+those becomes worth the added complexity (stale-cache bugs for offline
+support; VAPID keys and a subscription store for push).
+
 ## Tech stack
 
 - [Next.js](https://nextjs.org) (App Router) + TypeScript
@@ -141,8 +155,10 @@ public/
 The logo mark (`src/components/logo.tsx`) is a silhouette that reads both as
 a Flemish stepped gable (*trapgevel*) and as an ascending bar chart —
 regional identity plus financial growth. The same shape is used for the
-favicon (`src/app/icon.svg`) and the OG image
-(`src/app/opengraph-image.tsx`); keep those three in sync if you change it.
+favicon (`src/app/icon.svg`), the OG image (`src/app/opengraph-image.tsx`),
+and the generated PWA/app icons (`src/lib/app-icon.tsx`, reused by
+`src/app/apple-icon.tsx`, `src/app/icon-192/route.tsx` and
+`src/app/icon-512/route.tsx`); keep all four in sync if you change it.
 
 `public/hero-skyline.svg` is a hand-built, monochrome dusk skyline used
 behind the homepage hero and the page headers. It is original artwork, so
