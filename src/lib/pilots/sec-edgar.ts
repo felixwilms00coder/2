@@ -13,10 +13,12 @@ import { Holding, PilotFiling } from "./types";
  */
 
 function userAgent(): string {
+  // HTTP header values must be ByteString (Latin-1) - no em dashes or other
+  // non-ASCII characters here, or fetch() throws before the request is sent.
   const contact = process.env.SEC_EDGAR_CONTACT_EMAIL;
   return contact
     ? `FinEdu Pilots feature (${contact})`
-    : "FinEdu Pilots feature (contact not configured — set SEC_EDGAR_CONTACT_EMAIL)";
+    : "FinEdu Pilots feature (contact not configured, set SEC_EDGAR_CONTACT_EMAIL)";
 }
 
 async function secFetchJson<T>(url: string): Promise<T> {
