@@ -72,6 +72,16 @@ export default async function AgentPage({
                 FinEdu. Gebruik een token met zo weinig mogelijk rechten, en
                 trek het in bij je broker zodra je stopt met testen.
               </p>
+
+              <h2>Interactive Brokers</h2>
+              <p>
+                Voor IBKR praat deze pagina rechtstreeks met de Client Portal
+                Gateway die je zelf lokaal draait en waarin je zelf inlogt op{" "}
+                <code>https://localhost:5000</code> — er is geen token om te
+                plakken en geen FinEdu-server ertussen. Begin met een
+                paper-account: welke rekening je krijgt hangt volledig af van
+                waarmee je inlogt op de gateway, niet van een instelling hier.
+              </p>
             </div>
           </section>
 

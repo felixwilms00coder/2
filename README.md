@@ -40,11 +40,13 @@ responsibly, insurance, pensions, and taxes — all in Dutch.
 - **Beleggingsagent (`/agent`)** — a self-managed automation agent. The user
   writes their own buy rules (instrument, amount, cadence, per-order and
   monthly caps), and the agent executes them against a broker of their
-  choosing. Ships with a fully working paper-trading broker; the Saxo OpenAPI
-  adapter is present but **has never been tested against the live API**.
-  Rules, log and tokens stay on the user's device — there is no FinEdu server
-  in the order path, which is what keeps this software rather than a
-  regulated investment service. See `docs/automatisering.md`.
+  choosing. Ships with a fully working paper-trading broker, a Saxo OpenAPI
+  adapter, and an Interactive Brokers adapter that talks straight to the
+  user's own locally-running Client Portal Gateway — **neither the Saxo nor
+  the IBKR adapter has ever been tested against a live account**. Rules, log
+  and tokens stay on the user's device — there is no FinEdu server in the
+  order path, which is what keeps this software rather than a regulated
+  investment service. See `docs/automatisering.md`.
 - **Broker MCP server (`mcp/`)** — the same self-managed idea, reachable from
   an MCP client (Claude Desktop, Claude Code) instead of a browser tab. Runs
   locally against your own IBKR (Client Portal API), Saxo (OpenAPI) and

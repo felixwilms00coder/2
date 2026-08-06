@@ -22,6 +22,12 @@ import {
   saxoStoreToken,
   type SaxoMode,
 } from "@/lib/agent/brokers/saxo";
+import {
+  ibkrCheckConnection,
+  ibkrClearGatewayUrl,
+  ibkrGatewayUrl,
+  ibkrStoreGatewayUrl,
+} from "@/lib/agent/brokers/ibkr";
 
 function euro(n: number): string {
   return new Intl.NumberFormat("nl-BE", {
@@ -59,6 +65,9 @@ export function AgentDashboard({ prefillName }: { prefillName?: string } = {}) {
   const [token, setToken] = useState("");
   const [saxoMode, setSaxoMode] = useState<SaxoMode>("sim");
   const [connectMsg, setConnectMsg] = useState<string | null>(null);
+  const [gatewayUrl, setGatewayUrl] = useState(ibkrGatewayUrl());
+  const [ibkrMsg, setIbkrMsg] = useState<string | null>(null);
+  const [ibkrBusy, setIbkrBusy] = useState(false);
 
   if (!ready) {
     return (
@@ -138,6 +147,21 @@ export function AgentDashboard({ prefillName }: { prefillName?: string } = {}) {
         ? "Verbonden met je LIVE Saxo-omgeving. Orders kosten vanaf nu echt geld."
         : "Verbonden met Saxo's simulatie-omgeving.",
     );
+  }
+
+  function saveGatewayUrl(url: string) {
+    ibkrStoreGatewayUrl(url);
+    setGatewayUrl(url);
+  }
+
+  async function checkIbkr() {
+    setIbkrBusy(true);
+    try {
+      const msg = await ibkrCheckConnection();
+      setIbkrMsg(msg);
+    } finally {
+      setIbkrBusy(false);
+    }
   }
 
   function downloadLog() {
@@ -260,6 +284,80 @@ export function AgentDashboard({ prefillName }: { prefillName?: string } = {}) {
             ))}
           </div>
         </fieldset>
+
+        {state.settings.brokerId === "ibkr" && (
+          <div className="mt-5 rounded-2xl border border-dashed border-warning/50 bg-warning-light p-4">
+            <p className="flex gap-2.5 text-sm leading-relaxed text-foreground/90">
+              <AlertTriangle
+                className="mt-0.5 h-4 w-4 shrink-0 text-warning"
+                aria-hidden="true"
+              />
+              <span>
+                <span className="font-bold">
+                  Deze koppeling gaat rechtstreeks naar jouw eigen IBKR
+                  Client Portal Gateway.
+                </span>{" "}
+                Download en start die gateway zelf, log in op{" "}
+                <a
+                  href="https://localhost:5000"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold underline"
+                >
+                  https://localhost:5000
+                </a>{" "}
+                met je eigen IBKR-account, en accepteer eenmalig de
+                certificaatwaarschuwing van de browser — dat hoort bij deze
+                API, niet bij FinEdu. Deze pagina praat daarna rechtstreeks
+                met die gateway; er is geen FinEdu-server in dat pad. Begin
+                met een paper-account tot je zeker bent.
+              </span>
+            </p>
+
+            <div className="mt-4 space-y-3">
+              <div>
+                <label
+                  htmlFor="ibkr-gateway"
+                  className="text-sm font-semibold text-foreground"
+                >
+                  Adres van je gateway
+                </label>
+                <input
+                  id="ibkr-gateway"
+                  value={gatewayUrl}
+                  onChange={(e) => saveGatewayUrl(e.target.value)}
+                  placeholder="https://localhost:5000/v1/api"
+                  className="mt-1.5 min-h-11 w-full rounded-xl border border-border bg-surface px-3 font-mono text-sm text-foreground focus:border-accent"
+                />
+              </div>
+              <div className="flex flex-wrap gap-2.5">
+                <button
+                  type="button"
+                  onClick={checkIbkr}
+                  disabled={ibkrBusy}
+                  className="inline-flex min-h-11 items-center rounded-full bg-accent px-5 text-sm font-semibold text-accent-contrast transition-colors hover:bg-accent-strong disabled:opacity-45"
+                >
+                  Controleer verbinding
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    ibkrClearGatewayUrl();
+                    setGatewayUrl(ibkrGatewayUrl());
+                    setIbkrMsg("Adres teruggezet naar standaard.");
+                  }}
+                  className="inline-flex min-h-11 items-center rounded-full border border-border bg-surface px-5 text-sm font-semibold text-foreground transition-colors hover:bg-surface-muted"
+                >
+                  Terugzetten
+                </button>
+              </div>
+            </div>
+
+            <p aria-live="polite" className="mt-2 text-sm font-semibold text-foreground">
+              {ibkrMsg}
+            </p>
+          </div>
+        )}
 
         {state.settings.brokerId === "saxo" && (
           <div className="mt-5 rounded-2xl border border-dashed border-warning/50 bg-warning-light p-4">

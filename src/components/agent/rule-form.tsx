@@ -128,7 +128,7 @@ export function RuleForm({
 
         <div>
           <label htmlFor="r-uic" className="text-sm font-semibold text-foreground">
-            Saxo Uic
+            Instrument-ID (optioneel)
           </label>
           <input
             id="r-uic"
@@ -139,8 +139,8 @@ export function RuleForm({
             className={`mt-1.5 ${inputClass}`}
           />
           <p className="mt-1 text-xs text-muted">
-            Alleen nodig voor Saxo. Zoek het instrument-id op in je eigen
-            Saxo-account.
+            Saxo gebruikt hiervoor een Uic, IBKR een conid — zoek het zelf op
+            bij je broker. Laat leeg en FinEdu zoekt op ticker, waar dat kan.
           </p>
         </div>
 

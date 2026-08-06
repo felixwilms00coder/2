@@ -58,8 +58,16 @@ door een advocaat financieel recht voordat dit live gaat met echte rekeningen.
   dat alleen in `sessionStorage` van dat tabblad staat. Voor productie hoort
   daar een OAuth 2.0-flow met PKCE en refresh-tokens bij, met een eigen
   geregistreerde applicatie bij Saxo.
-- **Bolero blijft onmogelijk**: geen publieke API voor derden. Dat is een
-  feitelijke beperking, geen keuze.
+- **De IBKR-adapter (`src/lib/agent/brokers/ibkr.ts`) is eveneens nooit
+  tegen een echte rekening getest.** Deze pagina praat rechtstreeks vanuit de
+  browser met de lokaal draaiende IBKR Client Portal Gateway van de
+  gebruiker (`https://localhost:5000`) — er is dus wél een echte gateway
+  nodig om dit te valideren, iets wat in deze omgeving niet beschikbaar was.
+  Begin met een paper-account (herkenning via het `DU`-prefix van het
+  rekeningnummer is een educated guess, geen garantie — controleer dit zelf
+  bij IBKR als het ertoe doet).
+- **Bolero en DEGIRO blijven onmogelijk**: geen publieke API voor derden. Dat
+  is een feitelijke beperking, geen keuze.
 - **Uitvoering vereist een open tabblad.** Er draait bewust geen achtergrond-
   proces. Wie uitvoering wil die ook zonder hem doorloopt, gebruikt het
   periodieke beleggingsplan van de broker zelf.
