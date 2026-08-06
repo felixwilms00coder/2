@@ -10,7 +10,12 @@ export const metadata: Metadata = {
   alternates: { canonical: "/agent" },
 };
 
-export default function AgentPage() {
+export default async function AgentPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ ruleName?: string }>;
+}) {
+  const { ruleName } = await searchParams;
   return (
     <>
       <PageHero
@@ -28,7 +33,7 @@ export default function AgentPage() {
             leveren alleen het gereedschap.
           </Callout>
 
-          <AgentDashboard />
+          <AgentDashboard prefillName={ruleName} />
 
           <section aria-labelledby="hoe-werkt-het">
             <h2

@@ -16,6 +16,7 @@ const directLinks = [
   { href: "/tools", label: "Rekentools" },
   { href: "/spel", label: "Keuzespel" },
   { href: "/agent", label: "Agent" },
+  { href: "/pilots", label: "Pilots" },
   { href: "/quiz", label: "Quiz" },
 ];
 

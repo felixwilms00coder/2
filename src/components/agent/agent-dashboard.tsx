@@ -39,7 +39,7 @@ const statusStyle: Record<LogEntry["status"], string> = {
   mislukt: "bg-warning-light text-warning",
 };
 
-export function AgentDashboard() {
+export function AgentDashboard({ prefillName }: { prefillName?: string } = {}) {
   const {
     ready,
     state,
@@ -489,7 +489,7 @@ export function AgentDashboard() {
         )}
 
         <div className="mt-4">
-          <RuleForm onAdd={addRule} />
+          <RuleForm onAdd={addRule} prefillName={prefillName} />
         </div>
       </section>
 

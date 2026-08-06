@@ -52,6 +52,14 @@ responsibly, insurance, pensions, and taxes — all in Dutch.
   with a mandatory preview-then-confirm step before anything is sent, hard
   euro guardrails, and a disarmed-by-default master switch. See
   `mcp/README.md`. DEGIRO has no public API and is not supported.
+- **Pilots (`/pilots`)** — read-only display of the US equity positions
+  well-known investors are legally required to disclose (SEC Form 13F),
+  fetched live from SEC EDGAR. No brokerage connection, no execution, no
+  ranking of "best" investors — FinEdu neither curates nor recommends any of
+  it. A "start regel" link on each holding pre-fills only a rule *name* in
+  `/agent`; the user still picks and confirms the actual instrument
+  themselves. See `docs/automatisering.md` (§8) for why this stops well
+  short of a copy-trading feature.
 - **Quiz (`/quiz`)** — a 10-question financial literacy quiz with instant
   per-question explanations and a final score.
 - **Zoeken (`/zoeken`)** — local keyword search across all content, plus an

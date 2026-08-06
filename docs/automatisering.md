@@ -472,3 +472,67 @@ Saxo. Niet alle drie kwamen er op dezelfde manier:
 juridische positionering. Punt 5 hierboven — laat de zelfbeheerde opzet
 juridisch bevestigen voor een live-schakelaar aangaat — geldt hier evengoed,
 en voor Robinhood specifiek weegt daar het ToS-risico nog bovenop.
+
+---
+
+## 8. Pilots (`/pilots`) — publieke 13F-data, geen copy-trading
+
+Er kwam een uitdrukkelijk verzoek om een app te bouwen zoals Autopilot
+("joinautopilot.com"): een marktplaats van "Pilots" (bekende beleggers) die
+gebruikers met één klik kunnen kopiëren, waarna hun eigen brokeraccount
+automatisch meehandelt. Autopilot kan dat legaal aanbieden omdat het bedrijf
+zelf een bij de SEC geregistreerde investment adviser is — precies die
+registratie maakt "wij kiezen, jij kopieert, wij voeren automatisch uit voor
+jou" legaal in plaats van een overtreding. Zonder het EU-equivalent van die
+registratie (MiFID II-vergunning voor vermogensbeheer/beleggingsadvies, via
+FSMA of een andere nationale toezichthouder — zie secties 1 en 7) is die
+curatie-plus-automatische-uitvoering-voor-andere-gebruikers precies het stuk
+dat dit project bewust **niet** bouwt.
+
+### Wat er wél gebouwd is
+
+`/pilots` toont uitsluitend publiek verplichte data, zonder koppeling met een
+broker en zonder enige uitvoering:
+
+- **Bron: SEC EDGAR, formulier 13F-HR**, rechtstreeks opgehaald bij
+  `data.sec.gov` / `sec.gov` — dezelfde officiële, gratis bron als
+  `src/lib/content/sources.ts` voor andere onderdelen van de site. Geen
+  eigen dataset, geen scraping van een derde partij.
+- **Drie gecureerde namen** (Berkshire Hathaway, Scion Asset Management,
+  Pershing Square Capital Management) puur als bekende, publiek
+  identificeerbare voorbeelden — niet als aanbeveling. Er is geen
+  rangschikking op rendement, geen "beste pilot"-label, en geen
+  gepersonaliseerde geschiktheidstoets zoals bij echt beleggingsadvies.
+- **Geen automatische uitvoering.** De "Start regel"-link per positie op de
+  detailpagina vult enkel een *naam* in bij een nieuwe, lege regel in
+  `/agent` — geen ticker, geen bedrag, geen broker. De gebruiker kiest en
+  bevestigt zelf het instrument, exact zoals bij elke andere regel in de
+  agent (zie sectie hierboven). FinEdu voert nooit iets uit namens de
+  gebruiker.
+- **Beperkingen van 13F expliciet vermeld op de pagina zelf**: enkel
+  Amerikaanse long-posities in beursgenoteerde aandelen, tot 45 dagen na het
+  einde van het kwartaal gemeld, geen short-posities, opties of
+  niet-Amerikaanse holdings — dus een onvolledig en soms al verouderd beeld.
+
+### Waarom dit geen beleggingsadvies is
+
+Investment advice onder MiFID II vereist een *persoonlijke aanbeveling* aan
+een specifieke cliënt. `/pilots` doet dat niet: het toont dezelfde publieke
+cijfers aan iedereen, zonder rekening te houden met wie kijkt, zonder
+suitability-vraag, en zonder een "dit past bij jou"-oordeel. Dat is dezelfde
+juridische positie als een financieel nieuwsmedium dat een 13F-melding
+naverteld.
+
+### Wat dit niet oplost
+
+- Dit is nadrukkelijk **niet** de Autopilot-marktplaats. Zodra dit uitbreidt
+  naar automatische uitvoering voor andere gebruikers, geldt dezelfde
+  redenering als sectie 1 en 7: dat vereist een echte vergunning, geen
+  configuratiewijziging.
+- 13F-data is vertraagd en onvolledig (zie hierboven) — geschikt om te
+  begrijpen wat grote beleggers *meldden*, niet om te weten wat ze *nu* doen.
+- De keuze van drie bekende namen is zelf een redactionele keuze. Ze zijn
+  bewust generiek gehouden (geen sector- of themakeuze, geen "groei"- of
+  "waarde"-framing) om niet zelf als aanbeveling te lezen, maar dat is een
+  ontwerpkeuze, geen garantie — een editor die dit uitbreidt moet dezelfde
+  toets blijven toepassen.

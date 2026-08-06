@@ -17,11 +17,18 @@ const inputClass =
 
 export function RuleForm({
   onAdd,
+  prefillName,
 }: {
   onAdd: (rule: Omit<Rule, "id" | "createdISO">) => void;
+  /**
+   * Optional suggested label for a new rule (e.g. from /pilots) — a name
+   * only, never a ticker or amount. The user still has to fill in and
+   * confirm the actual instrument themselves, same as any other rule.
+   */
+  prefillName?: string;
 }) {
-  const [open, setOpen] = useState(false);
-  const [name, setName] = useState("");
+  const [open, setOpen] = useState(Boolean(prefillName));
+  const [name, setName] = useState(prefillName ?? "");
   const [symbol, setSymbol] = useState("");
   const [uic, setUic] = useState("");
   const [assetType, setAssetType] = useState("Etf");
