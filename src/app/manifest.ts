@@ -1,11 +1,6 @@
 import type { MetadataRoute } from "next";
 
-/**
- * Makes FinEdu installable to a phone's home screen (PWA). Scoped to the
- * educational content and tools for now — /agent and /pilots stay
- * desktop-oriented (IBKR's local Client Portal Gateway is only reachable
- * from the same machine it runs on, which a phone isn't).
- */
+/** Makes FinEdu installable to a phone's home screen (PWA). */
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "FinEdu — financieel wegwijs vanaf je eerste job",

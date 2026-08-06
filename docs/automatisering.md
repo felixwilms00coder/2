@@ -6,6 +6,16 @@ blijft. Het is geschreven op basis van de Belgische en Europese regelgeving
 zoals die algemeen bekend is; **laat het juridische deel altijd toetsen door
 een advocaat gespecialiseerd in financieel recht voor je iets lanceert.**
 
+> **Verplaatst:** de zelfbeheerde aankoopagent (voorheen `/agent`), de
+> MCP-brokerserver (voorheen `mcp/`) en de publieke 13F-viewer (voorheen
+> `/pilots`) zijn verhuisd naar een apart project, **Auto Broker**
+> (`auto-broker/` in deze repository — bedoeld om later een eigen
+> GitHub-repository te worden). Dat is een broker-automatiseringstool, geen
+> financieel-educatiefunctie, en hoort dus niet meer bij FinEdu. De volledige
+> juridische redenering achter die architectuur staat nu in
+> `auto-broker/docs/regulatory.md`. Dit document blijft de bron voor alles
+> wat wél in FinEdu blijft.
+
 ## Samenvatting
 
 | Functie | Status vandaag | Opmerking |
@@ -13,66 +23,10 @@ een advocaat gespecialiseerd in financieel recht voor je iets lanceert.**
 | Uitgaven analyseren via CSV-import | **Gebouwd** (`/tools/geldscan`) | Geen |
 | Uitgaven analyseren via banktoegang | Niet gebouwd | PSD2/AIS-vergunning of licensed aggregator |
 | Beleggingsplan simuleren | **Gebouwd** (`/tools/beleggingsplan`) | Geen |
-| Zelfbeheerde aankoopagent | **Gebouwd** (`/agent`) | Werkt volledig in simulatie; Saxo-adapter ongetest |
-| MCP-brokerserver (IBKR/Saxo/Robinhood) | **Gebouwd** (`mcp/`) | Lokaal proces, eigen credentials, preview-dan-confirm; zie sectie 7 |
 | AI-antwoord op zoekvragen | **Gebouwd** (`/zoeken`) | Vrij LLM-antwoord (Groq, gpt-oss-120b), zie update in sectie 3 |
 | Wetgeving uitleggen + toepassen op gebruikerssituatie | **Gebouwd** (`/zoeken`, `/wetgeving`) | Curated bronnenlijst, geen live overheids-API; juridische toetsing nog nodig, zie sectie 4 |
 | Aankopen in naam van de gebruiker | Bewust niet gebouwd | Zou vermogensbeheer zijn |
-
-## De zelfbeheerde agent: waarom deze vorm wél kan
-
-`/agent` laat de gebruiker zijn eigen automatische aankopen instellen. De
-regelgevende positie hangt volledig aan de architectuur, dus die is bewust zo
-gebouwd:
-
-- **De gebruiker bepaalt alles.** Instrument, bedrag, ritme en limieten worden
-  door hem ingevuld. FinEdu stelt geen instrument voor, filtert of rangschikt
-  niets, en beoordeelt niet of iets bij hem past. Zonder persoonlijke
-  aanbeveling is er geen beleggingsadvies.
-- **Geen discretie.** De agent voert uitsluitend uit wat de gebruiker vooraf
-  letterlijk heeft vastgelegd. Er is geen enkele beslissing die FinEdu neemt,
-  dus geen vermogensbeheer.
-- **Geen orderstroom via FinEdu.** Orders gaan rechtstreeks van de browser van
-  de gebruiker naar zijn eigen brokeraccount, met zijn eigen token. Er is geen
-  FinEdu-server in dat pad. FinEdu ontvangt, bundelt of verstuurt geen orders,
-  en houdt geen gelden of instrumenten aan.
-
-In die vorm levert FinEdu **software**, en is de gebruiker zelf de
-opdrachtgever tegenover zijn vergunde broker. Dat is dezelfde positie als
-iemand die zijn eigen script tegen de API van zijn broker draait.
-
-**Waar de grens ligt.** Deze redenering houdt alleen stand zolang aan élk van
-die punten voldaan is. Zodra er iets bijkomt zoals: een server die orders in
-naam van gebruikers verstuurt, een lijst met "aanbevolen" of voorgeselecteerde
-ETF's, een standaardportefeuille, een geschiktheidsvraag met een uitkomst, of
-het aanhouden van klantentokens aan jullie kant — dan verschuift het richting
-een gereglementeerde beleggingsdienst. Laat de definitieve inschatting maken
-door een advocaat financieel recht voordat dit live gaat met echte rekeningen.
-
-### Wat er technisch nog moet gebeuren
-
-- **De Saxo-adapter (`src/lib/agent/brokers/saxo.ts`) is nooit tegen de echte
-  API getest.** Hij volgt de gedocumenteerde OpenAPI-vorm, maar moet eerst
-  tegen Saxo's simulatie-omgeving gevalideerd worden.
-- **Tokenbeheer is nu handmatig.** De gebruiker plakt zelf een access token,
-  dat alleen in `sessionStorage` van dat tabblad staat. Voor productie hoort
-  daar een OAuth 2.0-flow met PKCE en refresh-tokens bij, met een eigen
-  geregistreerde applicatie bij Saxo.
-- **De IBKR-adapter (`src/lib/agent/brokers/ibkr.ts`) is eveneens nooit
-  tegen een echte rekening getest.** Deze pagina praat rechtstreeks vanuit de
-  browser met de lokaal draaiende IBKR Client Portal Gateway van de
-  gebruiker (`https://localhost:5000`) — er is dus wél een echte gateway
-  nodig om dit te valideren, iets wat in deze omgeving niet beschikbaar was.
-  Begin met een paper-account (herkenning via het `DU`-prefix van het
-  rekeningnummer is een educated guess, geen garantie — controleer dit zelf
-  bij IBKR als het ertoe doet).
-- **Bolero en DEGIRO blijven onmogelijk**: geen publieke API voor derden. Dat
-  is een feitelijke beperking, geen keuze.
-- **Uitvoering vereist een open tabblad.** Er draait bewust geen achtergrond-
-  proces. Wie uitvoering wil die ook zonder hem doorloopt, gebruikt het
-  periodieke beleggingsplan van de broker zelf.
-
----
+| Zelfbeheerde aankoopagent, MCP-brokerserver, publieke 13F-viewer | **Verplaatst** naar Auto Broker | Zie `auto-broker/docs/regulatory.md` |
 
 ## 1. Automatisch beleggen via Bolero of Saxo
 
@@ -113,8 +67,8 @@ Beide sluiten "even snel koppelen" uit.
 
 ### Wat wél kan zonder vergunning
 
-0. **Een zelfbeheerde agent leveren** — zie de sectie hierboven. Dit is de
-   route die dit project gekozen heeft.
+0. **Een zelfbeheerde agent leveren** — de route die Auto Broker koos (zie
+   `auto-broker/docs/regulatory.md`), niet meer onderdeel van FinEdu zelf.
 1. **Doorverwijzen naar de periodieke beleggingsplannen van de broker zelf.**
    De meeste Belgische brokers laten gebruikers zelf een terugkerende order
    instellen. De automatisering gebeurt dan bij de vergunde partij, en de
@@ -421,126 +375,7 @@ eerste-stap-verwijzing voor wie nog geen cijfers heeft.
 2. Verbeter de categorisatie op basis van echte feedback (een "klopt dit
    niet?"-knop per transactie kost weinig en maakt de regels beter).
 3. Beslis pas daarna of banktoegang de kost en de compliance waard is.
-4. Valideer de Saxo-adapter tegen hun simulatie-omgeving en vervang het
-   handmatige token door een echte OAuth-flow voor je iemand met een live
-   rekening laat koppelen.
-5. Laat de zelfbeheerde opzet juridisch bevestigen voor de live-schakelaar
-   aangaat. Blijf weg van alles wat naar selectie of aanbeveling neigt: dat is
-   precies waar het onderscheid met vergunningsplichtige dienstverlening
-   verdwijnt.
-
----
-
-## 7. MCP-brokerserver (`mcp/`) — dezelfde zelfbeheerde opzet, via MCP
-
-Op verzoek kwam er een tweede uitvoeringspad voor de zelfbeheerde agent, naast
-`/agent` in de browser: een lokale [MCP](https://modelcontextprotocol.io)-server
-(`mcp/`) die dezelfde broker-koppelingen blootstelt aan een MCP-client (Claude
-Desktop, Claude Code). De regelgevende positie blijft identiek aan die van
-`/agent` — zie de redenering bovenaan dit document — omdat de architectuur
-bewust dezelfde grenzen respecteert:
-
-- **Draait enkel lokaal, bij de gebruiker.** Geen FinEdu-server, geen
-  meerdere gebruikers op één instantie: wie dit wil gebruiken, start zijn
-  eigen kopie met zijn eigen credentials.
-- **Credentials blijven van de gebruiker.** Tokens en wachtwoorden komen via
-  omgevingsvariabelen binnen (bij voorkeur via de MCP-clientconfiguratie, niet
-  via een bestand in deze repo) en worden nergens anders opgeslagen dan in het
-  geheugen van dat proces.
-- **Confirm-before-send, geen volautomatische uitvoering.** Elke order gaat
-  verplicht via twee aparte tool-aanroepen: `preview_order` (stuurt niets,
-  toont enkel koers/aantal/guardrail-resultaat) en pas daarna `confirm_order`
-  (enige tool die echt iets verstuurt). De server start bovendien elke keer
-  ontwapend (`armed: false`) en moet expliciet bewapend worden via
-  `set_armed` voor `confirm_order` iets doet.
-
-Er was expliciet gevraagd om ook IBKR, DEGIRO en Robinhood te koppelen, naast
-Saxo. Niet alle drie kwamen er op dezelfde manier:
-
-- **IBKR** — via de officiële Client Portal Web API, tegen een lokaal
-  draaiende IBKR Gateway. Standaard op `IBKR_MODE=paper`.
-- **Saxo** — hergebruikt hetzelfde OpenAPI-protocol als
-  `src/lib/agent/brokers/saxo.ts`, met dezelfde beperking: **nooit getest
-  tegen de live Saxo-API**, enkel tegen SIM.
-- **DEGIRO** — **niet gebouwd.** Geen publieke API voor derden, dezelfde
-  feitelijke beperking als Bolero elders in dit document.
-- **Robinhood** — gebouwd, maar expliciet gelabeld als **niet-officieel en
-  experimenteel**. Robinhood heeft nergens een publieke handelsAPI voor
-  derde partijen; deze integratie spreekt dezelfde private endpoints aan als
-  de Robinhood-app zelf, via een reverse-engineered protocol. Dat schendt
-  Robinhood's gebruiksvoorwaarden, kan op elk moment breken zonder
-  aankondiging, en kan tot een geblokkeerd account leiden. Dit werd op
-  uitdrukkelijk verzoek toch gebouwd — de code weigert te draaien tenzij
-  `ROBINHOOD_ACKNOWLEDGE_UNOFFICIAL_API=true` expliciet gezet is, bovenop de
-  eigenlijke credentials, zodat dit nooit per ongeluk actief staat. Zie
-  `mcp/README.md` en `mcp/src/brokers/robinhood.ts` voor het volledige
-  voorbehoud.
-
-**Wat dit niet verandert:** dit voegt een uitvoeringspad toe, geen nieuwe
-juridische positionering. Punt 5 hierboven — laat de zelfbeheerde opzet
-juridisch bevestigen voor een live-schakelaar aangaat — geldt hier evengoed,
-en voor Robinhood specifiek weegt daar het ToS-risico nog bovenop.
-
----
-
-## 8. Pilots (`/pilots`) — publieke 13F-data, geen copy-trading
-
-Er kwam een uitdrukkelijk verzoek om een app te bouwen zoals Autopilot
-("joinautopilot.com"): een marktplaats van "Pilots" (bekende beleggers) die
-gebruikers met één klik kunnen kopiëren, waarna hun eigen brokeraccount
-automatisch meehandelt. Autopilot kan dat legaal aanbieden omdat het bedrijf
-zelf een bij de SEC geregistreerde investment adviser is — precies die
-registratie maakt "wij kiezen, jij kopieert, wij voeren automatisch uit voor
-jou" legaal in plaats van een overtreding. Zonder het EU-equivalent van die
-registratie (MiFID II-vergunning voor vermogensbeheer/beleggingsadvies, via
-FSMA of een andere nationale toezichthouder — zie secties 1 en 7) is die
-curatie-plus-automatische-uitvoering-voor-andere-gebruikers precies het stuk
-dat dit project bewust **niet** bouwt.
-
-### Wat er wél gebouwd is
-
-`/pilots` toont uitsluitend publiek verplichte data, zonder koppeling met een
-broker en zonder enige uitvoering:
-
-- **Bron: SEC EDGAR, formulier 13F-HR**, rechtstreeks opgehaald bij
-  `data.sec.gov` / `sec.gov` — dezelfde officiële, gratis bron als
-  `src/lib/content/sources.ts` voor andere onderdelen van de site. Geen
-  eigen dataset, geen scraping van een derde partij.
-- **Drie gecureerde namen** (Berkshire Hathaway, Scion Asset Management,
-  Pershing Square Capital Management) puur als bekende, publiek
-  identificeerbare voorbeelden — niet als aanbeveling. Er is geen
-  rangschikking op rendement, geen "beste pilot"-label, en geen
-  gepersonaliseerde geschiktheidstoets zoals bij echt beleggingsadvies.
-- **Geen automatische uitvoering.** De "Start regel"-link per positie op de
-  detailpagina vult enkel een *naam* in bij een nieuwe, lege regel in
-  `/agent` — geen ticker, geen bedrag, geen broker. De gebruiker kiest en
-  bevestigt zelf het instrument, exact zoals bij elke andere regel in de
-  agent (zie sectie hierboven). FinEdu voert nooit iets uit namens de
-  gebruiker.
-- **Beperkingen van 13F expliciet vermeld op de pagina zelf**: enkel
-  Amerikaanse long-posities in beursgenoteerde aandelen, tot 45 dagen na het
-  einde van het kwartaal gemeld, geen short-posities, opties of
-  niet-Amerikaanse holdings — dus een onvolledig en soms al verouderd beeld.
-
-### Waarom dit geen beleggingsadvies is
-
-Investment advice onder MiFID II vereist een *persoonlijke aanbeveling* aan
-een specifieke cliënt. `/pilots` doet dat niet: het toont dezelfde publieke
-cijfers aan iedereen, zonder rekening te houden met wie kijkt, zonder
-suitability-vraag, en zonder een "dit past bij jou"-oordeel. Dat is dezelfde
-juridische positie als een financieel nieuwsmedium dat een 13F-melding
-naverteld.
-
-### Wat dit niet oplost
-
-- Dit is nadrukkelijk **niet** de Autopilot-marktplaats. Zodra dit uitbreidt
-  naar automatische uitvoering voor andere gebruikers, geldt dezelfde
-  redenering als sectie 1 en 7: dat vereist een echte vergunning, geen
-  configuratiewijziging.
-- 13F-data is vertraagd en onvolledig (zie hierboven) — geschikt om te
-  begrijpen wat grote beleggers *meldden*, niet om te weten wat ze *nu* doen.
-- De keuze van drie bekende namen is zelf een redactionele keuze. Ze zijn
-  bewust generiek gehouden (geen sector- of themakeuze, geen "groei"- of
-  "waarde"-framing) om niet zelf als aanbeveling te lezen, maar dat is een
-  ontwerpkeuze, geen garantie — een editor die dit uitbreidt moet dezelfde
-  toets blijven toepassen.
+4. Blijf weg van alles wat naar selectie of aanbeveling neigt in `/zoeken`,
+   `/wetgeving` en de rekentools: dat is precies waar het onderscheid met
+   vergunningsplichtige dienstverlening verdwijnt. Voor de agent/MCP/Pilots-
+   redenering, zie `auto-broker/docs/regulatory.md`.

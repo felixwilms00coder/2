@@ -37,31 +37,6 @@ responsibly, insurance, pensions, and taxes — all in Dutch.
     not premium alone. No policy data or insurer ranking of its own — see
     `docs/automatisering.md` (§5) for why this stayed a calculator instead
     of a price-comparison ranking.
-- **Beleggingsagent (`/agent`)** — a self-managed automation agent. The user
-  writes their own buy rules (instrument, amount, cadence, per-order and
-  monthly caps), and the agent executes them against a broker of their
-  choosing. Ships with a fully working paper-trading broker, a Saxo OpenAPI
-  adapter, and an Interactive Brokers adapter that talks straight to the
-  user's own locally-running Client Portal Gateway — **neither the Saxo nor
-  the IBKR adapter has ever been tested against a live account**. Rules, log
-  and tokens stay on the user's device — there is no FinEdu server in the
-  order path, which is what keeps this software rather than a regulated
-  investment service. See `docs/automatisering.md`.
-- **Broker MCP server (`mcp/`)** — the same self-managed idea, reachable from
-  an MCP client (Claude Desktop, Claude Code) instead of a browser tab. Runs
-  locally against your own IBKR (Client Portal API), Saxo (OpenAPI) and
-  Robinhood (unofficial, experimental — read the warning first) accounts,
-  with a mandatory preview-then-confirm step before anything is sent, hard
-  euro guardrails, and a disarmed-by-default master switch. See
-  `mcp/README.md`. DEGIRO has no public API and is not supported.
-- **Pilots (`/pilots`)** — read-only display of the US equity positions
-  well-known investors are legally required to disclose (SEC Form 13F),
-  fetched live from SEC EDGAR. No brokerage connection, no execution, no
-  ranking of "best" investors — FinEdu neither curates nor recommends any of
-  it. A "start regel" link on each holding pre-fills only a rule *name* in
-  `/agent`; the user still picks and confirms the actual instrument
-  themselves. See `docs/automatisering.md` (§8) for why this stops well
-  short of a copy-trading feature.
 - **Quiz (`/quiz`)** — a 10-question financial literacy quiz with instant
   per-question explanations and a final score.
 - **Zoeken (`/zoeken`)** — local keyword search across all content, plus an
@@ -85,13 +60,9 @@ mypension.be) for exact numbers.
 ## Installing as an app (PWA)
 
 FinEdu is installable to a phone or desktop home screen (`src/app/manifest.ts`,
-`src/app/apple-icon.tsx`, `src/app/icon-192/`, `src/app/icon-512/`). This
-covers the educational content and tools — `/agent` and `/pilots` still work
-from an installed copy (Saxo, the simulation broker, and Pilots are all
-plain HTTPS calls), except the IBKR adapter, which needs its Client Portal
-Gateway on `localhost` and so only works from the same machine the gateway
-runs on, installed app or not. There's deliberately no service worker or
-offline caching yet, and no push notifications — see the [Next.js PWA
+`src/app/apple-icon.tsx`, `src/app/icon-192/`, `src/app/icon-512/`). There's
+deliberately no service worker or offline caching yet, and no push
+notifications — see the [Next.js PWA
 guide](https://nextjs.org/docs/app/guides/progressive-web-apps) if either of
 those becomes worth the added complexity (stale-cache bugs for offline
 support; VAPID keys and a subscription store for push).
@@ -183,11 +154,18 @@ without touching the type. Make sure you have the rights to the image.
 
 ## Automation and regulation
 
-`docs/automatisering.md` documents what would be required to go further:
-FSMA/MiFID II licensing for automated investing, the PSD2/AIS route for
-direct bank access, the API situation at Bolero versus Saxo, and why the
-suggestion engine is deterministic rather than LLM-driven. Read it before
-promising any broker integration.
+FinEdu previously shipped a self-managed broker-automation agent, a public
+13F "Pilots" viewer, and an MCP broker server. Those moved to their own,
+separate project, **Auto Broker** — currently [`auto-broker/`](auto-broker)
+in this same repository, since creating it as its own GitHub repository
+wasn't possible from this session; move it to its own repo when convenient —
+since they're a distinct product from financial education, not a FinEdu
+feature. `docs/automatisering.md` still documents what would be required to
+go further on the parts that remain here: FSMA/MiFID II licensing for
+automated investing, the PSD2/AIS route for direct bank access, the API
+situation at Bolero versus Saxo, and why the suggestion engine is
+deterministic rather than LLM-driven. Read it before promising any broker
+integration.
 
 ## Disclaimer
 

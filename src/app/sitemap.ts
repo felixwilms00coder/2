@@ -12,7 +12,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/tools",
     "/quiz",
     "/spel",
-    "/agent",
     "/wetgeving",
     "/voortgang",
     "/over",

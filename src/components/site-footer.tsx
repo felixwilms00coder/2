@@ -43,11 +43,6 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/agent" className="inline-flex min-h-9 items-center hover:text-accent">
-                  Beleggingsagent
-                </Link>
-              </li>
-              <li>
                 <Link href="/voortgang" className="inline-flex min-h-9 items-center hover:text-accent">
                   Jouw voortgang
                 </Link>

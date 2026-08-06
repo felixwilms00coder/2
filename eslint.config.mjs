@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Separate nested project with its own tooling (see its own README).
+    "auto-broker/**",
   ]),
 ]);
 
