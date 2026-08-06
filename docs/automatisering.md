@@ -14,6 +14,7 @@ een advocaat gespecialiseerd in financieel recht voor je iets lanceert.**
 | Uitgaven analyseren via banktoegang | Niet gebouwd | PSD2/AIS-vergunning of licensed aggregator |
 | Beleggingsplan simuleren | **Gebouwd** (`/tools/beleggingsplan`) | Geen |
 | Zelfbeheerde aankoopagent | **Gebouwd** (`/agent`) | Werkt volledig in simulatie; Saxo-adapter ongetest |
+| MCP-brokerserver (IBKR/Saxo/Robinhood) | **Gebouwd** (`mcp/`) | Lokaal proces, eigen credentials, preview-dan-confirm; zie sectie 7 |
 | AI-antwoord op zoekvragen | **Gebouwd** (`/zoeken`) | Vrij LLM-antwoord (Groq, gpt-oss-120b), zie update in sectie 3 |
 | Wetgeving uitleggen + toepassen op gebruikerssituatie | **Gebouwd** (`/zoeken`, `/wetgeving`) | Curated bronnenlijst, geen live overheids-API; juridische toetsing nog nodig, zie sectie 4 |
 | Aankopen in naam van de gebruiker | Bewust niet gebouwd | Zou vermogensbeheer zijn |
@@ -419,3 +420,55 @@ eerste-stap-verwijzing voor wie nog geen cijfers heeft.
    aangaat. Blijf weg van alles wat naar selectie of aanbeveling neigt: dat is
    precies waar het onderscheid met vergunningsplichtige dienstverlening
    verdwijnt.
+
+---
+
+## 7. MCP-brokerserver (`mcp/`) — dezelfde zelfbeheerde opzet, via MCP
+
+Op verzoek kwam er een tweede uitvoeringspad voor de zelfbeheerde agent, naast
+`/agent` in de browser: een lokale [MCP](https://modelcontextprotocol.io)-server
+(`mcp/`) die dezelfde broker-koppelingen blootstelt aan een MCP-client (Claude
+Desktop, Claude Code). De regelgevende positie blijft identiek aan die van
+`/agent` — zie de redenering bovenaan dit document — omdat de architectuur
+bewust dezelfde grenzen respecteert:
+
+- **Draait enkel lokaal, bij de gebruiker.** Geen FinEdu-server, geen
+  meerdere gebruikers op één instantie: wie dit wil gebruiken, start zijn
+  eigen kopie met zijn eigen credentials.
+- **Credentials blijven van de gebruiker.** Tokens en wachtwoorden komen via
+  omgevingsvariabelen binnen (bij voorkeur via de MCP-clientconfiguratie, niet
+  via een bestand in deze repo) en worden nergens anders opgeslagen dan in het
+  geheugen van dat proces.
+- **Confirm-before-send, geen volautomatische uitvoering.** Elke order gaat
+  verplicht via twee aparte tool-aanroepen: `preview_order` (stuurt niets,
+  toont enkel koers/aantal/guardrail-resultaat) en pas daarna `confirm_order`
+  (enige tool die echt iets verstuurt). De server start bovendien elke keer
+  ontwapend (`armed: false`) en moet expliciet bewapend worden via
+  `set_armed` voor `confirm_order` iets doet.
+
+Er was expliciet gevraagd om ook IBKR, DEGIRO en Robinhood te koppelen, naast
+Saxo. Niet alle drie kwamen er op dezelfde manier:
+
+- **IBKR** — via de officiële Client Portal Web API, tegen een lokaal
+  draaiende IBKR Gateway. Standaard op `IBKR_MODE=paper`.
+- **Saxo** — hergebruikt hetzelfde OpenAPI-protocol als
+  `src/lib/agent/brokers/saxo.ts`, met dezelfde beperking: **nooit getest
+  tegen de live Saxo-API**, enkel tegen SIM.
+- **DEGIRO** — **niet gebouwd.** Geen publieke API voor derden, dezelfde
+  feitelijke beperking als Bolero elders in dit document.
+- **Robinhood** — gebouwd, maar expliciet gelabeld als **niet-officieel en
+  experimenteel**. Robinhood heeft nergens een publieke handelsAPI voor
+  derde partijen; deze integratie spreekt dezelfde private endpoints aan als
+  de Robinhood-app zelf, via een reverse-engineered protocol. Dat schendt
+  Robinhood's gebruiksvoorwaarden, kan op elk moment breken zonder
+  aankondiging, en kan tot een geblokkeerd account leiden. Dit werd op
+  uitdrukkelijk verzoek toch gebouwd — de code weigert te draaien tenzij
+  `ROBINHOOD_ACKNOWLEDGE_UNOFFICIAL_API=true` expliciet gezet is, bovenop de
+  eigenlijke credentials, zodat dit nooit per ongeluk actief staat. Zie
+  `mcp/README.md` en `mcp/src/brokers/robinhood.ts` voor het volledige
+  voorbehoud.
+
+**Wat dit niet verandert:** dit voegt een uitvoeringspad toe, geen nieuwe
+juridische positionering. Punt 5 hierboven — laat de zelfbeheerde opzet
+juridisch bevestigen voor een live-schakelaar aangaat — geldt hier evengoed,
+en voor Robinhood specifiek weegt daar het ToS-risico nog bovenop.

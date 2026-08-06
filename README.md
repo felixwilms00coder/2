@@ -45,6 +45,13 @@ responsibly, insurance, pensions, and taxes — all in Dutch.
   Rules, log and tokens stay on the user's device — there is no FinEdu server
   in the order path, which is what keeps this software rather than a
   regulated investment service. See `docs/automatisering.md`.
+- **Broker MCP server (`mcp/`)** — the same self-managed idea, reachable from
+  an MCP client (Claude Desktop, Claude Code) instead of a browser tab. Runs
+  locally against your own IBKR (Client Portal API), Saxo (OpenAPI) and
+  Robinhood (unofficial, experimental — read the warning first) accounts,
+  with a mandatory preview-then-confirm step before anything is sent, hard
+  euro guardrails, and a disarmed-by-default master switch. See
+  `mcp/README.md`. DEGIRO has no public API and is not supported.
 - **Quiz (`/quiz`)** — a 10-question financial literacy quiz with instant
   per-question explanations and a final score.
 - **Zoeken (`/zoeken`)** — local keyword search across all content, plus an
