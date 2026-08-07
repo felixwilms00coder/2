@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Auto Broker</string>
+    <string name="title_activity_main">Auto Broker</string>
+    <string name="package_name">com.autobroker.app</string>
+    <string name="custom_url_scheme">com.autobroker.app</string>
+</resources>

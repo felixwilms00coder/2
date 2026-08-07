@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Container, PageHero, Callout } from "@/components/ui";
 import { AgentDashboard } from "@/components/agent/agent-dashboard";
+import { AgentDashboardWithParams } from "@/components/agent/agent-dashboard-with-params";
 
 export const metadata: Metadata = {
   title: "Agent — your rules, your broker",
@@ -9,12 +11,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/agent" },
 };
 
-export default async function AgentPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ ruleName?: string }>;
-}) {
-  const { ruleName } = await searchParams;
+export default function AgentPage() {
   return (
     <>
       <PageHero
@@ -32,7 +29,9 @@ export default async function AgentPage({
             instruction — we only provide the tool.
           </Callout>
 
-          <AgentDashboard prefillName={ruleName} />
+          <Suspense fallback={<AgentDashboard />}>
+            <AgentDashboardWithParams />
+          </Suspense>
 
           <section aria-labelledby="good-to-know">
             <h2

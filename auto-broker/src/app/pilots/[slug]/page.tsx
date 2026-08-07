@@ -3,11 +3,23 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Container, Callout } from "@/components/ui";
-import { getPilot } from "@/lib/pilots/pilots";
+import { getPilot, pilots } from "@/lib/pilots/pilots";
 import { fetchPilotHistory, filingIndexUrl } from "@/lib/pilots/sec-edgar";
 import { diffFilings } from "@/lib/pilots/diff";
 import { ValueChart } from "@/components/pilots/value-chart";
 import { PositionChanges } from "@/components/pilots/position-changes";
+
+// Required for static export (Capacitor build): every dynamic route needs
+// its params known at build time there. For the normal live web build this
+// just pre-warms these 3 pages; new Pilots still need adding here to be
+// reachable at all once CAPACITOR_BUILD is set.
+export function generateStaticParams() {
+  return pilots.map((p) => ({ slug: p.slug }));
+}
+
+// Static export can't serve params outside generateStaticParams (there's no
+// server left to fall back to), so pin this rather than leave the default.
+export const dynamicParams = false;
 
 export function generateMetadata({
   params,

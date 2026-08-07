@@ -14,6 +14,9 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     // This repo's separate MCP server package, built with its own tsc.
     "mcp/**",
+    // Capacitor native projects: generated/vendored code, not app source.
+    "ios/**",
+    "android/**",
   ]),
 ]);
 

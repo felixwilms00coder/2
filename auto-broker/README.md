@@ -67,6 +67,16 @@ except the IBKR adapter, which needs its Client Portal Gateway on
 `localhost` and so only works from the same machine the gateway runs on,
 installed app or not.
 
+## App Store / Play Store build (Capacitor)
+
+The web app is also wrapped for a real native build via
+[Capacitor](https://capacitorjs.com) — scaffolded `ios/` and `android/`
+projects are committed in this repo. See
+[`mobile/README.md`](mobile/README.md) for what's already done, what still
+needs your own Mac/Xcode, Android Studio, and Apple/Google developer
+accounts, and the IBKR-localhost caveat that mobile doesn't get around for
+free.
+
 ## Project structure
 
 ```
@@ -81,6 +91,8 @@ src/
 mcp/                   separate MCP server package (own README)
 docs/
   regulatory.md        the legal reasoning behind the architecture
+ios/, android/         Capacitor native app projects (see mobile/README.md)
+mobile/                mobile build/submission docs
 ```
 
 ## Extending

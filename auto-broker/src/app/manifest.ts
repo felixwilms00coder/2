@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 
+export const dynamic = "force-static";
+
 /** Installable to a phone/desktop home screen. Saxo, the simulation broker
  * and Pilots all work fine from an installed copy; IBKR needs its Client
  * Portal Gateway on localhost, so it only works from the same machine the
