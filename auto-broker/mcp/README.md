@@ -95,6 +95,15 @@ full list.
 
 ### Robinhood — UNOFFICIAL, EXPERIMENTAL, read this before using it
 
+**Robinhood now has an official path — use that instead.** Robinhood hosts
+its own Agentic Trading MCP server
+(`https://agent.robinhood.com/mcp/trading`); you connect your AI agent to
+it directly, sanctioned by the broker, with no unofficial API involved. See
+[`docs/robinhood-agentic-trading.md`](../docs/robinhood-agentic-trading.md).
+Everything below describes this repo's own unofficial adapter, which
+predates that and should now be considered superseded for Robinhood
+accounts.
+
 Robinhood has never published a public trading API for third-party
 developers, in the US, EU or UK. This integration talks to the same private
 endpoints the Robinhood app uses, reverse-engineered by the open-source

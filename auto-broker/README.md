@@ -23,12 +23,15 @@ behind that distinction, and where it stops holding.
   actual instrument yourself.
 - **Broker MCP server (`mcp/`)** — the same self-managed idea, reachable
   from an MCP client (Claude Desktop, Claude Code) instead of a browser
-  tab. Runs locally against your own IBKR (Client Portal API), Saxo
-  (OpenAPI) and Robinhood (unofficial, experimental — read the warning
-  first) accounts, with a mandatory preview-then-confirm step before
+  tab. Runs locally against your own IBKR (Client Portal API) and Saxo
+  (OpenAPI) accounts, with a mandatory preview-then-confirm step before
   anything is sent, hard guardrails, and a disarmed-by-default master
   switch. See [`mcp/README.md`](mcp/README.md). DEGIRO has no public API
   and is not supported.
+- **Robinhood** — Robinhood now runs its own official Agentic Trading MCP
+  server (`https://agent.robinhood.com/mcp/trading`); connect your AI
+  agent to it directly rather than using this repo's unofficial adapter.
+  See [`docs/robinhood-agentic-trading.md`](docs/robinhood-agentic-trading.md).
 
 ## Tech stack
 

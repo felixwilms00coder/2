@@ -92,6 +92,28 @@ export default function AgentPage() {
                   what you log into the gateway with, not on a setting here.
                 </p>
               </div>
+              <div>
+                <h3 className="font-display text-base font-bold text-foreground">
+                  Robinhood
+                </h3>
+                <p className="mt-2">
+                  Robinhood isn&apos;t in the broker picker above — it
+                  doesn&apos;t need to be. Robinhood runs its own official
+                  Agentic Trading MCP server, and you connect your AI agent
+                  (Claude Code, Claude Desktop, ChatGPT, etc.) to it
+                  directly, sanctioned by Robinhood itself, with no Auto
+                  Broker involved at all. See{" "}
+                  <a
+                    href="https://robinhood.com/us/en/support/articles/agentic-trading-overview/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold underline"
+                  >
+                    Robinhood&apos;s own setup guide
+                  </a>{" "}
+                  for the connection steps and required risk disclosures.
+                </p>
+              </div>
             </div>
           </section>
 
