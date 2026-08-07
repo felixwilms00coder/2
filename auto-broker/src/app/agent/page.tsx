@@ -112,6 +112,13 @@ export default function AgentPage() {
                     Robinhood&apos;s own setup guide
                   </a>{" "}
                   for the connection steps and required risk disclosures.
+                  One important difference from everything else on this
+                  page: Robinhood does not force a confirmation step per
+                  trade — by their own disclosure, an agent you&apos;ve told
+                  to act without asking your approval can place trades
+                  without it. That guarantee is yours to build into your
+                  own instructions there, not something this page
+                  provides.
                 </p>
               </div>
             </div>

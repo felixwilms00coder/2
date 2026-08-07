@@ -37,9 +37,48 @@ Robinhood's own page notes those examples are illustrative only, not a
 recommendation or endorsement — the same posture Auto Broker takes toward
 the rules you write in `/agent`.
 
-**Read Robinhood's own Risks section on that page before connecting
-anything.** It isn't reproduced here — this is exactly the kind of detail
-that should come from the broker itself, not be paraphrased secondhand.
+## The confirmation step is optional — read this before Auto Broker's rest
+
+This is the one point where Robinhood's Agentic Trading behaves
+**differently** from everything else in Auto Broker, and it's the reason
+this section exists rather than just linking out.
+
+Every other broker connection in this repo (`/agent`, `mcp/`) hard-codes a
+preview-then-confirm step: nothing is ever sent to a broker without you
+separately approving the exact order first. Robinhood's own Risks section
+says the opposite is possible here:
+
+> You are ultimately responsible for the trades your AI agent places in
+> your account. [...] Before your agent takes action, you can review what
+> it's about to do. **Be aware that if you've asked your agent to take
+> action without asking your approval, it can place trades without your
+> confirmation.**
+
+In other words, whether you get a confirmation prompt per trade depends on
+how you instruct your agent, not on a control Robinhood enforces for you.
+If you want the same "nothing executes without my explicit yes" guarantee
+Auto Broker gives you elsewhere, you have to build that into your own
+prompts/instructions to the agent — it isn't automatic here.
+
+Robinhood's disclosures also state plainly: agentic trading risks the loss
+of your entire investment, AI agents can misinterpret instructions or act
+on outdated information, Robinhood does not guarantee agent output, and
+**you assume all risk** for trades the agent executes and for how
+third-party AI providers use your data.
+
+### What your agent can access
+
+Per Robinhood: once connected, your agent gets **read access** to more
+than just the Agentic account —
+
+- all your Robinhood accounts, including account numbers
+- all details about your positions and balances
+- all details about your transactions, including order history
+- all details about your watchlists and scans
+
+Trading is scoped tighter than reading: **your agent can only place trades
+in your Robinhood Agentic account**, not your other Robinhood accounts —
+but it can *see* all of them.
 
 ## Eligibility
 
@@ -50,6 +89,10 @@ that should come from the broker itself, not be paraphrased secondhand.
   10-account limit for self-directed individual investing accounts).
 - Onboarding for that account happens automatically the first time you
   authenticate your AI agent against the Robinhood Trading MCP.
+- **Desktop only.** You can only open the Agentic account and authenticate
+  your agent on a desktop device. If you're connecting from a mobile AI
+  app, Robinhood has you copy the onboarding URL and finish it in a
+  desktop browser instead.
 
 ## Connecting your AI agent
 
