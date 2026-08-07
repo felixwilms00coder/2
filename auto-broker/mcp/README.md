@@ -78,6 +78,23 @@ full list.
 4. `IBKR_GATEWAY_URL` defaults to `https://localhost:5000/v1/api`; only
    change it if you've reconfigured the gateway's port.
 
+**Verified against a mock gateway, not yet against a real one.** The full
+tool flow (`list_brokers` → `get_account` → `get_positions` → `get_quote`
+→ `preview_order` → disarmed refusal → `set_armed` → `confirm_order` →
+duplicate-previewId refusal → guardrail rejection → `cancel_order` →
+`get_order_history`) was run end-to-end through a local HTTPS server that
+reproduces the Client Portal Web API's actual response shapes for
+`/iserver/auth/status`, `/iserver/accounts`, `/portfolio/{id}/summary`,
+`/portfolio/{id}/positions/0`, `/iserver/secdef/search`,
+`/iserver/marketdata/snapshot` (including the "first call returns no
+price" retry behaviour `snapshotPrice()` handles), and the order-placement
+"question/reply" confirmation dance IBKR's own gateway does before an
+order reaches the exchange. Every step passed. What this does **not**
+prove: real auth/2FA behaviour, real market data entitlements, or
+anything about your actual account — that only a real paper account run
+locally against the real gateway can confirm. Do that before trusting
+this with `IBKR_MODE=live`.
+
 ### Saxo Bank (OpenAPI) — officially supported, adapter unverified live
 
 1. Register your own app at [developer.saxo](https://www.developer.saxo) and
