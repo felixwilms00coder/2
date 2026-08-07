@@ -28,3 +28,25 @@ export type PilotFiling = {
   accessionNumber: string;
   holdings: Holding[];
 };
+
+export type FilingSnapshot = {
+  filingDate: string;
+  accessionNumber: string;
+  holdings: Holding[];
+  totalValueUsd: number;
+};
+
+export type PositionChangeCategory =
+  | "new"
+  | "closed"
+  | "increased"
+  | "decreased"
+  | "unchanged";
+
+export type PositionChange = {
+  issuer: string;
+  cusip: string;
+  category: PositionChangeCategory;
+  previousPct: number;
+  currentPct: number;
+};

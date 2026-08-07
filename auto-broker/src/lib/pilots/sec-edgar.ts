@@ -1,4 +1,4 @@
-import { Holding, PilotFiling } from "./types";
+import { FilingSnapshot, Holding, PilotFiling } from "./types";
 
 /**
  * Fetches a Pilot's most recently filed Form 13F-HR holdings straight from
@@ -55,22 +55,30 @@ type SubmissionsResponse = {
   };
 };
 
-async function latestThirteenF(
+type FilingSummary = { accessionNumber: string; filingDate: string };
+
+/** Newest-first list of up to `limit` 13F-HR filings from SEC's recent-submissions window. */
+async function listThirteenFFilings(
   cik: string,
-): Promise<{ accessionNumber: string; filingDate: string }> {
+  limit: number,
+): Promise<FilingSummary[]> {
   const data = await secFetchJson<SubmissionsResponse>(
     `https://data.sec.gov/submissions/CIK${cik}.json`,
   );
   const recent = data.filings?.recent;
   const forms = recent?.form ?? [];
-  const idx = forms.findIndex((f) => f === "13F-HR");
-  if (idx === -1 || !recent?.accessionNumber?.[idx] || !recent?.filingDate?.[idx]) {
+  const out: FilingSummary[] = [];
+  for (let i = 0; i < forms.length && out.length < limit; i++) {
+    const accessionNumber = recent?.accessionNumber?.[i];
+    const filingDate = recent?.filingDate?.[i];
+    if (forms[i] === "13F-HR" && accessionNumber && filingDate) {
+      out.push({ accessionNumber, filingDate });
+    }
+  }
+  if (out.length === 0) {
     throw new Error("No 13F-HR filing found in the recent SEC submissions.");
   }
-  return {
-    accessionNumber: recent.accessionNumber[idx],
-    filingDate: recent.filingDate[idx],
-  };
+  return out;
 }
 
 type FilingIndex = {
@@ -119,15 +127,50 @@ function parseInfoTable(xml: string): Holding[] {
     .sort((a, b) => b.valueUsd - a.valueUsd);
 }
 
-export async function fetchLatestFiling(cik: string): Promise<PilotFiling> {
-  const { accessionNumber, filingDate } = await latestThirteenF(cik);
+async function fetchHoldingsForFiling(
+  cik: string,
+  accessionNumber: string,
+): Promise<Holding[]> {
   const cikNoLeadingZeros = String(Number(cik));
   const accessionNoDashes = accessionNumber.replace(/-/g, "");
   const fileName = await findInfoTableFile(cikNoLeadingZeros, accessionNoDashes);
   const xml = await secFetchText(
     `https://www.sec.gov/Archives/edgar/data/${cikNoLeadingZeros}/${accessionNoDashes}/${fileName}`,
   );
-  return { filingDate, accessionNumber, holdings: parseInfoTable(xml) };
+  return parseInfoTable(xml);
+}
+
+export async function fetchLatestFiling(cik: string): Promise<PilotFiling> {
+  const [latest] = await listThirteenFFilings(cik, 1);
+  const holdings = await fetchHoldingsForFiling(cik, latest.accessionNumber);
+  return { filingDate: latest.filingDate, accessionNumber: latest.accessionNumber, holdings };
+}
+
+/**
+ * Up to `quarters` most recent 13F-HR filings, newest first, each with its
+ * holdings and total reported value — enough to chart a trend and diff
+ * consecutive quarters. Fetched in parallel: each filing is 2 requests
+ * (the filing index, then the info table XML), so 6 quarters is ~12
+ * requests total rather than 12 sequential round trips.
+ */
+export async function fetchPilotHistory(
+  cik: string,
+  quarters = 6,
+): Promise<FilingSnapshot[]> {
+  const filings = await listThirteenFFilings(cik, quarters);
+  const snapshots = await Promise.all(
+    filings.map(async (f): Promise<FilingSnapshot> => {
+      const holdings = await fetchHoldingsForFiling(cik, f.accessionNumber);
+      const totalValueUsd = holdings.reduce((sum, h) => sum + h.valueUsd, 0);
+      return {
+        filingDate: f.filingDate,
+        accessionNumber: f.accessionNumber,
+        holdings,
+        totalValueUsd,
+      };
+    }),
+  );
+  return snapshots;
 }
 
 export function filingIndexUrl(cik: string, accessionNumber: string): string {
