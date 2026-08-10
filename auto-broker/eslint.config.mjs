@@ -17,6 +17,8 @@ const eslintConfig = defineConfig([
     // Capacitor native projects: generated/vendored code, not app source.
     "ios/**",
     "android/**",
+    // Separate Expo app, its own package.json/tsconfig/eslint scope.
+    "native/**",
   ]),
 ]);
 

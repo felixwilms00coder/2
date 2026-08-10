@@ -70,15 +70,20 @@ except the IBKR adapter, which needs its Client Portal Gateway on
 `localhost` and so only works from the same machine the gateway runs on,
 installed app or not.
 
-## App Store / Play Store build (Capacitor)
+## Two different mobile builds
 
-The web app is also wrapped for a real native build via
-[Capacitor](https://capacitorjs.com) — scaffolded `ios/` and `android/`
-projects are committed in this repo. See
-[`mobile/README.md`](mobile/README.md) for what's already done, what still
-needs your own Mac/Xcode, Android Studio, and Apple/Google developer
-accounts, and the IBKR-localhost caveat that mobile doesn't get around for
-free.
+- **`native/` — a real native app (recommended).** Built with
+  [Expo](https://expo.dev), not a wrapped website: native navigation,
+  gestures, haptics, and Reanimated-driven motion, reusing the same rule
+  engine and Pilots logic as the web app. Preview it on your own iPhone in
+  under a minute via the free Expo Go app — no Xcode required for that
+  step. See [`native/README.md`](native/README.md).
+- **`mobile/` / `ios/` / `android/` — a Capacitor wrap of this web app.**
+  Simpler (it's the website above in a native shell), and still useful if
+  you'd rather maintain one UI. See [`mobile/README.md`](mobile/README.md).
+
+Both hit the same IBKR-localhost caveat: `localhost` means the phone
+itself on a phone, not the computer running your Client Portal Gateway.
 
 ## Project structure
 
@@ -95,7 +100,8 @@ mcp/                   separate MCP server package (own README)
 docs/
   regulatory.md        the legal reasoning behind the architecture
 ios/, android/         Capacitor native app projects (see mobile/README.md)
-mobile/                mobile build/submission docs
+mobile/                Capacitor mobile build/submission docs
+native/                real native app (Expo), own README
 ```
 
 ## Extending
