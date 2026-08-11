@@ -111,11 +111,13 @@ until confirmed, and fills at quantity 100, price 18.
 
 The IBKR adapter talks to `https://localhost:5000` by default, which is
 the **phone itself** on a phone, not a computer running the Client Portal
-Gateway. The Agent tab now has a **Gateway address** field (shown when
-IBKR is the selected broker) — enter that computer's LAN address there
-(e.g. `https://192.168.1.23:5000/v1/api`) and tap **Save & test
-connection**. It's saved on-device (not a secret, just an address) so you
-only type it once.
+Gateway. The Agent tab's connect UI (shown when IBKR is the selected
+broker) is deliberately down to one field and one button: enter that
+computer's LAN address (e.g. `https://192.168.1.23:5000/v1/api`) and tap
+**Connect**. It's saved on-device (not a secret, just an address) so you
+only type it once. Everything else — why "localhost" doesn't work, where
+to find that address — sits behind a collapsed "Where do I find this
+address?" link so the default screen isn't a wall of text.
 
 **One extra step this UI can't do for you**: IBKR's Client Portal Gateway
 uses a self-signed certificate. A laptop browser lets you click through

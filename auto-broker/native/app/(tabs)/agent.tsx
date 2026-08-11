@@ -54,6 +54,7 @@ export default function AgentScreen() {
   const [gatewayUrl, setGatewayUrl] = useState(ibkrGatewayUrl());
   const [checkingConnection, setCheckingConnection] = useState(false);
   const [connectionResult, setConnectionResult] = useState<string | null>(null);
+  const [showIbkrHelp, setShowIbkrHelp] = useState(false);
 
   useEffect(() => {
     if (ready) setGatewayUrl(ibkrGatewayUrl());
@@ -180,12 +181,6 @@ export default function AgentScreen() {
         </Text>
         {state.settings.brokerId === "ibkr" && (
           <View style={{ marginTop: space.md, gap: space.sm }}>
-            <Callout tone="warning" title="Point this at your computer, not your phone">
-              "localhost" means this phone, not the machine running IBKR's
-              Client Portal Gateway. Run the gateway on a computer on the
-              same network, log in there at https://&lt;that computer&gt;:5000,
-              then enter that computer's LAN address below.
-            </Callout>
             <Field label="Gateway address">
               <Input
                 value={gatewayUrl}
@@ -200,26 +195,49 @@ export default function AgentScreen() {
               haptic="light"
               onPress={testIbkrConnection}
               disabled={checkingConnection}
-              style={[styles.testButton, { borderColor: colors.border }]}
+              style={[styles.connectButton, { backgroundColor: colors.accent }]}
             >
               {checkingConnection ? (
-                <ActivityIndicator size="small" color={colors.accent} />
+                <ActivityIndicator size="small" color="#ffffff" />
               ) : (
-                <Text variant="bodySemiBold" color={colors.accent}>
-                  Save & test connection
+                <Text variant="bodySemiBold" color="#ffffff">
+                  Connect
                 </Text>
               )}
             </AnimatedPressable>
             {connectionResult && (
-              <Text variant="muted" style={{ fontSize: 13 }}>
-                {connectionResult}
+              <View style={{ flexDirection: "row", alignItems: "flex-start", gap: space.xs }}>
+                <Ionicons
+                  name={connectionResult.startsWith("Connected") ? "checkmark-circle" : "alert-circle"}
+                  size={16}
+                  color={connectionResult.startsWith("Connected") ? colors.accent : colors.warning}
+                  style={{ marginTop: 1 }}
+                />
+                <Text variant="muted" style={{ fontSize: 13, flex: 1 }}>
+                  {connectionResult}
+                </Text>
+              </View>
+            )}
+            <AnimatedPressable onPress={() => setShowIbkrHelp((v) => !v)}>
+              <Text variant="bodyMedium" color={colors.accent} style={{ fontSize: 13 }}>
+                {showIbkrHelp ? "Hide help ▲" : "Where do I find this address? ▼"}
               </Text>
+            </AnimatedPressable>
+            {showIbkrHelp && (
+              <Callout tone="tip" title="One-time setup, on a computer">
+                Download IBKR's Client Portal Gateway and run it on a
+                computer on the same Wi-Fi as your phone (not the phone
+                itself — "localhost" above means this phone). Open
+                https://&lt;that computer&gt;:5000 in a browser there and log
+                in with your IBKR account. Then enter that computer's
+                address above, e.g. https://192.168.1.23:5000/v1/api — find
+                its IP under that computer's Wi-Fi settings.
+              </Callout>
             )}
             <AnimatedPressable onPress={() => Linking.openURL(IBKR_MCP_URL)}>
-              <Text variant="bodyMedium" color={colors.accent} style={{ fontSize: 13 }}>
-                IBKR also has its own official Trading MCP — no local gateway
-                needed, and it can only draft instructions, not place orders
-                directly. Tap for details →
+              <Text variant="muted" style={{ fontSize: 12 }}>
+                Prefer zero setup? Use IBKR's own official AI connector
+                instead (drafts instructions only, no gateway needed) →
               </Text>
             </AnimatedPressable>
           </View>
@@ -387,12 +405,10 @@ const styles = StyleSheet.create({
     minWidth: 88,
     alignItems: "center",
   },
-  testButton: {
-    alignSelf: "flex-start",
-    paddingHorizontal: space.md,
-    paddingVertical: space.sm,
+  connectButton: {
+    paddingVertical: space.md,
     borderRadius: radius.full,
-    borderWidth: 1,
+    alignItems: "center",
   },
   ruleRow: { flexDirection: "row", alignItems: "center", gap: space.md },
   ruleActions: {
