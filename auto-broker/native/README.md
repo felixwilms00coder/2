@@ -85,33 +85,69 @@ folders.
 - **Fonts**: Inter + Plus Jakarta Sans via `@expo-google-fonts/*`,
   matching the web app's `next/font` choice exactly.
 
+## Placing orders from the app: rules, including limit orders
+
+The Agent tab's rules are how you tell the app what to place on your IBKR
+account — ticker, amount, order type (**Market** or **Limit**, with a
+limit price), cadence, and per-order/per-month euro guardrails. Nothing
+is suggested; you fill in every field. A rule with "Send without
+confirmation" off (the default) always lands in "Waiting for your
+confirmation" first — you tap **Send** yourself before anything reaches a
+broker. This is the same architecture as the web app's `/agent`, just
+native UI.
+
+For a limit order, `amount` is what gets spent *at the limit price* to
+size the order — e.g. an amount of $1800 with an $18 limit buys 100
+units. Verified end-to-end against the Simulation broker: a $1800/$18
+limit rule correctly refuses if it's above your guardrails, sits pending
+until confirmed, and fills at quantity 100, price 18.
+
 ## The IBKR-localhost caveat still applies
 
-The IBKR adapter talks to `https://localhost:5000`, which is the phone
-itself on a phone, not a computer running the Client Portal Gateway.
-Point `ibkrStoreGatewayUrl()` (in `lib/agent/brokers/ibkr.ts`) at that
-computer's LAN/VPN address if you want the self-hosted adapter to work
-from this app.
+The IBKR adapter talks to `https://localhost:5000` by default, which is
+the **phone itself** on a phone, not a computer running the Client Portal
+Gateway. The Agent tab now has a **Gateway address** field (shown when
+IBKR is the selected broker) — enter that computer's LAN address there
+(e.g. `https://192.168.1.23:5000/v1/api`) and tap **Save & test
+connection**. It's saved on-device (not a secret, just an address) so you
+only type it once.
 
-**The better option for a phone**: connect to
+**One extra step this UI can't do for you**: IBKR's Client Portal Gateway
+uses a self-signed certificate. A laptop browser lets you click through
+that warning once; iOS's networking stack won't silently trust it for
+app traffic. Until the certificate is installed as a trusted profile on
+the phone (Settings → General → VPN & Device Management, after AirDroping
+or otherwise transferring the gateway's cert), requests from this app to
+the gateway will fail even with the right address entered. This is a
+real device-trust step, not a bug in the adapter — same constraint any
+app talking to a self-signed local server would hit.
+
+**The zero-setup alternative for a phone**: connect to
 [IBKR's own official Trading MCP](../docs/ibkr-agentic-trading.md)
-instead (`https://api.ibkr.com/v1/api/mcp-public`) — no local gateway at
-all, works from wherever you are. That's a connection you make in your
-AI client (Claude, ChatGPT, etc.), not inside this app; this app's own
-IBKR adapter is the self-hosted alternative for when you specifically
-want no third-party-hosted server involved.
+instead (`https://api.ibkr.com/v1/api/mcp-public`) — no local gateway, no
+certificate to trust, works from wherever you are. That's a connection
+you make in your AI client (Claude, ChatGPT, etc.), not inside this app,
+and it can only draft instructions — you still open IBKR's own app to
+place anything. This app's own IBKR adapter (with the rules above) is the
+one that can actually queue orders for your confirmation from inside Auto
+Broker itself, once the gateway and its certificate are reachable.
 
 ## What's been verified, and what hasn't
 
-Verified: `npx tsc --noEmit` clean, and the app has been built and run
-for real via Xcode on the iOS Simulator (not just this sandbox's
-`expo start --web` proxy).
+Verified: `npx tsc --noEmit` clean, the app has been built and run for
+real via Xcode on the iOS Simulator (not just this sandbox's
+`expo start --web` proxy), and the rule form → guardrail → pending
+confirmation → simulated fill flow (including a limit order) was driven
+end-to-end through `expo start --web` with Playwright, confirming the
+persisted log entry (quantity/price computed from the limit price, not a
+market quote).
 
 Not yet done: a real IBKR connection tested end-to-end from this app on
-a device, a physical (non-Simulator) device run, dark mode spot-check
-on-device, and replacing the default Expo app icon/splash with real Auto
-Broker branding (`assets/images/` still has the scaffold's placeholder
-icon) — all worth doing before any App Store submission.
+a device (including the certificate-trust step above), a physical
+(non-Simulator) device run, dark mode spot-check on-device, and replacing
+the default Expo app icon/splash with real Auto Broker branding
+(`assets/images/` still has the scaffold's placeholder icon) — all worth
+doing before any App Store submission.
 
 ## Project structure
 

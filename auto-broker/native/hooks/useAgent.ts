@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState, useSyncExternalStore } from "react";
-import { createIbkrBroker } from "@/lib/agent/brokers/ibkr";
+import { createIbkrBroker, ibkrHydrateGatewayUrl } from "@/lib/agent/brokers/ibkr";
 import { createSimulationBroker } from "@/lib/agent/brokers/simulation";
 import { ensureHydrated, getSnapshot, newId, subscribe, update } from "@/lib/agent/store";
 import { BrokerAdapter, LogEntry, Rule } from "@/lib/agent/types";
@@ -15,7 +15,7 @@ export function useAgent() {
 
   useEffect(() => {
     let cancelled = false;
-    ensureHydrated().then(() => {
+    Promise.all([ensureHydrated(), ibkrHydrateGatewayUrl()]).then(() => {
       if (!cancelled) setReady(true);
     });
     return () => {

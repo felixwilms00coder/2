@@ -10,12 +10,17 @@ import { Toggle } from "@/components/ui/Toggle";
 import { useAgent } from "@/hooks/useAgent";
 import { useTheme } from "@/hooks/useTheme";
 import { radius, space } from "@/constants/theme";
-import { Frequency } from "@/lib/agent/types";
+import { Frequency, OrderType } from "@/lib/agent/types";
 
 const FREQUENCIES: { value: Frequency; label: string }[] = [
   { value: "weekly", label: "Weekly" },
   { value: "biweekly", label: "Biweekly" },
   { value: "monthly", label: "Monthly" },
+];
+
+const ORDER_TYPES: { value: OrderType; label: string }[] = [
+  { value: "market", label: "Market" },
+  { value: "limit", label: "Limit" },
 ];
 
 const WEEKDAYS = [
@@ -37,6 +42,8 @@ export default function RuleFormModal() {
   const [uic, setUic] = useState("");
   const [assetType, setAssetType] = useState("Etf");
   const [amount, setAmount] = useState("100");
+  const [orderType, setOrderType] = useState<OrderType>("market");
+  const [limitPrice, setLimitPrice] = useState("");
   const [frequency, setFrequency] = useState<Frequency>("monthly");
   const [dayOfMonth, setDayOfMonth] = useState("5");
   const [weekday, setWeekday] = useState(1);
@@ -45,11 +52,18 @@ export default function RuleFormModal() {
   const [maxPerMonth, setMaxPerMonth] = useState("500");
   const [error, setError] = useState<string | null>(null);
 
-  const valid = symbol.trim().length > 0 && Number(amount) > 0;
+  const valid =
+    symbol.trim().length > 0 &&
+    Number(amount) > 0 &&
+    (orderType !== "limit" || Number(limitPrice) > 0);
 
   function submit() {
     if (!valid) {
-      setError("Fill in at least a ticker and an amount greater than 0.");
+      setError(
+        orderType === "limit"
+          ? "Fill in a ticker, an amount greater than 0, and a limit price greater than 0."
+          : "Fill in at least a ticker and an amount greater than 0.",
+      );
       return;
     }
     addRule({
@@ -59,6 +73,8 @@ export default function RuleFormModal() {
       uic: uic.trim() || undefined,
       assetType,
       amount: Number(amount),
+      orderType,
+      limitPrice: orderType === "limit" ? Number(limitPrice) : undefined,
       frequency,
       dayOfMonth: Math.min(28, Math.max(1, Number(dayOfMonth) || 5)),
       weekday,
@@ -104,6 +120,28 @@ export default function RuleFormModal() {
           <Input value={amount} onChangeText={setAmount} keyboardType="decimal-pad" />
         </Field>
       </View>
+
+      <View style={{ flexDirection: "row", gap: space.md }}>
+        <Field label="Order type">
+          <SegmentedControl options={ORDER_TYPES} value={orderType} onChange={setOrderType} />
+        </Field>
+        {orderType === "limit" && (
+          <Field label="Limit price">
+            <Input
+              value={limitPrice}
+              onChangeText={setLimitPrice}
+              keyboardType="decimal-pad"
+              placeholder="e.g. 18"
+            />
+          </Field>
+        )}
+      </View>
+      {orderType === "limit" && (
+        <Text variant="muted" style={{ marginTop: -space.md }}>
+          The amount above is spent at this price to size the order — e.g.
+          $1800 at an $18 limit buys 100 units.
+        </Text>
+      )}
 
       <Field label="How often">
         <SegmentedControl options={FREQUENCIES} value={frequency} onChange={setFrequency} />

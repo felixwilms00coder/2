@@ -83,6 +83,8 @@ export async function sendOrder(
       uic: rule.uic,
       assetType: rule.assetType,
       amountEur: rule.amount,
+      orderType: rule.orderType,
+      limitPrice: rule.limitPrice,
     });
     return entry(rule, broker, broker.isLive ? "filled" : "simulated", {
       price: placed.price,

@@ -1,3 +1,4 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { memoryStorage } from "../memory-storage";
 import { BrokerAdapter, OrderRequest, PlacedOrder, Quote } from "../types";
 
@@ -36,18 +37,40 @@ import { BrokerAdapter, OrderRequest, PlacedOrder, Quote } from "../types";
 const GATEWAY_KEY = "autobroker:ibkr:gatewayurl";
 const DEFAULT_GATEWAY = "https://localhost:5000/v1/api";
 
+// The gateway URL is just a LAN address the user typed in (e.g.
+// "https://192.168.1.23:5000/v1/api") — unlike a session token, there is
+// nothing sensitive about it, so unlike the web app's sessionStorage-only
+// tokens it is fine (and much more usable) to persist this in AsyncStorage
+// so the user doesn't have to retype their computer's IP every time they
+// open the app. memoryStorage stays the synchronous read path the broker
+// adapter uses at call time; ibkrHydrateGatewayUrl() fills it from disk once
+// at app startup.
 export function ibkrStoreGatewayUrl(url: string) {
   memoryStorage.setItem(GATEWAY_KEY, url);
+  AsyncStorage.setItem(GATEWAY_KEY, url).catch(() => {
+    // Storage full or blocked; this session still works from memory.
+  });
   cachedAccountId = null; // a different gateway may serve a different account
 }
 
 export function ibkrClearGatewayUrl() {
   memoryStorage.removeItem(GATEWAY_KEY);
+  AsyncStorage.removeItem(GATEWAY_KEY).catch(() => {});
   cachedAccountId = null;
 }
 
 export function ibkrGatewayUrl(): string {
   return memoryStorage.getItem(GATEWAY_KEY) || DEFAULT_GATEWAY;
+}
+
+/** Call once at app startup (useAgent does this) so ibkrGatewayUrl() reflects what was saved last session. */
+export async function ibkrHydrateGatewayUrl(): Promise<void> {
+  try {
+    const saved = await AsyncStorage.getItem(GATEWAY_KEY);
+    if (saved) memoryStorage.setItem(GATEWAY_KEY, saved);
+  } catch {
+    // No saved value reachable; DEFAULT_GATEWAY keeps working.
+  }
 }
 
 async function call<T>(path: string, init?: RequestInit): Promise<T> {
@@ -171,7 +194,12 @@ export function createIbkrBroker(): BrokerAdapter {
     async placeOrder(req: OrderRequest): Promise<PlacedOrder> {
       const accountId = await resolveAccountId();
       const conid = req.uic ? Number(req.uic) : await findConid(req.symbol);
-      const price = await snapshotPrice(conid);
+
+      const isLimit = req.orderType === "limit";
+      if (isLimit && !req.limitPrice) {
+        throw new Error('orderType "limit" requires limitPrice.');
+      }
+      const price = isLimit ? req.limitPrice! : await snapshotPrice(conid);
       const quantity = Math.floor(req.amountEur / price);
       if (quantity < 1) {
         throw new Error(
@@ -187,7 +215,8 @@ export function createIbkrBroker(): BrokerAdapter {
             orders: [
               {
                 conid,
-                orderType: "MKT",
+                orderType: isLimit ? "LMT" : "MKT",
+                ...(isLimit ? { price: req.limitPrice } : {}),
                 side: "BUY",
                 quantity,
                 tif: "DAY",

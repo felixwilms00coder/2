@@ -33,7 +33,7 @@ export function createSimulationBroker(): BrokerAdapter {
       return { price: pseudoPrice(req.symbol, new Date()), currency: "EUR" };
     },
     async placeOrder(req: OrderRequest): Promise<PlacedOrder> {
-      const price = pseudoPrice(req.symbol, new Date());
+      const price = req.orderType === "limit" && req.limitPrice ? req.limitPrice : pseudoPrice(req.symbol, new Date());
       const quantity = Math.floor((req.amountEur / price) * 10000) / 10000;
       return {
         brokerRef: `SIM-${Date.now().toString(36).toUpperCase()}`,

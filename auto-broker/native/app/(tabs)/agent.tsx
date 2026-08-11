@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { router } from "expo-router";
 import { ActivityIndicator, Linking, ScrollView, StyleSheet, View } from "react-native";
 import Animated, { FadeInDown, Layout } from "react-native-reanimated";
@@ -7,6 +7,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { AnimatedPressable } from "@/components/ui/AnimatedPressable";
 import { Callout } from "@/components/ui/Callout";
 import { Card } from "@/components/ui/Card";
+import { Field, Input } from "@/components/ui/Field";
 import { SegmentedControl } from "@/components/agent/SegmentedControl";
 import { StatusPill } from "@/components/agent/StatusPill";
 import { Text } from "@/components/ui/Text";
@@ -16,6 +17,7 @@ import { useTheme } from "@/hooks/useTheme";
 import { radius, space } from "@/constants/theme";
 import { runDueRules, runRule, sendOrder } from "@/lib/agent/engine";
 import { formatDate, nextRunDate } from "@/lib/agent/schedule";
+import { ibkrCheckConnection, ibkrGatewayUrl, ibkrStoreGatewayUrl } from "@/lib/agent/brokers/ibkr";
 import { LogEntry, Rule } from "@/lib/agent/types";
 
 const BROKER_SHORT_LABEL: Record<string, string> = {
@@ -49,6 +51,24 @@ export default function AgentScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const [busy, setBusy] = useState(false);
+  const [gatewayUrl, setGatewayUrl] = useState(ibkrGatewayUrl());
+  const [checkingConnection, setCheckingConnection] = useState(false);
+  const [connectionResult, setConnectionResult] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (ready) setGatewayUrl(ibkrGatewayUrl());
+  }, [ready]);
+
+  async function testIbkrConnection() {
+    ibkrStoreGatewayUrl(gatewayUrl.trim());
+    setCheckingConnection(true);
+    setConnectionResult(null);
+    try {
+      setConnectionResult(await ibkrCheckConnection());
+    } finally {
+      setCheckingConnection(false);
+    }
+  }
 
   if (!ready) {
     return (
@@ -159,13 +179,50 @@ export default function AgentScreen() {
           {broker.connectionSummary()}
         </Text>
         {state.settings.brokerId === "ibkr" && (
-          <AnimatedPressable onPress={() => Linking.openURL(IBKR_MCP_URL)} style={{ marginTop: space.sm }}>
-            <Text variant="bodyMedium" color={colors.accent} style={{ fontSize: 13 }}>
-              IBKR also has its own official Trading MCP — no local gateway
-              needed, and it can only draft instructions, not place orders
-              directly. Tap for details →
-            </Text>
-          </AnimatedPressable>
+          <View style={{ marginTop: space.md, gap: space.sm }}>
+            <Callout tone="warning" title="Point this at your computer, not your phone">
+              "localhost" means this phone, not the machine running IBKR's
+              Client Portal Gateway. Run the gateway on a computer on the
+              same network, log in there at https://&lt;that computer&gt;:5000,
+              then enter that computer's LAN address below.
+            </Callout>
+            <Field label="Gateway address">
+              <Input
+                value={gatewayUrl}
+                onChangeText={setGatewayUrl}
+                placeholder="https://192.168.1.23:5000/v1/api"
+                autoCapitalize="none"
+                autoCorrect={false}
+                keyboardType="url"
+              />
+            </Field>
+            <AnimatedPressable
+              haptic="light"
+              onPress={testIbkrConnection}
+              disabled={checkingConnection}
+              style={[styles.testButton, { borderColor: colors.border }]}
+            >
+              {checkingConnection ? (
+                <ActivityIndicator size="small" color={colors.accent} />
+              ) : (
+                <Text variant="bodySemiBold" color={colors.accent}>
+                  Save & test connection
+                </Text>
+              )}
+            </AnimatedPressable>
+            {connectionResult && (
+              <Text variant="muted" style={{ fontSize: 13 }}>
+                {connectionResult}
+              </Text>
+            )}
+            <AnimatedPressable onPress={() => Linking.openURL(IBKR_MCP_URL)}>
+              <Text variant="bodyMedium" color={colors.accent} style={{ fontSize: 13 }}>
+                IBKR also has its own official Trading MCP — no local gateway
+                needed, and it can only draft instructions, not place orders
+                directly. Tap for details →
+              </Text>
+            </AnimatedPressable>
+          </View>
         )}
       </View>
 
@@ -208,7 +265,9 @@ export default function AgentScreen() {
                         {rule.name}
                       </Text>
                       <Text variant="muted" style={{ marginTop: 2 }}>
-                        {money(rule.amount)} · {rule.frequency} · next {formatDate(nextRunDate(rule))}
+                        {money(rule.amount)}
+                        {rule.orderType === "limit" ? ` @ limit ${rule.limitPrice}` : ""} ·{" "}
+                        {rule.frequency} · next {formatDate(nextRunDate(rule))}
                       </Text>
                     </View>
                     <Toggle value={rule.enabled} onChange={(v) => updateRule(rule.id, { enabled: v })} />
@@ -327,6 +386,13 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     minWidth: 88,
     alignItems: "center",
+  },
+  testButton: {
+    alignSelf: "flex-start",
+    paddingHorizontal: space.md,
+    paddingVertical: space.sm,
+    borderRadius: radius.full,
+    borderWidth: 1,
   },
   ruleRow: { flexDirection: "row", alignItems: "center", gap: space.md },
   ruleActions: {

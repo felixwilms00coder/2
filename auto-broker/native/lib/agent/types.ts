@@ -1,5 +1,7 @@
 export type Frequency = "weekly" | "biweekly" | "monthly";
 
+export type OrderType = "market" | "limit";
+
 /**
  * A rule the user writes themselves. Auto Broker never creates, suggests or
  * pre-fills an instrument: the user is the one deciding what to buy.
@@ -18,6 +20,10 @@ export type Rule = {
   assetType: string;
   /** Amount per execution, in the account's own currency. */
   amount: number;
+  /** Defaults to "market" if omitted. */
+  orderType?: OrderType;
+  /** Required when orderType is "limit" — the most this rule will pay per unit. */
+  limitPrice?: number;
   frequency: Frequency;
   /** 1-28 for monthly rules. */
   dayOfMonth: number;
@@ -65,6 +71,10 @@ export type OrderRequest = {
   uic?: string;
   assetType: string;
   amountEur: number;
+  /** Defaults to "market" if omitted. */
+  orderType?: OrderType;
+  /** Required when orderType is "limit" — the most this order will pay per unit. */
+  limitPrice?: number;
 };
 
 /**
