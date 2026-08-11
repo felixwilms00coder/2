@@ -60,8 +60,9 @@ responsibly, insurance, pensions, and taxes — all in Dutch.
   Rules, log and tokens stay on the user's device — there is no FinEdu server
   in the order path, which is what keeps this software rather than a
   regulated investment service. See `docs/automatisering.md`.
-- **Quiz (`/quiz`)** — a 10-question financial literacy quiz with instant
-  per-question explanations and a final score.
+- **Quiz (`/quiz`)** — four quizzes with instant per-question explanations
+  and a final score: a general 10-question starter quiz, plus focused
+  8-question quizzes on housing/loans, saving/investing, and inheritance.
 - **Zoeken (`/zoeken`)** — local keyword search across all content, plus an
   optional AI-generated answer from an open-weight model (gpt-oss-120b via
   Groq). The AI answer is clearly labeled as experimental and never

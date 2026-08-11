@@ -28,7 +28,9 @@
   the statutory Belgian pension — it links to the official MyPension.be
   simulator for that. All calculations are simplified, indicative
   estimates, not official figures.
-- `/quiz` — a short financial-literacy quiz with per-question explanations.
+- `/quiz` — four short financial-literacy quizzes with per-question
+  explanations: a general starter quiz plus themed quizzes on housing/loans,
+  saving/investing, and inheritance.
 - `/spel` — an interactive decision game about the first year of working
   life; choices affect an emergency buffer, monthly fixed costs and quality
   of life, and are scored after seven rounds.
