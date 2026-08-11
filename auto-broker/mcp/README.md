@@ -66,6 +66,17 @@ full list.
 
 ### Interactive Brokers (Client Portal API) — officially supported
 
+**IBKR now also has its own official Trading MCP — consider that first.**
+IBKR hosts `https://api.ibkr.com/v1/api/mcp-public` directly: no local
+gateway to run, connects to your existing account with no extra setup,
+and its agent can only draft trade instructions — you still have to open
+IBKR's own app to turn one into a real order, a stronger gate than even
+this server's own preview/confirm flow. See
+[`docs/ibkr-agentic-trading.md`](../docs/ibkr-agentic-trading.md).
+Everything below is this repo's own self-hosted alternative, useful if
+you specifically want a local-only setup with no third-party-hosted
+server in the picture at all.
+
 1. Download IBKR's **Client Portal Gateway** from IBKR and run it yourself
    (`bin/run.sh root/conf.yaml` or the Windows equivalent).
 2. Open `https://localhost:5000` in a browser and log in with your own IBKR

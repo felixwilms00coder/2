@@ -90,6 +90,20 @@ export default function AgentPage() {
                   paste and no Auto Broker server in between. Start with a
                   paper account: which account you get depends entirely on
                   what you log into the gateway with, not on a setting here.
+                  IBKR also runs its own official Trading MCP server now,
+                  connecting to your existing account with no local gateway
+                  at all — see{" "}
+                  <a
+                    href="https://interactivebrokers.com/en/trading/ai-integrations.php"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold underline"
+                  >
+                    IBKR&apos;s own AI integrations page
+                  </a>
+                  . Its agent can only draft trade instructions — you still
+                  open IBKR&apos;s own app to turn one into a real order,
+                  stronger than this page&apos;s own confirm step.
                 </p>
               </div>
               <div>

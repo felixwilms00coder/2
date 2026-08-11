@@ -32,6 +32,13 @@ behind that distinction, and where it stops holding.
   server (`https://agent.robinhood.com/mcp/trading`); connect your AI
   agent to it directly rather than using this repo's unofficial adapter.
   See [`docs/robinhood-agentic-trading.md`](docs/robinhood-agentic-trading.md).
+- **Interactive Brokers** — IBKR also runs its own official Trading MCP
+  server (`https://api.ibkr.com/v1/api/mcp-public`) against your existing
+  account, no local gateway required. Its agent can only draft trade
+  *instructions* — turning one into a real order requires opening IBKR's
+  own app and confirming it there, a stronger gate than this repo's own
+  preview/confirm flow. See
+  [`docs/ibkr-agentic-trading.md`](docs/ibkr-agentic-trading.md).
 
 ## Tech stack
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { router } from "expo-router";
-import { ActivityIndicator, ScrollView, StyleSheet, View } from "react-native";
+import { ActivityIndicator, Linking, ScrollView, StyleSheet, View } from "react-native";
 import Animated, { FadeInDown, Layout } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
@@ -25,6 +25,8 @@ const BROKER_SHORT_LABEL: Record<string, string> = {
   ibkr: "IBKR",
   saxo: "Saxo",
 };
+
+const IBKR_MCP_URL = "https://interactivebrokers.com/en/trading/ai-integrations.php";
 
 function money(n: number): string {
   return new Intl.NumberFormat("en-GB", {
@@ -159,6 +161,15 @@ export default function AgentScreen() {
         <Text variant="muted" style={{ marginTop: space.sm }}>
           {broker.connectionSummary()}
         </Text>
+        {state.settings.brokerId === "ibkr" && (
+          <AnimatedPressable onPress={() => Linking.openURL(IBKR_MCP_URL)} style={{ marginTop: space.sm }}>
+            <Text variant="bodyMedium" color={colors.accent} style={{ fontSize: 13 }}>
+              IBKR also has its own official Trading MCP — no local gateway
+              needed, and it can only draft instructions, not place orders
+              directly. Tap for details →
+            </Text>
+          </AnimatedPressable>
+        )}
       </View>
 
       {/* Rules */}
