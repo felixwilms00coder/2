@@ -18,11 +18,6 @@ import { exportLogCsv, runDueRules, runRule, sendOrder } from "@/lib/agent/engin
 import { formatDate, nextRunDate, spentThisMonth } from "@/lib/agent/schedule";
 import { LogEntry, Rule } from "@/lib/agent/types";
 import {
-  saxoClearToken,
-  saxoStoreToken,
-  type SaxoMode,
-} from "@/lib/agent/brokers/saxo";
-import {
   ibkrCheckConnection,
   ibkrClearGatewayUrl,
   ibkrGatewayUrl,
@@ -45,7 +40,7 @@ const statusStyle: Record<LogEntry["status"], string> = {
   failed: "bg-warning-light text-warning",
 };
 
-export function AgentDashboard({ prefillName }: { prefillName?: string } = {}) {
+export function AgentDashboard() {
   const {
     ready,
     state,
@@ -62,9 +57,6 @@ export function AgentDashboard({ prefillName }: { prefillName?: string } = {}) {
   } = useAgent();
 
   const [busy, setBusy] = useState(false);
-  const [token, setToken] = useState("");
-  const [saxoMode, setSaxoMode] = useState<SaxoMode>("sim");
-  const [connectMsg, setConnectMsg] = useState<string | null>(null);
   const [gatewayUrl, setGatewayUrl] = useState(ibkrGatewayUrl());
   const [ibkrMsg, setIbkrMsg] = useState<string | null>(null);
   const [ibkrBusy, setIbkrBusy] = useState(false);
@@ -134,19 +126,6 @@ export function AgentDashboard({ prefillName }: { prefillName?: string } = {}) {
     } finally {
       setBusy(false);
     }
-  }
-
-  async function connectSaxo(e: React.FormEvent) {
-    e.preventDefault();
-    if (!token.trim()) return;
-    saxoStoreToken(token.trim(), saxoMode);
-    setToken("");
-    setBrokerId("saxo");
-    setConnectMsg(
-      saxoMode === "live"
-        ? "Connected to your LIVE Saxo environment. Orders now cost real money."
-        : "Connected to Saxo's simulation environment.",
-    );
   }
 
   function saveGatewayUrl(url: string) {
@@ -358,97 +337,6 @@ export function AgentDashboard({ prefillName }: { prefillName?: string } = {}) {
             </p>
           </div>
         )}
-
-        {state.settings.brokerId === "saxo" && (
-          <div className="mt-5 rounded-2xl border border-dashed border-warning/50 bg-warning-light p-4">
-            <p className="flex gap-2.5 text-sm leading-relaxed text-foreground/90">
-              <AlertTriangle
-                className="mt-0.5 h-4 w-4 shrink-0 text-warning"
-                aria-hidden="true"
-              />
-              <span>
-                <span className="font-bold">
-                  This connection has never been tested against the real
-                  Saxo API.
-                </span>{" "}
-                Use their simulation environment first and check that orders
-                arrive as expected. The token comes from your own Saxo
-                developer application and is only kept in this tab — it
-                disappears when you close it and is never sent to Auto
-                Broker.
-              </span>
-            </p>
-
-            <form onSubmit={connectSaxo} className="mt-4 space-y-3">
-              <div>
-                <label
-                  htmlFor="saxo-token"
-                  className="text-sm font-semibold text-foreground"
-                >
-                  Saxo access token
-                </label>
-                <input
-                  id="saxo-token"
-                  type="password"
-                  value={token}
-                  onChange={(e) => setToken(e.target.value)}
-                  autoComplete="off"
-                  placeholder="Paste your own token here"
-                  className="mt-1.5 min-h-11 w-full rounded-xl border border-border bg-surface px-3 font-mono text-sm text-foreground focus:border-accent"
-                />
-              </div>
-              <fieldset>
-                <legend className="text-sm font-semibold text-foreground">
-                  Environment
-                </legend>
-                <div className="mt-2 flex gap-2">
-                  {(["sim", "live"] as SaxoMode[]).map((m) => (
-                    <label
-                      key={m}
-                      className={`flex min-h-11 cursor-pointer items-center gap-2 rounded-full border px-4 text-sm font-semibold transition-colors ${
-                        saxoMode === m
-                          ? "border-accent border-2 bg-surface text-accent"
-                          : "border-border text-foreground"
-                      }`}
-                    >
-                      <input
-                        type="radio"
-                        name="saxomode"
-                        checked={saxoMode === m}
-                        onChange={() => setSaxoMode(m)}
-                        className="h-4 w-4 accent-[var(--color-accent)]"
-                      />
-                      {m === "sim" ? "Simulation" : "Live"}
-                    </label>
-                  ))}
-                </div>
-              </fieldset>
-              <div className="flex flex-wrap gap-2.5">
-                <button
-                  type="submit"
-                  disabled={!token.trim()}
-                  className="inline-flex min-h-11 items-center rounded-full bg-accent px-5 text-sm font-semibold text-accent-contrast transition-colors hover:bg-accent-strong disabled:opacity-45"
-                >
-                  Connect
-                </button>
-                <button
-                  type="button"
-                  onClick={() => {
-                    saxoClearToken();
-                    setConnectMsg("Token cleared.");
-                  }}
-                  className="inline-flex min-h-11 items-center rounded-full border border-border bg-surface px-5 text-sm font-semibold text-foreground transition-colors hover:bg-surface-muted"
-                >
-                  Clear token
-                </button>
-              </div>
-            </form>
-
-            <p aria-live="polite" className="mt-2 text-sm font-semibold text-foreground">
-              {connectMsg}
-            </p>
-          </div>
-        )}
       </section>
 
       {/* Pending confirmations */}
@@ -589,7 +477,7 @@ export function AgentDashboard({ prefillName }: { prefillName?: string } = {}) {
         )}
 
         <div className="mt-4">
-          <RuleForm onAdd={addRule} prefillName={prefillName} />
+          <RuleForm onAdd={addRule} />
         </div>
       </section>
 

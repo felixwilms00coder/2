@@ -19,7 +19,7 @@ const heading = Plus_Jakarta_Sans({
 
 const title = "Auto Broker — self-managed buy rules for your own broker";
 const description =
-  "Write your own buy rules, connect your own IBKR or Saxo account, and confirm every order yourself. Software you run, not a broker, adviser or portfolio manager.";
+  "Write your own buy rules, connect your own IBKR account, and confirm every order yourself. Software you run, not a broker, adviser or portfolio manager.";
 
 export const metadata: Metadata = {
   title: {

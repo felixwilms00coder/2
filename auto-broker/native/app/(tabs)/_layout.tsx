@@ -62,15 +62,6 @@ export default function TabLayout() {
           ),
         }}
       />
-      <Tabs.Screen
-        name="pilots"
-        options={{
-          title: "Pilots",
-          tabBarIcon: ({ focused }) => (
-            <TabIcon focused={focused} ios="airplane" android="airplanemode-active" />
-          ),
-        }}
-      />
     </Tabs>
   );
 }

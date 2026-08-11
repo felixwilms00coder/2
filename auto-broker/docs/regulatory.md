@@ -11,8 +11,7 @@ architecture in any of the ways described below as "where this breaks".**
 
 | Feature | Status | Note |
 | --- | --- | --- |
-| Self-managed buy-rule agent (`/agent`) | Built | Simulation broker fully working; Saxo and IBKR adapters unverified against live accounts |
-| Public 13F position viewer (`/pilots`) | Built | Read-only, no execution, no ranking |
+| Self-managed buy-rule agent (`/agent`) | Built | Simulation broker fully working; IBKR adapter unverified against a live account |
 | MCP broker server (`mcp/`) | Built | Same rules as `/agent`, reachable from an MCP client instead of a browser |
 | Curated "copy this portfolio" marketplace with auto-execution for other users | **Not built, on purpose** | This is the part that needs an actual investment-adviser license — see below |
 
@@ -56,31 +55,13 @@ accounts.
 
 ### What's still unverified
 
-- **The Saxo adapter has never been run against Saxo's live API.** It
-  follows their documented OpenAPI shape, but must be validated against
-  Saxo's simulation environment first.
-- **The IBKR adapter has never been run against a real IBKR account either**
-  (browser adapter or MCP client). Validate against a paper account first.
-- **Token/session handling is manual.** Saxo uses a pasted access token kept
-  only in `sessionStorage`; IBKR relies entirely on the Client Portal
-  Gateway's own session. Production use would want a real OAuth2/PKCE flow
-  for Saxo and a properly managed gateway lifecycle for IBKR.
-
-## Why `/pilots` is informational, not advice
-
-Investment advice under MiFID II requires a **personal recommendation** to a
-specific client. `/pilots` shows the same public SEC Form 13F data to
-everyone, with no suitability assessment and no "this fits you" judgment —
-the same legal position as a financial news site reporting on a 13F filing.
-It doesn't rank the investors it shows, doesn't call any of them "best," and
-the "Start rule" link on each holding only pre-fills a rule *name* in
-`/agent` — never a ticker, amount, or broker. The user still has to choose
-and confirm the actual instrument themselves.
-
-Form 13F itself is also a limited, delayed picture: only US long positions
-in publicly traded stocks, reported up to 45 days after quarter-end, no
-short positions, options, or non-US holdings. What's shown may already be
-outdated by the time it's read.
+- **The IBKR adapter has never been run against a real IBKR account**
+  (browser adapter or MCP client) — only against a mock gateway
+  reproducing the Client Portal Web API's response shapes. Validate
+  against a paper account first.
+- **Token/session handling is manual.** IBKR relies entirely on the
+  Client Portal Gateway's own session; there's no separate token to
+  manage on Auto Broker's side.
 
 ## Why the MCP server (`mcp/`) doesn't change the analysis
 
@@ -92,17 +73,6 @@ by construction: anyone who wants to use it runs their own copy with their
 own credentials, and nothing here is designed to serve multiple end users
 from one running instance. See `mcp/README.md` for the full safety model.
 
-### Robinhood — an added risk on top of the above
-
-Robinhood has no public trading API for third-party developers. The
-Robinhood integration in `mcp/` talks to the same private endpoints the
-Robinhood app itself uses, reverse-engineered by the open-source community.
-That's a **separate** risk from the regulatory question above: it violates
-Robinhood's Terms of Service, can break without notice whenever Robinhood
-changes its app, and risks the connected account being restricted or closed.
-It requires an explicit `ROBINHOOD_ACKNOWLEDGE_UNOFFICIAL_API=true` opt-in
-on top of credentials for exactly that reason.
-
 ### DEGIRO — not supported
 
 DEGIRO has no public API for third-party integrations. Rather than build
@@ -112,13 +82,10 @@ DEGIRO ever ships an official one.
 ## Recommended order of operations
 
 1. Test everything against simulation/paper environments first: the
-   built-in simulation broker, Saxo's SIM environment, and an IBKR paper
-   account.
-2. Validate the Saxo and IBKR adapters' request/response shapes against
-   each broker's current reference documentation — API details change.
-3. Replace Saxo's manually pasted token with a real OAuth2/PKCE flow before
-   pointing it at a live account.
-4. Get the self-managed architecture confirmed by a financial-services
-   lawyer before flipping any broker to live. Stay away from anything that
+   built-in simulation broker and an IBKR paper account.
+2. Validate the IBKR adapter's request/response shapes against IBKR's
+   current reference documentation — API details change.
+3. Get the self-managed architecture confirmed by a financial-services
+   lawyer before flipping IBKR to live. Stay away from anything that
    drifts toward selection or recommendation — that's precisely where the
    distinction from a regulated investment service disappears.

@@ -21,7 +21,7 @@ export type OrderSide = "buy" | "sell";
 
 export type OrderRequest = {
   symbol: string;
-  /** Broker-specific instrument identifier (Saxo Uic, IBKR conid, ...). */
+  /** Broker-specific instrument identifier (IBKR conid). */
   instrumentId?: string;
   assetType?: string;
   amountEur: number;

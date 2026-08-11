@@ -24,7 +24,7 @@ const STEPS = [
   {
     n: "3",
     title: "It goes straight to your broker",
-    body: "From this app or your own MCP client straight to IBKR or Saxo. Every attempt lands in a local log you can read.",
+    body: "From this app or your own MCP client straight to IBKR. Every attempt lands in a local log you can read.",
   },
 ];
 
@@ -53,8 +53,8 @@ export default function HomeScreen() {
           </Text>
           <Text style={{ color: "#ffffffcc", marginTop: space.md, lineHeight: 21 }}>
             Auto Broker is software you run yourself: write a rule, connect
-            your own IBKR or Saxo account, and every order still waits for
-            you to confirm it. No server in the order path.
+            your own IBKR account, and every order still waits for you to
+            confirm it. No server in the order path.
           </Text>
           <View style={styles.heroButtons}>
             <AnimatedPressable
@@ -64,14 +64,6 @@ export default function HomeScreen() {
             >
               <Text variant="bodySemiBold" color={colors.accentStrong}>
                 Open the agent
-              </Text>
-            </AnimatedPressable>
-            <AnimatedPressable
-              onPress={() => router.push("/(tabs)/pilots")}
-              style={styles.heroButtonSecondary}
-            >
-              <Text variant="bodySemiBold" color="#ffffff">
-                See public 13F data
               </Text>
             </AnimatedPressable>
           </View>
@@ -113,10 +105,10 @@ export default function HomeScreen() {
             Also available as an MCP server
           </Text>
           <Text variant="muted" style={{ marginTop: space.xs, lineHeight: 19 }}>
-            The same IBKR/Saxo connections, reachable from an MCP client
-            (Claude Desktop, Claude Code) instead of this app — runs
-            locally, uses only your own credentials, and still requires an
-            explicit confirm step before anything is sent.
+            The same IBKR connection, reachable from an MCP client (Claude
+            Desktop, Claude Code) instead of this app — runs locally, uses
+            only your own credentials, and still requires an explicit
+            confirm step before anything is sent.
           </Text>
         </Card>
       </Animated.View>
@@ -138,13 +130,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: space.lg,
     paddingVertical: space.md,
     borderRadius: radius.full,
-  },
-  heroButtonSecondary: {
-    paddingHorizontal: space.lg,
-    paddingVertical: space.md,
-    borderRadius: radius.full,
-    borderWidth: 1,
-    borderColor: "#ffffff66",
   },
   stepEyebrow: {
     fontSize: 12,

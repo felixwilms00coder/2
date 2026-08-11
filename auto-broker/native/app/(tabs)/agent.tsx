@@ -18,12 +18,9 @@ import { runDueRules, runRule, sendOrder } from "@/lib/agent/engine";
 import { formatDate, nextRunDate } from "@/lib/agent/schedule";
 import { LogEntry, Rule } from "@/lib/agent/types";
 
-// Short enough to fit a 3-way segmented control on a phone width; the full
-// name still shows in the connection summary text below it.
 const BROKER_SHORT_LABEL: Record<string, string> = {
   simulation: "Simulation",
   ibkr: "IBKR",
-  saxo: "Saxo",
 };
 
 const IBKR_MCP_URL = "https://interactivebrokers.com/en/trading/ai-integrations.php";

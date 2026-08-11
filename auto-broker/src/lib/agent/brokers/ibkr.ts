@@ -5,8 +5,7 @@ import { BrokerAdapter, OrderRequest, PlacedOrder, Quote } from "../types";
  * browser against the user's own, locally-running IBKR Client Portal
  * Gateway (the same Java process IBKR ships for this API). There is no
  * Auto Broker backend in this path: every call goes straight from this tab
- * to https://localhost:5000, exactly like the Saxo adapter goes straight to
- * Saxo.
+ * to https://localhost:5000.
  *
  * Setup the user has to do once, outside this app:
  *  1. Download and run IBKR's Client Portal Gateway.
@@ -17,11 +16,11 @@ import { BrokerAdapter, OrderRequest, PlacedOrder, Quote } from "../types";
  *     about it once; accepting that warning is IBKR's own standard setup
  *     step for this API, not something specific to Auto Broker.
  *
- * ⚠️ Same caveat as Saxo: written to IBKR's documented Client Portal Web
- * API shape, but validate against a **paper** account before ever trusting
- * it with a live one. The gateway's own account choice (paper vs live)
- * comes entirely from which credentials were used to log in — there is no
- * separate "sim/live" toggle here the way Saxo has SAXO_MODE.
+ * ⚠️ Written to IBKR's documented Client Portal Web API shape, but validate
+ * against a **paper** account before ever trusting it with a live one. The
+ * gateway's own account choice (paper vs live) comes entirely from which
+ * credentials were used to log in — there is no separate "sim/live" toggle
+ * here.
  */
 
 const GATEWAY_KEY = "autobroker:ibkr:gatewayurl";

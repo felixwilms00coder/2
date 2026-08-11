@@ -6,13 +6,10 @@ export default function HomePage() {
       <PageHero
         eyebrow="Self-managed"
         title="Your own buy rules. Your own broker. Your own confirmation."
-        description="Auto Broker is software you run yourself: write a rule, connect your own IBKR or Saxo account, and every order still waits for you to confirm it. No server in the order path, not Auto Broker's or anyone else's."
+        description="Auto Broker is software you run yourself: write a rule, connect your own IBKR account, and every order still waits for you to confirm it. No server in the order path, not Auto Broker's or anyone else's."
       >
         <div className="mt-8 flex flex-wrap gap-3">
           <ButtonLink href="/agent">Open the agent</ButtonLink>
-          <ButtonLink href="/pilots" variant="outline">
-            See public 13F data
-          </ButtonLink>
         </div>
       </PageHero>
 
@@ -50,36 +47,30 @@ export default function HomePage() {
             <div className="rounded-[1.75rem] border border-border bg-surface p-6">
               <p className="text-sm font-bold uppercase tracking-wide text-accent">3. It goes straight to your broker</p>
               <p className="mt-2 text-sm leading-relaxed text-muted">
-                From your browser or your own MCP client straight to IBKR or
-                Saxo. Every attempt — sent, refused, or failed — lands in a
-                local log you can read.
+                From your browser or your own MCP client straight to IBKR.
+                Every attempt — sent, refused, or failed — lands in a local
+                log you can read.
               </p>
             </div>
           </div>
         </div>
 
-        <div className="mt-14 grid gap-4 sm:grid-cols-2">
+        <div className="mt-14">
           <EntityCard
             href="/agent"
             title="Agent"
-            description="Set up rules against a paper broker, Saxo, or your own local IBKR Client Portal Gateway."
+            description="Set up rules against a paper broker or your own local IBKR Client Portal Gateway."
             meta="Open the agent"
-          />
-          <EntityCard
-            href="/pilots"
-            title="Pilots"
-            description="Read-only display of the US equity positions well-known investors are legally required to disclose (SEC Form 13F)."
-            meta="See public positions"
           />
         </div>
 
         <div className="mt-14 rounded-[1.75rem] border border-border bg-surface-muted p-6">
           <p className="text-sm font-bold uppercase tracking-wide text-accent">Also available as an MCP server</p>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">
-            The same IBKR/Saxo connections, reachable from an MCP client
-            (Claude Desktop, Claude Code) instead of a browser tab — runs
-            locally, uses only your own credentials, and still requires an
-            explicit confirm step before anything is sent. See{" "}
+            The same IBKR connection, reachable from an MCP client (Claude
+            Desktop, Claude Code) instead of a browser tab — runs locally,
+            uses only your own credentials, and still requires an explicit
+            confirm step before anything is sent. See{" "}
             <code className="rounded bg-surface px-1.5 py-0.5">mcp/README.md</code>{" "}
             in this repository.
           </p>

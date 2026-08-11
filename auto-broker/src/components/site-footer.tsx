@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Logo } from "./logo";
 
 export function SiteFooter() {
@@ -10,12 +9,8 @@ export function SiteFooter() {
           Auto Broker is software, not a broker, adviser or portfolio
           manager. You write the rules, you connect your own broker account,
           you confirm every order. There is no server in the order path, and
-          nothing here is a recommendation. See{" "}
-          <Link href="/pilots" className="font-semibold text-accent hover:underline">
-            /pilots
-          </Link>{" "}
-          for the same rule about the public data it shows, and the
-          project&apos;s README for the full reasoning behind that design.
+          nothing here is a recommendation. See the project&apos;s README
+          for the full reasoning behind that design.
         </p>
         <p className="mt-6 text-xs text-muted">
           © {new Date().getFullYear()} Auto Broker.

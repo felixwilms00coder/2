@@ -4,10 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Logo } from "./logo";
 
-const links = [
-  { href: "/agent", label: "Agent" },
-  { href: "/pilots", label: "Pilots" },
-];
+const links = [{ href: "/agent", label: "Agent" }];
 
 export function SiteHeader() {
   const pathname = usePathname();

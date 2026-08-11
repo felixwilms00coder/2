@@ -11,15 +11,13 @@ import {
   update,
 } from "@/lib/agent/store";
 import { createSimulationBroker } from "@/lib/agent/brokers/simulation";
-import { createSaxoBroker } from "@/lib/agent/brokers/saxo";
 import { createIbkrBroker } from "@/lib/agent/brokers/ibkr";
 import { BrokerAdapter, LogEntry, Rule } from "@/lib/agent/types";
 
 const simulation = createSimulationBroker();
-const saxo = createSaxoBroker();
 const ibkr = createIbkrBroker();
 
-export const brokers: BrokerAdapter[] = [simulation, ibkr, saxo];
+export const brokers: BrokerAdapter[] = [simulation, ibkr];
 
 export function useAgent() {
   const state = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);

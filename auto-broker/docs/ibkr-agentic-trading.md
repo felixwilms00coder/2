@@ -1,7 +1,6 @@
 # Interactive Brokers AI integrations (official)
 
-Like Robinhood (see [`robinhood-agentic-trading.md`](robinhood-agentic-trading.md)),
-this is **not** something Auto Broker builds or hosts. IBKR runs its own MCP
+This is **not** something Auto Broker builds or hosts. IBKR runs its own MCP
 server — `https://api.ibkr.com/v1/api/mcp-public` — and you connect your own
 AI agent (Claude, ChatGPT, Grok, Claude Code, Cursor, etc.) to it directly.
 There is no broker adapter to write.

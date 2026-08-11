@@ -64,10 +64,6 @@ function RootLayoutNav() {
         >
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen
-            name="pilots/[slug]"
-            options={{ title: "", headerBackTitle: "Pilots" }}
-          />
-          <Stack.Screen
             name="rule-form"
             options={{ presentation: "modal", title: "New rule" }}
           />

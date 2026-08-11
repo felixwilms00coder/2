@@ -2,7 +2,7 @@
   "name": "auto-broker-mcp",
   "version": "0.1.0",
   "private": true,
-  "description": "Self-managed MCP server that connects your own IBKR, Saxo and (experimental) Robinhood accounts to an MCP client. Runs locally, holds only your own credentials, never sends an order without an explicit confirm step.",
+  "description": "Self-managed MCP server that connects your own IBKR account to an MCP client. Runs locally, holds only your own credentials, never sends an order without an explicit confirm step.",
   "type": "module",
   "bin": {
     "auto-broker-mcp": "./dist/index.js"

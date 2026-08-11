@@ -2,16 +2,16 @@ import type { MetadataRoute } from "next";
 
 export const dynamic = "force-static";
 
-/** Installable to a phone/desktop home screen. Saxo, the simulation broker
- * and Pilots all work fine from an installed copy; IBKR needs its Client
- * Portal Gateway on localhost, so it only works from the same machine the
- * gateway runs on, installed app or not. */
+/** Installable to a phone/desktop home screen. The simulation broker works
+ * fine from an installed copy; IBKR needs its Client Portal Gateway on
+ * localhost, so it only works from the same machine the gateway runs on,
+ * installed app or not. */
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Auto Broker — self-managed buy rules for your own broker",
     short_name: "Auto Broker",
     description:
-      "Write your own buy rules, connect your own IBKR or Saxo account, and confirm every order yourself. No server in the order path.",
+      "Write your own buy rules, connect your own IBKR account, and confirm every order yourself. No server in the order path.",
     start_url: "/",
     display: "standalone",
     background_color: "#f8fafc",

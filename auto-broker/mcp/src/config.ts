@@ -26,16 +26,6 @@ export const guardrails = {
   },
 };
 
-export type SaxoMode = "sim" | "live";
-
-export function saxoConfig() {
-  return {
-    token: process.env.SAXO_TOKEN ?? null,
-    mode: (process.env.SAXO_MODE as SaxoMode | undefined) ?? "sim",
-    accountKey: process.env.SAXO_ACCOUNT_KEY ?? null,
-  };
-}
-
 export type IbkrMode = "paper" | "live";
 
 export function ibkrConfig() {
@@ -46,18 +36,5 @@ export function ibkrConfig() {
     gatewayUrl: process.env.IBKR_GATEWAY_URL ?? "https://localhost:5000/v1/api",
     mode: (process.env.IBKR_MODE as IbkrMode | undefined) ?? "paper",
     accountId: process.env.IBKR_ACCOUNT_ID ?? null,
-  };
-}
-
-export function robinhoodConfig() {
-  return {
-    username: process.env.ROBINHOOD_USERNAME ?? null,
-    password: process.env.ROBINHOOD_PASSWORD ?? null,
-    mfaCode: process.env.ROBINHOOD_MFA_CODE ?? null,
-    // A second, explicit opt-in on top of just having credentials set — the
-    // unofficial API breaks Robinhood's ToS, so using it should never be an
-    // accident of "I happened to have env vars configured".
-    unofficialApiAcknowledged:
-      process.env.ROBINHOOD_ACKNOWLEDGE_UNOFFICIAL_API === "true",
   };
 }

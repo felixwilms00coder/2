@@ -11,8 +11,8 @@ export type Rule = {
   /** Free-form ticker/ISIN as the user knows it at their own broker. */
   symbol: string;
   /**
-   * Broker-specific numeric instrument id (Saxo Uic, IBKR conid) — the user
-   * looks it up. Optional for brokers that can resolve the symbol directly.
+   * Broker-specific numeric instrument id (IBKR conid) — the user looks it
+   * up. Optional for brokers that can resolve the symbol directly.
    */
   uic?: string;
   assetType: string;

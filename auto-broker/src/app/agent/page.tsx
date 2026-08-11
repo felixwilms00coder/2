@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import { Container, PageHero, Callout } from "@/components/ui";
 import { AgentDashboard } from "@/components/agent/agent-dashboard";
-import { AgentDashboardWithParams } from "@/components/agent/agent-dashboard-with-params";
 
 export const metadata: Metadata = {
   title: "Agent — your rules, your broker",
@@ -29,9 +27,7 @@ export default function AgentPage() {
             instruction — we only provide the tool.
           </Callout>
 
-          <Suspense fallback={<AgentDashboard />}>
-            <AgentDashboardWithParams />
-          </Suspense>
+          <AgentDashboard />
 
           <section aria-labelledby="good-to-know">
             <h2
@@ -104,35 +100,6 @@ export default function AgentPage() {
                   . Its agent can only draft trade instructions — you still
                   open IBKR&apos;s own app to turn one into a real order,
                   stronger than this page&apos;s own confirm step.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-display text-base font-bold text-foreground">
-                  Robinhood
-                </h3>
-                <p className="mt-2">
-                  Robinhood isn&apos;t in the broker picker above — it
-                  doesn&apos;t need to be. Robinhood runs its own official
-                  Agentic Trading MCP server, and you connect your AI agent
-                  (Claude Code, Claude Desktop, ChatGPT, etc.) to it
-                  directly, sanctioned by Robinhood itself, with no Auto
-                  Broker involved at all. See{" "}
-                  <a
-                    href="https://robinhood.com/us/en/support/articles/agentic-trading-overview/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-semibold underline"
-                  >
-                    Robinhood&apos;s own setup guide
-                  </a>{" "}
-                  for the connection steps and required risk disclosures.
-                  One important difference from everything else on this
-                  page: Robinhood does not force a confirmation step per
-                  trade — by their own disclosure, an agent you&apos;ve told
-                  to act without asking your approval can place trades
-                  without it. That guarantee is yours to build into your
-                  own instructions there, not something this page
-                  provides.
                 </p>
               </div>
             </div>

@@ -17,18 +17,11 @@ const inputClass =
 
 export function RuleForm({
   onAdd,
-  prefillName,
 }: {
   onAdd: (rule: Omit<Rule, "id" | "createdISO">) => void;
-  /**
-   * Optional suggested label for a new rule (e.g. from /pilots) — a name
-   * only, never a ticker or amount. The user still has to fill in and
-   * confirm the actual instrument themselves, same as any other rule.
-   */
-  prefillName?: string;
 }) {
-  const [open, setOpen] = useState(Boolean(prefillName));
-  const [name, setName] = useState(prefillName ?? "");
+  const [open, setOpen] = useState(false);
+  const [name, setName] = useState("");
   const [symbol, setSymbol] = useState("");
   const [uic, setUic] = useState("");
   const [assetType, setAssetType] = useState("Etf");
@@ -139,8 +132,8 @@ export function RuleForm({
             className={`mt-1.5 ${inputClass}`}
           />
           <p className="mt-1 text-xs text-muted">
-            Saxo uses a Uic, IBKR a conid — look it up at your broker. Leave
-            blank and Auto Broker searches by ticker where it can.
+            IBKR calls this a conid — look it up at your broker. Leave blank
+            and Auto Broker searches by ticker where it can.
           </p>
         </div>
 
