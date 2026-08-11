@@ -57,6 +57,11 @@ export function SiteFooter() {
                   Wetgeving
                 </Link>
               </li>
+              <li>
+                <Link href="/lexicon" className="inline-flex min-h-9 items-center hover:text-accent">
+                  Financieel lexicon
+                </Link>
+              </li>
             </ul>
           </div>
           <div>

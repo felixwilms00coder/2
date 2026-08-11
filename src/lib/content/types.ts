@@ -107,3 +107,15 @@ export type OfficialSource = {
   description: string;
   topics: string[];
 };
+
+/**
+ * Eén term in het financieel lexicon: een korte, feitelijke uitleg in
+ * gewone taal. Bewust geen actuele bedragen of percentages (die veranderen
+ * jaarlijks) — enkel de betekenis van het begrip zelf.
+ */
+export type LexiconEntry = {
+  slug: string;
+  term: string;
+  uitleg: string;
+  categorySlug: string;
+};

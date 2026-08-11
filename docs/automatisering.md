@@ -431,7 +431,25 @@ document: zuivere rekenmodellen zonder eigen productdata, geen advies.
 
 ---
 
-## 7. Aanbevolen volgorde
+## 7. Financieel lexicon (`/lexicon`)
+
+Een doorzoekbaar, filterbaar woordenboek van ~45 financiële termen
+(`src/lib/content/lexicon.ts`), verdeeld over de 7 thema's. In tegenstelling
+tot de rest van dit document speelt hier geen vergunnings- of
+aansprakelijkheidsvraagstuk: het zijn definities, geen advies, geen
+productdata, geen bedragen. De enige regel die hier wél telt: **geen actuele
+bedragen, percentages of belastingschijven** in de definities zelf, want die
+wijzigen jaarlijks en horen thuis in `/wetgeving` of bij een officiële bron
+— een woordenboek dat zelden herzien wordt, is de verkeerde plek daarvoor.
+
+Geïntegreerd in de bestaande zoekfunctie (`src/lib/search.ts`, resultaat-kind
+`"begrip"`) en in de systeemprompt van `/api/ai-answer`, zodat een vraag naar
+enkel de betekenis van een term kort beantwoord wordt met een verwijzing naar
+`/lexicon` voor meer.
+
+---
+
+## 8. Aanbevolen volgorde
 
 1. Houd de Geldscan gratis en client-side. Dat is vandaag al de meeste waarde
    voor de gebruiker, zonder juridische last.

@@ -74,6 +74,11 @@ responsibly, insurance, pensions, and taxes — all in Dutch.
   legal explanations (`src/lib/legal-context.ts`) — there is no live feed
   from any Belgian or Flemish government source, so this list needs manual
   upkeep; see `docs/automatisering.md` section 4.
+- **Financieel lexicon (`/lexicon`)** — a searchable, filterable glossary of
+  ~45 financial terms (`src/lib/content/lexicon.ts`), each a short
+  plain-language definition. Deliberately excludes current amounts, rates,
+  or tax brackets — those go stale and belong in `/wetgeving` instead.
+  Indexed in site search under the "begrip" result kind.
 
 All calculators are clearly labeled as indicative estimates, not official
 figures — tax brackets and social contributions are simplified and change

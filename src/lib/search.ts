@@ -2,6 +2,7 @@ import { articles } from "./content/articles";
 import { getCategory } from "./content/categories";
 import { tools } from "./content/tools";
 import { quizzes } from "./content/quizzes";
+import { lexicon } from "./content/lexicon";
 import type { ArticleBlock } from "./content/types";
 
 export type SearchResult = {
@@ -184,6 +185,20 @@ export function searchContent(query: string): SearchResult[] {
       kind: "quiz",
       title: quiz.title,
       description: quiz.description,
+      score,
+    });
+  }
+
+  for (const entry of lexicon) {
+    const termScore = scoreTextAgainstTokens(entry.term, tokens) * 4;
+    const uitlegScore = scoreTextAgainstTokens(entry.uitleg, tokens);
+    const score = termScore + uitlegScore;
+    if (score <= 0) continue;
+    results.push({
+      href: `/lexicon#${entry.slug}`,
+      kind: "begrip",
+      title: entry.term,
+      description: entry.uitleg,
       score,
     });
   }
