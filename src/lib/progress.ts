@@ -3,14 +3,14 @@ export type ProgressState = {
   read: string[];
   /** Best score per quiz slug. */
   quizBest: Record<string, number>;
-  /** Best end-score of the decision game. */
-  gameBest: number | null;
+  /** Best end-score per decision-game slug. */
+  gameBest: Record<string, number>;
 };
 
 export const EMPTY_PROGRESS: ProgressState = {
   read: [],
   quizBest: {},
-  gameBest: null,
+  gameBest: {},
 };
 
 export const STORAGE_KEY = "finedu:progress:v1";
@@ -28,7 +28,7 @@ export function calculateXp(state: ProgressState): number {
   const quizXp =
     Object.values(state.quizBest).reduce((sum, s) => sum + s, 0) *
     XP_PER_CORRECT_ANSWER;
-  const gameXp = state.gameBest !== null ? XP_PER_GAME : 0;
+  const gameXp = Object.keys(state.gameBest).length * XP_PER_GAME;
   return readXp + quizXp + gameXp;
 }
 
@@ -66,15 +66,27 @@ export function readState(): ProgressState {
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY);
     if (!raw) return EMPTY_PROGRESS;
-    const parsed = JSON.parse(raw) as Partial<ProgressState>;
+    const parsed = JSON.parse(raw) as
+      | Partial<ProgressState>
+      | (Partial<Omit<ProgressState, "gameBest">> & { gameBest?: number | null });
+    // Older stored versions kept a single number for gameBest (one game
+    // existed back then). Migrate that into the flagship game's slot so
+    // returning players don't lose their earned score.
+    const legacyGameBest =
+      typeof parsed.gameBest === "number" ? parsed.gameBest : null;
+    const gameBest =
+      parsed.gameBest && typeof parsed.gameBest === "object"
+        ? (parsed.gameBest as Record<string, number>)
+        : legacyGameBest !== null
+          ? { "je-eerste-jaar": legacyGameBest }
+          : {};
     return {
       read: Array.isArray(parsed.read) ? parsed.read : [],
       quizBest:
         parsed.quizBest && typeof parsed.quizBest === "object"
           ? parsed.quizBest
           : {},
-      gameBest:
-        typeof parsed.gameBest === "number" ? parsed.gameBest : null,
+      gameBest,
     };
   } catch {
     return EMPTY_PROGRESS;

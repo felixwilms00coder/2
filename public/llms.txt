@@ -31,9 +31,11 @@
 - `/quiz` — four short financial-literacy quizzes with per-question
   explanations: a general starter quiz plus themed quizzes on housing/loans,
   saving/investing, and inheritance.
-- `/spel` — an interactive decision game about the first year of working
-  life; choices affect an emergency buffer, monthly fixed costs and quality
-  of life, and are scored after seven rounds.
+- `/spel` — three interactive decision games: a seven-round game about the
+  first year of working life, plus two shorter five-round games on an
+  unexpected expense and renting a first apartment. Choices affect an
+  emergency buffer, monthly fixed costs and quality of life, and are scored
+  at the end of each game.
 - `/agent` — a self-managed investment automation agent. The user defines
   their own rules and connects their own broker account; FinEdu recommends
   nothing, exercises no discretion, and never routes orders. Includes a

@@ -5,6 +5,7 @@ import { BookOpen, Gamepad2, RotateCcw, Trophy } from "lucide-react";
 import { useProgress } from "@/components/progress-provider";
 import { articles } from "@/lib/content/articles";
 import { quizzes } from "@/lib/content/quizzes";
+import { games } from "@/lib/content/game";
 import { categories } from "@/lib/content/categories";
 import { articleId } from "@/lib/progress";
 import { ButtonLink, ContentCard } from "@/components/ui";
@@ -22,6 +23,8 @@ export function ProgressOverview() {
 
   const readCount = state.read.length;
   const quizCount = Object.keys(state.quizBest).length;
+  const gameScores = Object.values(state.gameBest);
+  const bestGameScore = gameScores.length > 0 ? Math.max(...gameScores) : null;
   const unread = articles.filter(
     (a) => !state.read.includes(articleId(a.categorySlug, a.slug)),
   );
@@ -105,7 +108,10 @@ export function ProgressOverview() {
             Beste spelscore
           </dt>
           <dd className="mt-2 font-display text-2xl font-extrabold text-foreground">
-            {state.gameBest === null ? "—" : `${state.gameBest}/100`}
+            {bestGameScore === null ? "—" : `${bestGameScore}/100`}
+          </dd>
+          <dd className="mt-1 text-xs text-muted">
+            {gameScores.length}/{games.length} keuzespellen gespeeld
           </dd>
         </div>
       </dl>

@@ -52,6 +52,15 @@ responsibly, insurance, pensions, and taxes — all in Dutch.
     pension — that formula (wage caps, credited periods, ...) is too
     complex to simplify reliably, so the page links to the official
     MyPension.be simulator instead.
+- **Keuzespel (`/spel`)** — three interactive decision games
+  (`src/lib/content/game.ts` + the shared `KeuzespelEngine` component): a
+  seven-round game about the first year of working life, plus two shorter
+  five-round games on an unexpected expense and renting a first apartment.
+  Each choice affects an emergency buffer, monthly fixed costs and quality
+  of life, scored 0-100 at the end. Score targets are per-game
+  (`scoreConfig`) since a short game's euro swings are much smaller than a
+  year-long one's — reusing one fixed scale would make short games nearly
+  unscoreable.
 - **Beleggingsagent (`/agent`)** — a self-managed automation agent. The user
   writes their own buy rules (instrument, amount, cadence, per-order and
   monthly caps), and the agent executes them against a broker of their

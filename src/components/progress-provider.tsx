@@ -28,7 +28,7 @@ type ProgressContextValue = {
   isRead: (categorySlug: string, slug: string) => boolean;
   toggleRead: (categorySlug: string, slug: string) => void;
   recordQuiz: (quizSlug: string, score: number) => void;
-  recordGame: (score: number) => void;
+  recordGame: (gameSlug: string, score: number) => void;
   reset: () => void;
 };
 
@@ -70,10 +70,13 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
             [quizSlug]: Math.max(prev.quizBest[quizSlug] ?? 0, score),
           },
         })),
-      recordGame: (score) =>
+      recordGame: (gameSlug, score) =>
         updateProgress((prev) => ({
           ...prev,
-          gameBest: Math.max(prev.gameBest ?? 0, score),
+          gameBest: {
+            ...prev.gameBest,
+            [gameSlug]: Math.max(prev.gameBest[gameSlug] ?? 0, score),
+          },
         })),
       reset: () => updateProgress(() => EMPTY_PROGRESS),
     };

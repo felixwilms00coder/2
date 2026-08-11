@@ -3,15 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, PiggyBank, RotateCcw, Smile, Wallet } from "lucide-react";
-import {
-  BASIS_VASTE_KOSTEN,
-  GameEffect,
-  NETTO_LOON,
-  START_BUFFER,
-  START_HUMEUR,
-  START_SALDO,
-  gameRounds,
-} from "@/lib/content/game";
+import { Game, GameEffect } from "@/lib/content/game";
 import { useProgress } from "@/components/progress-provider";
 import { ButtonLink } from "@/components/ui";
 
@@ -20,13 +12,6 @@ type Stats = {
   buffer: number;
   humeur: number;
   vasteKosten: number;
-};
-
-const START: Stats = {
-  saldo: START_SALDO,
-  buffer: START_BUFFER,
-  humeur: START_HUMEUR,
-  vasteKosten: BASIS_VASTE_KOSTEN,
 };
 
 function euro(n: number) {
@@ -46,23 +31,34 @@ function apply(stats: Stats, effect: GameEffect): Stats {
   };
 }
 
-/** 0-100 end score, weighing buffer, balance and quality of life. */
-function endScore(stats: Stats): number {
-  const bufferScore = Math.min(1, stats.buffer / 3000) * 50;
-  const saldoScore = Math.min(1, Math.max(0, stats.saldo + 500) / 2000) * 25;
+/** 0-100 end score, weighing buffer, balance and quality of life against
+ * the game's own scale (a short game has much smaller euro swings than a
+ * year-long one, so each game defines its own targets). */
+function endScore(stats: Stats, game: Game): number {
+  const { bufferTarget, saldoFloor, saldoTarget } = game.scoreConfig;
+  const bufferScore = Math.min(1, stats.buffer / bufferTarget) * 50;
+  const saldoScore =
+    Math.min(1, Math.max(0, stats.saldo + saldoFloor) / saldoTarget) * 25;
   const humeurScore = (stats.humeur / 100) * 25;
   return Math.round(bufferScore + saldoScore + humeurScore);
 }
 
-export function MoneyGame() {
+export function KeuzespelEngine({ game }: { game: Game }) {
+  const start: Stats = {
+    saldo: game.startSaldo,
+    buffer: game.startBuffer,
+    humeur: game.startHumeur,
+    vasteKosten: game.basisVasteKosten,
+  };
+
   const [index, setIndex] = useState(0);
-  const [stats, setStats] = useState<Stats>(START);
+  const [stats, setStats] = useState<Stats>(start);
   const [picked, setPicked] = useState<number | null>(null);
   const [finished, setFinished] = useState(false);
   const { recordGame } = useProgress();
 
-  const round = gameRounds[index];
-  const isLastRound = index === gameRounds.length - 1;
+  const round = game.rounds[index];
+  const isLastRound = index === game.rounds.length - 1;
 
   function choose(i: number) {
     if (picked !== null) return;
@@ -72,11 +68,8 @@ export function MoneyGame() {
 
   function next() {
     if (isLastRound) {
+      recordGame(game.slug, endScore(stats, game));
       setFinished(true);
-      setStats((s) => {
-        recordGame(endScore(s));
-        return s;
-      });
       return;
     }
     setPicked(null);
@@ -85,15 +78,15 @@ export function MoneyGame() {
 
   function restart() {
     setIndex(0);
-    setStats(START);
+    setStats(start);
     setPicked(null);
     setFinished(false);
   }
 
-  const vrijBesteedbaar = NETTO_LOON - stats.vasteKosten;
+  const vrijBesteedbaar = game.nettoLoon - stats.vasteKosten;
 
   if (finished) {
-    const score = endScore(stats);
+    const score = endScore(stats, game);
     const verdict =
       score >= 75
         ? {
@@ -106,14 +99,14 @@ export function MoneyGame() {
               text: "Je houdt het hoofd boven water, maar je buffer of je vaste kosten verdienen aandacht. Speel opnieuw en probeer een andere volgorde.",
             }
           : {
-              title: "Het was een pittig jaar",
+              title: "Dat was een pittig traject",
               text: "Je koos vooral voor nu, waardoor tegenslagen hard aankwamen. Dat is precies wat een noodbuffer voorkomt — probeer het eens anders.",
             };
 
     return (
       <div className="rounded-3xl border border-border bg-surface p-6 sm:p-8">
         <p className="text-sm font-bold uppercase tracking-[0.14em] text-accent">
-          Na 12 maanden
+          Resultaat
         </p>
 
         <div className="mt-5 flex flex-wrap items-center gap-6">
@@ -229,23 +222,23 @@ export function MoneyGame() {
       {/* Timeline */}
       <div className="mt-6 flex items-center gap-2">
         <span className="text-xs font-semibold text-muted">
-          Maand {round.maand}
+          {game.roundLabel} {round.stap}
         </span>
         <div
           className="h-1.5 flex-1 overflow-hidden rounded-full bg-surface-muted"
           role="progressbar"
           aria-valuenow={index + 1}
           aria-valuemin={1}
-          aria-valuemax={gameRounds.length}
-          aria-label={`Situatie ${index + 1} van ${gameRounds.length}`}
+          aria-valuemax={game.rounds.length}
+          aria-label={`Situatie ${index + 1} van ${game.rounds.length}`}
         >
           <div
             className="h-full rounded-full bg-accent transition-all duration-500"
-            style={{ width: `${((index + 1) / gameRounds.length) * 100}%` }}
+            style={{ width: `${((index + 1) / game.rounds.length) * 100}%` }}
           />
         </div>
         <span className="text-xs font-semibold text-muted">
-          {index + 1}/{gameRounds.length}
+          {index + 1}/{game.rounds.length}
         </span>
       </div>
 
@@ -299,7 +292,7 @@ export function MoneyGame() {
                 onClick={next}
                 className="mt-2 inline-flex min-h-11 items-center gap-2 rounded-full bg-accent px-5 text-sm font-semibold text-accent-contrast transition-colors hover:bg-accent-strong"
               >
-                {isLastRound ? "Bekijk je jaar" : "Volgende maand"}
+                {isLastRound ? "Bekijk je resultaat" : "Volgende situatie"}
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </button>
             </div>

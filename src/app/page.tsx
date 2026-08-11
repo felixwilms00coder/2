@@ -3,6 +3,7 @@ import { ArrowRight, Gamepad2, Sparkles } from "lucide-react";
 import { categories, getCategory } from "@/lib/content/categories";
 import { tools } from "@/lib/content/tools";
 import { quizzes } from "@/lib/content/quizzes";
+import { games } from "@/lib/content/game";
 import { getArticle } from "@/lib/content/articles";
 import {
   ButtonLink,
@@ -240,15 +241,11 @@ export default function Home() {
                   Keuzespel
                 </p>
                 <h3 className="mt-2.5 font-display text-2xl font-extrabold tracking-tight text-foreground">
-                  Je eerste jaar als starter
+                  {games[0].title}
                 </h3>
-                <p className="mt-3 text-foreground/80">
-                  Zeven echte situaties: een kapotte wasmachine, je
-                  vakantiegeld, op jezelf gaan wonen. Elke keuze telt. Waar sta
-                  je na twaalf maanden?
-                </p>
+                <p className="mt-3 text-foreground/80">{games[0].description}</p>
                 <div className="mt-6 pt-2">
-                  <ButtonLink href="/spel" variant="accent">
+                  <ButtonLink href={`/spel/${games[0].slug}`} variant="accent">
                     Speel het spel
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </ButtonLink>

@@ -3,6 +3,7 @@ import { getCategory } from "./content/categories";
 import { tools } from "./content/tools";
 import { quizzes } from "./content/quizzes";
 import { lexicon } from "./content/lexicon";
+import { games } from "./content/game";
 import type { ArticleBlock } from "./content/types";
 
 export type SearchResult = {
@@ -185,6 +186,28 @@ export function searchContent(query: string): SearchResult[] {
       kind: "quiz",
       title: quiz.title,
       description: quiz.description,
+      score,
+    });
+  }
+
+  for (const game of games) {
+    const titleScore = scoreTextAgainstTokens(game.title, tokens) * 4;
+    const descScore = scoreTextAgainstTokens(
+      `${game.short} ${game.description}`,
+      tokens,
+    );
+    const situationScore = game.rounds.reduce(
+      (sum, round) =>
+        sum + scoreTextAgainstTokens(`${round.title} ${round.situation}`, tokens),
+      0,
+    );
+    const score = titleScore + descScore + situationScore;
+    if (score <= 0) continue;
+    results.push({
+      href: `/spel/${game.slug}`,
+      kind: "spel",
+      title: game.title,
+      description: game.description,
       score,
     });
   }

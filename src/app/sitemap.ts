@@ -3,6 +3,7 @@ import { categories } from "@/lib/content/categories";
 import { articles } from "@/lib/content/articles";
 import { tools } from "@/lib/content/tools";
 import { quizzes } from "@/lib/content/quizzes";
+import { games } from "@/lib/content/game";
 import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -48,11 +49,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const gameRoutes = games.map((game) => ({
+    url: `${SITE_URL}/spel/${game.slug}`,
+    changeFrequency: "yearly" as const,
+    priority: 0.6,
+  }));
+
   return [
     ...staticRoutes,
     ...categoryRoutes,
     ...articleRoutes,
     ...toolRoutes,
     ...quizRoutes,
+    ...gameRoutes,
   ];
 }
