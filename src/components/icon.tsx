@@ -14,6 +14,7 @@ import {
   LineChart,
   Scale,
   Umbrella,
+  Landmark,
   type LucideIcon,
 } from "lucide-react";
 
@@ -33,6 +34,7 @@ const iconMap: Record<string, LucideIcon> = {
   "line-chart": LineChart,
   scale: Scale,
   umbrella: Umbrella,
+  landmark: Landmark,
 };
 
 export function CategoryIcon({

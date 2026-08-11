@@ -14,7 +14,7 @@ responsibly, insurance, pensions, and taxes — all in Dutch.
   interactive blocks (`check` for an inline multiple-choice question,
   `reveal` for a guess-then-answer card, `figure` for a pulled-out number)
   defined in `src/lib/content/types.ts`.
-- **Rekentools (`/tools`)** — seven interactive calculators:
+- **Rekentools (`/tools`)** — eleven interactive calculators:
   - Geldscan — paste or upload a bank CSV export; it categorises your
     transactions, spots recurring subscriptions, compares your split against
     50/30/20 and generates concrete savings suggestions. Runs **entirely in
@@ -37,6 +37,21 @@ responsibly, insurance, pensions, and taxes — all in Dutch.
     not premium alone. No policy data or insurer ranking of its own — see
     `docs/automatisering.md` (§5) for why this stayed a calculator instead
     of a price-comparison ranking.
+  - Lening-vergelijker — compares up to four loan scenarios (rate + term)
+    on monthly payment and total cost, using the standard annuity formula.
+    Same "user supplies the rates" approach as the savings/insurance
+    comparators.
+  - Noodbuffer-calculator — shows how many months of fixed expenses your
+    current savings cover, against the common 3–6 month rule of thumb.
+  - 72-regel — the rule-of-72 shortcut for estimating how long it takes an
+    amount to double at a given annual return, shown alongside the exact
+    mathematical value.
+  - Aanvullend-pensioen-simulator — projects only self-funded extra
+    retirement savings (pensioensparen, VAPZ, or plain saving) via compound
+    growth. Deliberately does **not** estimate the statutory Belgian
+    pension — that formula (wage caps, credited periods, ...) is too
+    complex to simplify reliably, so the page links to the official
+    MyPension.be simulator instead.
 - **Beleggingsagent (`/agent`)** — a self-managed automation agent. The user
   writes their own buy rules (instrument, amount, cadence, per-order and
   monthly caps), and the agent executes them against a broker of their

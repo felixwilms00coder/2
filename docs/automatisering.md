@@ -405,7 +405,33 @@ eerste-stap-verwijzing voor wie nog geen cijfers heeft.
 
 ---
 
-## 6. Aanbevolen volgorde
+## 6. Vier extra rekentools: lening, noodbuffer, 72-regel, aanvullend pensioen
+
+Vier nieuwe rekentools onder `/tools`, zelfde aanpak als de rest van dit
+document: zuivere rekenmodellen zonder eigen productdata, geen advies.
+
+- **Lening-vergelijker** (`src/lib/calculations/leningsimulator.ts`) —
+  standaard annuïteitsformule, geen wetgevingskwestie: dit rekent enkel na
+  met een bedrag, rente en looptijd die de gebruiker zelf invult. Dossier-,
+  notaris- en verzekeringskosten zitten er bewust niet in.
+- **Noodbuffer-calculator** — spaargeld gedeeld door maandelijkse uitgaven,
+  afgezet tegen de gangbare (niet-wettelijke) vuistregel van 3 tot 6
+  maanden.
+- **72-regel** — de bekende `72 ÷ rendement`-vuistregel, met daarnaast de
+  wiskundig exacte waarde ter vergelijking.
+- **Aanvullend-pensioen-simulator** — **bewust geen** schatting van het
+  wettelijk Belgisch pensioen. Die formule (loonplafonds, gelijkgestelde
+  periodes, ...) is te complex om betrouwbaar te vereenvoudigen, en een
+  verkeerde schatting hier zou iemands pensioenverwachting kunnen
+  vertekenen. In plaats daarvan simuleert deze tool enkel wat je er zelf
+  bovenop opbouwt (pensioensparen, VAPZ, apart sparen) via samengestelde
+  interest, en verwijst voor het wettelijk pensioen naar de officiële
+  simulatie op MyPension.be — zelfde patroon als de spaarrente-doorverwijzing
+  in sectie 5.
+
+---
+
+## 7. Aanbevolen volgorde
 
 1. Houd de Geldscan gratis en client-side. Dat is vandaag al de meeste waarde
    voor de gebruiker, zonder juridische last.

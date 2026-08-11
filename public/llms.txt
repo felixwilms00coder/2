@@ -17,12 +17,17 @@
 - `/tools` — interactive calculators: geldscan (categorises a pasted bank
   CSV and suggests where to save, running entirely client-side),
   bruto-nettoloon calculator, 50/30/20 budgetplanner, spaardoel-calculator,
-  a beleggingsplan simulator, a spaarrekening-vergelijker and a
-  verzekering-vergelijker. The last two compare only rates or quotes the
-  user enters themselves — FinEdu supplies no rate table or product list of
-  its own and never names a "cheapest" or "best" bank or insurer, since
-  that would be licensed financial/insurance intermediation. All
-  calculations are simplified, indicative estimates, not official figures.
+  a beleggingsplan simulator, a spaarrekening-vergelijker, a
+  verzekering-vergelijker, a lening-vergelijker, a noodbuffer-calculator, a
+  72-regel calculator, and an aanvullend-pensioen simulator. The
+  vergelijker tools compare only rates or quotes the user enters
+  themselves — FinEdu supplies no rate table or product list of its own and
+  never names a "cheapest" or "best" bank, insurer, or lender, since that
+  would be licensed financial/insurance/credit intermediation. The pension
+  tool projects only self-funded extra savings (pensioensparen/VAPZ), not
+  the statutory Belgian pension — it links to the official MyPension.be
+  simulator for that. All calculations are simplified, indicative
+  estimates, not official figures.
 - `/quiz` — a short financial-literacy quiz with per-question explanations.
 - `/spel` — an interactive decision game about the first year of working
   life; choices affect an emergency buffer, monthly fixed costs and quality

@@ -15,7 +15,7 @@ export default function ToolsPage() {
       <PageHero
         eyebrow="Rekentools"
         title="Reken het na voor jouw situatie"
-        description="Drie eenvoudige tools die je meteen een concreet antwoord geven. Alle berekeningen zijn indicatief."
+        description="Eenvoudige tools die je meteen een concreet antwoord geven. Alle berekeningen zijn indicatief."
       />
       <Container className="py-14">
         <h2 className="sr-only">Alle rekentools</h2>

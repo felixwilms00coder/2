@@ -57,6 +57,38 @@ export const tools: ToolSummary[] = [
       "Vul je eigen offertes in en zie de verwachte totale jaarkost, niet enkel de premie. Geen eigen polissen, geen rangschikking van verzekeraars.",
     icon: "umbrella",
   },
+  {
+    slug: "lening-vergelijker",
+    title: "Lening-vergelijker",
+    short: "Maandelijkse aflossing en totale kost per scenario",
+    description:
+      "Vul rentevoeten en looptijden in die je zelf gevonden hebt en zie de maandelijkse aflossing en totale kost naast elkaar. Geen eigen rentetabel, geen aanbeveling.",
+    icon: "credit-card",
+  },
+  {
+    slug: "noodbuffer-calculator",
+    title: "Noodbuffer-calculator",
+    short: "Hoeveel maanden dekt je spaargeld?",
+    description:
+      "Zie hoeveel maanden vaste uitgaven je huidige spaargeld dekt, afgezet tegen de gangbare vuistregel van 3 tot 6 maanden.",
+    icon: "shield",
+  },
+  {
+    slug: "72-regel",
+    title: "De 72-regel",
+    short: "Hoe snel verdubbelt je geld?",
+    description:
+      "Vul een verwacht jaarlijks rendement in en zie in hoeveel jaar je bedrag ongeveer verdubbelt bij samengestelde interest.",
+    icon: "trending-up",
+  },
+  {
+    slug: "aanvullend-pensioen",
+    title: "Aanvullend-pensioen-simulator",
+    short: "Wat bouw je zelf op boven je wettelijk pensioen?",
+    description:
+      "Simuleer wat pensioensparen of apart sparen tot je pensioen kan opleveren. Geen schatting van je wettelijk pensioen — daarvoor verwijzen we naar MyPension.be.",
+    icon: "landmark",
+  },
 ];
 
 export function getTool(slug: string): ToolSummary | undefined {
