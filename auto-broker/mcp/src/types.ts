@@ -19,6 +19,8 @@ export type AccountSummary = {
 
 export type OrderSide = "buy" | "sell";
 
+export type OrderType = "market" | "limit";
+
 export type OrderRequest = {
   symbol: string;
   /** Broker-specific instrument identifier (IBKR conid). */
@@ -26,6 +28,10 @@ export type OrderRequest = {
   assetType?: string;
   amountEur: number;
   side: OrderSide;
+  /** Defaults to "market" if omitted. */
+  orderType?: OrderType;
+  /** Required when orderType is "limit" — the most you're willing to pay (buy) or least you'll accept (sell), per unit. */
+  limitPrice?: number;
 };
 
 export type PlacedOrder = {

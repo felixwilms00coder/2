@@ -157,6 +157,14 @@ const orderShape = {
   ...quoteShape,
   amountEur: z.number().positive(),
   side: z.enum(["buy", "sell"]).default("buy"),
+  orderType: z.enum(["market", "limit"]).default("market"),
+  limitPrice: z
+    .number()
+    .positive()
+    .optional()
+    .describe(
+      'Required when orderType is "limit" — the most you\'ll pay (buy) or least you\'ll accept (sell), per unit.',
+    ),
 };
 
 server.registerTool(
@@ -164,11 +172,14 @@ server.registerTool(
   {
     title: "Preview an order (step 1 of 2 — sends nothing)",
     description:
-      "Looks up a live quote and the resulting quantity for an order, checks it against your per-order/per-month euro guardrails, and returns a short-lived preview id. This never places an order — call confirm_order with the returned previewId to actually send it.",
+      "Looks up a live quote and the resulting quantity for an order, checks it against your per-order/per-month euro guardrails, and returns a short-lived preview id. This never places an order — call confirm_order with the returned previewId to actually send it. Defaults to a market order; pass orderType: \"limit\" with limitPrice for a limit order.",
     inputSchema: orderShape,
   },
   async (req) => {
     try {
+      if (req.orderType === "limit" && !req.limitPrice) {
+        return fail('orderType "limit" requires limitPrice.');
+      }
       const broker = getBroker(req.brokerId);
       if (!broker.isConfigured()) {
         return fail(`${broker.label} is not configured: ${await broker.connectionSummary()}`);
@@ -176,7 +187,8 @@ server.registerTool(
       const orderReq: OrderRequest = req;
       const guard = checkGuardrails(orderReq, req.brokerId);
       const quote = await broker.getQuote(req);
-      const quantity = Math.floor(req.amountEur / quote.price);
+      const referencePrice = req.orderType === "limit" ? req.limitPrice! : quote.price;
+      const quantity = Math.floor(req.amountEur / referencePrice);
 
       appendAuditLog({
         id: randomUUID(),
@@ -185,7 +197,7 @@ server.registerTool(
         symbol: req.symbol,
         amountEur: req.amountEur,
         status: "previewed",
-        price: quote.price,
+        price: referencePrice,
         quantity,
       });
 
@@ -195,12 +207,12 @@ server.registerTool(
       if (quantity < 1) {
         return ok({
           blocked: true,
-          reason: `Amount ${req.amountEur} is too small for one unit at price ${quote.price}.`,
+          reason: `Amount ${req.amountEur} is too small for one unit at price ${referencePrice}.`,
           quote,
         });
       }
 
-      const pending = createPending(req.brokerId, orderReq, quote.price, quantity);
+      const pending = createPending(req.brokerId, orderReq, referencePrice, quantity);
       return ok({
         previewId: pending.id,
         brokerId: req.brokerId,
@@ -208,8 +220,11 @@ server.registerTool(
         live: broker.isLive(),
         symbol: req.symbol,
         side: req.side,
+        orderType: req.orderType,
+        limitPrice: req.orderType === "limit" ? req.limitPrice : undefined,
         amountEur: req.amountEur,
-        price: quote.price,
+        marketPrice: quote.price,
+        price: referencePrice,
         quantity,
         expiresAt: new Date(pending.expiresAt).toISOString(),
         next: "Call confirm_order with this previewId to actually send it. It expires in 5 minutes.",

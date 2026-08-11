@@ -164,7 +164,12 @@ export function createIbkrClient(): BrokerClient {
       const { conid } = req.instrumentId
         ? { conid: Number(req.instrumentId) }
         : await findConid(req.symbol);
-      const price = await snapshotPrice(conid);
+
+      const isLimit = req.orderType === "limit";
+      if (isLimit && !req.limitPrice) {
+        throw new Error('orderType "limit" requires limitPrice.');
+      }
+      const price = isLimit ? req.limitPrice! : await snapshotPrice(conid);
       const quantity = Math.floor(req.amountEur / price);
       if (quantity < 1) {
         throw new Error(
@@ -180,7 +185,8 @@ export function createIbkrClient(): BrokerClient {
             orders: [
               {
                 conid,
-                orderType: "MKT",
+                orderType: isLimit ? "LMT" : "MKT",
+                ...(isLimit ? { price: req.limitPrice } : {}),
                 side: req.side === "sell" ? "SELL" : "BUY",
                 quantity,
                 tif: "DAY",

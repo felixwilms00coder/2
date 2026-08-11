@@ -28,8 +28,9 @@ multi-user, or fully-discretionary service — none of which this ships.
 ## Safety model
 
 1. **`preview_order` never sends anything.** It fetches a live quote,
-   computes the resulting quantity, checks your euro guardrails, and returns
-   a `previewId` that expires in 5 minutes.
+   computes the resulting quantity — from the live price for a market order,
+   or from your own `limitPrice` for a limit order — checks your euro
+   guardrails, and returns a `previewId` that expires in 5 minutes.
 2. **`confirm_order` is a separate, required second call.** Only a
    `previewId` from step 1 can be confirmed, and each one can only be used
    once. This is the confirm-before-send gate — nothing reaches a broker on
@@ -136,7 +137,7 @@ built server, with credentials in `env` rather than a checked-in file:
 | `get_account` | No | Cash / total value. |
 | `get_positions` | No | Current holdings. |
 | `get_quote` | No | Live price for one instrument. |
-| `preview_order` | **No** | Step 1 — quote + quantity + guardrail check + `previewId`. |
+| `preview_order` | **No** | Step 1 — quote + quantity + guardrail check + `previewId`. Defaults to a market order; pass `orderType: "limit"` with `limitPrice` for a limit order. |
 | `confirm_order` | **Yes** | Step 2 — the only tool that can place a real (or paper) order. |
 | `cancel_order` | No | Cancels an existing order by broker order id. |
 | `get_order_history` | No | Local audit log from `~/.auto-broker-mcp`. |
