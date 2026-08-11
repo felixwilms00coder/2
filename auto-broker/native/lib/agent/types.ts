@@ -17,7 +17,6 @@ export type Rule = {
    * up. Optional for brokers that can resolve the symbol directly.
    */
   uic?: string;
-  assetType: string;
   /** Amount per execution, in the account's own currency. */
   amount: number;
   /** Defaults to "market" if omitted. */
@@ -69,7 +68,6 @@ export type PlacedOrder = {
 export type OrderRequest = {
   symbol: string;
   uic?: string;
-  assetType: string;
   amountEur: number;
   /** Defaults to "market" if omitted. */
   orderType?: OrderType;

@@ -81,7 +81,6 @@ export async function sendOrder(
     const placed = await broker.placeOrder({
       symbol: rule.symbol,
       uic: rule.uic,
-      assetType: rule.assetType,
       amountEur: rule.amount,
       orderType: rule.orderType,
       limitPrice: rule.limitPrice,

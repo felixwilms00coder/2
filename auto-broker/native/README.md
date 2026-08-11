@@ -88,13 +88,18 @@ folders.
 ## Placing orders from the app: rules, including limit orders
 
 The Agent tab's rules are how you tell the app what to place on your IBKR
-account — ticker, amount, order type (**Market** or **Limit**, with a
-limit price), cadence, and per-order/per-month euro guardrails. Nothing
-is suggested; you fill in every field. A rule with "Send without
-confirmation" off (the default) always lands in "Waiting for your
-confirmation" first — you tap **Send** yourself before anything reaches a
-broker. This is the same architecture as the web app's `/agent`, just
-native UI.
+account. The form is deliberately down to five inputs: ticker, amount,
+order type (**Market** or **Limit**, with a limit price), how often, and
+"send without confirmation." Nothing is suggested; you fill in every
+field. Per-order/per-month euro guardrails still run on every execution
+(`schedule.ts`'s `checkGuardrails`) — they're just sized automatically
+from the amount you typed (per-order = that amount; per-month = 6× it)
+instead of being separate fields to fill in, since a rule always spends
+the same fixed amount anyway. A rule with "Send without confirmation" off
+(the default) always lands in "Waiting for your confirmation" first — you
+tap **Send** yourself before anything reaches a broker. This is the same
+architecture as the web app's `/agent`, just native UI and a smaller
+form.
 
 For a limit order, `amount` is what gets spent *at the limit price* to
 size the order — e.g. an amount of $1800 with an $18 limit buys 100

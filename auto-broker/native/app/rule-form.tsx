@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { router, useLocalSearchParams } from "expo-router";
+import { router } from "expo-router";
 import { ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { AnimatedPressable } from "@/components/ui/AnimatedPressable";
@@ -31,16 +31,19 @@ const WEEKDAYS = [
   { value: "5", label: "Fri" },
 ];
 
+// A rule always spends the same fixed amount, so a per-order cap that
+// differs from that amount is meaningless — it defaults to the amount
+// itself. The monthly cap is a flat multiple, generous enough to never
+// block a rule's own normal cadence (weekly is ~4.3 fires/month) while
+// still bounding runaway repeats if something misfires.
+const MONTHLY_GUARDRAIL_MULTIPLIER = 6;
+
 export default function RuleFormModal() {
   const { addRule } = useAgent();
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
-  const params = useLocalSearchParams<{ prefillName?: string }>();
 
-  const [name, setName] = useState(params.prefillName ?? "");
   const [symbol, setSymbol] = useState("");
-  const [uic, setUic] = useState("");
-  const [assetType, setAssetType] = useState("Etf");
   const [amount, setAmount] = useState("100");
   const [orderType, setOrderType] = useState<OrderType>("market");
   const [limitPrice, setLimitPrice] = useState("");
@@ -48,8 +51,6 @@ export default function RuleFormModal() {
   const [dayOfMonth, setDayOfMonth] = useState("5");
   const [weekday, setWeekday] = useState(1);
   const [autoConfirm, setAutoConfirm] = useState(false);
-  const [maxPerOrder, setMaxPerOrder] = useState("250");
-  const [maxPerMonth, setMaxPerMonth] = useState("500");
   const [error, setError] = useState<string | null>(null);
 
   const valid =
@@ -66,21 +67,20 @@ export default function RuleFormModal() {
       );
       return;
     }
+    const parsedAmount = Number(amount);
     addRule({
       enabled: true,
-      name: name.trim() || symbol.trim().toUpperCase(),
+      name: symbol.trim().toUpperCase(),
       symbol: symbol.trim().toUpperCase(),
-      uic: uic.trim() || undefined,
-      assetType,
-      amount: Number(amount),
+      amount: parsedAmount,
       orderType,
       limitPrice: orderType === "limit" ? Number(limitPrice) : undefined,
       frequency,
       dayOfMonth: Math.min(28, Math.max(1, Number(dayOfMonth) || 5)),
       weekday,
       autoConfirm,
-      maxPerOrder: Number(maxPerOrder) || 250,
-      maxPerMonth: Number(maxPerMonth) || 500,
+      maxPerOrder: parsedAmount,
+      maxPerMonth: parsedAmount * MONTHLY_GUARDRAIL_MULTIPLIER,
     });
     router.back();
   }
@@ -99,22 +99,9 @@ export default function RuleFormModal() {
         </Text>
       </View>
 
-      <Field label="Rule name (optional)">
-        <Input value={name} onChangeText={setName} placeholder="e.g. Monthly world ETF" />
-      </Field>
-
       <View style={{ flexDirection: "row", gap: space.md }}>
         <Field label="Ticker or ISIN *">
           <Input value={symbol} onChangeText={setSymbol} placeholder="IWDA" autoCapitalize="characters" />
-        </Field>
-        <Field label="Instrument ID (optional)">
-          <Input value={uic} onChangeText={setUic} placeholder="12345" keyboardType="numeric" />
-        </Field>
-      </View>
-
-      <View style={{ flexDirection: "row", gap: space.md }}>
-        <Field label="Instrument type">
-          <Input value={assetType} onChangeText={setAssetType} placeholder="Etf" />
         </Field>
         <Field label="Amount per purchase">
           <Input value={amount} onChangeText={setAmount} keyboardType="decimal-pad" />
@@ -160,15 +147,6 @@ export default function RuleFormModal() {
           />
         </Field>
       )}
-
-      <View style={{ flexDirection: "row", gap: space.md }}>
-        <Field label="Max. per order">
-          <Input value={maxPerOrder} onChangeText={setMaxPerOrder} keyboardType="decimal-pad" />
-        </Field>
-        <Field label="Max. per month">
-          <Input value={maxPerMonth} onChangeText={setMaxPerMonth} keyboardType="decimal-pad" />
-        </Field>
-      </View>
 
       <View style={[styles.toggleRow, { borderColor: colors.border }]}>
         <View style={{ flex: 1 }}>
