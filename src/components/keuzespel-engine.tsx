@@ -100,7 +100,7 @@ export function KeuzespelEngine({ game }: { game: Game }) {
             }
           : {
               title: "Dat was een pittig traject",
-              text: "Je koos vooral voor nu, waardoor tegenslagen hard aankwamen. Dat is precies wat een noodbuffer voorkomt — probeer het eens anders.",
+              text: "Je koos vooral voor nu, waardoor tegenslagen hard aankwamen. Dat is precies wat een noodbuffer voorkomt: probeer het eens anders.",
             };
 
     return (

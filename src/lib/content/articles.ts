@@ -221,7 +221,7 @@ export const articles: Article[] = [
             correct: false,
           },
           {
-            text: "Dit bestaat niet — hoger rendement gaat altijd samen met meer risico",
+            text: "Dit bestaat niet: hoger rendement gaat altijd samen met meer risico",
             correct: true,
           },
           { text: "Alleen banken mogen dat aanbieden", correct: false },

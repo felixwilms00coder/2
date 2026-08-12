@@ -83,7 +83,7 @@ export default function Home() {
           </h1>
           <p className="mt-4 max-w-md text-sm text-muted sm:text-base">
             Budget, sparen, beleggen, verzekeren, wonen, pensioen en
-            belastingen — uitgelegd voor starters.
+            belastingen: uitgelegd voor starters.
           </p>
 
           <div className="mt-8 w-full max-w-2xl">

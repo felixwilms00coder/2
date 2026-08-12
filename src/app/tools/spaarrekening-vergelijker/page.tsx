@@ -60,7 +60,7 @@ export default function SpaarrekeningVergelijkerPage() {
                 open koppeling, en een rangschikking van &quot;de goedkoopste
                 spaarrekening&quot; opstellen is in België een gereglementeerde
                 activiteit (financiële bemiddeling). FinEdu doet dat bewust
-                niet — deze tool rekent alleen na met cijfers die jij hebt.
+                niet: deze tool rekent alleen na met cijfers die jij hebt.
               </p>
               <p>
                 Belgische spaarrekeningen werken meestal met twee onderdelen:
@@ -86,7 +86,7 @@ export default function SpaarrekeningVergelijkerPage() {
 
           <Callout tone="warning" title="Wat deze tool niet doet">
             Dit is geen actuele rentetabel en geen aanbeveling. Rentes wijzigen
-            regelmatig en verschillen per bank — controleer de huidige tarieven
+            regelmatig en verschillen per bank: controleer de huidige tarieven
             altijd rechtstreeks bij de bank zelf voor je een keuze maakt.
           </Callout>
         </div>

@@ -19,7 +19,7 @@ export function Regel72() {
         <p className="text-sm leading-relaxed text-foreground/90">
           <span className="font-bold">Een vuistregel voor snel hoofdrekenen.</span>{" "}
           Ze gaat uit van een constant jaarlijks rendement, wat in de
-          werkelijkheid niet bestaat — gebruik dit om de orde van grootte aan
+          werkelijkheid niet bestaat: gebruik dit om de orde van grootte aan
           te voelen, niet om een exact eindbedrag te voorspellen.
         </p>
       </div>
@@ -68,7 +68,7 @@ export function Regel72() {
           <span className="font-semibold">
             {resultaat.vuistregelJaren.toFixed(1)} jaar
           </span>
-          . Hoe hoger het rendement, hoe sneller de verdubbeling — maar meestal
+          . Hoe hoger het rendement, hoe sneller de verdubbeling, maar meestal
           ook hoe hoger het risico dat je dat rendement niet elk jaar haalt.
         </p>
       </div>

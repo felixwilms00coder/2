@@ -10,7 +10,7 @@ const NIVEAU_TEKST = {
     kleur: "text-warning",
     achtergrond: "bg-warning-light",
     uitleg:
-      "Financiële-educatiebronnen zoals Wikifin noemen 3 tot 6 maanden vaste uitgaven als richtlijn. Je zit daar nu onder — een onverwachte uitgave kan dan sneller tot schulden leiden.",
+      "Financiële-educatiebronnen zoals Wikifin noemen 3 tot 6 maanden vaste uitgaven als richtlijn. Je zit daar nu onder: een onverwachte uitgave kan dan sneller tot schulden leiden.",
   },
   binnen: {
     label: "Binnen de vuistregel",
@@ -109,7 +109,7 @@ export function NoodbufferCalculator() {
           <p className={`mt-1 font-display text-2xl font-extrabold ${niveau.kleur}`}>
             {Number.isFinite(resultaat.aantalMaanden)
               ? `${resultaat.aantalMaanden.toFixed(1)} maanden`
-              : "—"}
+              : ": "}
           </p>
           <p className="mt-2 text-sm leading-relaxed text-foreground/90">
             {niveau.uitleg}

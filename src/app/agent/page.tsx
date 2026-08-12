@@ -4,7 +4,7 @@ import { Container, PageHero, Callout } from "@/components/ui";
 import { AgentDashboard } from "@/components/agent/agent-dashboard";
 
 export const metadata: Metadata = {
-  title: "Beleggingsagent — jouw regels, jouw broker",
+  title: "Beleggingsagent: jouw regels, jouw broker",
   description:
     "Stel je eigen automatische aankoopregels in en voer ze uit via je eigen brokerkoppeling. Jij bepaalt wat, hoeveel en wanneer. FinEdu beveelt niets aan.",
   alternates: { canonical: "/agent" },
@@ -24,7 +24,7 @@ export default function AgentPage() {
             FinEdu kiest geen instrumenten, doet geen aanbevelingen en beheert
             je portefeuille niet. Je regels staan in jouw browser, orders gaan
             rechtstreeks van jouw toestel naar jouw broker, en er is geen
-            FinEdu-server in dat pad. Wat je hier bouwt, is jouw opdracht — wij
+            FinEdu-server in dat pad. Wat je hier bouwt, is jouw opdracht: wij
             leveren alleen het gereedschap.
           </Callout>
 
@@ -43,7 +43,7 @@ export default function AgentPage() {
                 Er is bewust geen server die in jouw naam blijft draaien. Open
                 je deze pagina, dan kijkt de agent welke van jouw regels
                 intussen aan de beurt waren. Mis je een dag, dan wordt de regel
-                de eerstvolgende keer alsnog uitgevoerd — hij slaat geen maand
+                de eerstvolgende keer alsnog uitgevoerd: hij slaat geen maand
                 over.
               </p>
               <p>
@@ -73,7 +73,7 @@ export default function AgentPage() {
           <Callout tone="warning" title="Wat dit niet is">
             Geen beleggingsadvies en geen vermogensbeheer. FinEdu beoordeelt
             niet of een instrument bij jou past, of je genoeg buffer hebt, of
-            het moment goed is. Dat blijft jouw beoordeling — en die van een
+            het moment goed is. Dat blijft jouw beoordeling, en die van een
             vergund adviseur als je daar behoefte aan hebt. Lees eerst{" "}
             <Link
               href="/leerstof/sparen-en-beleggen/beleggen-de-basis"

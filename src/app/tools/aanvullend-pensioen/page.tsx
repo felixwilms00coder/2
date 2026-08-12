@@ -31,7 +31,7 @@ export default function AanvullendPensioenPage() {
             <div className="prose-article mt-4">
               <p>
                 Het Belgisch wettelijk pensioen berekenen vergt een complexe,
-                jaarlijks wijzigende formule — met onder meer loonplafonds en
+                jaarlijks wijzigende formule: met onder meer loonplafonds en
                 gelijkgestelde periodes (bijvoorbeeld tijdelijke werkloosheid
                 of ziekte) die meetellen. Daar bestaat geen betrouwbare
                 vereenvoudigde vuistregel voor die we hier durven aanbieden.
@@ -39,7 +39,7 @@ export default function AanvullendPensioenPage() {
               <p>
                 Voor een schatting van je eigen, echte wettelijk pensioen op
                 basis van je loopbaan tot nu toe, ga je naar de officiële
-                simulatie op MyPension.be — die houdt wel rekening met je
+                simulatie op MyPension.be: die houdt wel rekening met je
                 werkelijke loopbaangegevens.
               </p>
               <p>

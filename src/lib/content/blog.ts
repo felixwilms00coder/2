@@ -9,7 +9,7 @@ import { BlogPost } from "./types";
 export const blogPosts: BlogPost[] = [
   {
     slug: "14-dagen-bedenktijd-bij-een-lening",
-    title: "Je hebt altijd 14 dagen bedenktijd bij een lening — zo werkt het",
+    title: "Je hebt altijd 14 dagen bedenktijd bij een lening: zo werkt het",
     summary:
       "Een consumentenkrediet afgesloten en toch twijfels? Je hebt wettelijk 14 kalenderdagen om er zonder kosten van af te zien.",
     categorySlug: "budget-betalen-lenen-en-verzekeren",
@@ -18,7 +18,7 @@ export const blogPosts: BlogPost[] = [
     blocks: [
       {
         type: "p",
-        text: "Je hebt net een consumentenkrediet getekend — misschien voor een auto, misschien om een grotere aankoop te spreiden — en een paar dagen later bekruipt je twijfel. Goed nieuws: bij zo'n lening ben je wettelijk niet meteen vastgeklikt.",
+        text: "Je hebt net een consumentenkrediet getekend: misschien voor een auto, misschien om een grotere aankoop te spreiden, en een paar dagen later bekruipt je twijfel. Goed nieuws: bij zo'n lening ben je wettelijk niet meteen vastgeklikt.",
       },
       { type: "h2", text: "14 dagen, zonder reden, zonder kosten" },
       {
@@ -34,13 +34,13 @@ export const blogPosts: BlogPost[] = [
       { type: "h2", text: "Waarom dit ook vóór het tekenen al nuttig is" },
       {
         type: "p",
-        text: "Diezelfde wetgeving verplicht de kredietgever om je vóór je tekent een gestandaardiseerd informatieblad te geven, met daarin onder meer het jaarlijkse kostenpercentage (JKP) — niet enkel de rente, maar de volledige kost van het krediet op jaarbasis, kosten inbegrepen. Dat maakt het mogelijk om aanbiedingen van verschillende kredietgevers eerlijk te vergelijken vóór je een handtekening zet.",
+        text: "Diezelfde wetgeving verplicht de kredietgever om je vóór je tekent een gestandaardiseerd informatieblad te geven, met daarin onder meer het jaarlijkse kostenpercentage (JKP): niet enkel de rente, maar de volledige kost van het krediet op jaarbasis, kosten inbegrepen. Dat maakt het mogelijk om aanbiedingen van verschillende kredietgevers eerlijk te vergelijken vóór je een handtekening zet.",
       },
       {
         type: "callout",
         tone: "tip",
         title: "Bedenktijd is geen vervanging voor vergelijken vooraf",
-        text: "Reken liever vooraf goed na — bijvoorbeeld met de Lening-vergelijker op FinEdu — dan achteraf op de bedenktijd te vertrouwen. Herroepen kan wel, maar een goed doordachte keuze vooraf bespaart je die stap.",
+        text: "Reken liever vooraf goed na: bijvoorbeeld met de Lening-vergelijker op FinEdu: dan achteraf op de bedenktijd te vertrouwen. Herroepen kan wel, maar een goed doordachte keuze vooraf bespaart je die stap.",
       },
       {
         type: "p",

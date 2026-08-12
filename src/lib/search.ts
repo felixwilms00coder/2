@@ -141,7 +141,7 @@ export function searchContent(query: string): SearchResult[] {
       kind: article.kind,
       title: article.title,
       description: category
-        ? `${category.title} — ${article.summary}`
+        ? `${category.title}: ${article.summary}`
         : article.summary,
       score,
       snippet: bestSnippet(article.blocks, tokens),

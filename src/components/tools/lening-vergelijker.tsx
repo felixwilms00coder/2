@@ -65,7 +65,7 @@ export function LeningVergelijker() {
         <p className="text-sm leading-relaxed text-foreground/90">
           <span className="font-bold">Vul zelf de rentevoeten in die je al hebt.</span>{" "}
           FinEdu houdt geen eigen rentetabel bij en beveelt geen bank of
-          kredietgever aan — deze tool rekent enkel na met cijfers die jij
+          kredietgever aan: deze tool rekent enkel na met cijfers die jij
           van een offerte of simulatie overneemt. Dossierkosten,
           schuldsaldoverzekering en notariskosten (bij een hypothecair
           krediet) zitten hier niet in.
@@ -212,7 +212,7 @@ export function LeningVergelijker() {
                       isVoordeligst ? "text-accent" : "text-muted"
                     }`}
                   >
-                    {r.naam} {isVoordeligst && "— laagste totale kost"}
+                    {r.naam} {isVoordeligst && ": laagste totale kost"}
                   </dt>
                   <dd
                     className={`mt-1 font-display text-xl font-extrabold ${

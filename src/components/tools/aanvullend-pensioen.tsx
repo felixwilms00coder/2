@@ -41,8 +41,7 @@ export function AanvullendPensioen() {
         <p className="text-sm leading-relaxed text-foreground/90">
           <span className="font-bold">
             Dit is enkel wat je zelf extra opbouwt
-          </span>{" "}
-          — pensioensparen, VAPZ, of gewoon apart sparen — niet je wettelijk
+          </span>{" "}: pensioensparen, VAPZ, of gewoon apart sparen: niet je wettelijk
           pensioen. Voor een schatting van dat wettelijk pensioen op basis van
           je echte loopbaan, ga naar de officiële{" "}
           <a

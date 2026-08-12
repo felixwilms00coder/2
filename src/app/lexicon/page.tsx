@@ -15,7 +15,7 @@ export default function LexiconPage() {
       <PageHero
         eyebrow="Lexicon"
         title="Financieel jargon, uitgelegd"
-        description="Korte, feitelijke uitleg van begrippen die je elders op FinEdu tegenkomt — geen actuele bedragen of percentages, enkel wat een term betekent."
+        description="Korte, feitelijke uitleg van begrippen die je elders op FinEdu tegenkomt: geen actuele bedragen of percentages, enkel wat een term betekent."
       />
       <Container className="py-14">
         <LexiconLijst />

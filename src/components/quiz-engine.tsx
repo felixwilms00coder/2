@@ -72,7 +72,7 @@ export function QuizEngine({ quiz }: { quiz: Quiz }) {
         </p>
         <p className="mx-auto mt-2 max-w-sm text-muted">
           {percentage >= 80
-            ? "Sterk gedaan — je kent de basis goed."
+            ? "Sterk gedaan: je kent de basis goed."
             : percentage >= 50
               ? "Niet slecht, maar er valt zeker nog wat bij te leren."
               : "Geen zorgen: hier is precies waarom we deze leerstof schreven."}

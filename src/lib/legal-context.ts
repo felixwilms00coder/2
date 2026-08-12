@@ -12,7 +12,7 @@ export function buildLegalContext(): string {
   const lawLines = legislation
     .map(
       (l) =>
-        `- "${l.title}" — ${l.officialTitle} (bron: ${l.sourceUrl}, laatst nagekeken ${l.lastVerified}). ${l.summary}`,
+        `- "${l.title}": ${l.officialTitle} (bron: ${l.sourceUrl}, laatst nagekeken ${l.lastVerified}). ${l.summary}`,
     )
     .join("\n");
 
@@ -20,5 +20,5 @@ export function buildLegalContext(): string {
     .map((s) => `- ${s.name} (${s.url}): ${s.description}`)
     .join("\n");
 
-  return `WETGEVING waarop je je mag baseren voor juridische duiding — citeer altijd de titel tussen aanhalingstekens wanneer je hiervan gebruik maakt, en noem geen wetsartikel dat hier niet in staat:\n${lawLines}\n\nOFFICIËLE BRONNEN — noem en verwijs naar de relevante bron wanneer je vraag daarover gaat:\n${sourceLines}`;
+  return `WETGEVING waarop je je mag baseren voor juridische duiding: citeer altijd de titel tussen aanhalingstekens wanneer je hiervan gebruik maakt, en noem geen wetsartikel dat hier niet in staat:\n${lawLines}\n\nOFFICIËLE BRONNEN: noem en verwijs naar de relevante bron wanneer je vraag daarover gaat:\n${sourceLines}`;
 }

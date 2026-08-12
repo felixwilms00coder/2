@@ -68,7 +68,7 @@ export function BudgetScan() {
           <p className="text-sm leading-relaxed text-foreground/90">
             <span className="font-bold">Je gegevens blijven op je toestel.</span>{" "}
             De analyse draait volledig in je browser. Er wordt niets geüpload,
-            opgeslagen of doorgestuurd — je kan je internetverbinding zelfs
+            opgeslagen of doorgestuurd: je kan je internetverbinding zelfs
             uitzetten.
           </p>
         </div>

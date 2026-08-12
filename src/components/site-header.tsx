@@ -80,7 +80,7 @@ export function SiteHeader() {
     >
       <Container>
         <div className="flex h-16 items-center justify-between gap-3">
-          <Link href="/" aria-label="FinEdu — naar de startpagina">
+          <Link href="/" aria-label="FinEdu: naar de startpagina">
             <Logo markClassName="h-9 w-9 text-primary" />
           </Link>
 

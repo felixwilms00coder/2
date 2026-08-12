@@ -29,7 +29,7 @@ const serif = Fraunces({
   display: "swap",
 });
 
-const title = "FinEdu — financieel wegwijs vanaf je eerste job";
+const title = "FinEdu: financieel wegwijs vanaf je eerste job";
 const description =
   "FinEdu helpt jonge starters op de Vlaamse arbeidsmarkt wegwijs te raken in budget, sparen, beleggen, verzekeringen, wonen, pensioen en belastingen. Duidelijke uitleg, handige rekentools en een korte quiz.";
 
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: title,
-    template: "%s — FinEdu",
+    template: "%s: FinEdu",
   },
   description,
   alternates: {

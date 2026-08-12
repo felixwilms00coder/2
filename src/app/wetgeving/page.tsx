@@ -24,12 +24,11 @@ export default function WetgevingPage() {
       <PageHero
         eyebrow="Wetgeving"
         title="De regels achter de leerstof"
-        description="Wetgeving die relevant is voor de onderwerpen op FinEdu, samengevat in gewone taal — met telkens een link naar de officieel geconsolideerde tekst. Dit is ook de bron waarop het AI-antwoord op /zoeken zich baseert."
+        description="Wetgeving die relevant is voor de onderwerpen op FinEdu, samengevat in gewone taal: met telkens een link naar de officieel geconsolideerde tekst. Dit is ook de bron waarop het AI-antwoord op /zoeken zich baseert."
       />
       <Container className="py-14">
         <div className="max-w-2xl rounded-2xl border border-warning/25 bg-warning-light p-5 text-sm leading-relaxed text-foreground/90">
-          Dit zijn geen volledige of juridisch sluitende weergaves van de wet
-          — enkel de kernstructuur, herschreven in gewone taal, en cijfers
+          Dit zijn geen volledige of juridisch sluitende weergaves van de wet: enkel de kernstructuur, herschreven in gewone taal, en cijfers
           die vaak wijzigen (tarieven, drempels) staan hier bewust niet op.
           Voor een bindend antwoord op jouw concrete situatie: raadpleeg een
           notaris of advocaat.
@@ -80,7 +79,7 @@ export default function WetgevingPage() {
           </h2>
           <p className="mt-2 max-w-2xl text-muted">
             Geen van deze partijen biedt een publieke koppeling voor derden
-            aan — dit zijn dus doorverwijzingen, geen live geïntegreerde
+            aan: dit zijn dus doorverwijzingen, geen live geïntegreerde
             data.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">

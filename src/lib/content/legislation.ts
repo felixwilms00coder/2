@@ -23,11 +23,11 @@ export const legislation: LegislationEntry[] = [
   {
     slug: "wettelijk-erfdeel",
     title: "Iedereen met kinderen heeft een beschermd minimumdeel in de erfenis",
-    officialTitle: "Burgerlijk Wetboek, Boek 4 — Erfenissen, schenkingen en testamenten",
+    officialTitle: "Burgerlijk Wetboek, Boek 4: Erfenissen, schenkingen en testamenten",
     jurisdiction: "federaal",
     topics: ["erven"],
     summary:
-      "Kinderen (en bij ontstentenis daarvan soms de partner) hebben altijd recht op een minimumdeel van de erfenis, de 'reserve'. Dat deel kan een overledene niet wegschenken of via testament aan iemand anders geven, ook niet als hij dat zou willen. Wat overblijft na de reserve — het 'beschikbaar deel' — mag wel vrij via testament worden verdeeld.",
+      "Kinderen (en bij ontstentenis daarvan soms de partner) hebben altijd recht op een minimumdeel van de erfenis, de 'reserve'. Dat deel kan een overledene niet wegschenken of via testament aan iemand anders geven, ook niet als hij dat zou willen. Wat overblijft na de reserve: het 'beschikbaar deel': mag wel vrij via testament worden verdeeld.",
     sourceUrl:
       "https://www.ejustice.just.fgov.be/eli/wet/1804/03/21/1804032150/justel",
     lastVerified: "2026-08-04",
@@ -39,7 +39,7 @@ export const legislation: LegislationEntry[] = [
     jurisdiction: "vlaams",
     topics: ["erven"],
     summary:
-      "Wie erft in het Vlaamse Gewest, betaalt erfbelasting volgens een progressief schijvenstelsel: hoe groter het geërfde bedrag, hoe hoger het tarief op dat gedeelte. Het tarief hangt ook af van wie erft: partners en kinderen (rechte lijn) betalen minder dan broers/zussen, en zij weer minder dan anderen. De exacte schijfgrenzen en percentages wijzigen soms — check ze bij VLABEL voor je een concreet bedrag berekent.",
+      "Wie erft in het Vlaamse Gewest, betaalt erfbelasting volgens een progressief schijvenstelsel: hoe groter het geërfde bedrag, hoe hoger het tarief op dat gedeelte. Het tarief hangt ook af van wie erft: partners en kinderen (rechte lijn) betalen minder dan broers/zussen, en zij weer minder dan anderen. De exacte schijfgrenzen en percentages wijzigen soms: check ze bij VLABEL voor je een concreet bedrag berekent.",
     sourceUrl: "https://www.ejustice.just.fgov.be/eli/decreet/2013/12/13/2013036016/justel",
     lastVerified: "2026-08-04",
   },
@@ -50,7 +50,7 @@ export const legislation: LegislationEntry[] = [
     jurisdiction: "vlaams",
     topics: ["schenking", "erven"],
     summary:
-      "Een schenking van roerende goederen (geld, effecten) via de notaris wordt belast tegen een vast, doorgaans laag tarief. Onroerend goed schenken (bv. een woning) gebeurt altijd via de notaris en volgt een apart, progressief tarief. Belangrijk: overlijdt de schenker binnen een bepaalde termijn na een niet-geregistreerde schenking (bv. een handgift), dan kan de fiscus die alsnog als erfenis belasten. De exacte termijn en tarieven wijzigen soms — laat dit door een notaris bevestigen voor je schenkt.",
+      "Een schenking van roerende goederen (geld, effecten) via de notaris wordt belast tegen een vast, doorgaans laag tarief. Onroerend goed schenken (bv. een woning) gebeurt altijd via de notaris en volgt een apart, progressief tarief. Belangrijk: overlijdt de schenker binnen een bepaalde termijn na een niet-geregistreerde schenking (bv. een handgift), dan kan de fiscus die alsnog als erfenis belasten. De exacte termijn en tarieven wijzigen soms: laat dit door een notaris bevestigen voor je schenkt.",
     sourceUrl: "https://www.ejustice.just.fgov.be/eli/decreet/2013/12/13/2013036016/justel",
     lastVerified: "2026-08-04",
   },
@@ -68,7 +68,7 @@ export const legislation: LegislationEntry[] = [
   {
     slug: "herroepingsrecht-consumentenkrediet",
     title: "Bij een consumentenkrediet heb je altijd 14 dagen bedenktijd",
-    officialTitle: "Wetboek van Economisch Recht, Boek VII — Betalings- en kredietdiensten",
+    officialTitle: "Wetboek van Economisch Recht, Boek VII: Betalings- en kredietdiensten",
     jurisdiction: "federaal",
     topics: ["lenen"],
     summary:
@@ -84,7 +84,7 @@ export const legislation: LegislationEntry[] = [
     jurisdiction: "federaal",
     topics: ["belasting", "werk"],
     summary:
-      "Wat je werkgever maandelijks inhoudt als bedrijfsvoorheffing, is een voorschot op je uiteindelijke personenbelasting — niet het definitieve bedrag. Bij je jaarlijkse belastingaangifte wordt je échte belasting berekend op basis van je totale inkomen van het jaar (progressieve schijven) en vergeleken met wat al werd voorafbetaald: het verschil krijg je terug, of moet je bijbetalen. De schijfgrenzen en percentages worden jaarlijks geïndexeerd.",
+      "Wat je werkgever maandelijks inhoudt als bedrijfsvoorheffing, is een voorschot op je uiteindelijke personenbelasting: niet het definitieve bedrag. Bij je jaarlijkse belastingaangifte wordt je échte belasting berekend op basis van je totale inkomen van het jaar (progressieve schijven) en vergeleken met wat al werd voorafbetaald: het verschil krijg je terug, of moet je bijbetalen. De schijfgrenzen en percentages worden jaarlijks geïndexeerd.",
     sourceUrl:
       "https://www.ejustice.just.fgov.be/eli/wet/1992/04/10/1992003308/justel",
     lastVerified: "2026-08-04",
@@ -96,7 +96,7 @@ export const legislation: LegislationEntry[] = [
     jurisdiction: "federaal",
     topics: ["belasting", "werk", "pensioen"],
     summary:
-      "De sociale zekerheidsbijdrage die op je brutoloon wordt ingehouden, gaat naar een gemeenschappelijke pot die onder meer het wettelijk pensioen, de ziekte- en invaliditeitsverzekering, de werkloosheidsuitkering en het kindergeld financiert. Het is geen individuele spaarpot op jouw naam — je bouwt wel pensioenrechten op naarmate je meer en langer bijdraagt.",
+      "De sociale zekerheidsbijdrage die op je brutoloon wordt ingehouden, gaat naar een gemeenschappelijke pot die onder meer het wettelijk pensioen, de ziekte- en invaliditeitsverzekering, de werkloosheidsuitkering en het kindergeld financiert. Het is geen individuele spaarpot op jouw naam: je bouwt wel pensioenrechten op naarmate je meer en langer bijdraagt.",
     sourceUrl: "https://www.ejustice.just.fgov.be/eli/wet/1969/06/27/1969062702/justel",
     lastVerified: "2026-08-04",
   },
@@ -119,18 +119,18 @@ export const legislation: LegislationEntry[] = [
     jurisdiction: "eu",
     topics: ["sparen"],
     summary:
-      "Geld op een spaar- of zichtrekening bij een bank met een Belgische of Europese vergunning is via het depositogarantiestelsel beschermd tot een vast bedrag per persoon per bank, mocht de bank failliet gaan. Heb je spaargeld verspreid over meerdere banken, dan geldt die bescherming per bank apart — bij dezelfde bank stapelt het niet op als je er meerdere rekeningen hebt. Het exacte beschermde bedrag ligt wettelijk vast maar wijzigt zelden; controleer het actuele bedrag bij het Garantiefonds voor financiële diensten.",
+      "Geld op een spaar- of zichtrekening bij een bank met een Belgische of Europese vergunning is via het depositogarantiestelsel beschermd tot een vast bedrag per persoon per bank, mocht de bank failliet gaan. Heb je spaargeld verspreid over meerdere banken, dan geldt die bescherming per bank apart: bij dezelfde bank stapelt het niet op als je er meerdere rekeningen hebt. Het exacte beschermde bedrag ligt wettelijk vast maar wijzigt zelden; controleer het actuele bedrag bij het Garantiefonds voor financiële diensten.",
     sourceUrl: "https://www.ejustice.just.fgov.be/eli/wet/2014/04/25/2014003195/justel",
     lastVerified: "2026-08-04",
   },
   {
     slug: "verzekeringsbemiddeling-vergunning",
     title: "Wie verzekeringen voorstelt, aanbeveelt of vergelijkt als dienst, heeft daarvoor een FSMA-registratie nodig",
-    officialTitle: "Wet van 4 april 2014 betreffende de verzekeringen (omzetting IDD — Insurance Distribution Directive)",
+    officialTitle: "Wet van 4 april 2014 betreffende de verzekeringen (omzetting IDD: Insurance Distribution Directive)",
     jurisdiction: "eu",
     topics: ["verzekeren"],
     summary:
-      "Verzekeringsbemiddeling — het voorstellen, aanbevelen, vergelijken of voorbereidend werk doen richting het afsluiten van een verzekeringscontract — is in België een gereglementeerde activiteit. Wie dat als dienst aanbiedt, ook zonder commissie te ontvangen, moet geregistreerd zijn bij de FSMA als verzekeringstussenpersoon. Consumenten kunnen die registratie nakijken via het openbaar register op fsma.be voor ze op een aanbeveling ingaan.",
+      "Verzekeringsbemiddeling: het voorstellen, aanbevelen, vergelijken of voorbereidend werk doen richting het afsluiten van een verzekeringscontract: is in België een gereglementeerde activiteit. Wie dat als dienst aanbiedt, ook zonder commissie te ontvangen, moet geregistreerd zijn bij de FSMA als verzekeringstussenpersoon. Consumenten kunnen die registratie nakijken via het openbaar register op fsma.be voor ze op een aanbeveling ingaan.",
     sourceUrl: "https://www.ejustice.just.fgov.be/eli/wet/2014/04/04/2014011240/justel",
     lastVerified: "2026-08-04",
   },

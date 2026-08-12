@@ -196,7 +196,7 @@ export const quizzes: Quiz[] = [
           { text: "De notariskosten bij de aankoop", correct: false },
         ],
         explanation:
-          "Hoe hoger de quotiteit — hoe meer je leent in verhouding tot de woningwaarde — hoe meer risico de bank loopt, wat vaak resulteert in een hogere rente.",
+          "Hoe hoger de quotiteit: hoe meer je leent in verhouding tot de woningwaarde: hoe meer risico de bank loopt, wat vaak resulteert in een hogere rente.",
       },
       {
         question:
@@ -245,7 +245,7 @@ export const quizzes: Quiz[] = [
           { text: "Het is een boete bij te late aflossing", correct: false },
         ],
         explanation:
-          "Registratierechten (in Vlaanderen ook het verkooprecht genoemd) zijn een belasting bovenop de aankoopprijs — een aparte kost naast de lening zelf en de notariskosten.",
+          "Registratierechten (in Vlaanderen ook het verkooprecht genoemd) zijn een belasting bovenop de aankoopprijs: een aparte kost naast de lening zelf en de notariskosten.",
       },
       {
         question:
@@ -256,7 +256,7 @@ export const quizzes: Quiz[] = [
             correct: true,
           },
           { text: "Omdat de rentevoet automatisch stijgt na verloop van tijd", correct: false },
-          { text: "Dat klopt niet — een langere looptijd is altijd goedkoper", correct: false },
+          { text: "Dat klopt niet: een langere looptijd is altijd goedkoper", correct: false },
           { text: "Omdat de bank een boete aanrekent voor lange looptijden", correct: false },
         ],
         explanation:
@@ -370,7 +370,7 @@ export const quizzes: Quiz[] = [
           { text: "Een belasting die je betaalt op beleggingswinst", correct: false },
         ],
         explanation:
-          "Een ETF volgt bijvoorbeeld een beursindex zoals de S&P 500, zonder dat een fondsbeheerder actief aandelen selecteert — vaak tegen lagere lopende kosten dan een actief beheerd fonds.",
+          "Een ETF volgt bijvoorbeeld een beursindex zoals de S&P 500, zonder dat een fondsbeheerder actief aandelen selecteert: vaak tegen lagere lopende kosten dan een actief beheerd fonds.",
       },
       {
         question: "Wat is volatiliteit?",
@@ -384,7 +384,7 @@ export const quizzes: Quiz[] = [
           { text: "Een ander woord voor dividend", correct: false },
         ],
         explanation:
-          "Hoe hoger de volatiliteit, hoe onvoorspelbaarder de waarde op korte termijn — ook al kan het verwachte rendement op lange termijn hoog zijn.",
+          "Hoe hoger de volatiliteit, hoe onvoorspelbaarder de waarde op korte termijn: ook al kan het verwachte rendement op lange termijn hoog zijn.",
       },
       {
         question: "Wat beschermt het Belgisch depositogarantiestelsel?",
@@ -398,14 +398,14 @@ export const quizzes: Quiz[] = [
           { text: "Enkel geld op een zichtrekening, nooit op een spaarrekening", correct: false },
         ],
         explanation:
-          "Dit is een wettelijke bescherming voor gereglementeerd spaargeld, beheerd door het Garantiefonds voor financiële diensten — niet iets dat voor beleggingen geldt.",
+          "Dit is een wettelijke bescherming voor gereglementeerd spaargeld, beheerd door het Garantiefonds voor financiële diensten: niet iets dat voor beleggingen geldt.",
       },
       {
         question:
           "Waarom is het slim om bij een spaarrekening niet enkel naar het hoogste totale rentepercentage te kijken?",
         options: [
           {
-            text: "Omdat de getrouwheidspremie pas na een vol jaar ononderbroken sparen wordt uitbetaald — heb je het geld eerder nodig, dan mis je dat deel",
+            text: "Omdat de getrouwheidspremie pas na een vol jaar ononderbroken sparen wordt uitbetaald: heb je het geld eerder nodig, dan mis je dat deel",
             correct: true,
           },
           { text: "Omdat het totale percentage altijd fout wordt weergegeven", correct: false },
@@ -503,7 +503,7 @@ export const quizzes: Quiz[] = [
           { text: "Het bedrag dat de erfgenamen samen aan belasting betalen", correct: false },
         ],
         explanation:
-          "Een nalatenschap omvat zowel wat iemand bezat als wat die persoon nog verschuldigd was — schulden erf je in principe mee.",
+          "Een nalatenschap omvat zowel wat iemand bezat als wat die persoon nog verschuldigd was: schulden erf je in principe mee.",
       },
       {
         question: "Wanneer zou je overwegen om een erfenis te verwerpen?",
@@ -511,7 +511,7 @@ export const quizzes: Quiz[] = [
           { text: "Als de schulden van de nalatenschap groter zijn dan de bezittingen", correct: true },
           { text: "Als je de overledene niet goed kende", correct: false },
           { text: "Als er toevallig een testament bestaat", correct: false },
-          { text: "Dat kan wettelijk niet — aanvaarden is altijd verplicht", correct: false },
+          { text: "Dat kan wettelijk niet: aanvaarden is altijd verplicht", correct: false },
         ],
         explanation:
           "Omdat je een nalatenschap met haar schulden erft, kan verwerpen zinvol zijn als die schulden groter zijn dan wat er te verdelen valt.",
@@ -525,7 +525,7 @@ export const quizzes: Quiz[] = [
           { text: "Eender welke financiële website", correct: false },
         ],
         explanation:
-          "Algemene uitleg over erven kan je op FinEdu vinden, maar een bindend antwoord op je eigen dossier — met alle details van jouw situatie — geeft enkel een notaris.",
+          "Algemene uitleg over erven kan je op FinEdu vinden, maar een bindend antwoord op je eigen dossier: met alle details van jouw situatie: geeft enkel een notaris.",
       },
       {
         question: "Wat is het belangrijkste verschil tussen een schenking en een erfenis?",
@@ -536,7 +536,7 @@ export const quizzes: Quiz[] = [
           { text: "Een schenking kan enkel via een testament gebeuren", correct: false },
         ],
         explanation:
-          "Dat tijdstip — bij leven versus na overlijden — bepaalt welke regels en welke belasting van toepassing zijn. Beide kunnen, afhankelijk van hoe ze gebeuren, belast worden.",
+          "Dat tijdstip: bij leven versus na overlijden: bepaalt welke regels en welke belasting van toepassing zijn. Beide kunnen, afhankelijk van hoe ze gebeuren, belast worden.",
       },
     ],
   },

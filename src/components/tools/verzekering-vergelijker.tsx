@@ -70,7 +70,7 @@ export function VerzekeringVergelijker() {
         />
         <p className="text-sm leading-relaxed text-foreground/90">
           <span className="font-bold">Vul de offertes in die je al ontvangen hebt.</span>{" "}
-          FinEdu levert of rangschikt geen eigen polissen — vraag offertes op bij
+          FinEdu levert of rangschikt geen eigen polissen: vraag offertes op bij
           verzekeraars of een erkende verzekeringsmakelaar (check de
           vergunning op fsma.be), en vul hier enkel de cijfers in om ze eerlijk
           te vergelijken. De laagste premie is niet altijd de laagste kost.
@@ -224,7 +224,7 @@ export function VerzekeringVergelijker() {
                       isGoedkoopst ? "text-accent" : "text-muted"
                     }`}
                   >
-                    {r.naam} {isGoedkoopst && "— goedkoopst verwacht"}
+                    {r.naam} {isGoedkoopst && ": goedkoopst verwacht"}
                   </dt>
                   <dd
                     className={`mt-1 font-display text-xl font-extrabold ${

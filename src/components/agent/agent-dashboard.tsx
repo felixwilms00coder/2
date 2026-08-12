@@ -176,8 +176,8 @@ export function AgentDashboard() {
               <p className="font-display font-bold text-foreground">
                 {state.settings.armed
                   ? broker.isLive
-                    ? "Actief — echte orders"
-                    : "Actief — simulatie"
+                    ? "Actief: echte orders"
+                    : "Actief: simulatie"
                   : "Op pauze"}
               </p>
               <p className="mt-0.5 text-sm text-muted">
@@ -275,7 +275,7 @@ export function AgentDashboard() {
                 Gebruik eerst hun simulatie-omgeving en controleer of orders
                 aankomen zoals verwacht. Het token komt uit jouw eigen
                 Saxo-ontwikkelaarsapplicatie en wordt alleen in dit tabblad
-                bewaard — het verdwijnt zodra je het sluit en wordt nooit naar
+                bewaard: het verdwijnt zodra je het sluit en wordt nooit naar
                 FinEdu gestuurd.
               </span>
             </p>

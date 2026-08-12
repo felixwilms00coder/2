@@ -65,7 +65,7 @@ export function SpaarrekeningVergelijker() {
         />
         <p className="text-sm leading-relaxed text-foreground/90">
           <span className="font-bold">Vul zelf de tarieven in die je al hebt.</span>{" "}
-          FinEdu houdt geen eigen rentetabel bij en beveelt geen bank aan — deze
+          FinEdu houdt geen eigen rentetabel bij en beveelt geen bank aan: deze
           tool rekent enkel na met cijfers die jij van je eigen offertes of de
           website van de bank overneemt. Vergelijk ook zelf actuele tarieven bij
           de banken of via een onafhankelijke bron.
@@ -233,7 +233,7 @@ export function SpaarrekeningVergelijker() {
                       isBeste ? "text-accent" : "text-muted"
                     }`}
                   >
-                    {r.naam} {isBeste && "— beste van deze vergelijking"}
+                    {r.naam} {isBeste && ": beste van deze vergelijking"}
                   </dt>
                   <dd
                     className={`mt-1 font-display text-xl font-extrabold ${

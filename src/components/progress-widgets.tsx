@@ -97,7 +97,7 @@ export function LevelPill() {
     <Link
       href="/voortgang"
       className="hidden min-h-11 items-center gap-2 rounded-full border border-border bg-surface px-3 text-sm font-semibold text-foreground transition-colors hover:border-accent hover:bg-accent-soft lg:inline-flex"
-      title={`${xp} XP — niveau ${level.name}`}
+      title={`${xp} XP: niveau ${level.name}`}
     >
       <Trophy className="h-4 w-4 text-accent" aria-hidden="true" />
       <span>{level.name}</span>

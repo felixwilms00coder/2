@@ -38,7 +38,7 @@ export function ProgressOverview() {
         </h2>
         <p className="mx-auto mt-2 max-w-md text-muted">
           Lees een artikel, doe de quiz of speel het keuzespel. Je voortgang
-          wordt lokaal in je browser bewaard — je hoeft geen account te maken.
+          wordt lokaal in je browser bewaard: je hoeft geen account te maken.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           <ButtonLink href="/leerstof">Begin met lezen</ButtonLink>
@@ -108,7 +108,7 @@ export function ProgressOverview() {
             Beste spelscore
           </dt>
           <dd className="mt-2 font-display text-2xl font-extrabold text-foreground">
-            {bestGameScore === null ? "—" : `${bestGameScore}/100`}
+            {bestGameScore === null ? ": " : `${bestGameScore}/100`}
           </dd>
           <dd className="mt-1 text-xs text-muted">
             {gameScores.length}/{games.length} keuzespellen gespeeld

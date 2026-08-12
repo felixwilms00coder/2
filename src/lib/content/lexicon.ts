@@ -19,7 +19,7 @@ export const lexicon: LexiconEntry[] = [
     slug: "brutoloon",
     term: "Brutoloon",
     uitleg:
-      "Het loon vóór aftrek van sociale bijdragen en belastingen — het bedrag dat in je arbeidscontract staat.",
+      "Het loon vóór aftrek van sociale bijdragen en belastingen: het bedrag dat in je arbeidscontract staat.",
     categorySlug: "budget-betalen-lenen-en-verzekeren",
   },
   {
@@ -54,7 +54,7 @@ export const lexicon: LexiconEntry[] = [
     slug: "schuldsaldoverzekering",
     term: "Schuldsaldoverzekering",
     uitleg:
-      "Een verzekering die (een deel van) je resterende lening aflost als je overlijdt voor die volledig is terugbetaald — vaak verplicht bij een hypothecair krediet.",
+      "Een verzekering die (een deel van) je resterende lening aflost als je overlijdt voor die volledig is terugbetaald: vaak verplicht bij een hypothecair krediet.",
     categorySlug: "budget-betalen-lenen-en-verzekeren",
   },
   {
@@ -68,7 +68,7 @@ export const lexicon: LexiconEntry[] = [
     slug: "wachttijd",
     term: "Wachttijd",
     uitleg:
-      "De periode net na het afsluiten van een verzekering waarin bepaalde schadegevallen nog niet gedekt zijn — vaak vermeld in de kleine lettertjes van de polis.",
+      "De periode net na het afsluiten van een verzekering waarin bepaalde schadegevallen nog niet gedekt zijn: vaak vermeld in de kleine lettertjes van de polis.",
     categorySlug: "budget-betalen-lenen-en-verzekeren",
   },
   {
@@ -98,7 +98,7 @@ export const lexicon: LexiconEntry[] = [
     slug: "feitelijk-samenwonen",
     term: "Feitelijk samenwonen",
     uitleg:
-      "Samenwonen zonder dat te registreren bij de gemeente — de eenvoudigste vorm, maar met de minste wettelijke bescherming voor beide partners.",
+      "Samenwonen zonder dat te registreren bij de gemeente: de eenvoudigste vorm, maar met de minste wettelijke bescherming voor beide partners.",
     categorySlug: "familie",
   },
   {
@@ -184,7 +184,7 @@ export const lexicon: LexiconEntry[] = [
     slug: "volatiliteit",
     term: "Volatiliteit",
     uitleg:
-      "Hoe sterk de waarde van een belegging schommelt over een bepaalde periode — hoe hoger de volatiliteit, hoe onvoorspelbaarder de korte termijn.",
+      "Hoe sterk de waarde van een belegging schommelt over een bepaalde periode: hoe hoger de volatiliteit, hoe onvoorspelbaarder de korte termijn.",
     categorySlug: "sparen-en-beleggen",
   },
   {
@@ -198,7 +198,7 @@ export const lexicon: LexiconEntry[] = [
     slug: "instapkost",
     term: "Instapkost",
     uitleg:
-      "Een eenmalige kost, uitgedrukt als percentage van je inleg, die je betaalt bij de aankoop van een beleggingsfonds — komt bovenop de lopende kosten.",
+      "Een eenmalige kost, uitgedrukt als percentage van je inleg, die je betaalt bij de aankoop van een beleggingsfonds: komt bovenop de lopende kosten.",
     categorySlug: "sparen-en-beleggen",
   },
   {
@@ -226,7 +226,7 @@ export const lexicon: LexiconEntry[] = [
     slug: "tak23",
     term: "Tak 23",
     uitleg:
-      "Een levensverzekeringsproduct waarbij je premie belegd wordt in onderliggende fondsen, zonder gewaarborgd rendement — de opbrengst (of het verlies) hangt volledig af van hoe die fondsen presteren.",
+      "Een levensverzekeringsproduct waarbij je premie belegd wordt in onderliggende fondsen, zonder gewaarborgd rendement: de opbrengst (of het verlies) hangt volledig af van hoe die fondsen presteren.",
     categorySlug: "sparen-en-beleggen",
   },
   {
@@ -247,7 +247,7 @@ export const lexicon: LexiconEntry[] = [
     slug: "beheersvergoeding",
     term: "Beheersvergoeding",
     uitleg:
-      "De jaarlijkse vergoeding voor wie het fonds of de portefeuille beheert — meestal al verrekend in de lopende kosten, niet apart aangerekend.",
+      "De jaarlijkse vergoeding voor wie het fonds of de portefeuille beheert: meestal al verrekend in de lopende kosten, niet apart aangerekend.",
     categorySlug: "sparen-en-beleggen",
   },
 
@@ -283,7 +283,7 @@ export const lexicon: LexiconEntry[] = [
     slug: "verwerpen-van-een-erfenis",
     term: "Verwerpen van een erfenis",
     uitleg:
-      "De keuze om een erfenis niet te aanvaarden — bijvoorbeeld omdat de schulden groter zijn dan de bezittingen.",
+      "De keuze om een erfenis niet te aanvaarden: bijvoorbeeld omdat de schulden groter zijn dan de bezittingen.",
     categorySlug: "erven",
   },
 
@@ -313,7 +313,7 @@ export const lexicon: LexiconEntry[] = [
     slug: "vapz",
     term: "VAPZ",
     uitleg:
-      "Vrij Aanvullend Pensioen voor Zelfstandigen — een fiscaal voordelige manier voor zelfstandigen om een aanvullend pensioen op te bouwen.",
+      "Vrij Aanvullend Pensioen voor Zelfstandigen: een fiscaal voordelige manier voor zelfstandigen om een aanvullend pensioen op te bouwen.",
     categorySlug: "pensioen-en-pensioenvoorbereiding",
   },
   {
@@ -343,7 +343,7 @@ export const lexicon: LexiconEntry[] = [
     slug: "belastingschijven",
     term: "Belastingschijven",
     uitleg:
-      "Het progressieve systeem waarbij een hoger percentage van je inkomen belast wordt naarmate dat inkomen hoger is — enkel het deel boven een drempel valt in de hogere schijf.",
+      "Het progressieve systeem waarbij een hoger percentage van je inkomen belast wordt naarmate dat inkomen hoger is: enkel het deel boven een drempel valt in de hogere schijf.",
     categorySlug: "belasting-werk-en-inkomen",
   },
   {
@@ -386,7 +386,7 @@ export const lexicon: LexiconEntry[] = [
     slug: "registratierechten",
     term: "Registratierechten",
     uitleg:
-      "De belasting die je betaalt bij de aankoop van een woning of grond, berekend op de aankoopprijs — in Vlaanderen ook wel het verkooprecht genoemd.",
+      "De belasting die je betaalt bij de aankoop van een woning of grond, berekend op de aankoopprijs: in Vlaanderen ook wel het verkooprecht genoemd.",
     categorySlug: "woning-en-hypothecaire-lening",
   },
   {
@@ -407,7 +407,7 @@ export const lexicon: LexiconEntry[] = [
     slug: "quotiteit",
     term: "Quotiteit",
     uitleg:
-      "De verhouding tussen het geleende bedrag en de waarde van de woning — hoe hoger de quotiteit, hoe meer risico de bank loopt en hoe hoger vaak de rente.",
+      "De verhouding tussen het geleende bedrag en de waarde van de woning: hoe hoger de quotiteit, hoe meer risico de bank loopt en hoe hoger vaak de rente.",
     categorySlug: "woning-en-hypothecaire-lening",
   },
   {

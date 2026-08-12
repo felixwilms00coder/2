@@ -86,7 +86,7 @@ export const tools: ToolSummary[] = [
     title: "Aanvullend-pensioen-simulator",
     short: "Wat bouw je zelf op boven je wettelijk pensioen?",
     description:
-      "Simuleer wat pensioensparen of apart sparen tot je pensioen kan opleveren. Geen schatting van je wettelijk pensioen — daarvoor verwijzen we naar MyPension.be.",
+      "Simuleer wat pensioensparen of apart sparen tot je pensioen kan opleveren. Geen schatting van je wettelijk pensioen: daarvoor verwijzen we naar MyPension.be.",
     icon: "landmark",
   },
 ];

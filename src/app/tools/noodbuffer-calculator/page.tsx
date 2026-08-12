@@ -31,7 +31,7 @@ export default function NoodbufferCalculatorPage() {
             <div className="prose-article mt-4">
               <p>
                 Een noodbuffer is geld dat apart staat voor onverwachte
-                uitgaven of inkomensverlies — een kapotte wasmachine, een
+                uitgaven of inkomensverlies: een kapotte wasmachine, een
                 medische kost, of een periode zonder job. Zonder buffer eindig
                 je bij zo&apos;n uitgave vaak op een duurdere lening of
                 creditcardschuld.
@@ -48,8 +48,7 @@ export default function NoodbufferCalculatorPage() {
           <Callout tone="warning" title="Wat deze tool niet meerekent">
             De 3-tot-6-maanden-richtlijn is generiek. Wie een onzeker inkomen
             heeft (freelance, tijdelijk contract) of mensen ten laste, doet er
-            vaak goed aan om aan de hoge kant van die richtlijn te mikken —
-            of eroverheen.
+            vaak goed aan om aan de hoge kant van die richtlijn te mikken, of eroverheen.
           </Callout>
         </div>
       </Container>

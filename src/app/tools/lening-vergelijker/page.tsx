@@ -36,7 +36,7 @@ export default function LeningVergelijkerPage() {
                 koppeling, en een rangschikking van &quot;de goedkoopste
                 lening&quot; opstellen is in België een gereglementeerde
                 activiteit (kredietbemiddeling). Deze tool rekent enkel na
-                met cijfers die jij hebt — bijvoorbeeld uit een offerte of
+                met cijfers die jij hebt: bijvoorbeeld uit een offerte of
                 online simulatie.
               </p>
               <p>

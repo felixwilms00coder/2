@@ -32,11 +32,11 @@ export default function Regel72Page() {
               <p>
                 Deel 72 door je verwachte jaarlijkse rendementspercentage, en
                 je krijgt een snelle schatting van het aantal jaren tot je
-                bedrag verdubbelt bij samengestelde interest — interest op
+                bedrag verdubbelt bij samengestelde interest: interest op
                 interest. Bij 6% is dat bijvoorbeeld 72 ÷ 6 = 12 jaar.
               </p>
               <p>
-                Het is een vuistregel, geen exacte formule — vandaar dat deze
+                Het is een vuistregel, geen exacte formule: vandaar dat deze
                 tool ook het wiskundig exacte aantal jaren toont ter
                 vergelijking. Voor rendementen tussen ongeveer 4% en 12% ligt
                 de 72-regel dicht bij de werkelijkheid; daarbuiten wijkt ze
@@ -46,7 +46,7 @@ export default function Regel72Page() {
           </section>
 
           <Callout tone="warning" title="Wat deze regel niet meerekent">
-            Een constant rendement bestaat niet — beleggingen schommelen van
+            Een constant rendement bestaat niet: beleggingen schommelen van
             jaar tot jaar, en belastingen (roerende voorheffing, beurstaks) en
             inflatie zitten niet in deze berekening.
           </Callout>

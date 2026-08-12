@@ -210,7 +210,7 @@ function buildSuggestions(
       title: "Je betaalt maandelijks af op krediet",
       body: `Gemiddeld ${euro(
         afbetaling.total / a.monthsCovered,
-      )} per maand. Ga na welk krediet het duurste jaarlijks kostenpercentage heeft en los dat als eerste versneld af — dat levert meer op dan sparen tegen de huidige spaarrente.`,
+      )} per maand. Ga na welk krediet het duurste jaarlijks kostenpercentage heeft en los dat als eerste versneld af: dat levert meer op dan sparen tegen de huidige spaarrente.`,
       href: "/leerstof/budget-betalen-lenen-en-verzekeren/verantwoord-lenen",
       linkLabel: "Verantwoord lenen",
     });

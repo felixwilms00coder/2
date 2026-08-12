@@ -275,9 +275,9 @@ export const games: Game[] = [
   {
     slug: "onverwachte-uitgave",
     title: "Onverwachte uitgave: wat nu?",
-    short: "Je auto valt uit — vijf beslissingen in twintig dagen",
+    short: "Je auto valt uit: vijf beslissingen in twintig dagen",
     description:
-      "Eén tegenvaller, een reeks beslissingen erna. Zie hoe je noodbuffer je helpt — en wat er gebeurt als je die niet gebruikt.",
+      "Eén tegenvaller, een reeks beslissingen erna. Zie hoe je noodbuffer je helpt, en wat er gebeurt als je die niet gebruikt.",
     roundLabel: "Dag",
     startSaldo: 150,
     startBuffer: 700,
@@ -326,19 +326,19 @@ export const games: Game[] = [
             label: "Ik neem de trein met een weekabonnement (35 euro)",
             effect: { saldo: -35, humeur: 2 },
             feedback:
-              "Een voorspelbare, beperkte kost — een prima noodoplossing.",
+              "Een voorspelbare, beperkte kost: een prima noodoplossing.",
           },
           {
             label: "Ik bestel elke dag een taxi (25 euro per dag, 5 dagen)",
             effect: { saldo: -125, humeur: 5 },
             feedback:
-              "Comfortabel, maar 125 euro voor één week transport is fors — dat loopt snel op als de auto langer buiten dienst blijft.",
+              "Comfortabel, maar 125 euro voor één week transport is fors: dat loopt snel op als de auto langer buiten dienst blijft.",
           },
           {
             label: "Ik vraag een collega om elke dag mee te rijden",
             effect: { saldo: 0, humeur: -2 },
             feedback:
-              "Kost niets, maar je bent afhankelijk van iemand anders z'n schema — niet altijd een houdbare oplossing.",
+              "Kost niets, maar je bent afhankelijk van iemand anders z'n schema: niet altijd een houdbare oplossing.",
           },
         ],
       },
@@ -352,7 +352,7 @@ export const games: Game[] = [
             label: "Ik bedank hem, maar los het zelf op",
             effect: { humeur: 3 },
             feedback:
-              "Een onverwachte uitgave is vervelend, maar geen reden om vrienden financieel te betrekken — dat kan de relatie ook onder druk zetten.",
+              "Een onverwachte uitgave is vervelend, maar geen reden om vrienden financieel te betrekken: dat kan de relatie ook onder druk zetten.",
           },
           {
             label: "Ik ga akkoord, het scheelt toch",
@@ -365,7 +365,7 @@ export const games: Game[] = [
               "Ik vraag enkel mijn ouders om een renteloze lening, met een afspraak om terug te betalen",
             effect: { saldo: 300, humeur: 0 },
             feedback:
-              "Familie kan een goede tussenoplossing zijn, zeker met een duidelijke afspraak — dat voorkomt latere misverstanden.",
+              "Familie kan een goede tussenoplossing zijn, zeker met een duidelijke afspraak: dat voorkomt latere misverstanden.",
           },
         ],
       },
@@ -385,13 +385,13 @@ export const games: Game[] = [
             label: "Ik vul aan zodra er toevallig geld overblijft",
             effect: { buffer: 40, humeur: 0 },
             feedback:
-              "Zonder vast ritme duurt het meestal veel langer om een buffer weer op peil te krijgen — en de volgende tegenvaller kan intussen alweer toeslaan.",
+              "Zonder vast ritme duurt het meestal veel langer om een buffer weer op peil te krijgen, en de volgende tegenvaller kan intussen alweer toeslaan.",
           },
           {
             label: "Ik stel het uit tot ik meer verdien",
             effect: { buffer: 0, humeur: -3 },
             feedback:
-              "Zonder buffer sta je kwetsbaar voor de volgende onverwachte kost — en die komt vroeg of laat.",
+              "Zonder buffer sta je kwetsbaar voor de volgende onverwachte kost, en die komt vroeg of laat.",
           },
         ],
       },
@@ -402,7 +402,7 @@ export const games: Game[] = [
           "Een collega raadt een app aan die binnen enkele minuten tot 500 euro leent, zonder aanvraagformulieren. 'Handig voor de volgende keer,' zegt hij.",
         choices: [
           {
-            label: "Ik installeer de app niet — ik vertrouw liever op mijn buffer",
+            label: "Ik installeer de app niet: ik vertrouw liever op mijn buffer",
             effect: { humeur: 4 },
             feedback:
               "Snelle-kredietapps rekenen vaak hoge kosten aan voor het gemak. Een buffer die je zelf opbouwt, kost niets.",
@@ -417,7 +417,7 @@ export const games: Game[] = [
             label: "Ik gebruik de app meteen om alvast wat buffer aan te vullen",
             effect: { buffer: 200, saldo: -220, humeur: -4 },
             feedback:
-              "Lenen om te sparen kost je per saldo geld door de kosten van de app — je buffer groeit zo trager dan wanneer je gewoon zelf spaart.",
+              "Lenen om te sparen kost je per saldo geld door de kosten van de app: je buffer groeit zo trager dan wanneer je gewoon zelf spaart.",
           },
         ],
         leesMeer: {
@@ -451,13 +451,13 @@ export const games: Game[] = [
             label: "Ik betaal alles in één keer met mijn buffer",
             effect: { buffer: -2250, humeur: 10, vasteKost: 750 },
             feedback:
-              "Je opstartkosten zijn meteen geregeld, maar je buffer is bijna leeg — bouw hem als eerste weer op.",
+              "Je opstartkosten zijn meteen geregeld, maar je buffer is bijna leeg: bouw hem als eerste weer op.",
           },
           {
             label: "Ik betaal de waarborg via een huurwaarborglening",
             effect: { buffer: -750, saldo: -30, humeur: 6, vasteKost: 800 },
             feedback:
-              "Een huurwaarborglening spreidt de kost, maar de afbetaling komt bovenop je huur — check de voorwaarden goed.",
+              "Een huurwaarborglening spreidt de kost, maar de afbetaling komt bovenop je huur: check de voorwaarden goed.",
           },
           {
             label:
@@ -494,7 +494,7 @@ export const games: Game[] = [
             label: "Ik laat de plaatsbeschrijving overdoen door een expert (kost 150 euro, gedeeld)",
             effect: { saldo: -75, humeur: 3 },
             feedback:
-              "Grondig, en de kost wordt gedeeld met de verhuurder — een goede optie bij twijfel over de staat van de woning.",
+              "Grondig, en de kost wordt gedeeld met de verhuurder: een goede optie bij twijfel over de staat van de woning.",
           },
         ],
       },
@@ -508,19 +508,19 @@ export const games: Game[] = [
             label: "Ik sluit ze meteen af",
             effect: { saldo: -12, humeur: 3, vasteKost: 12 },
             feedback:
-              "Verstandig — vaak ook een verplichting in je huurcontract, en ze dekt schade die anders volledig voor jouw rekening zou zijn.",
+              "Verstandig: vaak ook een verplichting in je huurcontract, en ze dekt schade die anders volledig voor jouw rekening zou zijn.",
           },
           {
             label: "Ik stel het nog even uit",
             effect: { humeur: -3 },
             feedback:
-              "Als brand of waterschade optreedt voor je verzekerd bent, betaal je alles zelf — en dat kan het bedrag van je hele waarborg overstijgen.",
+              "Als brand of waterschade optreedt voor je verzekerd bent, betaal je alles zelf, en dat kan het bedrag van je hele waarborg overstijgen.",
           },
           {
             label: "Ik neem de duurste polis met alle extra's (35 euro per maand)",
             effect: { saldo: -35, humeur: -2, vasteKost: 35 },
             feedback:
-              "Meer dekking kan geruststellend zijn, maar begin met wat verplicht en zinvol is — je kan later altijd uitbreiden.",
+              "Meer dekking kan geruststellend zijn, maar begin met wat verplicht en zinvol is: je kan later altijd uitbreiden.",
           },
         ],
       },
@@ -546,7 +546,7 @@ export const games: Game[] = [
             label: "Ik wacht met grote aankopen tot mijn buffer weer aangevuld is",
             effect: { humeur: -5 },
             feedback:
-              "Financieel de veiligste keuze — het duurt wel langer voor je woning helemaal ingericht aanvoelt.",
+              "Financieel de veiligste keuze: het duurt wel langer voor je woning helemaal ingericht aanvoelt.",
           },
         ],
       },

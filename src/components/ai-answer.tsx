@@ -90,7 +90,7 @@ export function AiAnswer({ query }: { query: string }) {
             {state.answer}
           </p>
           <p className="text-xs text-muted">
-            Gegenereerd door een open-source taalmodel — geen persoonlijk
+            Gegenereerd door een open-source taalmodel: geen persoonlijk
             financieel of bindend juridisch advies. Verifieer cijfers en
             juridische stappen altijd bij een officiële bron, notaris of
             advocaat.

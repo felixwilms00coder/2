@@ -66,7 +66,7 @@ export const officialSources: OfficialSource[] = [
   },
   {
     slug: "vlaanderen-wonen",
-    name: "Vlaanderen.be — Wonen",
+    name: "Vlaanderen.be: Wonen",
     url: "https://www.vlaanderen.be/wonen",
     description:
       "Vlaamse overheidsinformatie over huren en verhuren, de Vlaamse huurwaarborglening en premies voor eigenaars.",
@@ -82,10 +82,10 @@ export const officialSources: OfficialSource[] = [
   },
   {
     slug: "wikifin-vergelijkingstool-sparen",
-    name: "Wikifin — Vergelijkingstool spaarrekeningen (FSMA)",
+    name: "Wikifin: Vergelijkingstool spaarrekeningen (FSMA)",
     url: "https://www.wikifin.be/nl/sparen-en-beleggen/vergelijkingstool-spaarrekeningen",
     description:
-      "De officiële, door de FSMA beheerde vergelijkingstool voor spaarrekeningen: vul je startbedrag, maandelijkse storting en spaarperiode in en krijg een gerangschikte lijst op basis van basisrente en getrouwheidspremie, met categorie (A/B/C) en of er roerende voorheffing verschuldigd is. FinEdu houdt zelf geen actuele rentetabel bij — dit is de plek voor de rente van vandaag.",
+      "De officiële, door de FSMA beheerde vergelijkingstool voor spaarrekeningen: vul je startbedrag, maandelijkse storting en spaarperiode in en krijg een gerangschikte lijst op basis van basisrente en getrouwheidspremie, met categorie (A/B/C) en of er roerende voorheffing verschuldigd is. FinEdu houdt zelf geen actuele rentetabel bij: dit is de plek voor de rente van vandaag.",
     topics: ["sparen"],
   },
   {
@@ -93,7 +93,7 @@ export const officialSources: OfficialSource[] = [
     name: "Spaargids.be (DPG Media)",
     url: "https://www.spaargids.be/sparen/spaartarieven.html",
     description:
-      "Een privaat, commercieel vergelijkingsplatform van DPG Media, sinds 2006 een van de grootste financiële vergelijkingssites in België. Niet gelieerd aan FinEdu of de FSMA — FinEdu heeft de cijfers op deze site niet zelf geverifieerd. Let op: de vergelijkingstools van Spaargids.be worden in de loop van 2026 geleidelijk overgeheveld naar Mijnvergelijker.be.",
+      "Een privaat, commercieel vergelijkingsplatform van DPG Media, sinds 2006 een van de grootste financiële vergelijkingssites in België. Niet gelieerd aan FinEdu of de FSMA: FinEdu heeft de cijfers op deze site niet zelf geverifieerd. Let op: de vergelijkingstools van Spaargids.be worden in de loop van 2026 geleidelijk overgeheveld naar Mijnvergelijker.be.",
     topics: ["sparen"],
   },
 ];
