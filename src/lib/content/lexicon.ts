@@ -92,6 +92,27 @@ export const lexicon: LexiconEntry[] = [
       "Wanneer het verzekerde bedrag lager ligt dan de werkelijke waarde van wat je verzekert. Bij een schadegeval kan de verzekeraar dan verhoudingsgewijs minder uitkeren dan de volledige schade.",
     categorySlug: "budget-betalen-lenen-en-verzekeren",
   },
+  {
+    slug: "jaarlijks-kostenpercentage",
+    term: "Jaarlijks kostenpercentage (JKP)",
+    uitleg:
+      "Het percentage dat de totale kost van een lening weergeeft: rente plus alle verplichte bijkomende kosten, samen op jaarbasis. Vergelijk leningen op basis van het JKP, niet enkel de rentevoet.",
+    categorySlug: "budget-betalen-lenen-en-verzekeren",
+  },
+  {
+    slug: "kredietopening",
+    term: "Kredietopening",
+    uitleg:
+      "Een doorlopend krediet waarbij je binnen een afgesproken limiet kan opnemen en terugbetalen wanneer je wil, in tegenstelling tot een lening met een vast bedrag en aflossingsschema.",
+    categorySlug: "budget-betalen-lenen-en-verzekeren",
+  },
+  {
+    slug: "herroepingsrecht",
+    term: "Herroepingsrecht",
+    uitleg:
+      "Het wettelijk recht om een afgesloten contract binnen een bepaalde termijn zonder opgave van reden ongedaan te maken, bijvoorbeeld bij een consumentenkrediet of een aankoop op afstand.",
+    categorySlug: "budget-betalen-lenen-en-verzekeren",
+  },
 
   // Familie
   {
@@ -127,6 +148,27 @@ export const lexicon: LexiconEntry[] = [
     term: "Groeipakket",
     uitleg:
       "De Vlaamse financiële ondersteuning voor gezinnen met kinderen, maandelijks uitbetaald per kind.",
+    categorySlug: "familie",
+  },
+  {
+    slug: "ouderlijk-gezag",
+    term: "Ouderlijk gezag",
+    uitleg:
+      "Het geheel van rechten en plichten van ouders om te beslissen over de persoon en het vermogen van hun minderjarig kind.",
+    categorySlug: "familie",
+  },
+  {
+    slug: "onderhoudsgeld",
+    term: "Onderhoudsgeld",
+    uitleg:
+      "Een periodieke financiële bijdrage die de ene ouder aan de andere betaalt voor de opvoeding en kosten van een kind, bijvoorbeeld na een scheiding.",
+    categorySlug: "familie",
+  },
+  {
+    slug: "huwelijkscontract",
+    term: "Huwelijkscontract",
+    uitleg:
+      "Een notariële akte waarin toekomstige of gehuwde partners afspraken over hun huwelijksvermogensstelsel vastleggen, in afwijking van het wettelijk stelsel.",
     categorySlug: "familie",
   },
 
@@ -250,6 +292,27 @@ export const lexicon: LexiconEntry[] = [
       "De jaarlijkse vergoeding voor wie het fonds of de portefeuille beheert: meestal al verrekend in de lopende kosten, niet apart aangerekend.",
     categorySlug: "sparen-en-beleggen",
   },
+  {
+    slug: "obligatie",
+    term: "Obligatie",
+    uitleg:
+      "Een schuldbewijs waarmee je geld uitleent aan een overheid of onderneming, in ruil voor periodieke rente en terugbetaling van het geleende bedrag op de eindvervaldag.",
+    categorySlug: "sparen-en-beleggen",
+  },
+  {
+    slug: "aandeel",
+    term: "Aandeel",
+    uitleg:
+      "Een bewijs van mede-eigenaarschap in een onderneming, dat recht kan geven op een deel van de winst en op stemrecht, maar zonder gewaarborgd rendement of terugbetaling.",
+    categorySlug: "sparen-en-beleggen",
+  },
+  {
+    slug: "dividend",
+    term: "Dividend",
+    uitleg:
+      "Het deel van de winst dat een onderneming uitkeert aan haar aandeelhouders, meestal jaarlijks. Een onderneming is niet verplicht om dividend uit te keren.",
+    categorySlug: "sparen-en-beleggen",
+  },
 
   // Erven
   {
@@ -284,6 +347,27 @@ export const lexicon: LexiconEntry[] = [
     term: "Verwerpen van een erfenis",
     uitleg:
       "De keuze om een erfenis niet te aanvaarden: bijvoorbeeld omdat de schulden groter zijn dan de bezittingen.",
+    categorySlug: "erven",
+  },
+  {
+    slug: "vruchtgebruik-en-blote-eigendom",
+    term: "Vruchtgebruik en blote eigendom",
+    uitleg:
+      "Een opsplitsing van eigendom: de vruchtgebruiker mag een goed gebruiken en de opbrengsten ervan innen, terwijl de blote eigenaar pas volledige eigenaar wordt zodra het vruchtgebruik eindigt (vaak bij overlijden).",
+    categorySlug: "erven",
+  },
+  {
+    slug: "schenking",
+    term: "Schenking",
+    uitleg:
+      "Het vrijwillig en kosteloos overdragen van een goed aan iemand anders tijdens je leven, in tegenstelling tot een erfenis die pas bij overlijden overgaat.",
+    categorySlug: "erven",
+  },
+  {
+    slug: "testament",
+    term: "Testament",
+    uitleg:
+      "Een document waarin iemand vastlegt hoe zijn of haar nalatenschap na overlijden verdeeld moet worden, binnen de grenzen van de wettelijke reserve.",
     categorySlug: "erven",
   },
 
@@ -330,6 +414,13 @@ export const lexicon: LexiconEntry[] = [
       "Periodes waarin je niet werkte (bijvoorbeeld tijdelijke werkloosheid of ziekte) maar die toch meetellen voor de berekening van je pensioen.",
     categorySlug: "pensioen-en-pensioenvoorbereiding",
   },
+  {
+    slug: "groepsverzekering",
+    term: "Groepsverzekering",
+    uitleg:
+      "Een aanvullend pensioen dat een werkgever voor zijn werknemers opbouwt (tweede pijler), vaak deels gefinancierd met een eigen bijdrage van de werknemer.",
+    categorySlug: "pensioen-en-pensioenvoorbereiding",
+  },
 
   // Belasting, werk en inkomen
   {
@@ -371,6 +462,13 @@ export const lexicon: LexiconEntry[] = [
     term: "Eindejaarspremie",
     uitleg:
       "Een extra premie die veel werknemers eind december bovenop hun normale loon krijgen, meestal geregeld via een sector- of bedrijfs-cao.",
+    categorySlug: "belasting-werk-en-inkomen",
+  },
+  {
+    slug: "beroepskosten",
+    term: "Beroepskosten",
+    uitleg:
+      "Kosten die je maakt om je beroepsinkomen te verwerven of te behouden, en die je van je belastbaar inkomen kan aftrekken: forfaitair, of met bewijsstukken voor het werkelijke bedrag.",
     categorySlug: "belasting-werk-en-inkomen",
   },
 
@@ -415,6 +513,20 @@ export const lexicon: LexiconEntry[] = [
     term: "Onroerende voorheffing",
     uitleg:
       "Een jaarlijkse belasting op vastgoed dat je bezit, berekend op het kadastraal inkomen van de woning.",
+    categorySlug: "woning-en-hypothecaire-lening",
+  },
+  {
+    slug: "wederbeleggingsvergoeding",
+    term: "Wederbeleggingsvergoeding",
+    uitleg:
+      "Een vergoeding die een bank mag aanrekenen wanneer je een hypothecair krediet vervroegd (gedeeltelijk) terugbetaalt, als compensatie voor de misgelopen rente-inkomsten.",
+    categorySlug: "woning-en-hypothecaire-lening",
+  },
+  {
+    slug: "energieprestatiecertificaat",
+    term: "Energieprestatiecertificaat (EPC)",
+    uitleg:
+      "Een verplicht document bij de verkoop of verhuur van een woning dat de energiezuinigheid ervan weergeeft, en dat mee de waarde en toekomstige verbouwingskosten kan beïnvloeden.",
     categorySlug: "woning-en-hypothecaire-lening",
   },
 ];

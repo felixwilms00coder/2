@@ -433,7 +433,7 @@ document: zuivere rekenmodellen zonder eigen productdata, geen advies.
 
 ## 7. Financieel lexicon (`/lexicon`)
 
-Een doorzoekbaar, filterbaar woordenboek van ~57 financiële termen
+Een doorzoekbaar, filterbaar woordenboek van ~73 financiële termen
 (`src/lib/content/lexicon.ts`), verdeeld over de 7 thema's. In tegenstelling
 tot de rest van dit document speelt hier geen vergunnings- of
 aansprakelijkheidsvraagstuk: het zijn definities, geen advies, geen
