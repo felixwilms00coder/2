@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { CheckCircle2, Loader2 } from "lucide-react";
+import { markNewsletterSubscribed } from "@/lib/interest-tracking";
 
 type Status = "idle" | "loading" | "sent" | "error";
 
@@ -30,6 +31,7 @@ export function NewsletterForm() {
         return;
       }
       setStatus("sent");
+      markNewsletterSubscribed();
     } catch {
       setErrorMessage("Kon geen verbinding maken. Probeer het later opnieuw.");
       setStatus("error");

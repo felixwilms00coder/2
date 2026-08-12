@@ -4,7 +4,7 @@ import { Container, PageHero } from "@/components/ui";
 export const metadata: Metadata = {
   title: "Privacybeleid",
   description:
-    "Welke gegevens FinEdu verzamelt via de nieuwsbrief, waarom, en hoe je je kan uitschrijven.",
+    "Welke gegevens FinEdu verzamelt via de nieuwsbrief en cookies, waarom, en hoe je controle houdt.",
   alternates: { canonical: "/privacybeleid" },
 };
 
@@ -46,6 +46,37 @@ export default function PrivacybeleidPage() {
             We bewaren je e-mailadres zolang je ingeschreven blijft. Elke
             nieuwsbrief bevat een uitschrijflink onderaan: klik daarop, en je
             adres wordt onmiddellijk uit de verzendlijst gehaald.
+          </p>
+          <h2>Cookies</h2>
+          <p>
+            FinEdu gebruikt geen advertentie- of trackingcookies van derden.
+            Vraag je toestemming via de cookiebanner, dan zet FinEdu twee
+            functionele cookies:
+          </p>
+          <ul>
+            <li>
+              <span className="font-semibold">finedu_interest</span>: onthoudt
+              welk thema (bv. &quot;wonen&quot; of &quot;beleggen&quot;) je op
+              FinEdu het meest bekijkt, 30 dagen lang. We gebruiken dit
+              uitsluitend om de tip-popup die na een tiental seconden op het
+              platform verschijnt relevanter te maken (bijvoorbeeld een
+              rekentool of gids die bij dat thema past). Dit gebeurt volledig
+              in je browser: er wordt niets naar een server buiten FinEdu
+              gestuurd.
+            </li>
+            <li>
+              <span className="font-semibold">finedu_popup_last_shown</span>:
+              onthoudt wanneer je die popup het laatst zag, zodat je ze niet
+              te vaak te zien krijgt.
+            </li>
+          </ul>
+          <p>
+            Kies je voor &quot;Enkel noodzakelijke&quot;, dan worden deze
+            cookies niet geplaatst en zie je ook geen gepersonaliseerde popup.
+            Een derde cookie, <span className="font-semibold">finedu_consent</span>,
+            onthoudt gewoon welke keuze je maakte, zodat we niet elk bezoek
+            opnieuw vragen. Je kan je keuze op elk moment herzien via
+            &quot;Cookie-instellingen&quot; onderaan elke pagina.
           </p>
           <h2>Je rechten</h2>
           <p>

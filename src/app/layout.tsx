@@ -5,6 +5,8 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { WebsiteJsonLd } from "@/components/json-ld";
 import { ProgressProvider } from "@/components/progress-provider";
+import { CookieConsentBanner } from "@/components/cookie-consent-banner";
+import { PersonalizedPopup } from "@/components/personalized-popup";
 import { SITE_URL } from "@/lib/site";
 
 const body = Inter({
@@ -79,6 +81,8 @@ export default function RootLayout({
             {children}
           </main>
           <SiteFooter />
+          <CookieConsentBanner />
+          <PersonalizedPopup />
         </ProgressProvider>
       </body>
     </html>

@@ -7,12 +7,14 @@ import type { CategoryColor } from "@/lib/content/types";
 export function Container({
   children,
   className = "",
+  id,
 }: {
   children: ReactNode;
   className?: string;
+  id?: string;
 }) {
   return (
-    <div className={`mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 ${className}`}>
+    <div id={id} className={`mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 ${className}`}>
       {children}
     </div>
   );

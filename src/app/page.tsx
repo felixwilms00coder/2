@@ -279,7 +279,7 @@ export default function Home() {
       </div>
 
       {/* ---- Newsletter ---- */}
-      <Container className="py-20 sm:py-24">
+      <Container id="nieuwsbrief" className="scroll-mt-24 py-20 sm:py-24">
         <div className="relative overflow-hidden rounded-3xl border border-border bg-surface p-8 sm:p-10">
           <div
             aria-hidden="true"
