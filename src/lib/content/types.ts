@@ -86,7 +86,7 @@ export type Jurisdiction = "vlaams" | "federaal" | "eu";
  * Curated, plain-language summary of één wetgevend kader. Geen vervanging
  * van de officiële tekst — telkens met een link naar de geconsolideerde
  * bron en een datum waarop een redacteur de samenvatting laatst nakeek.
- * Wordt gebruikt om het AI-antwoord te gronden (zie src/lib/legal-context.ts)
+ * Wordt gebruikt om het AI-antwoord te gronden (zie src/lib/ai-context.ts)
  * en om broncitaten in de UI te tonen.
  */
 export type LegislationEntry = {
