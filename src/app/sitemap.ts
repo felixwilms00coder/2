@@ -4,6 +4,7 @@ import { articles } from "@/lib/content/articles";
 import { tools } from "@/lib/content/tools";
 import { quizzes } from "@/lib/content/quizzes";
 import { games } from "@/lib/content/game";
+import { blogPosts } from "@/lib/content/blog";
 import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -16,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/agent",
     "/wetgeving",
     "/lexicon",
+    "/blog",
     "/voortgang",
     "/over",
     "/disclaimer",
@@ -55,6 +57,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const blogRoutes = blogPosts.map((post) => ({
+    url: `${SITE_URL}/blog/${post.slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.5,
+  }));
+
   return [
     ...staticRoutes,
     ...categoryRoutes,
@@ -62,5 +70,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...toolRoutes,
     ...quizRoutes,
     ...gameRoutes,
+    ...blogRoutes,
   ];
 }

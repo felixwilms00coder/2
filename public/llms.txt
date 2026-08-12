@@ -36,6 +36,11 @@
   unexpected expense and renting a first apartment. Choices affect an
   emergency buffer, monthly fixed costs and quality of life, and are scored
   at the end of each game.
+- `/blog` — one AI-generated article per day, published automatically with
+  no human review. Grounded only in the site's existing legislation/lexicon
+  content, clearly labeled "AI-gegenereerd" on every post and on the
+  overview page. Treat with more caution than `/leerstof`, which is
+  human-authored.
 - `/agent` — a self-managed investment automation agent. The user defines
   their own rules and connects their own broker account; FinEdu recommends
   nothing, exercises no discretion, and never routes orders. Includes a

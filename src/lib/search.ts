@@ -4,6 +4,7 @@ import { tools } from "./content/tools";
 import { quizzes } from "./content/quizzes";
 import { lexicon } from "./content/lexicon";
 import { games } from "./content/game";
+import { blogPosts } from "./content/blog";
 import type { ArticleBlock } from "./content/types";
 
 export type SearchResult = {
@@ -187,6 +188,25 @@ export function searchContent(query: string): SearchResult[] {
       title: quiz.title,
       description: quiz.description,
       score,
+    });
+  }
+
+  for (const post of blogPosts) {
+    const titleScore = scoreTextAgainstTokens(post.title, tokens) * 4;
+    const summaryScore = scoreTextAgainstTokens(post.summary, tokens) * 2;
+    const bodyScore = articleChunks(post.blocks).reduce(
+      (sum, chunk) => sum + scoreTextAgainstTokens(chunk, tokens),
+      0,
+    );
+    const score = titleScore + summaryScore + bodyScore;
+    if (score <= 0) continue;
+    results.push({
+      href: `/blog/${post.slug}`,
+      kind: "blog",
+      title: post.title,
+      description: post.summary,
+      score,
+      snippet: bestSnippet(post.blocks, tokens),
     });
   }
 

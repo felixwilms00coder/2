@@ -62,6 +62,11 @@ export function SiteFooter() {
                   Financieel lexicon
                 </Link>
               </li>
+              <li>
+                <Link href="/blog" className="inline-flex min-h-9 items-center hover:text-accent">
+                  Blog
+                </Link>
+              </li>
             </ul>
           </div>
           <div>

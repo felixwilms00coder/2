@@ -449,7 +449,64 @@ enkel de betekenis van een term kort beantwoord wordt met een verwijzing naar
 
 ---
 
-## 8. Aanbevolen volgorde
+## 8. Blog (`/blog`) — een dagelijkse agent die zelf publiceert, zonder redactie
+
+Op expliciet verzoek publiceert een dagelijkse agent één nieuw artikel per
+dag onder `/blog`, automatisch — géén menselijke goedkeuring vooraf. Dat is
+een principieel andere risicocategorie dan de rest van dit document: overal
+elders is een mens (ikzelf, tijdens deze sessie) de content aan het
+schrijven en een geautomatiseerde pijplijn aan het draaien vóór het live
+gaat. Hier schrijft en publiceert de agent zelf, zonder die stap.
+
+### Wat de opzet doet om dat risico te beperken
+
+- **Verplichte gronding.** De agent mag zich uitsluitend baseren op wat al
+  in `legislation.ts` en `lexicon.ts` staat — dezelfde regel als het
+  AI-antwoord op `/zoeken` (sectie 3-4). Geen vrij verzonnen wetsartikelen,
+  bedragen of percentages. Staat het onderwerp er niet in, dan schrijft de
+  agent er niet over.
+- **Zichtbaar gelabeld.** Elke post toont een "AI-gegenereerd"-badge en de
+  publicatiedatum, en de `/blog`-overzichtspagina opent met een expliciete
+  waarschuwing dat niemand het artikel vooraf las. Dit is bewust
+  prominenter dan het "experimenteel"-label bij het AI-antwoord, net omdat
+  hier geen enkele menselijke stap meer tussen generatie en publicatie zit.
+- **Vaste structuur, geen vrije vorm.** Elke post gebruikt hetzelfde
+  `ArticleBlock[]`-formaat als de leerstof-artikelen
+  (`src/components/article-body.tsx`) — de agent vult een sjabloon in, hij
+  verzint geen eigen lay-out of nieuwe blokstructuur.
+- **Zelfde verificatiepijplijn als elke andere wijziging in deze sessie.**
+  De trigger-instructie verplicht de agent om `next build` en `eslint` te
+  draaien vóór commit — een artikel dat de build breekt gaat niet live,
+  ook al is er verder niemand die het naleest.
+
+### Wat dit niet oplost
+
+- **Inhoudelijke fouten worden niet gevangen.** De build- en lintstap
+  controleert code, niet feiten. Een subtiel verkeerd samengevatte
+  wetsregel — zelfs binnen de toegestane bronnen — kan alsnog gepubliceerd
+  worden. Dat is de kern van het risico dat "geen menselijke redactie"
+  bewust aanvaardt.
+- **Er is geen automatische controle die een slechte dag detecteert** (bv.
+  een artikel dat toch buiten de toegestane bronnen gaat, of de
+  disclaimer-regels niet volgt). De enige waarborg is de instructie in de
+  trigger-prompt zelf.
+- **Dit blijft educatieve informatie, geen advies** — dezelfde grens als de
+  rest van het platform, maar met minder menselijke controle erachter dan
+  ooit eerder in dit document. Een periodieke steekproef door een mens
+  wordt aanbevolen, ook al is dat geen ingebouwde technische waarborg.
+
+### Hoe de dagelijkse uitvoering werkt
+
+Een Routine (cron, dagelijks) start een nieuwe sessie met een
+zelfstandige instructie: kies een thema, schrijf één artikel volgens
+bovenstaand format gegrond op de bestaande content, voeg het toe aan
+`src/lib/content/blog.ts`, draai build + lint, commit en push naar `main`.
+Geen aparte goedkeuringsstap — de push naar `main` ís de publicatie, via
+Vercel's auto-deploy.
+
+---
+
+## 9. Aanbevolen volgorde
 
 1. Houd de Geldscan gratis en client-side. Dat is vandaag al de meeste waarde
    voor de gebruiker, zonder juridische last.

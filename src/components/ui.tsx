@@ -106,6 +106,7 @@ const kindLabels: Record<string, string> = {
   quiz: "Quiz",
   begrip: "Lexicon",
   spel: "Keuzespel",
+  blog: "Blog",
 };
 
 export function KindBadge({

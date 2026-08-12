@@ -119,3 +119,21 @@ export type LexiconEntry = {
   uitleg: string;
   categorySlug: string;
 };
+
+/**
+ * Een blogpost in de "Blog"-sectie: gegenereerd door een dagelijkse agent,
+ * altijd gegrond op wat al elders op FinEdu staat (legislation.ts,
+ * lexicon.ts) — geen vrij verzonnen feiten. Elke post is duidelijk
+ * gelabeld als AI-gegenereerd (zie de PageHero/Callout op /blog), dus dit
+ * type zelf houdt geen los "aiGenerated"-veld bij: dat geldt voor de hele
+ * sectie, niet per post.
+ */
+export type BlogPost = {
+  slug: string;
+  title: string;
+  summary: string;
+  categorySlug: string;
+  publishedAt: string;
+  readMinutes: number;
+  blocks: ArticleBlock[];
+};

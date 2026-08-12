@@ -61,6 +61,16 @@ responsibly, insurance, pensions, and taxes — all in Dutch.
   (`scoreConfig`) since a short game's euro swings are much smaller than a
   year-long one's — reusing one fixed scale would make short games nearly
   unscoreable.
+- **Blog (`/blog`)** — one new AI-generated article per day, published fully
+  automatically by a daily Routine with **no human review before publish**.
+  Each post is required to ground itself in the existing
+  `legislation.ts`/`lexicon.ts` content (no invented facts), uses the same
+  `ArticleBlock[]` template as leerstof articles, and carries a prominent
+  "AI-gegenereerd" badge plus an overview-page warning that no one read it
+  first. This is a materially different risk profile from every other
+  feature in this repo — see `docs/automatisering.md` section 8 for the
+  full reasoning and what it does *not* solve (factual accuracy isn't
+  checked by the build/lint pipeline, only code correctness is).
 - **Beleggingsagent (`/agent`)** — a self-managed automation agent. The user
   writes their own buy rules (instrument, amount, cadence, per-order and
   monthly caps), and the agent executes them against a broker of their
