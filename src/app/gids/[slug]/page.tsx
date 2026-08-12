@@ -74,7 +74,7 @@ export default async function GidsDetailPage({
               id="inhoud"
               className="font-display text-xl font-extrabold text-foreground"
             >
-              Wat staat erin?
+              {`Het stappenplan in ${gids.chapters.length} stappen`}
             </h2>
             <ol className="prose-article mt-4 list-decimal space-y-1.5 pl-5">
               {gids.chapters.map((chapter, i) => (
