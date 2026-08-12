@@ -14,7 +14,6 @@ import {
 } from "@/components/ui";
 import { CategoryIcon } from "@/components/icon";
 import { SearchBox } from "@/components/search-box";
-import { LogoMark } from "@/components/logo";
 import { NewsletterForm } from "@/components/newsletter-form";
 import { homeSuggestions } from "@/lib/content/suggestions";
 import { HomeFaqJsonLd } from "@/components/json-ld";
@@ -70,9 +69,7 @@ export default function Home() {
           className="pointer-events-none absolute -right-24 top-1/4 h-80 w-80 rounded-full bg-cat-rose/15 blur-[110px]"
         />
         <Container className="relative flex min-h-[calc(100svh-4rem)] flex-col items-center justify-center py-16 text-center">
-          <LogoMark className="h-12 w-12 text-accent/10" />
-
-          <span className="mt-6 inline-flex items-center gap-1.5 rounded-full border border-border bg-surface px-3.5 py-1.5 text-xs font-semibold text-foreground shadow-sm">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface px-3.5 py-1.5 text-xs font-semibold text-foreground shadow-sm">
             <Sparkles className="h-3.5 w-3.5 text-accent" aria-hidden="true" />
             Onafhankelijk &amp; 100% gratis
           </span>
