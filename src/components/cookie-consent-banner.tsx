@@ -32,7 +32,7 @@ export function CookieConsentBanner() {
   if (!mounted || !visible) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-surface px-4 py-4 shadow-[0_-4px_16px_rgba(0,0,0,0.08)] sm:px-6">
+    <div className="pointer-events-auto w-full border-t border-border bg-surface px-4 py-4 shadow-[0_-4px_16px_rgba(0,0,0,0.08)] sm:px-6">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-start gap-3">
           <Cookie
@@ -40,10 +40,11 @@ export function CookieConsentBanner() {
             aria-hidden="true"
           />
           <p className="text-sm text-foreground">
-            We gebruiken een cookie om te onthouden welke onderwerpen je op
-            FinEdu bekijkt, zodat we je af en toe een relevante tip kunnen
-            tonen. Nodig is dat niet: je kan het platform ook zonder deze
-            cookie gebruiken. Zie ons{" "}
+            FinEdu toont soms een nieuwsbrief-pop-up en gebruikt daarvoor een
+            functionele cookie (zodat je ze niet te vaak te zien krijgt).
+            Geef je toestemming, dan personaliseren we die pop-up bovendien op
+            basis van welke onderwerpen je op FinEdu bekijkt. Optioneel: dat
+            werkt ook prima zonder. Zie ons{" "}
             <Link
               href="/privacybeleid"
               className="underline hover:text-accent"

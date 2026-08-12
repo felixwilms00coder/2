@@ -81,8 +81,10 @@ export default function RootLayout({
             {children}
           </main>
           <SiteFooter />
-          <CookieConsentBanner />
-          <PersonalizedPopup />
+          <div className="pointer-events-none fixed inset-x-0 bottom-0 z-50 flex flex-col items-end gap-3 p-4 sm:p-6">
+            <PersonalizedPopup />
+            <CookieConsentBanner />
+          </div>
         </ProgressProvider>
       </body>
     </html>

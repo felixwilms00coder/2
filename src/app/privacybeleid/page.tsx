@@ -50,33 +50,39 @@ export default function PrivacybeleidPage() {
           <h2>Cookies</h2>
           <p>
             FinEdu gebruikt geen advertentie- of trackingcookies van derden.
-            Vraag je toestemming via de cookiebanner, dan zet FinEdu twee
-            functionele cookies:
+            Een paar keer per bezoek toont FinEdu een pop-up die om je
+            e-mailadres voor de nieuwsbrief vraagt, na een tiental seconden.
+            Daarvoor gebruiken we, ongeacht je cookiekeuze, drie functionele
+            cookies die niets over jou naar buiten sturen:
           </p>
           <ul>
             <li>
-              <span className="font-semibold">finedu_interest</span>: onthoudt
-              welk thema (bv. &quot;wonen&quot; of &quot;beleggen&quot;) je op
-              FinEdu het meest bekijkt, 30 dagen lang. We gebruiken dit
-              uitsluitend om de tip-popup die na een tiental seconden op het
-              platform verschijnt relevanter te maken (bijvoorbeeld een
-              rekentool of gids die bij dat thema past). Dit gebeurt volledig
-              in je browser: er wordt niets naar een server buiten FinEdu
-              gestuurd.
+              <span className="font-semibold">finedu_consent</span>: onthoudt
+              welke cookiekeuze je maakte, zodat we niet elk bezoek opnieuw
+              vragen.
             </li>
             <li>
               <span className="font-semibold">finedu_popup_last_shown</span>:
-              onthoudt wanneer je die popup het laatst zag, zodat je ze niet
+              onthoudt wanneer je die pop-up het laatst zag, zodat je ze niet
               te vaak te zien krijgt.
+            </li>
+            <li>
+              <span className="font-semibold">finedu_newsletter_subscribed</span>:
+              onthoudt dat je je al inschreef, zodat de pop-up je dat niet
+              nogmaals vraagt.
             </li>
           </ul>
           <p>
-            Kies je voor &quot;Enkel noodzakelijke&quot;, dan worden deze
-            cookies niet geplaatst en zie je ook geen gepersonaliseerde popup.
-            Een derde cookie, <span className="font-semibold">finedu_consent</span>,
-            onthoudt gewoon welke keuze je maakte, zodat we niet elk bezoek
-            opnieuw vragen. Je kan je keuze op elk moment herzien via
-            &quot;Cookie-instellingen&quot; onderaan elke pagina.
+            Kies je voor &quot;Cookies accepteren&quot;, dan zet FinEdu
+            daarnaast <span className="font-semibold">finedu_interest</span>:
+            onthoudt welk thema (bv. &quot;wonen&quot; of
+            &quot;beleggen&quot;) je op FinEdu het meest bekijkt, 30 dagen
+            lang, puur in je browser. We gebruiken dit uitsluitend om de
+            pitch in die pop-up relevanter te maken. Kies je voor
+            &quot;Enkel noodzakelijke&quot;, dan blijft de pop-up gewoon
+            verschijnen, maar met een algemene, niet-gepersonaliseerde tekst.
+            Je kan je keuze op elk moment herzien via &quot;Cookie-instellingen&quot;
+            onderaan elke pagina.
           </p>
           <h2>Je rechten</h2>
           <p>
