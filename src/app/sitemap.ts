@@ -23,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/voortgang",
     "/over",
     "/disclaimer",
+    "/privacybeleid",
   ].map((path) => ({
     url: `${SITE_URL}${path}`,
     changeFrequency: "monthly" as const,

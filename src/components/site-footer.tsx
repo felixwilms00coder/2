@@ -100,6 +100,11 @@ export function SiteFooter() {
                 Disclaimer
               </Link>
             </li>
+            <li>
+              <Link href="/privacybeleid" className="inline-flex min-h-9 items-center hover:text-accent">
+                Privacybeleid
+              </Link>
+            </li>
           </ul>
           <p className="text-xs text-muted">
             © {new Date().getFullYear()} FinEdu. Gemaakt als educatief
