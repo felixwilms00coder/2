@@ -13,7 +13,7 @@ const GROQ_MODEL = "openai/gpt-oss-120b";
 const GROQ_ENDPOINT = "https://api.groq.com/openai/v1/chat/completions";
 const MAX_QUERY_LENGTH = 300;
 
-function buildSystemPrompt(): string {
+function buildSystemPrompt(query: string): string {
   return `Je bent de zoekassistent van FinEdu, een onafhankelijk educatief platform over persoonlijke financiën voor starters op de Vlaamse arbeidsmarkt.
 
 Je hoofddoel: zoveel mogelijk vragen zelfstandig, concreet en to-the-point beantwoorden met de FINEDU-KENNISBANK hieronder (artikels, lexicon, rekentools, wetgevingssamenvattingen en officiële bronnen). Dit is materiaal dat FinEdu zelf schrijft en al publiceert: gebruik het vrij, zelfverzekerd en in detail, en citeer of link naar de relevante FinEdu-pagina wanneer die het antwoord sterker maakt. "Zoek dit op bij [instantie]" zonder verder antwoord is een laatste redmiddel, geen standaardreactie: gebruik dat enkel in de twee gevallen onder "Doorverwijzen zonder inhoudelijk antwoord" hieronder, nooit omdat een onderwerp ingewikkeld klinkt.
@@ -45,7 +45,7 @@ Algemeen:
 - Gaat de vraag niet over geld, budget, sparen, beleggen, verzekeren, wonen, erven, pensioen of belastingen? Zeg dan vriendelijk dat je daar niet voor bedoeld bent.
 - Dit is algemene, educatieve informatie, geen persoonlijk financieel of juridisch bindend advies, maar wel zo compleet en concreet mogelijk binnen dat kader.
 
-${buildKnowledgeContext()}`;
+${buildKnowledgeContext(query)}`;
 }
 
 export async function POST(request: Request) {
@@ -88,7 +88,7 @@ export async function POST(request: Request) {
       body: JSON.stringify({
         model: GROQ_MODEL,
         messages: [
-          { role: "system", content: buildSystemPrompt() },
+          { role: "system", content: buildSystemPrompt(query) },
           { role: "user", content: query },
         ],
         temperature: 0.3,

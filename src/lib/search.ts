@@ -31,7 +31,7 @@ const STOPWORDS = new Set([
   "meest", "mag", "mogen", "er", "the", "a", "te", "zo", "ben", "man", "vrouw",
 ]);
 
-function tokenize(text: string): string[] {
+export function tokenize(text: string): string[] {
   return text
     .toLowerCase()
     .normalize("NFKD")
@@ -41,7 +41,7 @@ function tokenize(text: string): string[] {
 }
 
 /** Telt hoe vaak elk zoektoken voorkomt in `text`, als heel woord of als deel van een woord. */
-function scoreTextAgainstTokens(text: string, tokens: string[]): number {
+export function scoreTextAgainstTokens(text: string, tokens: string[]): number {
   if (!text) return 0;
   const words = tokenize(text);
   const wordSet = new Set(words);
@@ -57,7 +57,7 @@ function scoreTextAgainstTokens(text: string, tokens: string[]): number {
 }
 
 /** Splitst een artikel op in doorzoekbare, op zichzelf staande tekstfragmenten. */
-function articleChunks(blocks: ArticleBlock[]): string[] {
+export function articleChunks(blocks: ArticleBlock[]): string[] {
   const chunks: string[] = [];
   for (const block of blocks) {
     switch (block.type) {
