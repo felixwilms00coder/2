@@ -8,6 +8,47 @@ import { BlogPost } from "./types";
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: "huurcontract-opzeggen-vlaanderen-wat-de-wet-zegt",
+    title: "Je huurcontract opzeggen: wat de wet in Vlaanderen vastlegt",
+    summary:
+      "Een standaard huurcontract van 9 jaar opzeggen kan, maar huurder en verhuurder moeten allebei vaste termijnen respecteren, en de verhuurder heeft daar bovendien een wettelijke reden voor nodig.",
+    categorySlug: "woning-en-hypothecaire-lening",
+    publishedAt: "2026-08-12",
+    readMinutes: 3,
+    blocks: [
+      {
+        type: "p",
+        text: "Je huurt voor het eerst je eigen plek en het contract dat je tekende, loopt in principe negen jaar. Wil je toch verhuizen voor die negen jaar om zijn, of laat je verhuurder weten dat hij het pand nodig heeft? Dat kan, maar niet zomaar op elk moment en niet zonder vaste regels: voor jou als huurder, én voor je verhuurder.",
+      },
+      {
+        type: "figure",
+        value: "9 jaar",
+        label: "Standaardduur van een woninghuurcontract in Vlaanderen",
+        source: "Vlaams Huurdecreet van 9 november 2018",
+      },
+      { type: "h2", text: "Als huurder opzeggen" },
+      {
+        type: "p",
+        text: "Wil je als huurder vroegtijdig weg uit een lopend contract van 9 jaar, dan moet je een minimale opzegtermijn respecteren. Zeg je op tijdens de eerste jaren van de looptijd, dan kan daar bovendien een opzegvergoeding aan verbonden zijn. Hoeveel opzegtermijn en welke vergoeding precies gelden, hangt af van het moment waarop je opzegt: check dat in je concreet huurcontract, of bij de officiële bron hieronder, want dit verschilt per situatie.",
+      },
+      { type: "h2", text: "Als verhuurder opzeggen: enkel met een wettelijke reden" },
+      {
+        type: "p",
+        text: "Een verhuurder kan een lopend huurcontract van 9 jaar niet zomaar stopzetten. Dat mag enkel om specifieke, wettelijk voorziene redenen, zoals zelf (of een naaste) in de woning gaan wonen, of het pand grondig renoveren. Ook de verhuurder moet daarbij een vaste opzegtermijn respecteren.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Kortlopende contracten volgen een ander regime",
+        text: "Huur je met een contract van 3 jaar of minder, dan gelden er strengere, deels andere opzegregels dan bij het standaardcontract van 9 jaar. Ga dus eerst na welk type contract je precies hebt getekend, voor je van bepaalde termijnen uitgaat.",
+      },
+      {
+        type: "p",
+        text: "Deze samenvatting geeft de structuur van de regel weer, niet elk exact aantal maanden of elk mogelijk bedrag: dat hangt af van het type contract en het moment van opzeg, en FinEdu houdt daar zelf geen actuele tabel van bij. Voor de precieze termijnen en vergoedingen kan je terecht bij Vlaanderen.be: Wonen, of bij de volledige wettekst via /wetgeving. Dit is algemene informatie op basis van de wet, geen bindend advies over jouw concreet huurcontract: laat je specifieke situatie bij twijfel bevestigen door een jurist of de dienst wonen van je gemeente.",
+      },
+    ],
+  },
+  {
     slug: "14-dagen-bedenktijd-bij-een-lening",
     title: "Je hebt altijd 14 dagen bedenktijd bij een lening: zo werkt het",
     summary:
