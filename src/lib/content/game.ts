@@ -578,6 +578,190 @@ export const games: Game[] = [
       },
     ],
   },
+  {
+    slug: "je-eerste-keer-beleggen",
+    title: "Je eerste keer beleggen",
+    short: "Een bonus, een verdachte tip en een dalende beurs: vijf beslissingen",
+    description:
+      "Je noodbuffer staat er goed voor en je wil voor het eerst beleggen. Zie hoe een bonus, een te-mooi-om-waar-te-zijn tip en een koersdaling je aanpak op de proef stellen.",
+    roundLabel: "Stap",
+    startSaldo: 300,
+    startBuffer: 3000,
+    startHumeur: 55,
+    nettoLoon: 2200,
+    basisVasteKosten: 1500,
+    scoreConfig: { bufferTarget: 3400, saldoFloor: 0, saldoTarget: 300 },
+    rounds: [
+      {
+        stap: 1,
+        title: "Een bonus van 1000 euro",
+        situation:
+          "Na een goed jaar krijg je op je werk een bonus van 1000 euro netto. Je noodbuffer staat er goed voor, en je vraagt je af of dit het moment is om voor het eerst te beleggen.",
+        choices: [
+          {
+            label: "Ik zet alles op mijn noodbuffer",
+            effect: { buffer: 1000, humeur: 2 },
+            feedback:
+              "Veilig, maar je buffer stond al op peil: dit geld had ook al iets voor je verder op termijn kunnen doen.",
+          },
+          {
+            label: "Ik beleg alles in één keer in een breed indexfonds",
+            effect: { humeur: 4 },
+            feedback:
+              "Op lange termijn kan dat renderen, maar alles in één keer beleggen zonder iets bij te houden voor onvoorziene kosten is niet zonder risico.",
+          },
+          {
+            label: "Ik verdeel: 500 euro naar mijn buffer, 500 euro beleg ik",
+            effect: { buffer: 500, humeur: 6 },
+            feedback:
+              "Een verstandige middenweg: je buffer groeit verder, en je bouwt tegelijk ervaring op met beleggen.",
+          },
+          {
+            label: "Ik geef het uit aan een verre reis",
+            effect: { humeur: 8 },
+            feedback:
+              "Ook een bonus mag je deels aan jezelf besteden, maar hou in het achterhoofd dat je hiermee geen stap zet richting je financiële doelen.",
+          },
+        ],
+        leesMeer: {
+          label: "Hoeveel noodbuffer heb je nodig?",
+          href: "/leerstof/sparen-en-beleggen/noodbuffer-hoeveel-sparen",
+        },
+      },
+      {
+        stap: 2,
+        title: "Een 'exclusieve' tip",
+        situation:
+          "Een kennis stuurt je een link naar een 'exclusief' beleggingsplatform met 'gegarandeerd 15% rendement per maand', enkel voor wie snel instapt.",
+        choices: [
+          {
+            label: "Ik stap meteen in met 300 euro",
+            effect: { saldo: -300, humeur: -15 },
+            feedback:
+              "Gegarandeerd hoog rendement bestaat niet. Dit patroon (hoge beloftes, tijdsdruk, exclusiviteit) is typisch voor beleggingsfraude.",
+          },
+          {
+            label: "Ik zoek eerst op of dit platform een FSMA-vergunning heeft",
+            effect: { humeur: 6 },
+            feedback:
+              "Precies goed: controleer altijd via fsma.be of een aanbieder vergund is voor je met echt geld instapt.",
+          },
+          {
+            label: "Ik negeer het bericht",
+            effect: { humeur: 2 },
+            feedback:
+              "Veilig, al helpt het om ook te weten waaraan je fraude kan herkennen voor de volgende keer.",
+          },
+          {
+            label: "Ik stap in met een klein bedrag om te testen",
+            effect: { saldo: -100, humeur: -6 },
+            feedback:
+              "Ook een klein testbedrag kan je kwijtraken: het probleem zit niet in het bedrag, maar in het patroon van de belofte zelf.",
+          },
+        ],
+      },
+      {
+        stap: 3,
+        title: "De beurs zakt 12% in een week",
+        situation:
+          "Enkele maanden na je eerste belegging zakt de beurs fors. Op papier sta je plots een pak lager dan wat je hebt ingelegd.",
+        choices: [
+          {
+            label: "Ik verkoop alles, ik wil geen verder verlies",
+            effect: { humeur: -10 },
+            feedback:
+              "Verkopen na een daling zet een verlies vast dat op papier nog kon herstellen. Wie voor de lange termijn belegt, houdt doorgaans vast tijdens dalingen.",
+          },
+          {
+            label: "Ik doe niets en volg mijn oorspronkelijke plan",
+            effect: { humeur: 6 },
+            feedback:
+              "Vasthouden aan een langetermijnplan is meestal verstandiger dan in paniek verkopen bij een tijdelijke daling.",
+          },
+          {
+            label: "Ik beleg net iets bij vanuit mijn buffer, want alles is nu goedkoper",
+            effect: { buffer: -300, humeur: 2 },
+            feedback:
+              "Bijkopen tijdens een daling kan achteraf gunstig uitpakken, maar niet ten koste van je noodbuffer: die blijft primair voor onverwachte uitgaven.",
+          },
+          {
+            label: "Ik check elke dag paniekerig de koers",
+            effect: { humeur: -6 },
+            feedback:
+              "Dagelijks volgen verandert niets aan het resultaat, maar kost wel gemoedsrust.",
+          },
+        ],
+      },
+      {
+        stap: 4,
+        title: "Alles op één kaart?",
+        situation:
+          "Een collega steekt zijn spaargeld volledig in het aandeel van zijn eigen werkgever: 'Ik ken dat bedrijf toch goed.'",
+        choices: [
+          {
+            label: "Ik doe hetzelfde: alles in dat ene aandeel",
+            effect: { humeur: -8 },
+            feedback:
+              "Alles in één aandeel steken, zeker van je eigen werkgever, is dubbel risicovol: gaat het bedrijf slecht, dan kan je zowel je job als je beleggingen tegelijk verliezen.",
+          },
+          {
+            label: "Ik blijf spreiden over een breed fonds",
+            effect: { humeur: 5 },
+            feedback:
+              "Diversificatie spreidt het risico: het is niet spannend, maar het beschermt je wel tegen het slecht presteren van één bedrijf.",
+          },
+          {
+            label: "Ik doe een beetje van beide",
+            effect: { humeur: 0 },
+            feedback:
+              "Beter dan alles op één kaart, maar het concentratierisico van dat ene aandeel blijft wel meespelen.",
+          },
+          {
+            label: "Ik stop met beleggen, dit is me te ingewikkeld",
+            effect: { buffer: 200, humeur: -2 },
+            feedback:
+              "Stoppen is nooit verkeerd als je iets niet vertrouwt, maar je hoeft niet alles zelf uit te zoeken: een breed, wereldwijd fonds vereist geen dagelijkse opvolging.",
+          },
+        ],
+        leesMeer: {
+          label: "Beleggen: de basis",
+          href: "/leerstof/sparen-en-beleggen/beleggen-de-basis",
+        },
+      },
+      {
+        stap: 5,
+        title: "Een jaar later: tijd om te evalueren",
+        situation:
+          "Een jaar is voorbij. Je noodbuffer en je eerste beleggingen hebben allebei een tijdje kunnen groeien. Wat doe je nu?",
+        choices: [
+          {
+            label: "Ik blijf consequent maandelijks een vast bedrag opzij zetten",
+            effect: { buffer: 500, humeur: 6 },
+            feedback:
+              "Consequent blijven inleggen, ongeacht de stemming op de beurs, is een van de weinige dingen die je als belegger echt zelf in de hand hebt.",
+          },
+          {
+            label: "Ik verhoog fors, want het ging de laatste maanden erg goed",
+            effect: { buffer: -200, humeur: -4 },
+            feedback:
+              "Meer inleggen omdat de recente resultaten goed waren, is een bekende valkuil: recente prestaties zeggen weinig over wat hierna komt.",
+          },
+          {
+            label: "Ik trek alles terug naar cash, voor de zekerheid",
+            effect: { buffer: 800, humeur: -3 },
+            feedback:
+              "Helemaal terugplooien op cash voelt veilig, maar op lange termijn kost dat je meestal rendement.",
+          },
+          {
+            label: "Ik hou vast aan mijn plan, met een kleine verhoging",
+            effect: { buffer: 300, humeur: 8 },
+            feedback:
+              "Een klein beetje meer inleggen zonder je plan overhoop te gooien: een gezonde, haalbare gewoonte.",
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 export function getGame(slug: string): Game | undefined {
