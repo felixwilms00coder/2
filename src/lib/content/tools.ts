@@ -89,6 +89,14 @@ export const tools: ToolSummary[] = [
       "Simuleer wat pensioensparen of apart sparen tot je pensioen kan opleveren. Geen schatting van je wettelijk pensioen: daarvoor verwijzen we naar MyPension.be.",
     icon: "landmark",
   },
+  {
+    slug: "aankoopkosten-woning",
+    title: "Aankoopkosten-calculator",
+    short: "Wat kost een woning kopen, boven de aankoopprijs?",
+    description:
+      "Vul de registratierechten, notariskosten en eventuele kredietkosten in die voor jouw situatie gelden, en zie in één keer de totale prijs.",
+    icon: "receipt",
+  },
 ];
 
 export function getTool(slug: string): ToolSummary | undefined {
