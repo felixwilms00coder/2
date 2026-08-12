@@ -15,6 +15,7 @@ import { LevelPill } from "@/components/progress-widgets";
 const directLinks = [
   { href: "/tools", label: "Rekentools" },
   { href: "/spel", label: "Keuzespel" },
+  { href: "/gids", label: "Gidsen" },
   { href: "/agent", label: "Agent" },
   { href: "/quiz", label: "Quiz" },
 ];
@@ -81,7 +82,7 @@ export function SiteHeader() {
       <Container>
         <div className="flex h-16 items-center justify-between gap-3">
           <Link href="/" aria-label="FinEdu: naar de startpagina">
-            <Logo markClassName="h-9 w-9 text-primary" />
+            <Logo showMark={false} />
           </Link>
 
           {/* Desktop navigation */}

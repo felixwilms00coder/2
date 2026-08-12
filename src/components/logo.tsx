@@ -41,15 +41,17 @@ export function LogoMark({ className = "" }: { className?: string }) {
 export function Logo({
   className = "",
   markClassName = "h-8 w-8 text-primary",
+  showMark = true,
   showWordmark = true,
 }: {
   className?: string;
   markClassName?: string;
+  showMark?: boolean;
   showWordmark?: boolean;
 }) {
   return (
     <span className={`flex items-center gap-2.5 ${className}`}>
-      <LogoMark className={markClassName} />
+      {showMark && <LogoMark className={markClassName} />}
       {showWordmark && (
         <span className="font-display text-lg font-bold tracking-tight">
           Fin<span className="text-muted">Edu</span>
