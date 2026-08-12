@@ -433,7 +433,7 @@ document: zuivere rekenmodellen zonder eigen productdata, geen advies.
 
 ## 7. Financieel lexicon (`/lexicon`)
 
-Een doorzoekbaar, filterbaar woordenboek van ~45 financiële termen
+Een doorzoekbaar, filterbaar woordenboek van ~57 financiële termen
 (`src/lib/content/lexicon.ts`), verdeeld over de 7 thema's. In tegenstelling
 tot de rest van dit document speelt hier geen vergunnings- of
 aansprakelijkheidsvraagstuk: het zijn definities, geen advies, geen
@@ -446,6 +446,32 @@ Geïntegreerd in de bestaande zoekfunctie (`src/lib/search.ts`, resultaat-kind
 `"begrip"`) en in de systeemprompt van `/api/ai-answer`, zodat een vraag naar
 enkel de betekenis van een term kort beantwoord wordt met een verwijzing naar
 `/lexicon` voor meer.
+
+### Uitbreiding: "kleine lettertjes"-termen (instapkost, tak21/tak23, KID, ...)
+
+Op verzoek om transparantie te bieden over de voorwaarden van beleggings- en
+verzekeringsproducten ("de kleine lettertjes, vóór je op gesprek moet"), is
+het lexicon uitgebreid met veelvoorkomende clausules en begrippen uit die
+kleine lettertjes: instapkost, uitstapkost, kapitaalgarantie, tak21/tak23,
+het essentiële-informatiedocument (KID), de risico-indicator, wachttijd,
+uitsluiting, onderverzekering, enzovoort.
+
+Dit is bewust **generiek** gehouden — uitleg van wat een clausule betekent,
+gekoppeld aan geen enkel specifiek product van geen enkele naamgenoemde
+aanbieder. Het oorspronkelijke verzoek ging verder: een databank van de
+kleine lettertjes per specifiek product en aanbieder, wat neerkomt op de
+"goedkoopste spaarrekening/verzekering"-discussie uit sectie 5, maar dan
+voor productvoorwaarden in plaats van prijs. Volgens een — niet zelf
+geverifieerd, want fsma.be is in deze sessie op netwerkniveau ontoegankelijk
+gebleken — FSMA-standpunt over vergelijkingswebsites zou dat mogelijk buiten
+de vergunningsplicht kunnen vallen als er geen vergoeding is én geen
+mogelijkheid om het product via het platform af te sluiten. Zonder die
+brontekst zelf te kunnen nalezen, en zonder een gelijkaardige uitzondering
+gevonden te hebben voor beleggingsproducten (MiFID II), is beslist om dat
+niet te bouwen zonder bevestiging door een advocaat of de FSMA zelf — ook al
+bood de gebruiker aan om productdata via screenshots aan te leveren. Dat
+lost enkel het datatoegangsprobleem op, niet de openstaande juridische
+vraag.
 
 ---
 

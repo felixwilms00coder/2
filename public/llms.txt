@@ -60,7 +60,7 @@
   with a link to the official consolidated legal text and the date an
   editor last checked it against that text. Not a live feed — Belgian and
   Flemish government sources do not offer one.
-- `/lexicon` — a searchable, filterable glossary of ~45 financial terms
+- `/lexicon` — a searchable, filterable glossary of ~57 financial terms
   used elsewhere on the site (e.g. basisrente, quotiteit, roerende
   voorheffing), each with a short plain-language definition. Deliberately
   excludes current amounts, rates, or tax brackets, since those change

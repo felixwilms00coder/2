@@ -64,6 +64,34 @@ export const lexicon: LexiconEntry[] = [
       "Het bedrag van een schadegeval dat je zelf betaalt, voor de verzekeraar de rest van de kosten op zich neemt. Een hogere vrijstelling betekent meestal een lagere premie.",
     categorySlug: "budget-betalen-lenen-en-verzekeren",
   },
+  {
+    slug: "wachttijd",
+    term: "Wachttijd",
+    uitleg:
+      "De periode net na het afsluiten van een verzekering waarin bepaalde schadegevallen nog niet gedekt zijn — vaak vermeld in de kleine lettertjes van de polis.",
+    categorySlug: "budget-betalen-lenen-en-verzekeren",
+  },
+  {
+    slug: "opzegtermijn-verzekering",
+    term: "Opzegtermijn (verzekering)",
+    uitleg:
+      "De periode die jij of de verzekeraar wettelijk in acht moet nemen om een verzekeringscontract stop te zetten, meestal geteld vanaf de jaarlijkse vervaldag.",
+    categorySlug: "budget-betalen-lenen-en-verzekeren",
+  },
+  {
+    slug: "uitsluiting",
+    term: "Uitsluiting",
+    uitleg:
+      "Een specifieke situatie of soort schade die een polis uitdrukkelijk niet dekt, ook al lijkt het schadegeval op het eerste zicht onder de algemene dekking te vallen. Staat in de algemene of bijzondere voorwaarden.",
+    categorySlug: "budget-betalen-lenen-en-verzekeren",
+  },
+  {
+    slug: "onderverzekering",
+    term: "Onderverzekering",
+    uitleg:
+      "Wanneer het verzekerde bedrag lager ligt dan de werkelijke waarde van wat je verzekert. Bij een schadegeval kan de verzekeraar dan verhoudingsgewijs minder uitkeren dan de volledige schade.",
+    categorySlug: "budget-betalen-lenen-en-verzekeren",
+  },
 
   // Familie
   {
@@ -164,6 +192,62 @@ export const lexicon: LexiconEntry[] = [
     term: "Depositogarantiestelsel",
     uitleg:
       "De Belgische regeling die spaargeld tot een bepaald bedrag per persoon per bank beschermt als die bank failliet gaat.",
+    categorySlug: "sparen-en-beleggen",
+  },
+  {
+    slug: "instapkost",
+    term: "Instapkost",
+    uitleg:
+      "Een eenmalige kost, uitgedrukt als percentage van je inleg, die je betaalt bij de aankoop van een beleggingsfonds — komt bovenop de lopende kosten.",
+    categorySlug: "sparen-en-beleggen",
+  },
+  {
+    slug: "uitstapkost",
+    term: "Uitstapkost",
+    uitleg:
+      "Een kost die sommige fondsen aanrekenen wanneer je verkoopt, soms enkel als dat binnen een bepaalde periode na aankoop gebeurt.",
+    categorySlug: "sparen-en-beleggen",
+  },
+  {
+    slug: "kapitaalgarantie",
+    term: "Kapitaalgarantie",
+    uitleg:
+      "De belofte dat je bij het einde van de looptijd minstens je ingelegd kapitaal terugkrijgt, ongeacht hoe de onderliggende belegging presteerde. Geldt meestal enkel op de eindvervaldag, niet bij tussentijdse verkoop.",
+    categorySlug: "sparen-en-beleggen",
+  },
+  {
+    slug: "tak21",
+    term: "Tak 21",
+    uitleg:
+      "Een levensverzekeringsproduct met een gewaarborgd rendement en kapitaalbescherming, door verzekeraars aangeboden als spaar- of beleggingsalternatief.",
+    categorySlug: "sparen-en-beleggen",
+  },
+  {
+    slug: "tak23",
+    term: "Tak 23",
+    uitleg:
+      "Een levensverzekeringsproduct waarbij je premie belegd wordt in onderliggende fondsen, zonder gewaarborgd rendement — de opbrengst (of het verlies) hangt volledig af van hoe die fondsen presteren.",
+    categorySlug: "sparen-en-beleggen",
+  },
+  {
+    slug: "essentiele-informatiedocument",
+    term: "Essentiële-informatiedocument (KID)",
+    uitleg:
+      "Een verplicht, gestandaardiseerd document dat de belangrijkste kenmerken, kosten en risico's van een verpakt beleggingsproduct samenvat, dat je vóór aankoop moet kunnen inkijken.",
+    categorySlug: "sparen-en-beleggen",
+  },
+  {
+    slug: "risico-indicator",
+    term: "Risico-indicator",
+    uitleg:
+      "Een cijfer, meestal van 1 tot 7, op het essentiële-informatiedocument dat aangeeft hoe risicovol een beleggingsproduct is ten opzichte van andere producten.",
+    categorySlug: "sparen-en-beleggen",
+  },
+  {
+    slug: "beheersvergoeding",
+    term: "Beheersvergoeding",
+    uitleg:
+      "De jaarlijkse vergoeding voor wie het fonds of de portefeuille beheert — meestal al verrekend in de lopende kosten, niet apart aangerekend.",
     categorySlug: "sparen-en-beleggen",
   },
 
