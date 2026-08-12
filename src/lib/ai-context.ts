@@ -1,4 +1,5 @@
 import { articles } from "./content/articles";
+import { gidsen } from "./content/gidsen";
 import { legislation } from "./content/legislation";
 import { lexicon } from "./content/lexicon";
 import { officialSources } from "./content/sources";
@@ -61,6 +62,15 @@ function buildToolsContext(): string {
     .join("\n");
 }
 
+function buildGidsenContext(): string {
+  return gidsen
+    .map(
+      (g) =>
+        `- "${g.title}" (/gids/${g.slug}), gratis pdf, ${g.pageCount} pagina's: ${g.description} Hoofdstukken: ${g.chapters.join("; ")}.`,
+    )
+    .join("\n");
+}
+
 function buildLegislationContext(): string {
   return legislation
     .map(
@@ -85,5 +95,5 @@ function buildSourcesContext(): string {
  * baseren; het mag er nog steeds niets aan toevoegen dat er niet in staat.
  */
 export function buildKnowledgeContext(): string {
-  return `ARTIKELS op FinEdu (/leerstof): de volledige, door FinEdu geschreven leerstof. Gebruik dit vrij en met vertrouwen om vragen te beantwoorden, en verwijs naar de link tussen haakjes wanneer een artikel het onderwerp verder uitdiept:\n${buildArticleContext()}\n\nFINANCIEEL LEXICON (/lexicon): korte definities van jargon, gebruik dit voor elke "wat betekent"-vraag:\n${buildLexiconContext()}\n\nREKENTOOLS (/tools): verwijs hiernaar wanneer de gebruiker zelf iets concreet wil berekenen:\n${buildToolsContext()}\n\nWETGEVING waarop je je mag baseren voor juridische duiding: citeer altijd de titel tussen aanhalingstekens wanneer je hiervan gebruikmaakt, en noem geen wetsartikel dat hier niet in staat:\n${buildLegislationContext()}\n\nOFFICIËLE BRONNEN: noem en verwijs naar de relevante bron wanneer de vraag daarover gaat, of wanneer je een actueel cijfer niet zelf hebt:\n${buildSourcesContext()}`;
+  return `ARTIKELS op FinEdu (/leerstof): de volledige, door FinEdu geschreven leerstof. Gebruik dit vrij en met vertrouwen om vragen te beantwoorden, en verwijs naar de link tussen haakjes wanneer een artikel het onderwerp verder uitdiept:\n${buildArticleContext()}\n\nFINANCIEEL LEXICON (/lexicon): korte definities van jargon, gebruik dit voor elke "wat betekent"-vraag:\n${buildLexiconContext()}\n\nREKENTOOLS (/tools): verwijs hiernaar wanneer de gebruiker zelf iets concreet wil berekenen:\n${buildToolsContext()}\n\nGRATIS DOWNLOADBARE GIDSEN (pdf): verwijs hiernaar wanneer een vraag beter past bij een volledige, stap-voor-stap cursus dan bij een kort antwoord, bijvoorbeeld bij "hoe begin ik met..."-vragen van een complete beginner:\n${buildGidsenContext()}\n\nWETGEVING waarop je je mag baseren voor juridische duiding: citeer altijd de titel tussen aanhalingstekens wanneer je hiervan gebruikmaakt, en noem geen wetsartikel dat hier niet in staat:\n${buildLegislationContext()}\n\nOFFICIËLE BRONNEN: noem en verwijs naar de relevante bron wanneer de vraag daarover gaat, of wanneer je een actueel cijfer niet zelf hebt:\n${buildSourcesContext()}`;
 }

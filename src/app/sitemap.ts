@@ -5,6 +5,7 @@ import { tools } from "@/lib/content/tools";
 import { quizzes } from "@/lib/content/quizzes";
 import { games } from "@/lib/content/game";
 import { blogPosts } from "@/lib/content/blog";
+import { gidsen } from "@/lib/content/gidsen";
 import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -18,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/wetgeving",
     "/lexicon",
     "/blog",
+    "/gids",
     "/voortgang",
     "/over",
     "/disclaimer",
@@ -63,6 +65,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
+  const gidsRoutes = gidsen.map((gids) => ({
+    url: `${SITE_URL}/gids/${gids.slug}`,
+    changeFrequency: "yearly" as const,
+    priority: 0.6,
+  }));
+
   return [
     ...staticRoutes,
     ...categoryRoutes,
@@ -71,5 +79,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...quizRoutes,
     ...gameRoutes,
     ...blogRoutes,
+    ...gidsRoutes,
   ];
 }

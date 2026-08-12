@@ -16,6 +16,7 @@ import {
   Umbrella,
   Landmark,
   Receipt,
+  Download,
   type LucideIcon,
 } from "lucide-react";
 
@@ -37,6 +38,7 @@ const iconMap: Record<string, LucideIcon> = {
   umbrella: Umbrella,
   landmark: Landmark,
   receipt: Receipt,
+  download: Download,
 };
 
 export function CategoryIcon({

@@ -5,6 +5,7 @@ import { quizzes } from "./content/quizzes";
 import { lexicon } from "./content/lexicon";
 import { games } from "./content/game";
 import { blogPosts } from "./content/blog";
+import { gidsen } from "./content/gidsen";
 import type { ArticleBlock } from "./content/types";
 
 export type SearchResult = {
@@ -228,6 +229,23 @@ export function searchContent(query: string): SearchResult[] {
       kind: "spel",
       title: game.title,
       description: game.description,
+      score,
+    });
+  }
+
+  for (const gids of gidsen) {
+    const titleScore = scoreTextAgainstTokens(gids.title, tokens) * 4;
+    const descScore = scoreTextAgainstTokens(
+      `${gids.short} ${gids.description} ${gids.chapters.join(" ")}`,
+      tokens,
+    );
+    const score = titleScore + descScore;
+    if (score <= 0) continue;
+    results.push({
+      href: `/gids/${gids.slug}`,
+      kind: "gids",
+      title: gids.title,
+      description: gids.description,
       score,
     });
   }

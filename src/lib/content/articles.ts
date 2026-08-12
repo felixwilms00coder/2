@@ -245,6 +245,12 @@ export const articles: Article[] = [
         title: "Beleg nooit met geleend geld of je noodbuffer",
         text: "Beleg alleen met geld dat je gedurende meerdere jaren kan missen. Raadpleeg bij twijfel een erkend financieel adviseur en vergelijk altijd de kosten van verschillende aanbieders.",
       },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Liever een volledige cursus dan losse artikels?",
+        text: "Download de gratis gids 'Je eerste stappen om te beleggen' (/gids/eerste-stappen-beleggen): een stap-voor-stap pdf voor wie helemaal bij nul begint.",
+      },
     ],
   },
   {

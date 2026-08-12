@@ -137,3 +137,20 @@ export type BlogPost = {
   readMinutes: number;
   blocks: ArticleBlock[];
 };
+
+/**
+ * Een downloadbare gids (PDF): een langere, op zichzelf staande cursus
+ * over één onderwerp, voor wie liever offline of stap voor stap leert dan
+ * via losse artikels. Zelfde grondingsregel als de rest van FinEdu: geen
+ * actuele bedragen/percentages, geen productaanbevelingen.
+ */
+export type Gids = {
+  slug: string;
+  title: string;
+  short: string;
+  description: string;
+  categorySlug: string;
+  pdfPath: string;
+  pageCount: number;
+  chapters: string[];
+};

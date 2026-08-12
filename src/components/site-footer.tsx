@@ -67,6 +67,11 @@ export function SiteFooter() {
                   Blog
                 </Link>
               </li>
+              <li>
+                <Link href="/gids" className="inline-flex min-h-9 items-center hover:text-accent">
+                  Gidsen
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
