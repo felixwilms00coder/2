@@ -107,9 +107,7 @@ export function NoodbufferCalculator() {
             {niveau.label}
           </p>
           <p className={`mt-1 font-display text-2xl font-extrabold ${niveau.kleur}`}>
-            {Number.isFinite(resultaat.aantalMaanden)
-              ? `${resultaat.aantalMaanden.toFixed(1)} maanden`
-              : ": "}
+            {resultaat.aantalMaanden.toFixed(1)} maanden
           </p>
           <p className="mt-2 text-sm leading-relaxed text-foreground/90">
             {niveau.uitleg}
