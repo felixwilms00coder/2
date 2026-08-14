@@ -101,6 +101,18 @@ export const legislation: LegislationEntry[] = [
     lastVerified: "2026-08-04",
   },
   {
+    slug: "roerende-voorheffing-beleggingsinkomsten",
+    title: "Roerende voorheffing wordt automatisch ingehouden op dividenden en interest",
+    officialTitle: "Wetboek van de Inkomstenbelastingen 1992 (WIB92)",
+    jurisdiction: "federaal",
+    topics: ["beleggen", "sparen"],
+    summary:
+      "Op roerende inkomsten zoals dividenden en interest uit beleggingen houdt de uitkerende instelling (de bank, de broker, de fondsbeheerder) automatisch roerende voorheffing in, vóór ze het bedrag aan jou uitbetaalt. Voor de meeste particulieren is dit doorgaans de eindbelasting op dat inkomen: er moet in de regel niets meer aangegeven worden in de personenbelasting, al bestaan er situaties en vrijstellingen waarbij dat verschilt. Het tarief en eventuele vrijstellingen wijzigen soms: check de actuele regels via FOD Financiën voor je cijfers baseert op wat je hier leest.",
+    sourceUrl:
+      "https://www.ejustice.just.fgov.be/eli/wet/1992/04/10/1992003308/justel",
+    lastVerified: "2026-08-14",
+  },
+  {
     slug: "mifid-beleggingsadvies-vergunning",
     title: "Wie beleggingsadvies geeft of je portefeuille beheert, heeft daarvoor een FSMA-vergunning nodig",
     officialTitle: "Wet van 2 augustus 2002 betreffende het toezicht op de financiële sector (omzetting MiFID II)",

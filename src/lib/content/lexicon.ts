@@ -313,6 +313,41 @@ export const lexicon: LexiconEntry[] = [
       "Het deel van de winst dat een onderneming uitkeert aan haar aandeelhouders, meestal jaarlijks. Een onderneming is niet verplicht om dividend uit te keren.",
     categorySlug: "sparen-en-beleggen",
   },
+  {
+    slug: "roerende-voorheffing",
+    term: "Roerende voorheffing",
+    uitleg:
+      "Een bronbelasting die automatisch wordt ingehouden op roerende inkomsten zoals dividenden en interest, vóór de uitkerende instelling het bedrag aan jou uitbetaalt. Voor de meeste particulieren is dit doorgaans de eindbelasting op dat inkomen, al bestaan er uitzonderingen en vrijstellingen.",
+    categorySlug: "sparen-en-beleggen",
+  },
+  {
+    slug: "broker",
+    term: "Broker",
+    uitleg:
+      "De tussenpersoon (een bank, een gespecialiseerde effectenmakelaar, of een beleggingsapp) waarlangs je aan- en verkooporders voor aandelen, obligaties, fondsen of andere effecten doorgeeft.",
+    categorySlug: "sparen-en-beleggen",
+  },
+  {
+    slug: "effectenrekening",
+    term: "Effectenrekening",
+    uitleg:
+      "De rekening waarop je aandelen, obligaties, fondsen en andere effecten worden bijgehouden: te onderscheiden van een gewone zicht- of spaarrekening, waar enkel cash op staat.",
+    categorySlug: "sparen-en-beleggen",
+  },
+  {
+    slug: "transactiekosten",
+    term: "Transactiekosten",
+    uitleg:
+      "De kost die een broker aanrekent per aan- of verkooptransactie van een effect, meestal een vast bedrag of een percentage van het transactiebedrag.",
+    categorySlug: "sparen-en-beleggen",
+  },
+  {
+    slug: "bewaarloon",
+    term: "Bewaarloon",
+    uitleg:
+      "Een periodieke kost die sommige brokers of banken aanrekenen voor het bijhouden van effecten op je effectenrekening, los van de transactiekosten bij aan- of verkoop.",
+    categorySlug: "sparen-en-beleggen",
+  },
 
   // Erven
   {
