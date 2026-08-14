@@ -6,6 +6,7 @@ import { useProgress } from "@/components/progress-provider";
 import { articles } from "@/lib/content/articles";
 import { quizzes } from "@/lib/content/quizzes";
 import { games } from "@/lib/content/game";
+import { gidsen } from "@/lib/content/gidsen";
 import { categories } from "@/lib/content/categories";
 import { articleId } from "@/lib/progress";
 import { ButtonLink, ContentCard } from "@/components/ui";
@@ -157,6 +158,46 @@ export function ProgressOverview() {
           })}
         </ul>
       </div>
+
+      {/* Gidsen */}
+      {gidsen.length > 0 && (
+        <div>
+          <h2 className="font-display text-xl font-extrabold text-foreground">
+            Gidsen
+          </h2>
+          <ul className="mt-4 space-y-2.5">
+            {gidsen.map((gids) => {
+              const doneSteps = state.gidsSteps[gids.slug] ?? [];
+              const done = doneSteps.length;
+              const totalSteps = gids.chapters.length;
+              const pct = totalSteps > 0 ? (done / totalSteps) * 100 : 0;
+              return (
+                <li key={gids.slug}>
+                  <Link
+                    href={`/gids/${gids.slug}`}
+                    className="flex items-center gap-4 rounded-2xl border border-border bg-surface p-4 transition-colors hover:border-accent hover:bg-accent-soft"
+                  >
+                    <span className="min-w-0 flex-1">
+                      <span className="block truncate text-sm font-semibold text-foreground">
+                        {gids.title}
+                      </span>
+                      <span className="mt-2 block h-1.5 overflow-hidden rounded-full bg-surface-muted">
+                        <span
+                          className="block h-full rounded-full bg-accent transition-all"
+                          style={{ width: `${pct}%` }}
+                        />
+                      </span>
+                    </span>
+                    <span className="shrink-0 text-sm font-bold text-muted">
+                      {done}/{totalSteps}
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
 
       {/* Continue */}
       {unread.length > 0 && (

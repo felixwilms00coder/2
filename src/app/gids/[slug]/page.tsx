@@ -5,6 +5,7 @@ import { Download, FileText } from "lucide-react";
 import { gidsen, getGids } from "@/lib/content/gidsen";
 import { getCategory } from "@/lib/content/categories";
 import { Container, PageHero, Callout } from "@/components/ui";
+import { GidsStepChecklist } from "@/components/gids-progress";
 
 export function generateStaticParams() {
   return gidsen.map((g) => ({ slug: g.slug }));
@@ -76,11 +77,13 @@ export default async function GidsDetailPage({
             >
               {`Het stappenplan in ${gids.chapters.length} stappen`}
             </h2>
-            <ol className="prose-article mt-4 list-decimal space-y-1.5 pl-5">
-              {gids.chapters.map((chapter, i) => (
-                <li key={i}>{chapter}</li>
-              ))}
-            </ol>
+            <p className="mt-2 text-sm text-muted">
+              Vink een stap af zodra je ze in de pdf las: je voortgang en XP
+              worden lokaal in je browser bewaard, net als bij artikels.
+            </p>
+            <div className="mt-4">
+              <GidsStepChecklist gidsSlug={gids.slug} chapters={gids.chapters} />
+            </div>
           </section>
 
           <Callout tone="warning" title="Wat deze gids niet is">

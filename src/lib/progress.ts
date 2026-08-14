@@ -5,12 +5,15 @@ export type ProgressState = {
   quizBest: Record<string, number>;
   /** Best end-score per decision-game slug. */
   gameBest: Record<string, number>;
+  /** Afgevinkte stap-indices per gids-slug (pdf-stappenplannen). */
+  gidsSteps: Record<string, number[]>;
 };
 
 export const EMPTY_PROGRESS: ProgressState = {
   read: [],
   quizBest: {},
   gameBest: {},
+  gidsSteps: {},
 };
 
 export const STORAGE_KEY = "finedu:progress:v1";
@@ -18,6 +21,7 @@ export const STORAGE_KEY = "finedu:progress:v1";
 export const XP_PER_ARTICLE = 10;
 export const XP_PER_CORRECT_ANSWER = 5;
 export const XP_PER_GAME = 25;
+export const XP_PER_GIDS_STEP = 5;
 
 export function articleId(categorySlug: string, slug: string): string {
   return `${categorySlug}/${slug}`;
@@ -29,7 +33,12 @@ export function calculateXp(state: ProgressState): number {
     Object.values(state.quizBest).reduce((sum, s) => sum + s, 0) *
     XP_PER_CORRECT_ANSWER;
   const gameXp = Object.keys(state.gameBest).length * XP_PER_GAME;
-  return readXp + quizXp + gameXp;
+  const gidsStepCount = Object.values(state.gidsSteps).reduce(
+    (sum, steps) => sum + steps.length,
+    0,
+  );
+  const gidsXp = gidsStepCount * XP_PER_GIDS_STEP;
+  return readXp + quizXp + gameXp + gidsXp;
 }
 
 export type Level = {
@@ -69,6 +78,8 @@ export function readState(): ProgressState {
     const parsed = JSON.parse(raw) as
       | Partial<ProgressState>
       | (Partial<Omit<ProgressState, "gameBest">> & { gameBest?: number | null });
+    const gidsSteps =
+      parsed.gidsSteps && typeof parsed.gidsSteps === "object" ? parsed.gidsSteps : {};
     // Older stored versions kept a single number for gameBest (one game
     // existed back then). Migrate that into the flagship game's slot so
     // returning players don't lose their earned score.
@@ -87,6 +98,7 @@ export function readState(): ProgressState {
           ? parsed.quizBest
           : {},
       gameBest,
+      gidsSteps,
     };
   } catch {
     return EMPTY_PROGRESS;
