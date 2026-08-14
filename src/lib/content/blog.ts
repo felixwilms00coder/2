@@ -8,49 +8,6 @@ import { BlogPost } from "./types";
  */
 export const blogPosts: BlogPost[] = [
   {
-    slug: "depositogarantiestelsel-hoe-veilig-is-je-spaargeld",
-    title: "Wat als je bank omvalt? Zo werkt de bescherming van je spaargeld",
-    summary:
-      "Spaar- en zichtgeld bij een vergunde bank is via het depositogarantiestelsel beschermd bij een faillissement, maar de bescherming geldt per bank, niet per rekening: iets om te weten voor je spaart bij meerdere instellingen.",
-    categorySlug: "sparen-en-beleggen",
-    publishedAt: "2026-08-13",
-    readMinutes: 3,
-    blocks: [
-      {
-        type: "p",
-        text: "Je hebt een spaarrekening geopend en er staat stilaan een leuk bedrag op. Dan lees je in het nieuws dat ergens een bank in de problemen komt, en de vraag dringt zich op: wat gebeurt er dan met jouw geld? Het antwoord zit in het depositogarantiestelsel, en het is handig om te weten hoe dat precies werkt nog vóór je het ooit nodig hebt.",
-      },
-      { type: "h2", text: "Wat het depositogarantiestelsel dekt" },
-      {
-        type: "p",
-        text: "Staat je spaar- of zichtgeld bij een bank met een Belgische of Europese vergunning, dan is dat geld beschermd via het depositogarantiestelsel, mocht die bank onverhoopt failliet gaan. Je sluit daar zelf niets voor af en betaalt er ook niets voor: het is een wettelijke bescherming die automatisch geldt zodra je een rekening opent bij een vergunde instelling.",
-      },
-      { type: "h2", text: "Per bank, niet per rekening" },
-      {
-        type: "p",
-        text: "Een belangrijk detail: de bescherming geldt per persoon, per bank, niet per rekening. Heb je bij dezelfde bank zowel een spaar- als een zichtrekening, dan stapelt dat niet op: het is één beschermd bedrag voor die bank samen. Spreid je je geld wel over meerdere banken, dan geldt de bescherming voor elke bank apart.",
-      },
-      {
-        type: "list",
-        items: [
-          "Heeft de bank een Belgische of Europese bankvergunning?",
-          "Bij welk garantiefonds is de instelling precies aangesloten?",
-          "Hoeveel van je geld staat, opgeteld over al je rekeningen, al bij diezelfde bank?",
-        ],
-      },
-      {
-        type: "callout",
-        tone: "tip",
-        title: "Het beschermde bedrag verandert zelden, maar controleer het",
-        text: "FinEdu houdt zelf geen actueel beschermd bedrag bij, want dat ligt wettelijk vast maar kan wijzigen. Het precieze bedrag dat per bank beschermd is, vind je bij het Garantiefonds voor financiële diensten.",
-      },
-      {
-        type: "p",
-        text: "Dit stelsel beschermt je spaar- en zichtgeld bij een bankfaillissement: het is geen bescherming tegen koersverlies op beleggingen zoals aandelen of obligaties, dat is een ander soort risico. Dit is algemene informatie op basis van de wet, geen persoonlijk advies over jouw situatie. Twijfel je over de vergunning van een bank, check die dan via fsma.be, en vergelijk zelf tarieven en voorwaarden van verschillende spaarrekeningen via de Spaarrekening-vergelijker op FinEdu.",
-      },
-    ],
-  },
-  {
     slug: "huurcontract-opzeggen-vlaanderen-wat-de-wet-zegt",
     title: "Je huurcontract opzeggen: wat de wet in Vlaanderen vastlegt",
     summary:
