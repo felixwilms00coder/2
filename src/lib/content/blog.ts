@@ -8,49 +8,6 @@ import { BlogPost } from "./types";
  */
 export const blogPosts: BlogPost[] = [
   {
-    slug: "bedrijfsvoorheffing-is-geen-definitieve-belasting",
-    title: "Waarom er zoveel wordt ingehouden van je eerste loon: bedrijfsvoorheffing uitgelegd",
-    summary:
-      "Wat je werkgever elke maand inhoudt als bedrijfsvoorheffing, is een voorschot op je belastingen, geen definitief bedrag: pas bij je aangifte wordt duidelijk of je nog iets terugkrijgt of moet bijbetalen.",
-    categorySlug: "belasting-werk-en-inkomen",
-    publishedAt: "2026-08-14",
-    readMinutes: 3,
-    blocks: [
-      {
-        type: "p",
-        text: "Je eerste loonstrookje ligt er, en het verschil tussen wat er in je contract staat en wat er echt op je rekening komt, valt meteen op. Een flink stuk daarvan gaat naar iets dat 'bedrijfsvoorheffing' heet. Logische vraag: is dat gewoon weg, of komt daar nog iets van terug?",
-      },
-      { type: "h2", text: "Een voorschot, geen definitieve belasting" },
-      {
-        type: "p",
-        text: "Bedrijfsvoorheffing is het bedrag dat je werkgever maandelijks van je brutoloon inhoudt en rechtstreeks doorstort aan de fiscus. Dat gebeurt automatisch, je hoeft daar zelf niets voor te doen. Belangrijk om te weten: het is een voorschot op je uiteindelijke personenbelasting, niet het definitieve bedrag dat je verschuldigd bent.",
-      },
-      { type: "h2", text: "Waarom het uiteindelijke bedrag kan afwijken" },
-      {
-        type: "p",
-        text: "Je echte, definitieve belasting wordt pas berekend bij je jaarlijkse belastingaangifte, op basis van je volledige inkomen van dat jaar en de progressieve belastingschijven die daarop van toepassing zijn. Dat eindresultaat wordt dan vergeleken met wat er via bedrijfsvoorheffing al werd voorafbetaald. Is er te veel ingehouden, dan krijg je het verschil terug. Is er te weinig ingehouden, dan moet je bijbetalen.",
-      },
-      {
-        type: "list",
-        items: [
-          "Nettoloon: wat je effectief op je rekening krijgt, na RSZ-bijdrage én bedrijfsvoorheffing.",
-          "Brutoloon: het bedrag uit je arbeidscontract, vóór die inhoudingen.",
-          "Bedrijfsvoorheffing: het maandelijkse voorschot op je personenbelasting.",
-        ],
-      },
-      {
-        type: "callout",
-        tone: "tip",
-        title: "Je loonstrookje wordt duidelijker met de juiste begrippen",
-        text: "Twijfel je nog over het verschil tussen bruto- en nettoloon, of wat er allemaal wordt ingehouden? Het financieel lexicon van FinEdu legt die begrippen apart uit, en de Bruto-nettoloon calculator toont hoe ze samenhangen voor een concreet bedrag.",
-      },
-      {
-        type: "p",
-        text: "Dit is algemene informatie op basis van de wet, geen persoonlijk advies over jouw belastingsituatie: de exacte schijfgrenzen en percentages worden jaarlijks geïndexeerd en vind je bij de officiële bron via /wetgeving. Voor vragen over je concrete belastingaangifte kan je terecht bij FOD Financiën of een erkend boekhouder.",
-      },
-    ],
-  },
-  {
     slug: "depositogarantiestelsel-hoe-veilig-is-je-spaargeld",
     title: "Wat als je bank omvalt? Zo werkt de bescherming van je spaargeld",
     summary:
