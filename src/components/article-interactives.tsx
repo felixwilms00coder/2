@@ -69,15 +69,22 @@ export function InlineCheck({
         })}
       </div>
 
-      <div aria-live="polite">
-        {answered && (
-          <p className="mt-4 rounded-xl bg-surface p-3.5 text-sm leading-relaxed text-foreground/90">
-            <span className="font-bold">
-              {options[picked].correct ? "Juist. " : "Bijna. "}
-            </span>
+      <div
+        aria-live="polite"
+        className={`grid transition-all duration-300 ease-out ${
+          answered ? "mt-4 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+        }`}
+      >
+        <div className="overflow-hidden">
+          <p className="rounded-xl bg-surface p-3.5 text-sm leading-relaxed text-foreground/90">
+            {answered && (
+              <span className="font-bold">
+                {options[picked].correct ? "Juist. " : "Bijna. "}
+              </span>
+            )}
             {explanation}
           </p>
-        )}
+        </div>
       </div>
     </div>
   );
@@ -91,26 +98,21 @@ export function RevealCard({
   prompt: string;
   answer: string;
 }) {
-  const [open, setOpen] = useState(false);
-
   return (
-    <div className="my-8 rounded-2xl border border-dashed border-accent/40 bg-surface p-5">
-      <p className="font-display font-bold text-foreground">{prompt}</p>
-      {open ? (
-        <p className="mt-3 text-sm leading-relaxed text-foreground/90">
-          {answer}
-        </p>
-      ) : (
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          className="mt-3 inline-flex min-h-11 items-center gap-2 rounded-full bg-accent px-4 text-sm font-semibold text-accent-contrast transition-colors hover:bg-accent-strong"
-        >
+    <details className="group my-8 rounded-2xl border border-dashed border-accent/40 bg-surface p-5">
+      <summary className="flex cursor-pointer list-none flex-col items-start gap-3 [&::-webkit-details-marker]:hidden [&::marker]:hidden">
+        <span className="font-display font-bold text-foreground">
+          {prompt}
+        </span>
+        <span className="inline-flex min-h-11 items-center gap-2 rounded-full bg-accent px-4 text-sm font-semibold text-accent-contrast transition-colors hover:bg-accent-strong group-open:hidden">
           <Eye className="h-4 w-4" aria-hidden="true" />
           Toon het antwoord
-        </button>
-      )}
-    </div>
+        </span>
+      </summary>
+      <p className="mt-3 text-sm leading-relaxed text-foreground/90">
+        {answer}
+      </p>
+    </details>
   );
 }
 
