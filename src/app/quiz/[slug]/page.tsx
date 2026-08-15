@@ -4,6 +4,8 @@ import { quizzes, getQuiz } from "@/lib/content/quizzes";
 import { Container, PageHero } from "@/components/ui";
 import { QuizEngine } from "@/components/quiz-engine";
 import { pageMetadata } from "@/lib/metadata";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { BreadcrumbJsonLd } from "@/components/json-ld";
 
 export function generateStaticParams() {
   return quizzes.map((q) => ({ slug: q.slug }));
@@ -33,9 +35,26 @@ export default async function QuizPage({
   const quiz = getQuiz(slug);
   if (!quiz) notFound();
 
+  const href = `/quiz/${quiz.slug}`;
+
   return (
     <>
-      <PageHero eyebrow="Quiz" title={quiz.title} description={quiz.description} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Quiz", href: "/quiz" },
+          { name: quiz.title, href },
+        ]}
+      />
+      <PageHero eyebrow="Quiz" title={quiz.title} description={quiz.description}>
+        <div className="mt-6">
+          <Breadcrumbs
+            items={[
+              { name: "Quiz", href: "/quiz" },
+              { name: quiz.title },
+            ]}
+          />
+        </div>
+      </PageHero>
       <Container className="py-14">
         <div className="mx-auto max-w-xl">
           <QuizEngine quiz={quiz} />

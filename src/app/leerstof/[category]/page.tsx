@@ -5,6 +5,7 @@ import { categories, getCategory } from "@/lib/content/categories";
 import { getArticlesForSubcategory } from "@/lib/content/articles";
 import { Container, PageHero, ContentCard } from "@/components/ui";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { BreadcrumbJsonLd } from "@/components/json-ld";
 import type { CategoryColor } from "@/lib/content/types";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -60,6 +61,12 @@ export default async function CategoryPage({
 
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Leerstof", href: "/leerstof" },
+          { name: cat.title, href: `/leerstof/${cat.slug}` },
+        ]}
+      />
       <PageHero
         eyebrow="Leerstof"
         title={cat.title}

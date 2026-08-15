@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { BreadcrumbJsonLd } from "@/components/json-ld";
 import { Container, PageHero, Callout } from "@/components/ui";
 import { LeningVergelijker } from "@/components/tools/lening-vergelijker";
 
@@ -14,11 +16,26 @@ export const metadata: Metadata = pageMetadata({
 export default function LeningVergelijkerPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Rekentools", href: "/tools" },
+          { name: "Vergelijk leningscenario's", href: "/tools/lening-vergelijker" },
+        ]}
+      />
       <PageHero
         eyebrow="Rekentool"
         title="Vergelijk leningscenario's"
         description="Vul de rentevoeten en looptijden in die je zelf gevonden hebt, en zie de maandelijkse aflossing en totale kost naast elkaar."
-      />
+      >
+        <div className="mt-6">
+          <Breadcrumbs
+            items={[
+              { name: "Rekentools", href: "/tools" },
+              { name: "Vergelijk leningscenario's" },
+            ]}
+          />
+        </div>
+      </PageHero>
       <Container className="py-14">
         <div className="mx-auto max-w-3xl space-y-10">
           <LeningVergelijker />

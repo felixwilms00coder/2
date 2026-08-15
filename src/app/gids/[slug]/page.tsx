@@ -7,6 +7,8 @@ import { getCategory } from "@/lib/content/categories";
 import { Container, PageHero, Callout } from "@/components/ui";
 import { GidsStepChecklist } from "@/components/gids-progress";
 import { pageMetadata } from "@/lib/metadata";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { BreadcrumbJsonLd } from "@/components/json-ld";
 
 export function generateStaticParams() {
   return gidsen.map((g) => ({ slug: g.slug }));
@@ -37,14 +39,30 @@ export default async function GidsDetailPage({
   if (!gids) notFound();
 
   const category = getCategory(gids.categorySlug);
+  const href = `/gids/${gids.slug}`;
 
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Gidsen", href: "/gids" },
+          { name: gids.title, href },
+        ]}
+      />
       <PageHero
         eyebrow={category ? `Gids: ${category.title}` : "Gids"}
         title={gids.title}
         description={gids.description}
-      />
+      >
+        <div className="mt-6">
+          <Breadcrumbs
+            items={[
+              { name: "Gidsen", href: "/gids" },
+              { name: gids.title },
+            ]}
+          />
+        </div>
+      </PageHero>
       <Container className="py-14">
         <div className="mx-auto max-w-3xl space-y-10">
           <div className="rounded-3xl border border-border bg-surface p-6 sm:p-8">

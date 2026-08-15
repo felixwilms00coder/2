@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/metadata";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { BreadcrumbJsonLd } from "@/components/json-ld";
 import { Container, PageHero, Callout } from "@/components/ui";
 import { Regel72 } from "@/components/tools/regel-72";
 
@@ -13,11 +15,26 @@ export const metadata: Metadata = pageMetadata({
 export default function Regel72Page() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Rekentools", href: "/tools" },
+          { name: "De 72-regel", href: "/tools/72-regel" },
+        ]}
+      />
       <PageHero
         eyebrow="Rekentool"
         title="De 72-regel"
         description="Een snelle vuistregel om te schatten hoeveel jaar het duurt voor je geld verdubbelt."
-      />
+      >
+        <div className="mt-6">
+          <Breadcrumbs
+            items={[
+              { name: "Rekentools", href: "/tools" },
+              { name: "De 72-regel" },
+            ]}
+          />
+        </div>
+      </PageHero>
       <Container className="py-14">
         <div className="mx-auto max-w-3xl space-y-10">
           <Regel72 />

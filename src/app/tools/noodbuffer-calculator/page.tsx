@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/metadata";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { BreadcrumbJsonLd } from "@/components/json-ld";
 import { Container, PageHero, Callout } from "@/components/ui";
 import { NoodbufferCalculator } from "@/components/tools/noodbuffer-calculator";
 
@@ -13,11 +15,26 @@ export const metadata: Metadata = pageMetadata({
 export default function NoodbufferCalculatorPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Rekentools", href: "/tools" },
+          { name: "Hoe groot is jouw noodbuffer?", href: "/tools/noodbuffer-calculator" },
+        ]}
+      />
       <PageHero
         eyebrow="Rekentool"
         title="Hoe groot is jouw noodbuffer?"
         description="Vul je spaargeld en je maandelijkse vaste uitgaven in en zie hoeveel maanden je overbrugt zonder inkomen."
-      />
+      >
+        <div className="mt-6">
+          <Breadcrumbs
+            items={[
+              { name: "Rekentools", href: "/tools" },
+              { name: "Hoe groot is jouw noodbuffer?" },
+            ]}
+          />
+        </div>
+      </PageHero>
       <Container className="py-14">
         <div className="mx-auto max-w-3xl space-y-10">
           <NoodbufferCalculator />

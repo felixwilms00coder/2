@@ -5,6 +5,8 @@ import { legislation } from "@/lib/content/legislation";
 import { officialSources } from "@/lib/content/sources";
 import type { Jurisdiction } from "@/lib/content/types";
 import { pageMetadata } from "@/lib/metadata";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { LegislationJsonLd, BreadcrumbJsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = pageMetadata({
   title: "Wetgeving",
@@ -22,13 +24,16 @@ const jurisdictionLabels: Record<Jurisdiction, string> = {
 export default function WetgevingPage() {
   return (
     <>
+      <LegislationJsonLd entries={legislation} />
+      <BreadcrumbJsonLd items={[{ name: "Wetgeving", href: "/wetgeving" }]} />
       <PageHero
         eyebrow="Wetgeving"
         title="De regels achter de leerstof"
         description="Wetgeving die relevant is voor de onderwerpen op FinEdu, samengevat in gewone taal: met telkens een link naar de officieel geconsolideerde tekst. Dit is ook de bron waarop het AI-antwoord op /zoeken zich baseert."
       />
       <Container className="py-14">
-        <div className="max-w-2xl rounded-2xl border border-warning/25 bg-warning-light p-5 text-sm leading-relaxed text-foreground/90">
+        <Breadcrumbs items={[{ name: "Wetgeving" }]} />
+        <div className="mt-8 max-w-2xl rounded-2xl border border-warning/25 bg-warning-light p-5 text-sm leading-relaxed text-foreground/90">
           Dit zijn geen volledige of juridisch sluitende weergaves van de wet: enkel de kernstructuur, herschreven in gewone taal, en cijfers
           die vaak wijzigen (tarieven, drempels) staan hier bewust niet op.
           Voor een bindend antwoord op jouw concrete situatie: raadpleeg een

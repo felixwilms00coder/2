@@ -7,7 +7,7 @@ import { getCategory } from "@/lib/content/categories";
 import { Container } from "@/components/ui";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ArticleBody } from "@/components/article-body";
-import { BreadcrumbJsonLd } from "@/components/json-ld";
+import { BreadcrumbJsonLd, BlogPostingJsonLd } from "@/components/json-ld";
 import { pageMetadata } from "@/lib/metadata";
 
 export function generateStaticParams() {
@@ -52,6 +52,12 @@ export default async function BlogPostPage({
 
   return (
     <div className="bg-surface">
+      <BlogPostingJsonLd
+        title={post.title}
+        description={post.summary}
+        href={href}
+        datePublished={post.publishedAt}
+      />
       <BreadcrumbJsonLd
         items={[
           { name: "Blog", href: "/blog" },

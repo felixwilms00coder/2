@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { BreadcrumbJsonLd } from "@/components/json-ld";
 import { Container, PageHero, Callout } from "@/components/ui";
 import { SpaardoelCalculator } from "@/components/tools/spaardoel-calculator";
 
@@ -14,11 +16,26 @@ export const metadata: Metadata = pageMetadata({
 export default function SpaardoelPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Rekentools", href: "/tools" },
+          { name: "Spaardoel-calculator", href: "/tools/spaardoel" },
+        ]}
+      />
       <PageHero
         eyebrow="Rekentool"
         title="Spaardoel-calculator"
         description="Bereken hoe lang het duurt voor je je spaardoel haalt, of hoeveel je maandelijks nodig hebt voor een vaste termijn."
-      />
+      >
+        <div className="mt-6">
+          <Breadcrumbs
+            items={[
+              { name: "Rekentools", href: "/tools" },
+              { name: "Spaardoel-calculator" },
+            ]}
+          />
+        </div>
+      </PageHero>
       <Container className="py-14">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <SpaardoelCalculator />

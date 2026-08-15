@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/metadata";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { BreadcrumbJsonLd } from "@/components/json-ld";
 import { Container, PageHero, Callout } from "@/components/ui";
 import { AanvullendPensioen } from "@/components/tools/aanvullend-pensioen";
 
@@ -13,11 +15,26 @@ export const metadata: Metadata = pageMetadata({
 export default function AanvullendPensioenPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Rekentools", href: "/tools" },
+          { name: "Wat bouw je zelf op voor je pensioen?", href: "/tools/aanvullend-pensioen" },
+        ]}
+      />
       <PageHero
         eyebrow="Rekentool"
         title="Wat bouw je zelf op voor je pensioen?"
         description="Simuleer wat een maandelijkse inleg via pensioensparen, VAPZ of gewoon apart sparen kan opleveren tegen je pensioenleeftijd."
-      />
+      >
+        <div className="mt-6">
+          <Breadcrumbs
+            items={[
+              { name: "Rekentools", href: "/tools" },
+              { name: "Wat bouw je zelf op voor je pensioen?" },
+            ]}
+          />
+        </div>
+      </PageHero>
       <Container className="py-14">
         <div className="mx-auto max-w-3xl space-y-10">
           <AanvullendPensioen />

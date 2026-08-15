@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { BreadcrumbJsonLd } from "@/components/json-ld";
 import { Container, PageHero, Callout } from "@/components/ui";
 import { Beleggingsplan } from "@/components/tools/beleggingsplan";
 
@@ -14,11 +16,26 @@ export const metadata: Metadata = pageMetadata({
 export default function BeleggingsplanPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Rekentools", href: "/tools" },
+          { name: "Beleggingsplan-simulator", href: "/tools/beleggingsplan" },
+        ]}
+      />
       <PageHero
         eyebrow="Rekentool"
         title="Beleggingsplan-simulator"
         description="Zie wat een vast maandbedrag op lange termijn kan worden, en hoeveel je kosten daarvan opeten."
-      />
+      >
+        <div className="mt-6">
+          <Breadcrumbs
+            items={[
+              { name: "Rekentools", href: "/tools" },
+              { name: "Beleggingsplan-simulator" },
+            ]}
+          />
+        </div>
+      </PageHero>
       <Container className="py-14">
         <div className="mx-auto max-w-3xl space-y-10">
           <Beleggingsplan />

@@ -65,6 +65,8 @@ export default async function ArticlePage({
         description={article.summary}
         href={href}
         readMinutes={article.readMinutes}
+        datePublished={article.datePublished}
+        dateModified={article.dateModified}
       />
       <BreadcrumbJsonLd
         items={[

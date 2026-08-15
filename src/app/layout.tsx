@@ -3,7 +3,7 @@ import { Inter, Plus_Jakarta_Sans, Fraunces } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { WebsiteJsonLd } from "@/components/json-ld";
+import { WebsiteJsonLd, OrganizationJsonLd } from "@/components/json-ld";
 import { ProgressProvider } from "@/components/progress-provider";
 import { CookieConsentBanner } from "@/components/cookie-consent-banner";
 import { PersonalizedPopup } from "@/components/personalized-popup";
@@ -72,6 +72,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <WebsiteJsonLd />
+        <OrganizationJsonLd />
         <ProgressProvider>
           <a href="#hoofdinhoud" className="skip-link">
             Naar de hoofdinhoud

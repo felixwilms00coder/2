@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { BreadcrumbJsonLd } from "@/components/json-ld";
 import { Container, PageHero, Callout } from "@/components/ui";
 import { NettoloonCalculator } from "@/components/tools/nettoloon-calculator";
 
@@ -14,11 +16,26 @@ export const metadata: Metadata = pageMetadata({
 export default function NettoloonPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Rekentools", href: "/tools" },
+          { name: "Bruto-nettoloon calculator", href: "/tools/nettoloon" },
+        ]}
+      />
       <PageHero
         eyebrow="Rekentool"
         title="Bruto-nettoloon calculator"
         description="Geef je brutomaandloon in en krijg meteen een schatting van je RSZ-bijdrage, bedrijfsvoorheffing en nettoloon."
-      />
+      >
+        <div className="mt-6">
+          <Breadcrumbs
+            items={[
+              { name: "Rekentools", href: "/tools" },
+              { name: "Bruto-nettoloon calculator" },
+            ]}
+          />
+        </div>
+      </PageHero>
       <Container className="py-14">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <NettoloonCalculator />

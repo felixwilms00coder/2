@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { BreadcrumbJsonLd } from "@/components/json-ld";
 import { Container, PageHero, Callout } from "@/components/ui";
 import { AankoopkostenWoning } from "@/components/tools/aankoopkosten-woning";
 
@@ -14,11 +16,26 @@ export const metadata: Metadata = pageMetadata({
 export default function AankoopkostenWoningPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Rekentools", href: "/tools" },
+          { name: "Wat kost een woning kopen, boven de aankoopprijs?", href: "/tools/aankoopkosten-woning" },
+        ]}
+      />
       <PageHero
         eyebrow="Rekentool"
         title="Wat kost een woning kopen, boven de aankoopprijs?"
         description="Vul de registratierechten, notariskosten en eventuele kredietkosten in die voor jouw situatie gelden, en zie meteen de totale prijs."
-      />
+      >
+        <div className="mt-6">
+          <Breadcrumbs
+            items={[
+              { name: "Rekentools", href: "/tools" },
+              { name: "Wat kost een woning kopen, boven de aankoopprijs?" },
+            ]}
+          />
+        </div>
+      </PageHero>
       <Container className="py-14">
         <div className="mx-auto max-w-3xl space-y-10">
           <AankoopkostenWoning />
