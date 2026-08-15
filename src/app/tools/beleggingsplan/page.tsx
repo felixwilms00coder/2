@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { Container, PageHero, Callout } from "@/components/ui";
 import { Beleggingsplan } from "@/components/tools/beleggingsplan";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Beleggingsplan-simulator",
   description:
     "Simuleer wat periodiek beleggen op lange termijn kan opleveren, inclusief de impact van kosten. Een rekenmodel, geen advies en geen orderuitvoering.",
-  alternates: { canonical: "/tools/beleggingsplan" },
-};
+  path: "/tools/beleggingsplan",
+});
 
 export default function BeleggingsplanPage() {
   return (

@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { Container, PageHero, Callout } from "@/components/ui";
 import { VerzekeringVergelijker } from "@/components/tools/verzekering-vergelijker";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Verzekeringsoffertes vergelijken",
   description:
     "Vergelijk verzekeringsoffertes op premie én vrijstelling. FinEdu levert of rangschikt geen eigen polissen.",
-  alternates: { canonical: "/tools/verzekering-vergelijker" },
-};
+  path: "/tools/verzekering-vergelijker",
+});
 
 export default function VerzekeringVergelijkerPage() {
   return (

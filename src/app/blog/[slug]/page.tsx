@@ -8,6 +8,7 @@ import { Container } from "@/components/ui";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ArticleBody } from "@/components/article-body";
 import { BreadcrumbJsonLd } from "@/components/json-ld";
+import { pageMetadata } from "@/lib/metadata";
 
 export function generateStaticParams() {
   return blogPosts.map((p) => ({ slug: p.slug }));
@@ -21,18 +22,12 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = getBlogPost(slug);
   if (!post) return {};
-  const href = `/blog/${post.slug}`;
-  return {
+  return pageMetadata({
     title: post.title,
     description: post.summary,
-    alternates: { canonical: href },
-    openGraph: {
-      type: "article",
-      title: post.title,
-      description: post.summary,
-      url: href,
-    },
-  };
+    path: `/blog/${post.slug}`,
+    type: "article",
+  });
 }
 
 function formatDate(iso: string): string {

@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { Container, PageHero, Callout } from "@/components/ui";
 import { AanvullendPensioen } from "@/components/tools/aanvullend-pensioen";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Aanvullend-pensioen-simulator",
   description:
     "Simuleer wat pensioensparen of apart sparen tot je pensioen kan opleveren. Geen schatting van je wettelijk pensioen.",
-  alternates: { canonical: "/tools/aanvullend-pensioen" },
-};
+  path: "/tools/aanvullend-pensioen",
+});
 
 export default function AanvullendPensioenPage() {
   return (

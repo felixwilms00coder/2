@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Container, PageHero, ContentCard, KindBadge } from "@/components/ui";
@@ -6,10 +7,11 @@ import { SearchBox } from "@/components/search-box";
 import { AiAnswer } from "@/components/ai-answer";
 import { searchContent } from "@/lib/search";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Zoeken",
   description: "Doorzoek alle leerstof, rekentools en quizzen op FinEdu.",
-};
+  path: "/zoeken",
+});
 
 export default async function ZoekenPage({
   searchParams,

@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { Container, PageHero, Callout } from "@/components/ui";
 import { AankoopkostenWoning } from "@/components/tools/aankoopkosten-woning";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Aankoopkosten-calculator",
   description:
     "Vul de registratierechten, notariskosten en eventuele kredietkosten in die voor jouw situatie gelden, en zie meteen de totale prijs van een woning.",
-  alternates: { canonical: "/tools/aankoopkosten-woning" },
-};
+  path: "/tools/aankoopkosten-woning",
+});
 
 export default function AankoopkostenWoningPage() {
   return (

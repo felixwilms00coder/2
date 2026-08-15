@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { Container, PageHero } from "@/components/ui";
 import { BudgetScan } from "@/components/tools/budget-scan";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Geldscan: analyseer je inkomsten en uitgaven",
   description:
     "Plak je rekeningoverzicht en krijg meteen zicht op je inkomsten, uitgaven, terugkerende abonnementen en waar er ruimte zit om te besparen. Alles blijft in je browser.",
-  alternates: { canonical: "/tools/geldscan" },
-};
+  path: "/tools/geldscan",
+});
 
 export default function GeldscanPage() {
   return (

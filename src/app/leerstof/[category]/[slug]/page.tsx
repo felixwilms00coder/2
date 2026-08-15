@@ -9,6 +9,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { MarkReadButton } from "@/components/progress-widgets";
 import { ArticleBody } from "@/components/article-body";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/json-ld";
+import { pageMetadata } from "@/lib/metadata";
 
 export function generateStaticParams() {
   return articles.map((a) => ({
@@ -25,18 +26,12 @@ export async function generateMetadata({
   const { category, slug } = await params;
   const article = getArticle(category, slug);
   if (!article) return {};
-  const href = `/leerstof/${category}/${slug}`;
-  return {
+  return pageMetadata({
     title: article.title,
     description: article.summary,
-    alternates: { canonical: href },
-    openGraph: {
-      type: "article",
-      title: article.title,
-      description: article.summary,
-      url: href,
-    },
-  };
+    path: `/leerstof/${category}/${slug}`,
+    type: "article",
+  });
 }
 
 export default async function ArticlePage({

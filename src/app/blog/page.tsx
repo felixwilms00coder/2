@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { Bot } from "lucide-react";
 import { blogPosts } from "@/lib/content/blog";
 import { getCategory } from "@/lib/content/categories";
 import { Container, PageHero, Callout, ContentCard } from "@/components/ui";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Blog",
   description:
     "Elke dag een nieuw, AI-gegenereerd artikel over een van de FinEdu-thema's, telkens gegrond op de bestaande wetgeving en uitleg op het platform.",
-  alternates: { canonical: "/blog" },
-};
+  path: "/blog",
+});
 
 export default function BlogOverviewPage() {
   const sorted = [...blogPosts].sort((a, b) =>

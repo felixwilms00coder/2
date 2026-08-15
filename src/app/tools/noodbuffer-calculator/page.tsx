@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { Container, PageHero, Callout } from "@/components/ui";
 import { NoodbufferCalculator } from "@/components/tools/noodbuffer-calculator";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Noodbuffer-calculator",
   description:
     "Zie hoeveel maanden vaste uitgaven je huidige spaargeld dekt, afgezet tegen de gangbare vuistregel van 3 tot 6 maanden.",
-  alternates: { canonical: "/tools/noodbuffer-calculator" },
-};
+  path: "/tools/noodbuffer-calculator",
+});
 
 export default function NoodbufferCalculatorPage() {
   return (

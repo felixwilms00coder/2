@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { Container, PageHero } from "@/components/ui";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Over FinEdu",
   description:
     "FinEdu is een educatief platform over geld voor starters op de Vlaamse arbeidsmarkt, geïnspireerd door Wikifin.",
-  alternates: { canonical: "/over" },
-};
+  path: "/over",
+});
 
 export default function OverPage() {
   return (

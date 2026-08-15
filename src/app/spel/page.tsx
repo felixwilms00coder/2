@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { games } from "@/lib/content/game";
 import { Container, PageHero } from "@/components/ui";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Keuzespel",
   description:
     "Speel korte, realistische geldsituaties door: elke keuze telt, en je ziet meteen wat ze betekent voor je buffer, je vaste kosten en je levenskwaliteit.",
-  alternates: { canonical: "/spel" },
-};
+  path: "/spel",
+});
 
 export default function SpelOverviewPage() {
   return (

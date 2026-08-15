@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { Container, PageHero, Callout } from "@/components/ui";
 import { NettoloonCalculator } from "@/components/tools/nettoloon-calculator";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Bruto-nettoloon calculator",
   description:
     "Bereken een schatting van je nettoloon op basis van je brutomaandloon: RSZ-bijdrage, bedrijfsvoorheffing en nettoloon.",
-  alternates: { canonical: "/tools/nettoloon" },
-};
+  path: "/tools/nettoloon",
+});
 
 export default function NettoloonPage() {
   return (

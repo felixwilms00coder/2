@@ -4,13 +4,14 @@ import { Container, PageHero } from "@/components/ui";
 import { legislation } from "@/lib/content/legislation";
 import { officialSources } from "@/lib/content/sources";
 import type { Jurisdiction } from "@/lib/content/types";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Wetgeving",
   description:
     "Wetgeving die van toepassing is op de onderwerpen op FinEdu, samengevat in gewone taal met een link naar de officieel geconsolideerde tekst.",
-  alternates: { canonical: "/wetgeving" },
-};
+  path: "/wetgeving",
+});
 
 const jurisdictionLabels: Record<Jurisdiction, string> = {
   vlaams: "Vlaams",

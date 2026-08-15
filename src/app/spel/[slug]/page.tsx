@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { games, getGame } from "@/lib/content/game";
 import { Container, PageHero } from "@/components/ui";
 import { KeuzespelEngine } from "@/components/keuzespel-engine";
+import { pageMetadata } from "@/lib/metadata";
 
 export function generateStaticParams() {
   return games.map((g) => ({ slug: g.slug }));
@@ -16,11 +17,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const game = getGame(slug);
   if (!game) return {};
-  return {
+  return pageMetadata({
     title: game.title,
     description: game.description,
-    alternates: { canonical: `/spel/${game.slug}` },
-  };
+    path: `/spel/${game.slug}`,
+  });
 }
 
 export default async function SpelPage({

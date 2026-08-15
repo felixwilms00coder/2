@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { quizzes, getQuiz } from "@/lib/content/quizzes";
 import { Container, PageHero } from "@/components/ui";
 import { QuizEngine } from "@/components/quiz-engine";
+import { pageMetadata } from "@/lib/metadata";
 
 export function generateStaticParams() {
   return quizzes.map((q) => ({ slug: q.slug }));
@@ -16,11 +17,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const quiz = getQuiz(slug);
   if (!quiz) return {};
-  return {
+  return pageMetadata({
     title: quiz.title,
     description: quiz.description,
-    alternates: { canonical: `/quiz/${quiz.slug}` },
-  };
+    path: `/quiz/${quiz.slug}`,
+  });
 }
 
 export default async function QuizPage({

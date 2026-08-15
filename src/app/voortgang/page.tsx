@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { Container, PageHero } from "@/components/ui";
 import { ProgressOverview } from "@/components/progress-overview";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Jouw voortgang",
   description:
     "Bekijk hoeveel je al leerde: gelezen artikels, quizscores, je beste spelresultaat en je niveau.",
-  alternates: { canonical: "/voortgang" },
-};
+  path: "/voortgang",
+  robots: { index: false },
+});
 
 export default function VoortgangPage() {
   return (

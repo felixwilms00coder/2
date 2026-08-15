@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { Container, PageHero, Callout } from "@/components/ui";
 import { SpaarrekeningVergelijker } from "@/components/tools/spaarrekening-vergelijker";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Spaarrekening-vergelijker",
   description:
     "Vergelijk spaarrekeningen op basis van cijfers die je zelf invult. FinEdu houdt geen eigen rentetabel bij en beveelt geen bank aan.",
-  alternates: { canonical: "/tools/spaarrekening-vergelijker" },
-};
+  path: "/tools/spaarrekening-vergelijker",
+});
 
 export default function SpaarrekeningVergelijkerPage() {
   return (

@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { Container, PageHero, Callout } from "@/components/ui";
 import { Regel72 } from "@/components/tools/regel-72";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "De 72-regel",
   description:
     "Vul een verwacht jaarlijks rendement in en zie in hoeveel jaar je bedrag ongeveer verdubbelt bij samengestelde interest.",
-  alternates: { canonical: "/tools/72-regel" },
-};
+  path: "/tools/72-regel",
+});
 
 export default function Regel72Page() {
   return (

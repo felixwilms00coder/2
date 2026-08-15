@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { Container, PageHero } from "@/components/ui";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Privacybeleid",
   description:
     "Welke gegevens FinEdu verzamelt via de nieuwsbrief en cookies, waarom, en hoe je controle houdt.",
-  alternates: { canonical: "/privacybeleid" },
-};
+  path: "/privacybeleid",
+});
 
 export default function PrivacybeleidPage() {
   return (

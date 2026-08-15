@@ -1,5 +1,7 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Gamepad2, Sparkles } from "lucide-react";
+import { pageMetadata } from "@/lib/metadata";
 import { categories, getCategory } from "@/lib/content/categories";
 import { tools } from "@/lib/content/tools";
 import { quizzes } from "@/lib/content/quizzes";
@@ -41,6 +43,14 @@ const promises = [
     text: "Korte stukken in gewone taal, geschreven voor de Belgische context.",
   },
 ];
+
+export const metadata: Metadata = pageMetadata({
+  title: "FinEdu: financieel wegwijs vanaf je eerste job",
+  description:
+    "FinEdu helpt jonge starters op de Vlaamse arbeidsmarkt wegwijs te raken in budget, sparen, beleggen, verzekeringen, wonen, pensioen en belastingen. Duidelijke uitleg, handige rekentools en een korte quiz.",
+  path: "",
+  absoluteTitle: true,
+});
 
 export default function Home() {
   const featured = featuredSlugs

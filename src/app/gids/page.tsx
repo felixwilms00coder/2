@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { gidsen } from "@/lib/content/gidsen";
 import { Container, PageHero, EntityCard } from "@/components/ui";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Gidsen",
   description:
     "Gratis downloadbare pdf-gidsen: langere cursussen over één onderwerp, om in je eigen tempo door te nemen.",
-  alternates: { canonical: "/gids" },
-};
+  path: "/gids",
+});
 
 export default function GidsenOverviewPage() {
   return (

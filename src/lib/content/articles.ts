@@ -3,6 +3,8 @@ import { Article } from "./types";
 export const articles: Article[] = [
   {
     slug: "loonstrookje-ontcijferd",
+    datePublished: "2026-07-31",
+    dateModified: "2026-07-31",
     categorySlug: "belasting-werk-en-inkomen",
     subcategorySlug: "eerste-job",
     kind: "artikel",
@@ -72,6 +74,8 @@ export const articles: Article[] = [
   },
   {
     slug: "50-30-20-regel",
+    datePublished: "2026-07-31",
+    dateModified: "2026-07-31",
     categorySlug: "budget-betalen-lenen-en-verzekeren",
     subcategorySlug: "budget-en-budgetbeheer",
     kind: "artikel",
@@ -136,6 +140,8 @@ export const articles: Article[] = [
   },
   {
     slug: "noodbuffer-hoeveel-sparen",
+    datePublished: "2026-07-31",
+    dateModified: "2026-07-31",
     categorySlug: "sparen-en-beleggen",
     subcategorySlug: "spaarrekening",
     kind: "tips",
@@ -183,6 +189,8 @@ export const articles: Article[] = [
   },
   {
     slug: "beleggen-de-basis",
+    datePublished: "2026-07-31",
+    dateModified: "2026-07-31",
     categorySlug: "sparen-en-beleggen",
     subcategorySlug: "beleggen-en-risicospreiding",
     kind: "artikel",
@@ -255,6 +263,8 @@ export const articles: Article[] = [
   },
   {
     slug: "verantwoord-lenen",
+    datePublished: "2026-07-31",
+    dateModified: "2026-07-31",
     categorySlug: "budget-betalen-lenen-en-verzekeren",
     subcategorySlug: "lening-en-krediet",
     kind: "artikel",
@@ -305,6 +315,8 @@ export const articles: Article[] = [
   },
   {
     slug: "verzekeringen-voor-starters",
+    datePublished: "2026-07-31",
+    dateModified: "2026-07-31",
     categorySlug: "budget-betalen-lenen-en-verzekeren",
     subcategorySlug: "verzekeren",
     kind: "checklist",
@@ -365,6 +377,8 @@ export const articles: Article[] = [
   },
   {
     slug: "waarom-nu-al-pensioen",
+    datePublished: "2026-07-31",
+    dateModified: "2026-07-31",
     categorySlug: "pensioen-en-pensioenvoorbereiding",
     subcategorySlug: "drie-pensioenpijlers",
     kind: "artikel",
@@ -410,6 +424,8 @@ export const articles: Article[] = [
   },
   {
     slug: "eerste-belastingaangifte",
+    datePublished: "2026-07-31",
+    dateModified: "2026-07-31",
     categorySlug: "belasting-werk-en-inkomen",
     subcategorySlug: "belastingaangifte",
     kind: "artikel",
@@ -465,6 +481,8 @@ export const articles: Article[] = [
   },
   {
     slug: "meer-dan-je-basisloon",
+    datePublished: "2026-08-15",
+    dateModified: "2026-08-15",
     categorySlug: "belasting-werk-en-inkomen",
     subcategorySlug: "inkomen-en-loon",
     kind: "artikel",
@@ -551,6 +569,8 @@ export const articles: Article[] = [
   },
   {
     slug: "ziek-of-werkloos-wat-verandert-er-financieel",
+    datePublished: "2026-08-15",
+    dateModified: "2026-08-15",
     categorySlug: "belasting-werk-en-inkomen",
     subcategorySlug: "ziekte-en-werkloosheid",
     kind: "artikel",
@@ -632,6 +652,8 @@ export const articles: Article[] = [
   },
   {
     slug: "eerste-keer-huren",
+    datePublished: "2026-08-01",
+    dateModified: "2026-08-01",
     categorySlug: "woning-en-hypothecaire-lening",
     subcategorySlug: "woning-huren-verhuren",
     kind: "tips",
@@ -670,6 +692,8 @@ export const articles: Article[] = [
   },
   {
     slug: "studieschulden-naast-eerste-loon",
+    datePublished: "2026-08-01",
+    dateModified: "2026-08-01",
     categorySlug: "familie",
     subcategorySlug: "studeren",
     kind: "artikel",
@@ -702,6 +726,8 @@ export const articles: Article[] = [
   },
   {
     slug: "erven-als-starter",
+    datePublished: "2026-08-01",
+    dateModified: "2026-08-01",
     categorySlug: "erven",
     subcategorySlug: "erfenis-plannen",
     kind: "artikel",
@@ -732,6 +758,8 @@ export const articles: Article[] = [
   },
   {
     slug: "hoe-werkt-erfbelasting",
+    datePublished: "2026-08-15",
+    dateModified: "2026-08-15",
     categorySlug: "erven",
     subcategorySlug: "erven-en-successierechten",
     kind: "artikel",
@@ -803,6 +831,8 @@ export const articles: Article[] = [
   },
   {
     slug: "schenken-in-de-praktijk",
+    datePublished: "2026-08-15",
+    dateModified: "2026-08-15",
     categorySlug: "erven",
     subcategorySlug: "schenking",
     kind: "tips",
@@ -889,6 +919,8 @@ export const articles: Article[] = [
   },
   {
     slug: "hypothecair-krediet-basisbegrippen",
+    datePublished: "2026-08-15",
+    dateModified: "2026-08-15",
     categorySlug: "woning-en-hypothecaire-lening",
     subcategorySlug: "hypothecaire-lening",
     kind: "artikel",
@@ -966,6 +998,8 @@ export const articles: Article[] = [
   },
   {
     slug: "woning-kopen-stappen-en-kosten",
+    datePublished: "2026-08-15",
+    dateModified: "2026-08-15",
     categorySlug: "woning-en-hypothecaire-lening",
     subcategorySlug: "woning-kopen-bouwen-verbouwen",
     kind: "checklist",
@@ -1032,6 +1066,8 @@ export const articles: Article[] = [
   },
   {
     slug: "beleggingsproducten-vergelijken",
+    datePublished: "2026-08-15",
+    dateModified: "2026-08-15",
     categorySlug: "sparen-en-beleggen",
     subcategorySlug: "beleggingsproducten",
     kind: "artikel",
@@ -1140,6 +1176,8 @@ export const articles: Article[] = [
   },
   {
     slug: "beleggingsfraude-herkennen",
+    datePublished: "2026-08-15",
+    dateModified: "2026-08-15",
     categorySlug: "sparen-en-beleggen",
     subcategorySlug: "fraude-bij-beleggen",
     kind: "checklist",
@@ -1225,6 +1263,8 @@ export const articles: Article[] = [
   },
   {
     slug: "financieel-geletterd-blijven-na-je-studies",
+    datePublished: "2026-08-15",
+    dateModified: "2026-08-15",
     categorySlug: "familie",
     subcategorySlug: "financiele-opvoeding",
     kind: "tips",
@@ -1291,6 +1331,8 @@ export const articles: Article[] = [
   },
   {
     slug: "feitelijk-wettelijk-samenwonen-of-trouwen",
+    datePublished: "2026-08-15",
+    dateModified: "2026-08-15",
     categorySlug: "familie",
     subcategorySlug: "trouwen-samenwonen",
     kind: "artikel",
@@ -1361,6 +1403,8 @@ export const articles: Article[] = [
   },
   {
     slug: "eerste-kind-financieel-voorbereiden",
+    datePublished: "2026-08-15",
+    dateModified: "2026-08-15",
     categorySlug: "familie",
     subcategorySlug: "kinderen-krijgen",
     kind: "checklist",
@@ -1431,6 +1475,8 @@ export const articles: Article[] = [
   },
   {
     slug: "hoe-je-wettelijk-pensioen-wordt-opgebouwd",
+    datePublished: "2026-08-15",
+    dateModified: "2026-08-15",
     categorySlug: "pensioen-en-pensioenvoorbereiding",
     subcategorySlug: "wettelijk-pensioen",
     kind: "artikel",
@@ -1502,6 +1548,8 @@ export const articles: Article[] = [
   },
   {
     slug: "pensioensparen-derde-pijler-uitgelegd",
+    datePublished: "2026-08-15",
+    dateModified: "2026-08-15",
     categorySlug: "pensioen-en-pensioenvoorbereiding",
     subcategorySlug: "pensioensparen",
     kind: "artikel",
@@ -1581,6 +1629,8 @@ export const articles: Article[] = [
   },
   {
     slug: "groepsverzekering-checklist-aanvullend-pensioen",
+    datePublished: "2026-08-15",
+    dateModified: "2026-08-15",
     categorySlug: "pensioen-en-pensioenvoorbereiding",
     subcategorySlug: "aanvullend-pensioen",
     kind: "checklist",
@@ -1642,6 +1692,8 @@ export const articles: Article[] = [
   },
   {
     slug: "zichtrekening-kosten-en-keuze",
+    datePublished: "2026-08-15",
+    dateModified: "2026-08-15",
     categorySlug: "budget-betalen-lenen-en-verzekeren",
     subcategorySlug: "zichtrekening",
     kind: "artikel",
@@ -1722,6 +1774,8 @@ export const articles: Article[] = [
   },
   {
     slug: "betaalkaarten-debet-krediet-en-veiligheid",
+    datePublished: "2026-08-15",
+    dateModified: "2026-08-15",
     categorySlug: "budget-betalen-lenen-en-verzekeren",
     subcategorySlug: "betaalkaarten",
     kind: "checklist",

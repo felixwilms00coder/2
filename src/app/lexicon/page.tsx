@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { Container, PageHero } from "@/components/ui";
 import { LexiconLijst } from "@/components/lexicon-lijst";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Financieel lexicon",
   description:
     "Korte, begrijpelijke uitleg van financieel jargon: van basisrente tot quotiteit. Doorzoekbaar en gefilterd per thema.",
-  alternates: { canonical: "/lexicon" },
-};
+  path: "/lexicon",
+});
 
 export default function LexiconPage() {
   return (

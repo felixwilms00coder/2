@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { Container, PageHero, Callout } from "@/components/ui";
 import { BudgetPlanner } from "@/components/tools/budget-planner";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "50/30/20 budgetplanner",
   description:
     "Verdeel je nettoloon over noden, wensen en sparen volgens de 50/30/20-regel, en vergelijk met je eigen uitgaven.",
-  alternates: { canonical: "/tools/budgetplanner" },
-};
+  path: "/tools/budgetplanner",
+});
 
 export default function BudgetplannerPage() {
   return (

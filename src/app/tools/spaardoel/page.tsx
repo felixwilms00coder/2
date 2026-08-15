@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { Container, PageHero, Callout } from "@/components/ui";
 import { SpaardoelCalculator } from "@/components/tools/spaardoel-calculator";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Spaardoel-calculator",
   description:
     "Bereken hoe lang het duurt voor je je spaardoel bereikt, of hoeveel je maandelijks opzij moet zetten voor een vaste termijn.",
-  alternates: { canonical: "/tools/spaardoel" },
-};
+  path: "/tools/spaardoel",
+});
 
 export default function SpaardoelPage() {
   return (

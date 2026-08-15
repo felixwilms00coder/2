@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { tools } from "@/lib/content/tools";
 import { Container, PageHero, EntityCard } from "@/components/ui";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Rekentools",
   description:
     "Bereken je nettoloon, stel een 50/30/20-budget op of bereken hoe lang het duurt voor je een spaardoel haalt.",
-  alternates: { canonical: "/tools" },
-};
+  path: "/tools",
+});
 
 export default function ToolsPage() {
   return (

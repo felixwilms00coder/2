@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { Container, PageHero } from "@/components/ui";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Disclaimer",
   description:
     "Belangrijke informatie over het gebruik van FinEdu: geen persoonlijk financieel advies, indicatieve rekentools.",
-  alternates: { canonical: "/disclaimer" },
-};
+  path: "/disclaimer",
+});
 
 export default function DisclaimerPage() {
   return (

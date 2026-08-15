@@ -161,11 +161,13 @@ public/
 
 ## Branding and artwork
 
-The logo mark (`src/components/logo.tsx`) is a silhouette that reads both as
-a Flemish stepped gable (*trapgevel*) and as an ascending bar chart —
-regional identity plus financial growth. The same shape is used for the
-favicon (`src/app/icon.svg`) and the OG image
-(`src/app/opengraph-image.tsx`); keep those three in sync if you change it.
+FinEdu uses text-only branding sitewide: just the "FinEdu" wordmark, no
+pictorial icon (`src/components/logo.tsx` renders the wordmark; its
+`showMark` prop for the older icon-based mark defaults to hidden). The
+favicon (`src/app/icon.tsx`, `src/app/apple-icon.tsx`) and the OG image
+(`src/app/opengraph-image.tsx`) follow the same convention: a plain "F"
+monogram / "FinEdu" text, not a pictorial shape. Keep those in sync if you
+change the branding.
 
 `public/hero-skyline.svg` is a hand-built, monochrome dusk skyline used
 behind the homepage hero and the page headers. It is original artwork, so

@@ -15,12 +15,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/tools",
     "/quiz",
     "/spel",
-    "/agent",
     "/wetgeving",
     "/lexicon",
     "/blog",
     "/gids",
-    "/voortgang",
     "/over",
     "/disclaimer",
     "/privacybeleid",
@@ -40,6 +38,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${SITE_URL}/leerstof/${article.categorySlug}/${article.slug}`,
     changeFrequency: "yearly" as const,
     priority: 0.6,
+    ...(article.dateModified
+      ? { lastModified: article.dateModified }
+      : {}),
   }));
 
   const toolRoutes = tools.map((tool) => ({
@@ -62,8 +63,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const blogRoutes = blogPosts.map((post) => ({
     url: `${SITE_URL}/blog/${post.slug}`,
-    changeFrequency: "monthly" as const,
+    changeFrequency: "weekly" as const,
     priority: 0.5,
+    lastModified: post.publishedAt,
   }));
 
   const gidsRoutes = gidsen.map((gids) => ({

@@ -51,6 +51,9 @@ export type Article = {
   summary: string;
   readMinutes: number;
   blocks: ArticleBlock[];
+  /** ISO 8601. Backfilled from git history; missing on articles predating this field. */
+  datePublished?: string;
+  dateModified?: string;
 };
 
 export type ToolSummary = {

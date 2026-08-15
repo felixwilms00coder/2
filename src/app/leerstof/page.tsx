@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { categories } from "@/lib/content/categories";
 import { getArticlesForCategory } from "@/lib/content/articles";
 import { Container, PageHero, EntityCard } from "@/components/ui";
 import { ThemeProgressRing } from "@/components/progress-widgets";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Leerstof",
   description:
     "Alle thema's op een rij: budget, familie, sparen en beleggen, erven, pensioen, belasting en werk, en wonen, uitgelegd voor starters.",
-  alternates: { canonical: "/leerstof" },
-};
+  path: "/leerstof",
+});
 
 export default function LeerstofPage() {
   return (

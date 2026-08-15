@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { Container, PageHero, Callout } from "@/components/ui";
 import { LeningVergelijker } from "@/components/tools/lening-vergelijker";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Lening-vergelijker",
   description:
     "Vergelijk leningscenario's op basis van rentevoeten die je zelf invult. FinEdu houdt geen eigen rentetabel bij en beveelt geen kredietgever aan.",
-  alternates: { canonical: "/tools/lening-vergelijker" },
-};
+  path: "/tools/lening-vergelijker",
+});
 
 export default function LeningVergelijkerPage() {
   return (

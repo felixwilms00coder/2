@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { Container, PageHero, Callout } from "@/components/ui";
 import { AgentDashboard } from "@/components/agent/agent-dashboard";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Beleggingsagent: jouw regels, jouw broker",
   description:
     "Stel je eigen automatische aankoopregels in en voer ze uit via je eigen brokerkoppeling. Jij bepaalt wat, hoeveel en wanneer. FinEdu beveelt niets aan.",
-  alternates: { canonical: "/agent" },
-};
+  path: "/agent",
+  robots: { index: false },
+});
 
 export default function AgentPage() {
   return (

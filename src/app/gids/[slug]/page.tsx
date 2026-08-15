@@ -6,6 +6,7 @@ import { gidsen, getGids } from "@/lib/content/gidsen";
 import { getCategory } from "@/lib/content/categories";
 import { Container, PageHero, Callout } from "@/components/ui";
 import { GidsStepChecklist } from "@/components/gids-progress";
+import { pageMetadata } from "@/lib/metadata";
 
 export function generateStaticParams() {
   return gidsen.map((g) => ({ slug: g.slug }));
@@ -19,11 +20,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const gids = getGids(slug);
   if (!gids) return {};
-  return {
+  return pageMetadata({
     title: gids.title,
     description: gids.description,
-    alternates: { canonical: `/gids/${gids.slug}` },
-  };
+    path: `/gids/${gids.slug}`,
+  });
 }
 
 export default async function GidsDetailPage({

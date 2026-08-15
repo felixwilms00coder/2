@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { quizzes } from "@/lib/content/quizzes";
 import { Container, PageHero } from "@/components/ui";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Quiz",
   description:
     "Test je financiële kennis als starter met een korte, interactieve quiz over loon, sparen, lenen en verzekeren.",
-  alternates: { canonical: "/quiz" },
-};
+  path: "/quiz",
+});
 
 export default function QuizOverviewPage() {
   return (

@@ -6,6 +6,7 @@ import { getArticlesForSubcategory } from "@/lib/content/articles";
 import { Container, PageHero, ContentCard } from "@/components/ui";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import type { CategoryColor } from "@/lib/content/types";
+import { pageMetadata } from "@/lib/metadata";
 
 const pillColorStyles: Record<CategoryColor, string> = {
   blue: "hover:border-cat-blue hover:bg-cat-blue-soft hover:text-cat-blue",
@@ -41,11 +42,11 @@ export async function generateMetadata({
   const { category } = await params;
   const cat = getCategory(category);
   if (!cat) return {};
-  return {
+  return pageMetadata({
     title: cat.title,
     description: cat.description,
-    alternates: { canonical: `/leerstof/${cat.slug}` },
-  };
+    path: `/leerstof/${cat.slug}`,
+  });
 }
 
 export default async function CategoryPage({
