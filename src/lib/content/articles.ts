@@ -563,6 +563,163 @@ export const articles: Article[] = [
       },
     ],
   },
+  {
+    slug: "hoe-werkt-erfbelasting",
+    categorySlug: "erven",
+    subcategorySlug: "erven-en-successierechten",
+    kind: "artikel",
+    title: "Hoe werkt erfbelasting eigenlijk?",
+    summary:
+      "Erfbelasting is geen vast percentage: het tarief hangt af van hoeveel je erft en van je band met de overledene. Zo werkt het schijvenstelsel.",
+    readMinutes: 5,
+    blocks: [
+      {
+        type: "p",
+        text: "Wie erft, betaalt daarop erfbelasting (vroeger 'successierechten' genoemd) aan de regio waar de overledene het laatst woonde. In Vlaanderen is dat de Vlaamse erfbelasting, geïnd door VLABEL. Veel starters denken dat er één vast percentage bestaat, maar dat klopt niet: het werkt met een progressief schijvenstelsel.",
+      },
+      { type: "h2", text: "Twee dingen bepalen je tarief" },
+      {
+        type: "list",
+        items: [
+          "Hoeveel je erft: net zoals bij de personenbelasting betaal je op de eerste schijf van je erfdeel een lager tarief, en stijgt het tarief naarmate het bedrag groter wordt. Elke schijf heeft zijn eigen percentage, dat enkel op dat deel van het bedrag wordt toegepast.",
+          "Je band met de overledene: partners en kinderen (rechte lijn) betalen doorgaans de gunstigste tarieven. Broers, zussen, ooms, tantes en niet-verwante personen betalen op eenzelfde bedrag meer, en vaak volgens een ander schijvenstelsel.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Geen bedragen uit je hoofd leren",
+        text: "De exacte schijfgrenzen en percentages veranderen soms. FinEdu geeft bewust geen concrete cijfers hier: check die altijd bij VLABEL of bij een notaris voor je een reële erfenis probeert te berekenen.",
+      },
+      { type: "h2", text: "Waarom dit systeem bestaat" },
+      {
+        type: "p",
+        text: "Het progressieve schijvenstelsel zorgt ervoor dat kleinere erfenissen relatief minder belast worden dan grote. Het verschil per band met de overledene weerspiegelt een keuze van de wetgever: naaste familie (partner, kinderen) wordt fiscaal minder zwaar belast dan verdere familie of vreemden, omdat zij vaker mee opgebouwd hebben aan het vermogen of ervan afhankelijk zijn.",
+      },
+      {
+        type: "reveal",
+        prompt:
+          "Twee mensen erven elk 50.000 euro van een niet-verwante kennis: de ene als kind, de andere als goede vriend zonder familieband. Betalen ze evenveel erfbelasting?",
+        answer:
+          "Nee. Ook al is het bedrag identiek, het tarief hangt mee af van de band met de overledene. Een kind (rechte lijn) betaalt op datzelfde bedrag doorgaans een pak minder dan een vriend zonder familieband, die als 'derde' wordt beschouwd.",
+      },
+      { type: "h2", text: "Wat als je een erfenis niet ziet zitten?" },
+      {
+        type: "p",
+        text: "Een nalatenschap kan ook schulden bevatten. Erf je automatisch mee in die schulden zodra je de erfenis aanvaardt, dus soms is het verstandiger om een erfenis te verwerpen of onder voorrecht van boedelbeschrijving te aanvaarden. Dat is telkens een individuele afweging, en de notaris die de nalatenschap afhandelt, legt de opties uit.",
+      },
+      {
+        type: "check",
+        question:
+          "Wat bepaalt vooral hoe hoog de erfbelasting is die iemand betaalt?",
+        options: [
+          {
+            text: "Enkel het totale bedrag van de nalatenschap, ongeacht wie erft",
+            correct: false,
+          },
+          {
+            text: "Het geërfde bedrag én de band met de overledene, samen via een schijvenstelsel",
+            correct: true,
+          },
+          { text: "Enkel de leeftijd van de erfgenaam", correct: false },
+        ],
+        explanation:
+          "Erfbelasting werkt progressief: hoe meer je erft, hoe hoger het tarief op dat deel. Daarnaast bepaalt je verwantschap met de overledene welk schijvenstelsel en welke tarieven van toepassing zijn.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Educatieve uitleg, geen advies over jouw situatie",
+        text: "Dit artikel legt de algemene werking van de erfbelasting uit. Voor de concrete berekening en afhandeling van een echte nalatenschap ga je altijd langs bij een notaris, en voor de actuele tarieven en schijfgrenzen bij VLABEL.",
+      },
+    ],
+  },
+  {
+    slug: "schenken-in-de-praktijk",
+    categorySlug: "erven",
+    subcategorySlug: "schenking",
+    kind: "tips",
+    title: "Schenken in de praktijk: waar moet je op letten?",
+    summary:
+      "Roerend of onroerend, via de notaris of als handgift: de vorm van een schenking bepaalt welke regels en risico's ervoor gelden.",
+    readMinutes: 5,
+    blocks: [
+      {
+        type: "p",
+        text: "Een schenking klinkt eenvoudig: iemand geeft je iets tijdens zijn of haar leven. In de praktijk bepaalt de vorm van de schenking welke regels gelden, en dat maakt best wel wat verschil.",
+      },
+      { type: "h2", text: "Roerend versus onroerend" },
+      {
+        type: "list",
+        items: [
+          "Roerende goederen: geld, effecten (aandelen, fondsen), sieraden, en andere zaken die je kan verplaatsen. Die kan je op verschillende manieren schenken, met elk hun eigen gevolgen.",
+          "Onroerende goederen: een woning, grond of ander vastgoed. Dat schenken kan enkel via een notariële akte, er bestaat geen alternatief zoals bij roerende goederen.",
+        ],
+      },
+      { type: "h2", text: "Drie manieren om roerend te schenken" },
+      {
+        type: "steps",
+        items: [
+          "Notariële schenking: de notaris stelt een akte op en registreert de schenking. Dit kost registratiekosten, maar geeft meteen zekerheid over de datum en de inhoud van de schenking.",
+          "Bankgift: geld overschrijven via de bank, meestal met een begeleidend document (pacte adjoint) waarin de schenker en begiftigde de voorwaarden vastleggen. Niet verplicht om te registreren, maar dat kan wel.",
+          "Handgift: iets fysiek overhandigen, bijvoorbeeld cash geld of een sieraad, zonder notaris of geschreven document. De eenvoudigste vorm, maar ook de minst goed te bewijzen.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Het risico van een niet-geregistreerde schenking",
+        text: "Overlijdt de schenker binnen een bepaalde termijn na een handgift of niet-geregistreerde bankgift, dan kan de fiscus die schenking alsnog meetellen bij de nalatenschap en er erfbelasting op heffen, in plaats van de doorgaans voordeligere schenkbelasting. Laat een schenking daarom (laten) registreren als je die termijn niet volledig zeker wil afwachten.",
+      },
+      { type: "h2", text: "Waarom toch (laten) registreren?" },
+      {
+        type: "list",
+        items: [
+          "Zekerheid over de datum: bij een geregistreerde schenking staat onomstotelijk vast wanneer ze gebeurde, wat de risicotermijn voor de erfbelasting laat starten.",
+          "Bewijs bij discussie: een handgift zonder document is achteraf moeilijk te bewijzen, bijvoorbeeld als andere erfgenamen later betwisten dat er iets geschonken is.",
+          "Vaak een lager tarief: schenkbelasting op roerende goederen ligt doorgaans op een vast en relatief laag tarief, wat voordeliger kan zijn dan het progressieve tarief van de erfbelasting later.",
+        ],
+      },
+      {
+        type: "figure",
+        value: "2",
+        label: "hoofdcategorieën van schenkbaar vermogen: roerend en onroerend, elk met hun eigen route",
+      },
+      {
+        type: "reveal",
+        prompt:
+          "Een ouder geeft zijn kind 10.000 euro cash in een envelop, zonder document. Is dat juridisch een schenking?",
+        answer:
+          "Ja, ook een handgift is een geldige schenking. Het probleem zit niet in de geldigheid, maar in het bewijs en de fiscale gevolgen: zonder registratie is er geen vaste datum, en overlijdt de schenker binnen de risicotermijn, dan kan de fiscus dit bedrag alsnog als erfenis belasten.",
+      },
+      {
+        type: "check",
+        question: "Waarom kan een handgift achteraf tot problemen leiden?",
+        options: [
+          {
+            text: "Omdat handgiften juridisch niet geldig zijn",
+            correct: false,
+          },
+          {
+            text: "Omdat ze moeilijk te bewijzen zijn en, bij overlijden van de schenker binnen de risicotermijn, alsnog als erfenis belast kunnen worden",
+            correct: true,
+          },
+          {
+            text: "Omdat een handgift altijd hoger belast wordt dan een erfenis",
+            correct: false,
+          },
+        ],
+        explanation:
+          "Een handgift is geldig, maar zonder geregistreerd document ontbreekt een vaste datum en sluitend bewijs. Overlijdt de schenker binnen de wettelijke risicotermijn, dan kan de schenking alsnog bij de nalatenschap gerekend worden.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Bespreek je situatie met een notaris",
+        text: "Welke vorm van schenken het meest geschikt is, hangt af van wat je schenkt, aan wie, en welk risico je aanvaardbaar vindt. FinEdu legt hier enkel de algemene principes uit: voor een concrete schenking en de actuele tarieven ga je langs bij een notaris of check je bij VLABEL.",
+      },
+    ],
+  },
 ];
 
 export function getArticlesForCategory(categorySlug: string): Article[] {
