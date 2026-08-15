@@ -1262,6 +1262,217 @@ export const articles: Article[] = [
       },
     ],
   },
+  {
+    slug: "hoe-je-wettelijk-pensioen-wordt-opgebouwd",
+    categorySlug: "pensioen-en-pensioenvoorbereiding",
+    subcategorySlug: "wettelijk-pensioen",
+    kind: "artikel",
+    title: "Hoe je wettelijk pensioen wordt opgebouwd: loopbaanjaren en gelijkgestelde periodes",
+    summary:
+      "Je wettelijk pensioen hangt af van hoeveel jaar je werkte en wat je verdiende, maar ook periodes van ziekte of werkloosheid kunnen meetellen. Zo werkt de opbouw.",
+    readMinutes: 6,
+    blocks: [
+      {
+        type: "p",
+        text: "Je weet ondertussen dat je RSZ-bijdrage niet naar een persoonlijke spaarpot gaat, maar naar een gemeenschappelijke pot voor de hele sociale zekerheid. Toch bouw je wel degelijk een eigen wettelijk pensioen op: hoe dat precies gebeurt, hangt af van je loopbaanjaren en van wat er in die jaren op je loonstrookje stond.",
+      },
+      { type: "h2", text: "Elk loopbaanjaar telt apart" },
+      {
+        type: "p",
+        text: "Het wettelijk pensioen wordt niet berekend als één vast percentage van je laatste loon. Voor werknemers telt elk loopbaanjaar apart mee: hoe meer loopbaanjaren je hebt en hoe hoger (tot een wettelijk plafond) je loon in die jaren was, hoe hoger je uiteindelijke pensioen. Een onderbroken of kortere loopbaan geeft dus ook een lager pensioen, tenzij die onderbreking als gelijkgestelde periode meetelt.",
+      },
+      { type: "h2", text: "Gelijkgestelde periodes: ook zonder werken bouw je soms mee" },
+      {
+        type: "p",
+        text: "Niet elk jaar dat je niet werkte, is automatisch een verloren jaar voor je pensioen. De wet erkent een aantal situaties als gelijkgestelde periodes: je bouwt dan, onder voorwaarden, mee pensioenrechten op alsof je gewerkt had, ook al ontving je toen geen loon.",
+      },
+      {
+        type: "list",
+        items: [
+          "Tijdelijke of volledige werkloosheid: telt onder voorwaarden mee als gelijkgestelde periode.",
+          "Ziekte en invaliditeit: erkende periodes van arbeidsongeschiktheid tellen eveneens mee.",
+          "Bepaalde vormen van tijdskrediet of loopbaanonderbreking: soms gedeeltelijk gelijkgesteld, afhankelijk van het type en de periode.",
+          "Enkele andere specifieke situaties, zoals legerdienst in het verleden.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "De regels veranderen, de logica blijft",
+        text: "Welke periodes precies gelijkgesteld worden en hoe zwaar ze meetellen, ligt vast in uitvoeringsbesluiten die geregeld wijzigen. De onderliggende logica (dat bepaalde onderbrekingen je pensioenopbouw beschermen) blijft wel overeind.",
+      },
+      {
+        type: "check",
+        question:
+          "Als je een tijdje werkloos was, telt die periode dan automatisch voor 0 euro mee in je wettelijk pensioen?",
+        options: [
+          { text: "Ja, werkloosheid telt nooit mee voor je pensioen", correct: false },
+          {
+            text: "Nee, ze kan als gelijkgestelde periode meetellen, onder voorwaarden",
+            correct: true,
+          },
+          { text: "Enkel als je vrijwillig ontslag nam", correct: false },
+        ],
+        explanation:
+          "Werkloosheid kan als gelijkgestelde periode meetellen voor je wettelijk pensioen, weliswaar onder voorwaarden die afhangen van het type werkloosheid en de duur. Het is dus niet automatisch een verloren jaar.",
+      },
+      { type: "h2", text: "Zo check je je eigen opbouw" },
+      {
+        type: "steps",
+        items: [
+          "Maak een account op mypension.be en bekijk je loopbaanoverzicht: welke jaren staan geregistreerd, en welke ontbreken?",
+          "Vraag bij twijfel over een periode (bv. een periode in het buitenland of een onduidelijke onderbreking) na bij de Federale Pensioendienst of die periode meetelt.",
+          "Bekijk ook de geschatte pensioenleeftijd en het geschatte pensioenbedrag op basis van je huidige loopbaan.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Dit is geen persoonlijke berekening",
+        text: "Deze uitleg beschrijft de algemene logica achter het wettelijk pensioen, geen berekening van jouw eigen bedrag. Voor je eigen, actuele pensioenrechten en -leeftijd is mypension.be de enige betrouwbare bron.",
+      },
+    ],
+  },
+  {
+    slug: "pensioensparen-derde-pijler-uitgelegd",
+    categorySlug: "pensioen-en-pensioenvoorbereiding",
+    subcategorySlug: "pensioensparen",
+    kind: "artikel",
+    title: "Pensioensparen: wat de derde pijler wel en niet is",
+    summary:
+      "Pensioensparen wordt vaak in één adem genoemd met 'je pensioen', maar het staat los van het wettelijk pensioen en de groepsverzekering. Dit is het verschil.",
+    readMinutes: 6,
+    blocks: [
+      {
+        type: "p",
+        text: "Pensioensparen duikt elk jaar rond de jaarwisseling op in reclame en nieuwsberichten. Het is een populaire manier om een fiscaal voordeel te combineren met sparen voor later, maar het is maar één onderdeel van hoe je pensioen in België is opgebouwd: de derde pijler.",
+      },
+      { type: "h2", text: "Drie pijlers, drie verschillende systemen" },
+      {
+        type: "p",
+        text: "Pensioensparen wordt vaak in één adem genoemd met 'je pensioen', maar het staat los van het wettelijk pensioen (pijler 1) en het aanvullend pensioen via je werkgever (pijler 2). Het verschil zit vooral in wie het opbouwt en wie erover beslist.",
+      },
+      {
+        type: "list",
+        items: [
+          "Wettelijk pensioen (pijler 1): opgebouwd via de sociale zekerheid, op basis van je loopbaan. Jij beslist hier niets over: het volgt automatisch uit je werk.",
+          "Aanvullend pensioen via de werkgever (pijler 2): een groepsverzekering die je werkgever al dan niet voorziet, vaak deels met een eigen bijdrage van jou. Je hebt hier zelf beperkte keuzevrijheid.",
+          "Pensioensparen (pijler 3): een individueel initiatief. Jij kiest zelf of, hoeveel (binnen het fiscale maximum) en via welke vorm je spaart, los van je werkgever.",
+        ],
+      },
+      {
+        type: "check",
+        question:
+          "Je werkgever biedt geen groepsverzekering aan. Betekent dat automatisch dat je geen aanvullend pensioen kan opbouwen?",
+        options: [
+          {
+            text: "Klopt, zonder werkgever is er geen aanvullend pensioen mogelijk",
+            correct: false,
+          },
+          {
+            text: "Niet noodzakelijk: je kan zelf individueel pensioensparen (pijler 3), los van je werkgever",
+            correct: true,
+          },
+          { text: "Enkel zelfstandigen kunnen dat oplossen", correct: false },
+        ],
+        explanation:
+          "Pijler 2 (groepsverzekering) hangt af van je werkgever, maar pijler 3 (pensioensparen) is een individueel initiatief dat je zelf kan opstarten, ongeacht wat je werkgever aanbiedt.",
+      },
+      { type: "h2", text: "Twee vormen, geen aanbevelingen hier" },
+      {
+        type: "p",
+        text: "Pensioensparen kan via twee soorten producten: een pensioenspaarverzekering (tak21, met een gewaarborgd rendement van de verzekeraar) of een pensioenspaarfonds (belegd in aandelen en obligaties, zonder kapitaalgarantie). FinEdu doet hier bewust geen aanbeveling van een specifiek fonds of een specifieke verzekeraar: welke vorm bij jou past, hangt af van je risicobereidheid en je horizon, en dat bespreek je best met een FSMA-gecheckte adviseur.",
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Geen garantie is geen probleem, wel iets om te weten",
+        text: "Een pensioenspaarfonds kent doorgaans een hoger verwacht rendement dan een spaarverzekering, maar ook meer schommelingen (volatiliteit) en geen kapitaalgarantie. Het essentiële-informatiedocument van elk product legt de risico-indicator en de kosten uit voor je instapt.",
+      },
+      { type: "h2", text: "Het fiscaal voordeel heeft grenzen" },
+      {
+        type: "p",
+        text: "Pensioensparen levert een fiscaal voordeel op binnen een jaarlijks wettelijk maximumbedrag: stort je meer, dan geniet je op dat extra bedrag geen belastingvoordeel meer. Dat maximumbedrag en het bijhorende belastingvoordeel worden regelmatig herzien, dus check de actuele grens voor je een bedrag inplant.",
+      },
+      {
+        type: "reveal",
+        prompt: "Ben je verplicht om aan pensioensparen te doen zodra je begint te werken?",
+        answer:
+          "Nee. Pensioensparen is volledig vrijwillig en individueel. Het wettelijk pensioen (pijler 1) bouw je automatisch op via je werk; pensioensparen (pijler 3) is een keuze die je zelf maakt, meestal pas nadat je noodbuffer op orde is.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Eerst de basis, dan pensioensparen",
+        text: "Pensioensparen is voor de meeste starters pas interessant nadat de noodbuffer op orde is: het geld zit vrijwel vast tot je pensioenleeftijd. Wil je een idee van wat apart sparen op lange termijn kan opleveren, gebruik dan de aanvullend-pensioen-rekentool op finedu.be/tools/aanvullend-pensioen.",
+      },
+      {
+        type: "p",
+        text: "Pensioensparen vervangt dus geen van de andere twee pijlers: het is een extra, optioneel bouwblokje. Voor een volledig beeld van wat je via het wettelijk pensioen opbouwt, blijft mypension.be de beste start; voor productkeuzes binnen pensioensparen kan een FSMA-gecheckte adviseur je verder helpen.",
+      },
+    ],
+  },
+  {
+    slug: "groepsverzekering-checklist-aanvullend-pensioen",
+    categorySlug: "pensioen-en-pensioenvoorbereiding",
+    subcategorySlug: "aanvullend-pensioen",
+    kind: "checklist",
+    title: "Groepsverzekering: een checklist voor je aanvullend pensioen via je werkgever",
+    summary:
+      "Niet elke werkgever biedt een groepsverzekering aan, en de voorwaarden lopen sterk uiteen. Met deze checklist weet je wat je moet navragen.",
+    readMinutes: 5,
+    blocks: [
+      {
+        type: "p",
+        text: "Een groepsverzekering is het aanvullend pensioen dat je werkgever voor jou (en je collega's) opbouwt: de tweede pijler. Niet elke werkgever voorziet dit, en de voorwaarden verschillen sterk van bedrijf tot bedrijf en soms zelfs van functie tot functie. Deze checklist helpt je uitzoeken wat er voor jou concreet geldt.",
+      },
+      { type: "h2", text: "Wat navragen bij je hr-dienst?" },
+      {
+        type: "list",
+        items: [
+          "Bestaat er een groepsverzekering, en geldt die voor iedereen of enkel voor bepaalde functies of een bepaalde anciënniteit?",
+          "Wie betaalt de bijdrage: enkel de werkgever, of wordt er ook een eigen bijdrage van jouw brutoloon afgehouden?",
+          "Verandert de bijdrage met je leeftijd of anciënniteit?",
+          "Welke verzekeraar of welk pensioenfonds beheert het contract, en is er een overzicht beschikbaar van je opgebouwde reserves?",
+          "Wat gebeurt er met je opgebouwde reserves als je van job verandert?",
+        ],
+      },
+      { type: "h2", text: "Een wettelijk minimum, ook al kies je zelf de verzekeraar niet" },
+      {
+        type: "p",
+        text: "Bij een groepsverzekering kies jij als werknemer meestal niet zelf de verzekeraar of het fonds: dat doet je werkgever. De wet regelt wel een minimumbescherming: de werkgever (of inrichter) moet op de gestorte bijdragen een wettelijk minimumrendement garanderen, ongeacht het werkelijke beleggingsresultaat van de verzekeraar of het pensioenfonds.",
+      },
+      {
+        type: "check",
+        question: "Verlies je je opgebouwde aanvullend pensioen als je van werkgever verandert?",
+        options: [
+          {
+            text: "Ja, het contract stopt en het opgebouwde bedrag vervalt",
+            correct: false,
+          },
+          {
+            text: "Nee, de opgebouwde reserves blijven van jou, ook bij een jobwissel",
+            correct: true,
+          },
+          { text: "Enkel als je zelf ontslag neemt", correct: false },
+        ],
+        explanation:
+          "De reserves die je al opbouwde in een groepsverzekering, blijven van jou, ook als je van werkgever verandert. Wat er precies met die reserves gebeurt (laten staan of overdragen), hangt af van de voorwaarden van het contract en je nieuwe situatie: dat check je best via mypension.be of bij de pensioeninstelling zelf.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Bereken wat het je kan opleveren",
+        text: "Wil je een idee krijgen van wat een aanvullend pensioen, via een groepsverzekering of via eigen sparen, je op termijn ongeveer kan opleveren? Gebruik de aanvullend-pensioen-rekentool op finedu.be/tools/aanvullend-pensioen. Voor een schatting van je wettelijk pensioen (pijler 1) verwijst die rekentool bewust naar mypension.be: dat blijft de enige juiste bron daarvoor.",
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Geen productadvies",
+        text: "Deze pagina legt uit hoe een groepsverzekering in het algemeen werkt, niet welke verzekeraar of welk fonds het beste is voor jouw situatie. Voor die keuze, voor zover je er zelf iets over te zeggen hebt, kan je terecht bij een FSMA-gecheckte adviseur.",
+      },
+    ],
+  },
 ];
 
 export function getArticlesForCategory(categorySlug: string): Article[] {

@@ -159,6 +159,31 @@ export const legislation: LegislationEntry[] = [
       "https://www.ejustice.just.fgov.be/eli/wet/1985/01/22/1985012230/justel",
     lastVerified: "2026-08-15",
   },
+  {
+    slug: "pensioenberekening-loopbaanjaren-werknemers",
+    title: "Je wettelijk pensioen wordt jaar per jaar opgebouwd, niet als vast bedrag",
+    officialTitle:
+      "Koninklijk besluit nr. 50 van 24 oktober 1967 betreffende het rust- en overlevingspensioen voor werknemers",
+    jurisdiction: "federaal",
+    topics: ["pensioen", "werk"],
+    summary:
+      "Het wettelijk pensioen van werknemers wordt niet als één vast percentage van je laatste loon berekend, maar loopbaanjaar per loopbaanjaar opgebouwd: voor elk jaar telt het toenmalige loon mee, tot een wettelijk plafond. Naast effectief gewerkte jaren erkent de wet ook 'gelijkgestelde periodes', zoals bepaalde vormen van werkloosheid, ziekte of invaliditeit, die onder voorwaarden meetellen alsof je gewerkt had. Hoeveel loopbaanjaren nodig zijn voor een volledig pensioen en welke periodes precies gelijkgesteld worden, ligt vast in uitvoeringsbesluiten die kunnen wijzigen: check de actuele regels en je eigen loopbaanoverzicht via mypension.be of de Federale Pensioendienst.",
+    sourceUrl:
+      "https://www.ejustice.just.fgov.be/eli/besluit/1967/10/24/1967102401/justel",
+    lastVerified: "2026-08-15",
+  },
+  {
+    slug: "wap-minimumrendement-aanvullend-pensioen",
+    title: "Bij een groepsverzekering garandeert de wet een minimumrendement op de bijdragen",
+    officialTitle:
+      "Wet van 28 april 2003 betreffende de aanvullende pensioenen en het belastingstelsel van die pensioenen en van sommige aanvullende voordelen inzake sociale zekerheid (WAP)",
+    jurisdiction: "federaal",
+    topics: ["pensioen", "werk"],
+    summary:
+      "De Wet Aanvullende Pensioenen (WAP) legt de spelregels vast voor het aanvullend pensioen dat een werkgever voor werknemers opbouwt (tweede pijler), zoals een groepsverzekering. Eén van die regels: de werkgever of inrichter moet op de gestorte bijdragen een wettelijk minimumrendement garanderen, ongeacht het werkelijke beleggingsresultaat van de verzekeraar of het pensioenfonds. Het percentage van dat minimumrendement staat niet vast in de wet zelf en kan wijzigen: de actuele stand vraag je na bij je pensioeninstelling of vind je bij de FSMA.",
+    sourceUrl: "https://www.ejustice.just.fgov.be/eli/wet/2003/04/28/2003022481/justel",
+    lastVerified: "2026-08-15",
+  },
 ];
 
 export function getLegislationForTopics(topics: string[]): LegislationEntry[] {
