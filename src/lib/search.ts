@@ -6,6 +6,8 @@ import { lexicon } from "./content/lexicon";
 import { games } from "./content/game";
 import { blogPosts } from "./content/blog";
 import { gidsen } from "./content/gidsen";
+import { legislation } from "./content/legislation";
+import { officialSources } from "./content/sources";
 import type { ArticleBlock } from "./content/types";
 
 export type SearchResult = {
@@ -260,6 +262,35 @@ export function searchContent(query: string): SearchResult[] {
       kind: "begrip",
       title: entry.term,
       description: entry.uitleg,
+      score,
+    });
+  }
+
+  for (const entry of legislation) {
+    const titleScore = scoreTextAgainstTokens(entry.title, tokens) * 4;
+    const officialTitleScore = scoreTextAgainstTokens(entry.officialTitle, tokens) * 2;
+    const summaryScore = scoreTextAgainstTokens(entry.summary, tokens);
+    const score = titleScore + officialTitleScore + summaryScore;
+    if (score <= 0) continue;
+    results.push({
+      href: `/wetgeving#${entry.slug}`,
+      kind: "wet",
+      title: entry.title,
+      description: entry.summary,
+      score,
+    });
+  }
+
+  for (const source of officialSources) {
+    const nameScore = scoreTextAgainstTokens(source.name, tokens) * 4;
+    const descScore = scoreTextAgainstTokens(source.description, tokens);
+    const score = nameScore + descScore;
+    if (score <= 0) continue;
+    results.push({
+      href: `/wetgeving#${source.slug}`,
+      kind: "bron",
+      title: source.name,
+      description: source.description,
       score,
     });
   }

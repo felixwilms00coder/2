@@ -110,6 +110,8 @@ const kindLabels: Record<string, string> = {
   spel: "Keuzespel",
   blog: "Blog",
   gids: "Gids",
+  wet: "Wetgeving",
+  bron: "Officiële bron",
 };
 
 export function KindBadge({

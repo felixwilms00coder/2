@@ -39,7 +39,8 @@ export default function WetgevingPage() {
           {legislation.map((entry) => (
             <div
               key={entry.slug}
-              className="flex flex-col gap-3 rounded-[1.75rem] border border-border bg-surface p-6"
+              id={entry.slug}
+              className="flex flex-col gap-3 rounded-[1.75rem] border border-border bg-surface p-6 scroll-mt-24"
             >
               <div className="flex items-center gap-2">
                 <span className="inline-flex items-center rounded-full bg-accent-soft px-2.5 py-1 text-xs font-bold uppercase tracking-[0.08em] text-accent">
@@ -86,10 +87,11 @@ export default function WetgevingPage() {
             {officialSources.map((source) => (
               <a
                 key={source.slug}
+                id={source.slug}
                 href={source.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ease-smooth flex flex-col gap-1.5 rounded-2xl border border-border bg-surface p-5 transition-all duration-200 hover:border-accent/30 hover:shadow-[0_16px_36px_-20px_rgba(3,105,161,0.25)]"
+                className="ease-smooth flex scroll-mt-24 flex-col gap-1.5 rounded-2xl border border-border bg-surface p-5 transition-all duration-200 hover:border-accent/30 hover:shadow-[0_16px_36px_-20px_rgba(3,105,161,0.25)]"
               >
                 <span className="font-display font-bold text-foreground">
                   {source.name}
