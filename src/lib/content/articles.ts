@@ -720,6 +720,149 @@ export const articles: Article[] = [
       },
     ],
   },
+  {
+    slug: "hypothecair-krediet-basisbegrippen",
+    categorySlug: "woning-en-hypothecaire-lening",
+    subcategorySlug: "hypothecaire-lening",
+    kind: "artikel",
+    title: "Hypothecair krediet: de basisbegrippen voor wie nog nooit leende",
+    summary:
+      "Vaste of variabele rente, quotiteit, wederbeleggingsvergoeding: de kernbegrippen van een hypothecair krediet in gewone taal, voor je met een kredietbemiddelaar gaat praten.",
+    readMinutes: 7,
+    blocks: [
+      {
+        type: "p",
+        text: "Een woning kopen doen de meeste mensen niet met eigen geld alleen. De lening die je daarvoor afsluit, heet een hypothecair krediet: een lening om een woning te kopen, bouwen of verbouwen, waarbij de woning zelf als onderpand dient. Voor je een gesprek aangaat met een kredietbemiddelaar, helpt het om een paar kernbegrippen al te kennen.",
+      },
+      { type: "h2", text: "Wat maakt een hypothecair krediet anders dan een gewone lening?" },
+      {
+        type: "p",
+        text: "Bij een hypothecair krediet krijgt de kredietgever een hypotheek op je woning: een wettelijk recht om de woning te laten verkopen als je niet meer terugbetaalt. Daardoor loopt de bank minder risico dan bij een lening zonder onderpand, en dat vertaalt zich meestal in een lagere rente en een langere looptijd dan bij bijvoorbeeld een autolening.",
+      },
+      { type: "h2", text: "Vaste of variabele rente?" },
+      {
+        type: "p",
+        text: "Een van de eerste keuzes die je maakt, is die tussen een vaste en een variabele rente. Bij een vaste rente ligt je rentevoet vast voor de hele looptijd: je weet dus vooraf exact wat je elke maand betaalt. Bij een variabele rente kan de rentevoet periodiek stijgen of dalen, gekoppeld aan een referte-index. Dat kan voordeliger uitpakken als de rente daalt, maar je loopt ook het risico dat je maandelijkse aflossing stijgt.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Geen keuze die je licht moet nemen",
+        text: "Vraag bij een variabele rente altijd na hoe vaak de rente herzien kan worden, en of er een maximale afwijking ('cap') is ten opzichte van de startrente. Een FSMA-gecheckte kredietbemiddelaar (te checken via fsma.be) moet je dit vooraf duidelijk uitleggen.",
+      },
+      { type: "h2", text: "Quotiteit: hoeveel leen je ten opzichte van de waarde van de woning?" },
+      {
+        type: "p",
+        text: "De quotiteit is de verhouding tussen het bedrag dat je leent en de waarde van de woning. Leen je het volledige aankoopbedrag, dan is de quotiteit hoog; breng je een deel eigen geld in (eigen inbreng), dan daalt ze. Hoe hoger de quotiteit, hoe meer risico de bank loopt, en dat zie je vaak terug in de voorwaarden: een hogere quotiteit kan een hogere rente of strengere voorwaarden betekenen.",
+      },
+      {
+        type: "check",
+        question:
+          "Je koopt een woning en leent het volledige bedrag, zonder eigen inbreng. Wat gebeurt er meestal met de quotiteit en de voorwaarden?",
+        options: [
+          { text: "De quotiteit is laag, en de voorwaarden worden voordeliger", correct: false },
+          {
+            text: "De quotiteit is hoog, en de bank vraagt vaak een hogere rente of strengere voorwaarden",
+            correct: true,
+          },
+          { text: "De quotiteit heeft geen invloed op de voorwaarden", correct: false },
+        ],
+        explanation:
+          "Hoe groter het geleende bedrag ten opzichte van de waarde van de woning, hoe hoger de quotiteit en hoe meer risico de bank loopt. Banken vertalen dat risico vaak in de rentevoet of in bijkomende voorwaarden, zoals een schuldsaldoverzekering.",
+      },
+      { type: "h2", text: "Vervroegd terugbetalen: de wederbeleggingsvergoeding" },
+      {
+        type: "p",
+        text: "Wil je je hypothecair krediet vervroegd (gedeeltelijk) terugbetalen, bijvoorbeeld na een erfenis of bonus, dan mag de kredietgever daarvoor een wederbeleggingsvergoeding aanrekenen: een vergoeding voor de rente-inkomsten die de bank misloopt doordat jij vroeger terugbetaalt dan afgesproken. Vraag dit steeds na voor je een vervroegde terugbetaling plant, want het kan mee bepalen of dat de moeite loont.",
+      },
+      { type: "h2", text: "Andere kosten om niet te vergeten" },
+      {
+        type: "list",
+        items: [
+          "Dossierkosten: eenmalige kosten voor het opstellen en verwerken van het krediet.",
+          "Schuldsaldoverzekering: vaak (bijna) verplicht gekoppeld aan een hypothecair krediet, dekt het overlijdensrisico zodat de lening bij overlijden (deels) afbetaald raakt.",
+          "Notariskosten voor de hypothecaire akte: een aparte post, los van de notariskosten bij de aankoop van de woning zelf.",
+        ],
+      },
+      { type: "h2", text: "Zelf verschillende scenario's vergelijken" },
+      {
+        type: "p",
+        text: "Rentevoeten en voorwaarden verschillen sterk van kredietgever tot kredietgever, en FinEdu geeft daarover bewust geen eigen tarieven of aanbevelingen. Vul de rentevoeten en looptijden die je zelf bij verschillende aanbieders opvraagt in bij de lening-vergelijker, en zie meteen naast elkaar wat de maandelijkse aflossing en de totale kost betekenen.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Laat je begeleiden",
+        text: "Een hypothecair krediet afsluiten is een van de grootste financiële beslissingen die je zal nemen. Een FSMA-gecheckte kredietbemiddelaar (controleer dit via fsma.be) kan je door de opties gidsen. FinEdu geeft educatieve informatie, geen bindend financieel advies.",
+      },
+    ],
+  },
+  {
+    slug: "woning-kopen-stappen-en-kosten",
+    categorySlug: "woning-en-hypothecaire-lening",
+    subcategorySlug: "woning-kopen-bouwen-verbouwen",
+    kind: "checklist",
+    title: "Een woning kopen: de stappen en kosten op een rij",
+    summary:
+      "Van bod tot notariële akte: welke stappen doorloop je bij een aankoop, en welke kosten komen er bovenop de aankoopprijs?",
+    readMinutes: 6,
+    blocks: [
+      {
+        type: "p",
+        text: "Een woning kopen is meer dan de aankoopprijs betalen. Er komt een vast traject bij kijken, met een aantal kosten die je makkelijk over het hoofd ziet. Deze checklist geeft een overzicht.",
+      },
+      { type: "h2", text: "De stappen bij een aankoop" },
+      {
+        type: "steps",
+        items: [
+          "Bod doen: je doet een (schriftelijk) bod op de woning, vaak via de verkoper of een makelaar.",
+          "Onderhandse verkoopovereenkomst (compromis): zodra bod en verkoper akkoord zijn, teken je een eerste, juridisch bindend contract met de belangrijkste afspraken.",
+          "Financiering rondmaken: binnen de afgesproken termijn regel je je hypothecair krediet, vaak met een opschortende voorwaarde in het compromis.",
+          "Notariële akte: binnen een wettelijk bepaalde termijn na het compromis verlijdt de notaris de authentieke akte, en word je officieel eigenaar.",
+          "Registratie en overschrijving: de notaris zorgt voor de registratie van de akte en de inschrijving in het hypotheekkantoor.",
+        ],
+      },
+      { type: "h2", text: "Wat kost een woning kopen, naast de aankoopprijs?" },
+      {
+        type: "list",
+        items: [
+          "Registratierechten: de belasting die je betaalt op de aankoopprijs, in Vlaanderen ook het verkooprecht genoemd.",
+          "Notariskosten: de kosten voor de notaris die de aankoopakte opstelt, bovenop de registratierechten.",
+          "Kosten voor de hypothecaire akte: leen je voor de aankoop, dan komen daar nog aparte notaris- en registratiekosten voor de hypotheek bovenop.",
+          "Schattingskosten en administratieve kosten: sommige kredietgevers vragen een schatting van de woning voor ze een hypothecair krediet toekennen.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Reken het voor jouw situatie na",
+        text: "Vul de registratierechten, notariskosten en eventuele kredietkosten die voor jouw situatie gelden in bij de aankoopkosten-calculator, en zie in één keer wat de totale prijs wordt boven op de aankoopprijs.",
+      },
+      { type: "h2", text: "Het energieprestatiecertificaat (EPC)" },
+      {
+        type: "p",
+        text: "Bij elke verkoop is een geldig energieprestatiecertificaat verplicht: het geeft de energiezuinigheid van de woning weer. Een slecht EPC-label betekent niet alleen een hogere energiefactuur later, maar kan ook wijzen op verbouwingskosten die je best mee in je budget opneemt voor je een bod doet.",
+      },
+      {
+        type: "reveal",
+        prompt:
+          "Denk je dat 'notariskosten' alle kosten dekt die je aan de notaris betaalt bij een aankoop?",
+        answer:
+          "Niet helemaal. Notariskosten verwijzen specifiek naar het ereloon van de notaris zelf. De registratierechten zijn een aparte, meestal veel grotere post die de notaris voor jou int en doorstort aan de overheid: geen inkomen voor de notaris. Reken dus altijd met beide posten samen, niet enkel met de notariskosten, als je je totale aankoopbudget bepaalt.",
+      },
+      { type: "h2", text: "Verbouwen: hetzelfde principe" },
+      {
+        type: "p",
+        text: "Koop je een woning om te verbouwen, dan gelden dezelfde aankoopkosten (registratierechten, notariskosten) als bij een instapklare woning. Reken daarnaast een aparte buffer voor de verbouwing zelf, en hou rekening met een aparte financiering of een uitbreiding van je hypothecair krediet indien nodig.",
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Een notaris is verplicht, koop nooit zonder",
+        text: "De overdracht van een woning kan in België enkel via een notariële akte. De notaris is onafhankelijk en behartigt de belangen van beide partijen. Twijfel je over je hypothecair krediet, raadpleeg dan een FSMA-gecheckte kredietbemiddelaar (te checken via fsma.be). FinEdu geeft educatieve informatie, geen bindend advies.",
+      },
+    ],
+  },
 ];
 
 export function getArticlesForCategory(categorySlug: string): Article[] {
