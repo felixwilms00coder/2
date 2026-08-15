@@ -563,6 +563,173 @@ export const articles: Article[] = [
       },
     ],
   },
+  {
+    slug: "zichtrekening-kosten-en-keuze",
+    categorySlug: "budget-betalen-lenen-en-verzekeren",
+    subcategorySlug: "zichtrekening",
+    kind: "artikel",
+    title: "Je zichtrekening: wat ze kost en waar je op let",
+    summary:
+      "Je zichtrekening is de motor van je dagelijkse geldzaken. Wat kost ze eigenlijk, en waar let je op als je een rekening kiest of vergelijkt?",
+    readMinutes: 6,
+    blocks: [
+      {
+        type: "p",
+        text: "Je zichtrekening is de rekening waarlangs bijna al je geld beweegt: je loon komt er binnen, je huur en abonnementen gaan er via domiciliëring vanaf, en je gebruikt ze om met je betaalkaart te betalen. In tegenstelling tot een spaarrekening is het geld erop meteen beschikbaar, maar daar staat meestal weinig tot geen rente tegenover.",
+      },
+      { type: "h2", text: "Wat kost een zichtrekening?" },
+      {
+        type: "p",
+        text: "De meeste banken rekenen beheerskosten aan: een vast bedrag per maand of per jaar voor het bijhouden van de rekening, los van hoeveel je ze gebruikt. Daarbovenop kunnen kosten komen voor een betaalkaart, extra kaarten, papieren rekeninguittreksels, of overschrijvingen buiten de eurozone. Sommige banken bieden voordelige pakketten voor jongeren of studenten aan.",
+      },
+      {
+        type: "list",
+        items: [
+          "Beheerskosten: vaak jaarlijks of per kwartaal aangerekend, soms verschillend per pakket (basis versus uitgebreid).",
+          "Kosten voor een betaalkaart: kan inbegrepen zijn in het pakket, of apart aangerekend.",
+          "Kosten bij roodstand: als je meer uitgeeft dan er op je rekening staat, betaal je vaak een hoge debetrente op het tekort.",
+          "Kosten voor extra diensten: een tweede kaart, een papieren uittreksel aan het loket, of een overschrijving in een andere munt.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Zie je eigen kosten in één oogopslag",
+        text: "Plak je rekeninguittreksel in de Geldscan (/tools/geldscan) om te zien welke kosten er precies van je zichtrekening afgaan, en neem beheerskosten mee als vaste post in je budgetplanner (/tools/budgetplanner).",
+      },
+      {
+        type: "check",
+        question:
+          "Je zichtrekening staat 200 euro in het rood, met toestemming van je bank. Wat gebeurt er meestal?",
+        options: [
+          { text: "Niets, dat is altijd gratis", correct: false },
+          {
+            text: "Je betaalt debetrente op het bedrag dat je in het rood staat",
+            correct: true,
+          },
+          { text: "Je rekening wordt automatisch geblokkeerd", correct: false },
+        ],
+        explanation:
+          "Een toegelaten roodstand is geen gratis extra budget: de bank rekent er doorgaans een aanzienlijke debetrente op aan, vaak hoger dan bij een gewone lening. Bekijk het liever als een dure noodoplossing dan als vast onderdeel van je budget.",
+      },
+      { type: "h2", text: "Waar let je op als je een rekening kiest?" },
+      {
+        type: "list",
+        items: [
+          "Welke diensten zitten in het basispakket, en welke betaal je apart bij?",
+          "Is er een voordeliger tarief zolang je jonger bent dan een bepaalde leeftijd, en wat verandert er daarna?",
+          "Kan je makkelijk internationale overschrijvingen doen, bijvoorbeeld voor een stage of studie in het buitenland?",
+          "Hoe werkt de mobiele app: kan je er je kaart tijdelijk blokkeren, uitgaven opvolgen, of meldingen instellen?",
+          "Wat zijn de voorwaarden en kosten om de rekening weer te sluiten of over te stappen naar een andere bank?",
+        ],
+      },
+      {
+        type: "p",
+        text: "FinEdu vergelijkt bewust geen concrete banken of pakketten: welke rekening het beste bij jou past, hangt af van je eigen gebruik. Vergelijk zelf de voorwaarden op de website van elke bank of vraag een overzicht van de kosten op voor je een keuze maakt.",
+      },
+      { type: "h2", text: "Geen rekening kunnen openen? Er is een vangnet" },
+      {
+        type: "reveal",
+        prompt:
+          "Denk even na: mag een bank je zomaar weigeren als klant voor een gewone zichtrekening?",
+        answer:
+          "Niet zonder meer. In België bestaat het recht op een basisbankdienst: een beperkt maar functioneel pakket (onder meer een betaalkaart, overschrijvingen en domiciliëringen) waar iedereen die legaal in de EU verblijft in principe recht op heeft, ook zonder inkomen. Een bank mag de aanvraag alleen weigeren in wettelijk bepaalde gevallen. Meer uitleg vind je bij Wikifin.be, de voorlichtingswebsite van de FSMA.",
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Niet akkoord met je bank?",
+        text: "Kom je er met je bank niet uit, bijvoorbeeld over aangerekende kosten of een geweigerde aanvraag, dan kan je gratis terecht bij Ombudsfin, de ombudsdienst voor financiële geschillen. Dit artikel is algemene informatie, geen persoonlijk advies.",
+      },
+    ],
+  },
+  {
+    slug: "betaalkaarten-debet-krediet-en-veiligheid",
+    categorySlug: "budget-betalen-lenen-en-verzekeren",
+    subcategorySlug: "betaalkaarten",
+    kind: "checklist",
+    title: "Betaalkaarten: debet vs. krediet, en wat te doen bij verlies of diefstal",
+    summary:
+      "Niet elke betaalkaart werkt hetzelfde. Het verschil tussen debet en krediet, hoe veilig contactloos betalen is, en je actieplan bij verlies of diefstal.",
+    readMinutes: 6,
+    blocks: [
+      {
+        type: "p",
+        text: "Een betaalkaart lijkt een simpel plastic kaartje, maar niet elke kaart werkt op dezelfde manier. Het verschil tussen een debetkaart en een kredietkaart bepaalt of je met je eigen geld betaalt, of eigenlijk telkens een klein krediet opneemt.",
+      },
+      { type: "h2", text: "Debetkaart versus kredietkaart" },
+      {
+        type: "list",
+        items: [
+          "Debetkaart: het bedrag van je aankoop wordt onmiddellijk van je zichtrekening afgeschreven. Je kan niet meer uitgeven dan er op je rekening staat (op een eventuele toegelaten roodstand na). Dit is de kaart die de meeste starters standaard bij hun zichtrekening krijgen.",
+          "Kredietkaart: de uitgever betaalt je aankoop voor, en jij betaalt het opgenomen bedrag nadien terug, meestal maandelijks. Betaal je niet het volledige bedrag in één keer terug, dan reken je effectief een lening af, vaak tegen een aanzienlijke debetrente.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Een kredietkaart is een vorm van krediet",
+        text: "Betaal je maandelijks slechts een deel van je kredietkaartschuld terug, dan loop je tegen dezelfde valkuilen aan als bij een kredietopening: de rente op het openstaande saldo kan hoog oplopen. Lees Verantwoord lenen voor meer uitleg over het jaarlijks kostenpercentage (JKP).",
+      },
+      {
+        type: "check",
+        question:
+          "Je betaalt met een debetkaart voor boodschappen van 40 euro, maar er staat maar 25 euro op je rekening (geen toegelaten roodstand). Wat gebeurt er normaal?",
+        options: [
+          { text: "De betaling lukt gewoon, je komt in het rood", correct: false },
+          { text: "De betaling wordt geweigerd", correct: true },
+          { text: "De bank leent je automatisch het verschil", correct: false },
+        ],
+        explanation:
+          "Zonder toegelaten roodstand kan een debetkaart normaal geen betaling doorvoeren die je saldo overschrijdt: de transactie wordt geweigerd. Dat is een belangrijk verschil met een kredietkaart, waarbij de uitgever de aankoop wél voorschiet.",
+      },
+      { type: "h2", text: "Contactloos betalen: hoe veilig is het?" },
+      {
+        type: "p",
+        text: "Bij contactloos betalen houd je je kaart of toestel tegen de betaalterminal in plaats van de kaart in te steken. Voor de meeste kleinere bedragen is geen pincode nodig, maar vanaf een bepaald bedrag, of na een aantal opeenvolgende contactloze betalingen, vraagt de terminal alsnog je pincode als extra controle. Verlies je je kaart, dan is dit een reden te meer om ze meteen te laten blokkeren: zolang je dat niet doet, kan iemand er in theorie kleine contactloze betalingen mee doen.",
+      },
+      { type: "h2", text: "Verlies of diefstal: je actieplan" },
+      {
+        type: "steps",
+        items: [
+          "Blokkeer je kaart onmiddellijk via de app van je bank, of via de centrale kaartblokkeringsdienst als je de app niet bij de hand hebt.",
+          "Neem daarna contact op met je bank om te melden wat er gebeurd is en de vervolgstappen te bespreken.",
+          "Doe bij diefstal ook aangifte bij de politie: dat kan nodig zijn voor de afhandeling met je bank of een eventuele verzekering.",
+          "Controleer nadien je rekeninguittreksels op transacties die je niet herkent, en meld die meteen aan je bank.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Meld het zo snel mogelijk",
+        text: "Tot je het verlies, de diefstal of het misbruik van je kaart meldt, ben je voor niet-toegestane betalingen wettelijk maar tot een beperkt bedrag zelf aansprakelijk, tenzij je frauduleus handelde of grof nalatig was. Zodra je meldt, stopt in principe je aansprakelijkheid voor verdere transacties. Check bij je bank hoe en waar je precies moet melden.",
+      },
+      { type: "h2", text: "Veilig omgaan met je kaart en pincode" },
+      {
+        type: "list",
+        items: [
+          "Deel je pincode nooit, ook niet met familie of 'medewerkers' die erom vragen aan de telefoon.",
+          "Bewaar je pincode nooit samen met je kaart, bijvoorbeeld opgeschreven in je portefeuille.",
+          "Dek het toetsenbord af met je hand wanneer je je pincode ingeeft aan een terminal of geldautomaat.",
+          "Controleer regelmatig je transacties via de app van je bank, zodat je snel afwijkingen opmerkt.",
+          "Wees achterdochtig bij een geldautomaat die er beschadigd of aangepast uitziet: dat kan wijzen op skimming.",
+        ],
+      },
+      {
+        type: "reveal",
+        prompt:
+          "Iemand belt je op en zegt van je bank te zijn. Ze vragen je pincode om 'een verdachte transactie te blokkeren'. Wat doe je?",
+        answer:
+          "Je geeft nooit je pincode door, ook niet aan iemand die zich voordoet als medewerker van je bank. Banken vragen dit nooit telefonisch. Hang op en bel zelf terug via het officiële nummer van je bank (niet een nummer dat de beller je doorgeeft) om te checken of er echt iets aan de hand is.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Algemene informatie, geen persoonlijk advies",
+        text: "Dit artikel legt de algemene werking uit. Heb je een concreet geschil met je bank over een fraudegeval, dan kan je terecht bij Ombudsfin, de ombudsdienst voor financiële geschillen.",
+      },
+    ],
+  },
 ];
 
 export function getArticlesForCategory(categorySlug: string): Article[] {
