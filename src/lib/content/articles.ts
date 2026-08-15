@@ -1056,6 +1056,212 @@ export const articles: Article[] = [
       },
     ],
   },
+  {
+    slug: "financieel-geletterd-blijven-na-je-studies",
+    categorySlug: "familie",
+    subcategorySlug: "financiele-opvoeding",
+    kind: "tips",
+    title: "Financieel geletterd blijven (of worden) na je studies",
+    summary:
+      "School leert je zelden hoe je een loonstrookje leest of een budget opstelt. Deze gewoontes helpen je om het zelf bij te houden, en later door te geven.",
+    readMinutes: 5,
+    blocks: [
+      {
+        type: "p",
+        text: "Voor veel starters stopt financiële opvoeding zodra de schoolbanken achter je liggen, net op het moment dat de grootste beslissingen beginnen: je eerste loonstrookje, je eerste huurcontract, je eerste lening. Financieel geletterd zijn is geen aangeboren talent, maar een gewoonte die je opbouwt door bewust met geld bezig te blijven.",
+      },
+      { type: "h2", text: "Vijf gewoontes die het verschil maken" },
+      {
+        type: "steps",
+        items: [
+          "Lees elk document dat je ondertekent, ook als het saai of lang is: een huurcontract, een verzekeringspolis, de voorwaarden van een lening.",
+          "Volg maandelijks op waar je geld naartoe gaat, bijvoorbeeld met de geldscan-tool, in plaats van pas actie te ondernemen als het te laat is.",
+          "Gebruik onafhankelijke, officiële bronnen zoals Wikifin.be om jargon of een aanbod te checken, in plaats van enkel af te gaan op reclame of een tip op sociale media.",
+          "Bouw een vast moment in, bijvoorbeeld één keer per maand, om je budget en spaardoelen te herbekijken met de 50/30/20 budgetplanner en de spaardoel-calculator.",
+          "Stel vragen als je iets niet begrijpt, aan een onafhankelijke bron, je hr-dienst of een erkende professional, niet enkel aan wie je het product probeert te verkopen.",
+        ],
+      },
+      {
+        type: "check",
+        question:
+          "Een account op sociale media belooft je 'gegarandeerd snel rijk worden' met een investeringstip. Wat is de verstandigste eerste stap?",
+        options: [
+          {
+            text: "Meteen instappen voor je de kans mist",
+            correct: false,
+          },
+          {
+            text: "Nagaan of de aanbieder een FSMA-vergunning heeft en de belofte kritisch checken",
+            correct: true,
+          },
+          {
+            text: "Enkel een klein bedrag inzetten, dat kan geen kwaad",
+            correct: false,
+          },
+        ],
+        explanation:
+          "Gegarandeerd hoog rendement zonder risico bestaat niet. Check bij twijfel altijd of een aanbieder vergund is bij de FSMA voor je erop ingaat, en wees extra kritisch bij tips die vooral haast willen creëren.",
+      },
+      {
+        type: "reveal",
+        prompt:
+          "Denk even na: wanneer heb jij voor het laatst een financieel document echt volledig gelezen voor je het ondertekende?",
+        answer:
+          "Veel mensen scrollen door de algemene voorwaarden en klikken 'akkoord'. Dat is menselijk, maar bij grote beslissingen (een lening, een huurcontract, een verzekering) loont het om er tijd voor te nemen of iemand te vragen mee te lezen. De kleine lettertjes zijn vaak net de plek waar uitsluitingen of extra kosten staan.",
+      },
+      { type: "h2", text: "Het later doorgeven" },
+      {
+        type: "p",
+        text: "Financiële opvoeding werkt in twee richtingen: wat jij nu opbouwt, geef je later vaak door aan jongere broers, zussen, of eigen kinderen. Dat hoeft niet ingewikkeld te zijn. Praat open over geld in plaats van er een taboe van te maken, laat kinderen al vroeg meebeslissen over kleine, begrensde aankopen, en toon voor hoe je zelf een budget of spaardoel bijhoudt.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Geen taboe, wel grenzen",
+        text: "Open praten over geld betekent niet dat je alle details moet delen (zoals je exacte loon), maar wel dat je laat zien hoe je keuzes maakt: waarom je spaart, waarom je iets wel of niet koopt.",
+      },
+    ],
+  },
+  {
+    slug: "feitelijk-wettelijk-samenwonen-of-trouwen",
+    categorySlug: "familie",
+    subcategorySlug: "trouwen-samenwonen",
+    kind: "artikel",
+    title: "Feitelijk samenwonen, wettelijk samenwonen of trouwen: wat verandert er financieel?",
+    summary:
+      "Je eerste keer samenwonen met een partner roept een praktische vraag op: doe je dat gewoon, laat je het registreren, of trouw je? Het financiële verschil is groter dan het lijkt.",
+    readMinutes: 6,
+    blocks: [
+      {
+        type: "p",
+        text: "Veel starters trekken samen met een partner zonder er lang bij stil te staan welke juridische vorm dat krijgt. Toch bestaan er in België drie duidelijk verschillende opties, elk met eigen gevolgen voor wie wat bezit, wie voor wiens schulden opdraait, en wat er gebeurt bij een overlijden of een breuk.",
+      },
+      { type: "h2", text: "Drie vormen, drie uitgangspunten" },
+      {
+        type: "list",
+        items: [
+          "Feitelijk samenwonen: samen onder één dak wonen zonder dat te registreren bij de gemeente. De eenvoudigste vorm, maar ook de vorm met de minste automatische wettelijke bescherming: jullie vermogens en schulden blijven in de regel volledig gescheiden, tenzij je zelf afspraken vastlegt.",
+          "Wettelijk samenwonen: samenwonen met een officiële verklaring bij de burgerlijke stand. Dit levert een aantal wettelijke rechten en plichten op (zoals een basisbescherming van de gezinswoning), zonder te huwen. Nog steeds blijft elk vermogen in principe apart, tenzij jullie een samenlevingscontract opstellen.",
+          "Huwelijk: je valt automatisch onder een huwelijksvermogensstelsel, dat bepaalt welk vermogen van jou, van je partner, of gemeenschappelijk is. Dat wettelijk stelsel geldt tenzij je er via een huwelijkscontract van afwijkt.",
+        ],
+      },
+      { type: "h2", text: "Waarom dit voor je portefeuille uitmaakt" },
+      {
+        type: "p",
+        text: "Het verschil wordt vooral zichtbaar in drie situaties. Bij het kopen van een woning samen bepaalt de vorm mee hoe eigendom en aankoopschuld worden verdeeld als jullie niet exact evenveel inbrengen. Bij schulden die één partner alleen aangaat, draait de ander daar in de regel niet automatisch voor op, ongeacht de samenlevingsvorm, tenzij het om een gezamenlijke schuld of de gemeenschappelijke huishouding gaat. En bij een overlijden of een breuk verschillen de automatische rechten sterk: gehuwden en wettelijk samenwonenden hebben een aantal wettelijke beschermingen, feitelijk samenwonenden nauwelijks.",
+      },
+      {
+        type: "check",
+        question:
+          "Je bent feitelijk samenwonend en je partner overlijdt zonder testament. Erf je automatisch van je partner?",
+        options: [
+          {
+            text: "Nee, niet automatisch: feitelijk samenwonenden erven niet van elkaar zonder testament",
+            correct: true,
+          },
+          { text: "Ja, net zoals gehuwde partners", correct: false },
+          {
+            text: "Ja, zolang jullie op hetzelfde adres ingeschreven staan",
+            correct: false,
+          },
+        ],
+        explanation:
+          "Feitelijk samenwonen geeft geen automatisch erfrecht. Wil je dat je partner van je erft zonder te huwen of wettelijk samen te wonen, dan moet dat via een testament geregeld worden. Wettelijk samenwonenden en gehuwden hebben wel een aantal automatische rechten, al verschillen die onderling ook.",
+      },
+      { type: "h2", text: "Financieel voorbereiden, ongeacht je keuze" },
+      {
+        type: "steps",
+        items: [
+          "Bespreek voor je samenwoont hoe jullie gezamenlijke kosten (huur, boodschappen, nutsvoorzieningen) verdelen, en zet dat liefst op papier.",
+          "Hou bij grote, gezamenlijke aankopen (zoals meubels of een woning) bij wie welk aandeel betaalde, zeker als jullie niet gehuwd zijn.",
+          "Overweeg een samenlevingscontract (bij wettelijk samenwonen) of een huwelijkscontract (bij een huwelijk) als jullie afwijkende afspraken op maat willen vastleggen.",
+          "Praat over hoe jullie met schulden omgaan: eigen schulden blijven in de regel eigen schulden, tenzij je ze samen aangaat.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Twijfel je welke vorm bij jullie past?",
+        text: "Elke vorm heeft eigen gevolgen op vlak van erfrecht, bescherming van de gezinswoning en wat er gebeurt bij een breuk. Een notaris kan je situatie kosteloos toelichten voor je een knoop doorhakt.",
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Dit is geen bindend advies",
+        text: "Deze informatie is educatief bedoeld en vervangt geen persoonlijk juridisch of notarieel advies. Raadpleeg een notaris voor een concrete beslissing over trouwen, samenwonen of een contract.",
+      },
+    ],
+  },
+  {
+    slug: "eerste-kind-financieel-voorbereiden",
+    categorySlug: "familie",
+    subcategorySlug: "kinderen-krijgen",
+    kind: "checklist",
+    title: "Een eerste kind: hoe bereid je je financieel voor?",
+    summary:
+      "Een baby verandert je budget structureel: van eenmalige aankopen tot een tijdelijk lager inkomen. Deze checklist helpt je vooraf na te denken.",
+    readMinutes: 6,
+    blocks: [
+      {
+        type: "p",
+        text: "Een eerste kind krijgen brengt niet alleen grote vreugde, maar ook een structurele verandering in je budget. Sommige kosten zijn eenmalig, andere blijven terugkeren, en tijdens verlofperiodes ligt je inkomen tijdelijk lager. Vooraf nadenken over die verschuivingen scheelt stress achteraf.",
+      },
+      { type: "h2", text: "Wat verandert er in je budget?" },
+      {
+        type: "list",
+        items: [
+          "Eenmalige aankopen: babyuitzet, kinderwagen, bed. Vaak de grootste eenmalige kost, maar tweedehands materiaal of spullen van familie kunnen dit sterk drukken.",
+          "Terugkerende kosten: kinderopvang, luiers, voeding. Deze lopen door nadat de eenmalige aankopen achter de rug zijn, en wegen op de lange termijn zwaarder door.",
+          "Tijdelijk lager inkomen: tijdens moederschaps-, geboorte- of ouderschapsverlof ontvang je niet je volledige normale loon, maar een vervangingsuitkering via je ziekenfonds of de RVA die meestal lager ligt dan je gewone nettoloon.",
+        ],
+      },
+      {
+        type: "check",
+        question:
+          "Tijdens ouderschapsverlof betaalt je werkgever gewoon je volledig loon door.",
+        options: [
+          { text: "Klopt, je loon loopt gewoon door", correct: false },
+          {
+            text: "Klopt niet: je krijgt een vervangingsuitkering die meestal lager ligt dan je normale loon",
+            correct: true,
+          },
+          {
+            text: "Klopt, maar enkel bij een voltijds ouderschapsverlof",
+            correct: false,
+          },
+        ],
+        explanation:
+          "Ouderschapsverlof is een van de 'thematische verloven': je werkgever betaalt het opgenomen deel niet langer als gewoon loon, maar je kan hiervoor een vervangingsuitkering aanvragen bij de RVA. Die dekt het gemiste loon in de regel niet volledig. Reken dit tijdig na in je budget.",
+      },
+      { type: "h2", text: "Checklist: financieel voorbereid op een eerste kind" },
+      {
+        type: "list",
+        items: [
+          "Reken uit hoeveel je noodbuffer moet aangroeien om de periode met lager inkomen op te vangen, bijvoorbeeld met de noodbuffer-calculator.",
+          "Zoek tijdig uit welk type verlof (geboorteverlof, moederschapsverlof, ouderschapsverlof) voor jou en je partner van toepassing is, en welke uitkering daarbij hoort via je ziekenfonds of de RVA.",
+          "Vraag het Groeipakket tijdig aan zodra je kind geboren is: dit is de Vlaamse financiële ondersteuning voor gezinnen met kinderen, maandelijks uitbetaald per kind.",
+          "Herbekijk je budgetverdeling met de nieuwe vaste kosten erbij, bijvoorbeeld via de 50/30/20 budgetplanner, en pas je spaardoelen aan met de spaardoel-calculator.",
+          "Check of een kind ten laste invloed heeft op je belastingaangifte, en of bestaande verzekeringen (familiale verzekering, hospitalisatieverzekering) je kind automatisch mee verzekeren of dat je dit moet aanpassen.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Blijkt na een paar maanden dat je nieuwe budget structureel niet meer klopt, wacht dan niet af. Herbekijk je uitgaven, en neem bij aanhoudende moeilijkheden contact op met een dienst voor schuldbemiddeling of het OCMW voor gratis budgetbegeleiding, in plaats van bij te lenen om het verschil op te vangen.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Bereken het vooraf",
+        text: "Gebruik de noodbuffer-calculator en de 50/30/20 budgetplanner om al voor de geboorte een realistisch beeld te krijgen van je nieuwe maandbudget.",
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Dit is algemene informatie, geen persoonlijk advies",
+        text: "De regels rond geboorte-, moederschaps- en ouderschapsverlof en het Groeipakket wijzigen geregeld qua voorwaarden en bedragen. Raadpleeg voor jouw concrete situatie je ziekenfonds, de RVA, of de FOD Sociale Zekerheid (Groeipakket).",
+      },
+    ],
+  },
 ];
 
 export function getArticlesForCategory(categorySlug: string): Article[] {

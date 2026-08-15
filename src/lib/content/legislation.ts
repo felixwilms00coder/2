@@ -146,6 +146,19 @@ export const legislation: LegislationEntry[] = [
     sourceUrl: "https://www.ejustice.just.fgov.be/eli/wet/2014/04/04/2014011240/justel",
     lastVerified: "2026-08-04",
   },
+  {
+    slug: "ouderschapsverlof-thematisch-verlof",
+    title: "Ouderschapsverlof is een recht op tijdelijk minder werken, met een vervangingsuitkering via de RVA",
+    officialTitle:
+      "Herstelwet van 22 januari 1985 houdende sociale bepalingen, hoofdstuk IV bis (ouderschapsverlof en andere thematische verloven)",
+    jurisdiction: "federaal",
+    topics: ["familie", "werk"],
+    summary:
+      "Ouderschapsverlof behoort tot de 'thematische verloven': een werknemer met voldoende anciënniteit kan voor een jong kind tijdelijk volledig stoppen met werken, deeltijds gaan werken, of het arbeidsritme verminderen, met behoud van de band met de werkgever en een wettelijk recht om nadien terug te keren naar dezelfde of een gelijkwaardige functie. Voor het inkomen dat je tijdens die periode misloopt, kan je een vervangingsuitkering aanvragen bij de RVA; die dekt het gemiste loon in de regel niet volledig. De precieze voorwaarden (leeftijdsgrens van het kind, minimale anciënniteit, mogelijke opnamevormen) en het uitkeringsbedrag wijzigen geregeld: check de actuele regels bij de RVA voor je plannen maakt.",
+    sourceUrl:
+      "https://www.ejustice.just.fgov.be/eli/wet/1985/01/22/1985012230/justel",
+    lastVerified: "2026-08-15",
+  },
 ];
 
 export function getLegislationForTopics(topics: string[]): LegislationEntry[] {
