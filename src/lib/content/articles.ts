@@ -563,6 +563,199 @@ export const articles: Article[] = [
       },
     ],
   },
+  {
+    slug: "beleggingsproducten-vergelijken",
+    categorySlug: "sparen-en-beleggen",
+    subcategorySlug: "beleggingsproducten",
+    kind: "artikel",
+    title: "Aandelen, fondsen, tak21 en tak23: welk beleggingsproduct past waar?",
+    summary:
+      "Achter 'beleggen' schuilen heel verschillende producten, elk met hun eigen kosten, risico's en werking. Een overzicht van de belangrijkste types, zonder productadvies.",
+    readMinutes: 8,
+    blocks: [
+      {
+        type: "p",
+        text: "Als je de basisbegrippen van beleggen kent, zoals rendement, risico en spreiding, is de volgende stap begrijpen welke concrete producten er bestaan. 'Beleggen' is geen homogeen ding: een individueel aandeel kopen, instappen in een fonds, of sparen via een verzekeringsproduct werken heel anders en hebben elk een eigen kostenstructuur.",
+      },
+      { type: "h2", text: "Een individueel aandeel of obligatie versus een fonds" },
+      {
+        type: "p",
+        text: "Een aandeel is een bewijs van mede-eigenaarschap in één onderneming: je deelt mee in de winst (bijvoorbeeld via een dividend), maar ook in het risico als het bedrijf het moeilijk heeft. Een obligatie is een schuldbewijs: je leent geld aan een overheid of onderneming in ruil voor periodieke rente en terugbetaling op de eindvervaldag. Beide zijn concentratierisico: je hangt af van het lot van één uitgever.",
+      },
+      {
+        type: "list",
+        items: [
+          "Individueel aandeel of obligatie: mogelijk hoger rendement bij een goede keuze, maar je risico zit bij één onderneming of één overheid.",
+          "Beleggingsfonds of ETF/tracker: je geld wordt gespreid over tientallen tot duizenden aandelen of obligaties tegelijk (diversificatie), wat het risico van één slecht presterende uitgever verkleint.",
+          "Een effectenrekening bij een broker of bank is nodig om aandelen, obligaties, fondsen of trackers aan te houden: hierop worden je transactiekosten en eventueel bewaarloon aangerekend.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Simuleer voor je instapt",
+        text: "Met de beleggingsplan-simulator (/tools/beleggingsplan) zie je hoe periodiek beleggen zich over jaren opstapelt, en hoeveel kosten daarvan afknabbelen. De 72-regel (/tools/72-regel) geeft een vuistregel voor hoe snel een bedrag verdubbelt bij een bepaald rendement.",
+      },
+      { type: "h2", text: "Actief beheerde fondsen versus ETF's (trackers)" },
+      {
+        type: "p",
+        text: "Binnen fondsen bestaat een belangrijk onderscheid. Een actief beheerd fonds probeert de markt te verslaan door een fondsbeheerder die zelf aandelen selecteert: daarvoor betaal je een hogere beheersvergoeding, vaak samen met een instapkost. Een ETF (tracker) volgt gewoon passief een index en rekent doorgaans lagere lopende kosten (TER) aan. Geen van beide is per definitie de betere keuze: dat hangt af van je situatie, en FinEdu doet daar geen uitspraak over.",
+      },
+      {
+        type: "check",
+        question:
+          "Twee fondsen beleggen in dezelfde markt en behalen exact hetzelfde brutorendement. Fonds A heeft hogere lopende kosten dan fonds B. Wat is het gevolg op lange termijn?",
+        options: [
+          { text: "Geen verschil, kosten spelen enkel op korte termijn", correct: false },
+          {
+            text: "Fonds A levert netto minder op dan fonds B, ook al is het brutorendement gelijk",
+            correct: true,
+          },
+          { text: "Fonds A levert automatisch meer op omdat het duurder is", correct: false },
+        ],
+        explanation:
+          "Lopende kosten worden jaarlijks ingehouden, ongeacht de prestatie. Op lange termijn tikt zelfs een klein verschil in kosten flink aan door het effect van samengestelde interest. Check daarom altijd de lopende kosten (TER) in het essentiële-informatiedocument (KID) voor je instapt.",
+      },
+      { type: "h2", text: "Beleggen via een verzekeringsproduct: tak21 en tak23" },
+      {
+        type: "p",
+        text: "Naast rechtstreeks beleggen via een effectenrekening, bestaan er levensverzekeringsproducten die als spaar- of beleggingsvorm dienen. Tak 21 combineert een gewaarborgd rendement met kapitaalgarantie: je krijgt minstens je ingelegd kapitaal terug, maar meestal enkel op de eindvervaldag, niet als je tussentijds verkoopt. Tak 23 heeft geen gewaarborgd rendement: je premie wordt belegd in onderliggende fondsen, en het resultaat hangt volledig af van hoe die fondsen presteren, net als bij een gewoon beleggingsfonds.",
+      },
+      {
+        type: "list",
+        items: [
+          "Ook tak21- en tak23-producten kunnen instapkosten en beheersvergoedingen aanrekenen: vergelijk deze net zo kritisch als bij een gewoon fonds.",
+          "Kapitaalgarantie bij tak21 is geen synoniem voor risicoloos: het gewaarborgd rendement kan laag zijn, en vervroegd uitstappen kan kosten of een lagere waarde met zich meebrengen.",
+          "De fiscale behandeling van een verzekeringsproduct verschilt van rechtstreeks beleggen: laat dit bij twijfel navragen door de verzekeraar of een onafhankelijke, FSMA-vergunde adviseur.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Lees altijd het essentiële-informatiedocument",
+        text: "Elk verpakt beleggingsproduct, ook tak21 en tak23, moet een essentiële-informatiedocument (KID) hebben met de risico-indicator, kosten en scenario's. Vraag dit op vóór je tekent, en check de risico-indicator (1 tot 7) om te zien hoe het product zich verhoudt tot andere producten.",
+      },
+      { type: "h2", text: "Pensioensparen: een fonds met een fiscaal kader" },
+      {
+        type: "p",
+        text: "Pensioensparen is in essentie ook een fonds (of een tak21-verzekering), maar dan met een specifiek fiscaal voordeel binnen bepaalde jaarlijkse grenzen, bedoeld om een kapitaal op te bouwen tegen je pensioen. Het geld zit daardoor in de praktijk vrijwel vast tot je pensioenleeftijd: opnemen vóór dan kan een deel van het fiscaal voordeel ongedaan maken. Dit onderwerp komt uitgebreider aan bod bij pensioen en pensioenvoorbereiding op FinEdu; hier is het vooral van belang als voorbeeld van hoe eenzelfde onderliggend fonds in een ander 'jasje' (fiscaal of verzekeringstechnisch) verpakt kan zitten.",
+      },
+      {
+        type: "reveal",
+        prompt:
+          "Denk na: is geld dat in pensioensparen zit even vlot beschikbaar als geld op een gewone effectenrekening met een ETF erop?",
+        answer:
+          "Nee. Een gewoon beleggingsfonds of ETF op een effectenrekening kan je in principe op elk moment verkopen (al blijft het koersrisico van dat moment gelden). Pensioensparen is gekoppeld aan een fiscaal voordeel dat net veronderstelt dat je pas op je pensioenleeftijd opneemt: vervroegd opnemen kan dat voordeel gedeeltelijk terugdraaien. Hou hier rekening mee: gebruik pensioensparen niet voor geld dat je mogelijk eerder nodig hebt.",
+      },
+      { type: "h2", text: "Voor je in een product stapt" },
+      {
+        type: "steps",
+        items: [
+          "Lees het essentiële-informatiedocument (KID) en check de risico-indicator.",
+          "Tel alle kosten op: instapkost, lopende kosten (TER) of beheersvergoeding, transactiekosten, bewaarloon, en eventuele uitstapkost.",
+          "Vraag na via welke weg je koopt (broker, bank of verzekeraar) en of die aanbieder een FSMA-vergunning heeft.",
+          "Vergelijk niet enkel het verwachte rendement, maar ook hoe vlot je eraan kan als je het geld toch nodig hebt.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Nog geen ervaring met beleggen?",
+        text: "Download eerst de gratis gids 'Je eerste stappen om te beleggen' (/gids/eerste-stappen-beleggen) voor je in een specifiek product stapt: die legt de volgorde van stappen uit, van noodbuffer tot kosten en belastingen.",
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Dit is geen productadvies",
+        text: "FinEdu is niet FSMA-vergund en beveelt geen specifieke banken, brokers, fondsen of verzekeraars aan. Voor een aanbeveling op maat van jouw situatie heb je een FSMA-vergunde adviseur nodig: check de vergunning altijd via fsma.be.",
+      },
+    ],
+  },
+  {
+    slug: "beleggingsfraude-herkennen",
+    categorySlug: "sparen-en-beleggen",
+    subcategorySlug: "fraude-bij-beleggen",
+    kind: "checklist",
+    title: "Beleggingsfraude herkennen: rode vlaggen en wat je kan doen",
+    summary:
+      "Van nepplatformen tot valse adviseurs: dit zijn de signalen van beleggingsfraude, hoe je een vergunning checkt, en wat te doen als het toch misgaat.",
+    readMinutes: 7,
+    blocks: [
+      {
+        type: "p",
+        text: "Beleggingsfraude komt in veel vormen voor: een nepplatform dat torenhoge, gegarandeerde rendementen belooft, een 'adviseur' die je ongevraagd belt of appt, of een clone firm die zich voordoet als een bestaande, vergunde instelling. De technieken evolueren, maar een aantal signalen komen telkens terug.",
+      },
+      { type: "h2", text: "Rode vlaggen" },
+      {
+        type: "list",
+        items: [
+          "Een hoog rendement wordt beloofd zonder enig risico, of 'gegarandeerd': hoger rendement gaat altijd samen met meer risico, zoiets bestaat niet.",
+          "Tijdsdruk: je moet 'nu meteen' instappen, anders mis je een unieke kans.",
+          "Ongevraagd contact via social media, WhatsApp, een advertentie of een koude telefoonoproep.",
+          "Je wordt gevraagd te betalen via cryptomunten of een overschrijving naar een privérekening, in plaats van te storten op een effectenrekening bij een erkende instelling.",
+          "Het is moeilijk of onmogelijk om je geld (deels) terug op te vragen, of er duiken telkens nieuwe kosten op voor je zou kunnen opnemen.",
+          "De website of het contactadres lijkt sterk op dat van een bekende, vergunde instelling, maar met kleine afwijkingen (een cijfer, een andere extensie).",
+          "Onduidelijke of ontbrekende bedrijfsgegevens, of een 'vergunning' die je niet zelf onafhankelijk kan terugvinden.",
+          "De nadruk ligt op het aanbrengen van nieuwe deelnemers of investeerders, eerder dan op een uitlegbare onderliggende belegging.",
+        ],
+      },
+      {
+        type: "check",
+        question:
+          "Iemand belt je onverwacht op met een 'exclusieve' beleggingskans die gegarandeerd een zeer hoog maandelijks rendement oplevert. Wat is de meest verstandige reactie?",
+        options: [
+          { text: "Meteen een klein bedrag storten om het te testen", correct: false },
+          {
+            text: "Ophangen, en zelf onafhankelijk de vergunning van de aanbieder controleren via fsma.be voor je iets doet",
+            correct: true,
+          },
+          { text: "Vragen om meer bedenktijd van een week en dan toch instappen", correct: false },
+        ],
+        explanation:
+          "Een gegarandeerd hoog rendement bij ongevraagd contact is een klassiek patroon van beleggingsfraude. Ga nooit in op de tijdsdruk, en zoek de contactgegevens van de FSMA altijd zelf op (niet via een link die de aanbieder je stuurt) voor je een vergunning controleert.",
+      },
+      { type: "h2", text: "Hoe check je of een aanbieder vergund is?" },
+      {
+        type: "steps",
+        items: [
+          "Surf zelf naar fsma.be (typ het adres zelf in, klik niet op een link die de aanbieder je stuurde) en zoek het openbaar register van vergunde instellingen.",
+          "Vergelijk niet alleen de naam, maar ook het ondernemingsnummer en de contactgegevens met wat de aanbieder je gaf.",
+          "Check ook de waarschuwingslijst van de FSMA: daar verzamelt de toezichthouder meldingen over niet-vergunde aanbieders en clone firms.",
+          "Twijfel je nog? Beleggingsadvies en vermogensbeheer mogen in België enkel door FSMA-vergunde partijen worden aangeboden: geen vergunning is een duidelijk stopsignaal.",
+        ],
+      },
+      {
+        type: "reveal",
+        prompt:
+          "Denk na: een 'adviseur' stuurt je een screenshot van een vergunningsnummer dat overeenkomt met een bestaande, vergunde instelling. Betekent dat automatisch dat alles klopt?",
+        answer:
+          "Nee. Bij een 'clone firm' geeft een oplichter zich uit voor een bestaand, echt vergund bedrijf en gebruikt diens naam of vergunningsnummer, maar met eigen (andere) contactgegevens. Controleer daarom altijd zelf, via de contactgegevens op fsma.be (niet via wat de aanbieder je doorstuurt), of je wel degelijk met de échte, vergunde instelling te maken hebt.",
+      },
+      { type: "h2", text: "Wat als je toch slachtoffer werd?" },
+      {
+        type: "steps",
+        items: [
+          "Stop onmiddellijk met verdere betalingen, ook als je wordt beloofd dat een extra storting nodig is om eerder geld vrij te maken.",
+          "Verzamel bewijs: e-mails, chatberichten, screenshots van het platform, en bewijzen van overschrijvingen.",
+          "Neem meteen contact op met je bank: vraag of een overschrijving nog geblokkeerd of teruggevorderd kan worden.",
+          "Dien klacht in bij de politie, en meld het ook bij de FSMA via het meldpunt op fsma.be.",
+          "Gaat het om een geschil met een wél vergunde instelling, dan kan je bij Ombudsfin terecht voor een bemiddelingsprocedure.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Meer achtergrond nodig?",
+        text: "De gratis gids 'Je eerste stappen om te beleggen' (/gids/eerste-stappen-beleggen) bevat een hoofdstuk 'Herken beleggingsfraude' dat dit thema kort kadert binnen de volledige beginnersroute.",
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Dit is geen juridisch of financieel advies",
+        text: "Deze checklist is educatief bedoeld en vervangt geen professioneel advies. FinEdu is niet FSMA-vergund. Ben je slachtoffer of twijfel je over een concrete situatie, neem dan contact op met de politie, de FSMA (fsma.be) of een FSMA-vergunde adviseur.",
+      },
+    ],
+  },
 ];
 
 export function getArticlesForCategory(categorySlug: string): Article[] {
