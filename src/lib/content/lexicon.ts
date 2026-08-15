@@ -564,6 +564,36 @@ export const lexicon: LexiconEntry[] = [
       "Een verplicht document bij de verkoop of verhuur van een woning dat de energiezuinigheid ervan weergeeft, en dat mee de waarde en toekomstige verbouwingskosten kan beïnvloeden.",
     categorySlug: "woning-en-hypothecaire-lening",
   },
+
+  // Belasting, werk en inkomen (aanvulling: ziekte en werkloosheid)
+  {
+    slug: "gewaarborgd-loon",
+    term: "Gewaarborgd loon",
+    uitleg:
+      "De periode waarin je werkgever je loon nog doorbetaalt bij ziekte, voor je mutualiteit een eventuele ziekte-uitkering overneemt.",
+    categorySlug: "belasting-werk-en-inkomen",
+  },
+  {
+    slug: "ziekte-uitkering",
+    term: "Ziekte-uitkering",
+    uitleg:
+      "Een vervangingsinkomen dat je mutualiteit uitbetaalt zodra de periode van gewaarborgd loon afloopt en je nog steeds arbeidsongeschikt bent.",
+    categorySlug: "belasting-werk-en-inkomen",
+  },
+  {
+    slug: "werkloosheidsuitkering",
+    term: "Werkloosheidsuitkering",
+    uitleg:
+      "Een vervangingsinkomen dat de RVA uitbetaalt aan wie onvrijwillig zonder werk valt en aan de voorwaarden voldoet, met een bedrag dat afhangt van je vroegere loon en je gezinssituatie.",
+    categorySlug: "belasting-werk-en-inkomen",
+  },
+  {
+    slug: "mutualiteit",
+    term: "Mutualiteit (ziekenfonds)",
+    uitleg:
+      "De instelling waarbij je verplicht aangesloten bent en die onder meer de terugbetaling van gezondheidszorg en de uitbetaling van een ziekte-uitkering regelt.",
+    categorySlug: "belasting-werk-en-inkomen",
+  },
 ];
 
 export function getLexiconEntry(slug: string): LexiconEntry | undefined {

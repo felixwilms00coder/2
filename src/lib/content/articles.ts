@@ -464,6 +464,173 @@ export const articles: Article[] = [
     ],
   },
   {
+    slug: "meer-dan-je-basisloon",
+    categorySlug: "belasting-werk-en-inkomen",
+    subcategorySlug: "inkomen-en-loon",
+    kind: "artikel",
+    title: "Eindejaarspremie, flexi-job en fiscaal voordeel: meer dan je basisloon",
+    summary:
+      "Je loonstrookje toont je maandloon, maar je inkomen bestaat vaak uit meer: een eindejaarspremie, misschien een flexi-job, en fiscale voordelen die je pas bij je belastingaangifte voelt.",
+    readMinutes: 6,
+    blocks: [
+      {
+        type: "p",
+        text: "Je eerste loonstrookje ontcijferd legt uit hoe je van brutoloon naar nettoloon komt. Maar je inkomen als starter bestaat vaak uit meer dan alleen dat vaste maandloon: een eindejaarspremie, misschien een flexi-job ernaast, en fiscale voordelen die je pas bij je belastingaangifte echt voelt. Dit artikel zoomt in op die extra looncomponenten.",
+      },
+      { type: "h2", text: "De eindejaarspremie: een dertiende maand?" },
+      {
+        type: "p",
+        text: "Veel werknemers krijgen eind december een eindejaarspremie bovenop hun gewone loon, in de volksmond soms 'dertiende maand' genoemd. Dat is geen wettelijke verplichting voor iedereen: of je die premie krijgt, en hoeveel, hangt af van de collectieve arbeidsovereenkomst (cao) van jouw sector of je specifieke werkgever. Sta je aan het begin van je carrière, vraag dan gerust na bij je hr-dienst of vakbond of er in jouw sector een eindejaarspremie geldt.",
+      },
+      {
+        type: "p",
+        text: "Belangrijk om te weten: een eindejaarspremie is fiscaal en sociaal gezien gewoon loon. Ze telt mee als brutoloon en wordt dus, net als je maandloon, onderworpen aan een RSZ-bijdrage en bedrijfsvoorheffing. Het bedrag dat je effectief op je rekening ziet, ligt daardoor lager dan het brutobedrag dat in je arbeidsovereenkomst of cao vermeld staat.",
+      },
+      {
+        type: "check",
+        question:
+          "Krijgt elke werknemer in België automatisch een eindejaarspremie?",
+        options: [
+          { text: "Ja, dat is overal wettelijk verplicht", correct: false },
+          {
+            text: "Nee, het hangt af van de sector of cao van je werkgever",
+            correct: true,
+          },
+          { text: "Enkel wie een flexi-job doet, krijgt dit", correct: false },
+        ],
+        explanation:
+          "Een eindejaarspremie is niet overal wettelijk verplicht: of je die krijgt en hoeveel, hangt af van de cao van je sector of je bedrijf. Vraag dit na bij je hr-dienst of vakbond als het niet duidelijk in je arbeidscontract staat.",
+      },
+      { type: "h2", text: "Bijverdienen met een flexi-job" },
+      {
+        type: "p",
+        text: "Een flexi-job is een vorm van bijverdienen naast een hoofdjob of pensioen, in bepaalde sectoren zoals horeca en handel, met een fiscaal gunstig regime. Het is bedoeld als extra, niet als vervanging van een volwaardige job: je moet elders al een hoofdactiviteit hebben, bijvoorbeeld als werknemer met een andere job, of als gepensioneerde.",
+      },
+      {
+        type: "reveal",
+        prompt:
+          "Kan je zomaar starten met een flexi-job als bijverdienste, zonder dat je al ergens anders werkt?",
+        answer:
+          "Nee. Een flexi-job is bedoeld als bijverdienste bovenop een bestaande hoofdactiviteit: je moet elders al aan de slag zijn, of bijvoorbeeld gepensioneerd zijn. De precieze voorwaarden bepalen wie in aanmerking komt; check die bij de RSZ of je (toekomstige) werkgever voor je ervan uitgaat dat je een flexi-job kan combineren met je situatie.",
+      },
+      {
+        type: "p",
+        text: "Omdat een flexi-job apart en fiscaal anders behandeld wordt dan een gewone job, verschijnt dat inkomen ook niet zomaar op hetzelfde loonstrookje als je hoofdjob. Wil je weten hoe een flexi-job precies past in jouw situatie, dan is dat iets om concreet na te vragen bij de werkgever die de flexi-job aanbiedt, of bij de RSZ.",
+      },
+      { type: "h2", text: "Fiscaal voordeel: hoe uitgaven je belasting kunnen verlagen" },
+      {
+        type: "p",
+        text: "Naast wat je verdient, speelt ook wat je uitgeeft (of investeert) een rol in hoeveel belasting je uiteindelijk betaalt. Een fiscaal voordeel is een vermindering van je belasting die je krijgt door bepaalde uitgaven te doen of bepaalde keuzes te maken.",
+      },
+      {
+        type: "list",
+        items: [
+          "Beroepskosten: kosten die je maakt om je loon te verdienen, aftrekbaar van je belastbaar inkomen: forfaitair (een vast, automatisch toegepast percentage), of, als dat voordeliger is, op basis van je werkelijke kosten met bewijsstukken.",
+          "Pensioensparen: premies die je zelf stort voor je aanvullend pensioen (derde pijler) geven meestal recht op een fiscaal voordeel, binnen een jaarlijkse grens.",
+          "Giften aan erkende goede doelen: onder bepaalde voorwaarden fiscaal aftrekbaar.",
+          "Dienstencheques: een deel van wat je aan dienstencheques betaalt, geeft eveneens recht op een fiscaal voordeel.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Deze voordelen verlagen niet je nettoloon van maand tot maand, maar wel het bedrag dat je uiteindelijk aan personenbelasting verschuldigd bent (of terugkrijgt) na je belastingaangifte. Hoe dat proces precies werkt, lees je in 'Je eerste belastingaangifte: een stap-voor-stap gids'.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Reken je basisloon eerst na",
+        text: "Wil je weten wat je gewone maandloon netto oplevert, los van premies of bijverdiensten? Gebruik de Bruto-nettoloon calculator (/tools/nettoloon) om een schatting te maken op basis van je brutoloon.",
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Cao's, grenzen en tarieven verschillen en veranderen",
+        text: "Of je recht hebt op een eindejaarspremie, onder welke voorwaarden een flexi-job mag, en hoeveel fiscaal voordeel een uitgave precies oplevert: dat hangt af van je sector, cao en jaarlijks geïndexeerde regels. Check bij twijfel je concrete arbeidsovereenkomst, je vakbond, of de website van FOD Financiën.",
+      },
+    ],
+  },
+  {
+    slug: "ziek-of-werkloos-wat-verandert-er-financieel",
+    categorySlug: "belasting-werk-en-inkomen",
+    subcategorySlug: "ziekte-en-werkloosheid",
+    kind: "artikel",
+    title: "Ziek of werkloos als starter: wat verandert er financieel?",
+    summary:
+      "Denken aan ziekte of werkloosheid voelt ver weg als je net begint te werken. Toch is het nuttig om te weten hoe het systeem in elkaar zit, en wie je dan moet contacteren.",
+    readMinutes: 6,
+    blocks: [
+      {
+        type: "p",
+        text: "Bij je eerste job denk je vooral aan je loon, niet aan wat er gebeurt als je ziek wordt of je job verliest. Toch is het nuttig om nu al te weten hoe dat systeem in elkaar zit: niet met exacte bedragen, want die hangen af van je persoonlijke situatie en veranderen regelmatig, maar wel met de structuur, zodat je weet wie je moet contacteren als het ooit nodig is.",
+      },
+      { type: "h2", text: "Wie betaalt dit eigenlijk?" },
+      {
+        type: "p",
+        text: "De RSZ-bijdrage die maandelijks van je brutoloon wordt ingehouden, gaat naar een gemeenschappelijke pot, geen persoonlijke spaarrekening met jouw naam erop. Die pot financiert onder meer het wettelijk pensioen, maar ook de ziekte- en invaliditeitsverzekering en de werkloosheidsuitkering. Val je zelf ooit ziek of zonder werk, dan spreek je met andere woorden een systeem aan waar je zelf al aan meebetaalde, samen met alle andere werknemers.",
+      },
+      {
+        type: "check",
+        question:
+          "Je RSZ-bijdrage wordt maandelijks ingehouden. Bouw je daarmee een persoonlijke spaarpot op voor als je ooit ziek of werkloos wordt?",
+        options: [
+          { text: "Ja, het is jouw eigen gereserveerde bedrag", correct: false },
+          {
+            text: "Nee, het gaat naar een gemeenschappelijke pot die de sociale zekerheid financiert",
+            correct: true,
+          },
+          {
+            text: "Nee, RSZ-bijdragen hebben niets met ziekte of werkloosheid te maken",
+            correct: false,
+          },
+        ],
+        explanation:
+          "De RSZ-bijdrage gaat naar een gemeenschappelijke pot, geen individuele rekening. Die pot financiert onder meer het wettelijk pensioen, de ziekte- en invaliditeitsverzekering en de werkloosheidsuitkering voor iedereen die daar op dat moment recht op heeft.",
+      },
+      { type: "h2", text: "Als je ziek wordt" },
+      {
+        type: "p",
+        text: "Word je ziek, dan betaalt je werkgever in een eerste periode nog je loon door: dit heet het gewaarborgd loon. Duurt je ziekte langer, dan neemt je mutualiteit (ziekenfonds) het over met een ziekte-uitkering: een vervangingsinkomen, geen volledig loon. Hoeveel dat precies bedraagt en vanaf wanneer, hangt af van wettelijk vastgelegde regels die regelmatig wijzigen: je mutualiteit berekent dit voor jouw concrete situatie.",
+      },
+      {
+        type: "steps",
+        items: [
+          "Verwittig je werkgever zo snel mogelijk dat je ziek bent, volgens de afspraken in je arbeidsreglement.",
+          "Bezorg tijdig een medisch getuigschrift aan je werkgever én, bij langere afwezigheid, aan je mutualiteit.",
+          "Duurt je ziekte langer dan de periode van gewaarborgd loon, neem dan zelf contact op met je mutualiteit over de ziekte-uitkering.",
+          "Bij twijfel over je rechten of de te volgen stappen: je mutualiteit en je vakbond helpen je hier kosteloos bij.",
+        ],
+      },
+      { type: "h2", text: "Als je werkloos wordt" },
+      {
+        type: "p",
+        text: "Verlies je onvrijwillig je job, dan kan je in aanmerking komen voor een werkloosheidsuitkering via de RVA. Twee stappen zijn daarbij belangrijk: je inschrijven als werkzoekende bij de bevoegde gewestelijke dienst (VDAB in Vlaanderen), en een uitkeringsaanvraag indienen, meestal via je vakbond of de Hulpkas voor Werkloosheidsuitkeringen (HVW).",
+      },
+      {
+        type: "p",
+        text: "Hoeveel je uitkering bedraagt en hoe lang je daar recht op hebt, hangt af van je vroegere loon, je gezinssituatie en je arbeidsverleden. Ben je pas afgestudeerd of heb je nog maar kort gewerkt, dan gelden er andere, aparte regels en wachttijden dan voor wie al langer aan het werk was. Vraag je concrete situatie na bij de RVA of je vakbond.",
+      },
+      {
+        type: "reveal",
+        prompt:
+          "Ben je net afgestudeerd en vind je nog geen job: krijg je dan meteen dezelfde werkloosheidsuitkering als een collega die al jaren werkt?",
+        answer:
+          "Niet noodzakelijk. Voor starters die nog maar kort of nog helemaal niet gewerkt hebben, gelden aparte regels en wachttijden bij de RVA, verschillend van de regeling voor wie al een langere loopbaan achter de rug heeft. Check je concrete situatie bij de RVA of je vakbond voor je van een bepaald bedrag of een bepaalde wachttijd uitgaat.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Wie kan je helpen?",
+        text: "Je mutualiteit (bij ziekte) en je vakbond of de Hulpkas voor Werkloosheidsuitkeringen (bij werkloosheid) geven je kosteloos concreet advies over je eigen dossier, en over de actuele bedragen en voorwaarden.",
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Geen bedragen op deze pagina, bewust",
+        text: "FinEdu geeft hier bewust geen concrete uitkeringsbedragen: die hangen sterk af van je persoonlijke situatie en veranderen regelmatig. Voor de actuele, correcte bedragen en voorwaarden ga je naar de website van de RVA of je eigen mutualiteit.",
+      },
+    ],
+  },
+  {
     slug: "eerste-keer-huren",
     categorySlug: "woning-en-hypothecaire-lening",
     subcategorySlug: "woning-huren-verhuren",
