@@ -8,6 +8,53 @@ import { BlogPost } from "./types";
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: "rsz-bijdrage-financiert-meer-dan-je-pensioen",
+    title: "Je RSZ-bijdrage betaalt niet enkel je eigen pensioen",
+    summary:
+      "De sociale zekerheidsbijdrage die van je brutoloon afgaat, is geen individuele spaarpot: ze financiert een gemeenschappelijke pot die onder meer het wettelijk pensioen, ziekteverzekering, werkloosheid en kindergeld betaalt.",
+    categorySlug: "pensioen-en-pensioenvoorbereiding",
+    publishedAt: "2026-08-15",
+    readMinutes: 3,
+    blocks: [
+      {
+        type: "p",
+        text: "Op je loonstrookje staat een post die bijna even groot is als de bedrijfsvoorheffing: de RSZ-bijdrage. Veel starters denken dat dit gewoon een voorschot op hun eigen pensioen is, zoals een verplicht spaarpotje. Dat klopt niet helemaal, en het is nuttig om te weten waar dat geld dan wél naartoe gaat.",
+      },
+      { type: "h2", text: "Eén gemeenschappelijke pot, geen individuele rekening" },
+      {
+        type: "p",
+        text: "De sociale zekerheidsbijdrage die op je brutoloon wordt ingehouden, gaat naar een gemeenschappelijke pot: geen persoonlijke spaarrekening met jouw naam erop. Die pot financiert onder meer het wettelijk pensioen, de ziekte- en invaliditeitsverzekering, de werkloosheidsuitkering en het kindergeld, voor iedereen die daar op dat moment recht op heeft.",
+      },
+      {
+        type: "h2",
+        text: "Je bouwt wel rechten op, ook al is het geen eigen rekening",
+      },
+      {
+        type: "p",
+        text: "Dat het geen individuele spaarpot is, betekent niet dat je bijdrage voor niets is. Je bouwt naarmate je meer en langer bijdraagt wel degelijk pensioenrechten op: het wettelijk pensioen wordt berekend op basis van je loopbaan als werknemer, zelfstandige of ambtenaar. Hoe die opbouw precies verloopt, hangt af van je concrete loopbaan.",
+      },
+      {
+        type: "list",
+        items: [
+          "Wettelijk pensioen: het pensioen dat je via de sociale zekerheid opbouwt op basis van je loopbaan.",
+          "Ziekte- en invaliditeitsverzekering: dekking bij ziekte of arbeidsongeschiktheid.",
+          "Werkloosheidsuitkering: een uitkering als je zonder werk valt.",
+          "Kindergeld: financiële ondersteuning voor wie kinderen ten laste heeft.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Het wettelijk pensioen is meestal niet je enige pensioen",
+        text: "Naast het wettelijk pensioen (eerste pijler) bestaat er ook een aanvullend pensioen, via je werkgever of jezelf opgebouwd. Bereken op finedu.be/tools/aanvullend-pensioen wat een aanvullend pensioen je later ongeveer kan opleveren, bovenop het wettelijke.",
+      },
+      {
+        type: "p",
+        text: "Dit is algemene informatie op basis van de wet, geen persoonlijk advies over jouw pensioenopbouw: je concrete rechten hangen af van je volledige loopbaan. Voor een overzicht van je eigen, opgebouwde pensioenrechten kan je terecht bij mypension.be.",
+      },
+    ],
+  },
+  {
     slug: "bedrijfsvoorheffing-is-geen-definitieve-belasting",
     title: "Waarom er zoveel wordt ingehouden van je eerste loon: bedrijfsvoorheffing uitgelegd",
     summary:
