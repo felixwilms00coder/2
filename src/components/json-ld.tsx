@@ -33,6 +33,29 @@ export function HomeFaqJsonLd({
   );
 }
 
+export function ArticleFaqJsonLd({
+  pairs,
+}: {
+  pairs: { question: string; answer: string }[];
+}) {
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: pairs.map((p) => ({
+          "@type": "Question",
+          name: p.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: p.answer,
+          },
+        })),
+      }}
+    />
+  );
+}
+
 export function WebsiteJsonLd() {
   return (
     <JsonLd

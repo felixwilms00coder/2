@@ -8,8 +8,9 @@ import { Container, KindBadge, ContentCard } from "@/components/ui";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { MarkReadButton } from "@/components/progress-widgets";
 import { ArticleBody } from "@/components/article-body";
-import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/json-ld";
+import { ArticleJsonLd, BreadcrumbJsonLd, ArticleFaqJsonLd } from "@/components/json-ld";
 import { pageMetadata } from "@/lib/metadata";
+import { extractFaqPairs } from "@/lib/faq";
 
 export function generateStaticParams() {
   return articles.map((a) => ({
@@ -46,6 +47,7 @@ export default async function ArticlePage({
 
   const subcategory = getSubcategory(cat.slug, article.subcategorySlug);
   const href = `/leerstof/${cat.slug}/${article.slug}`;
+  const faqPairs = extractFaqPairs(article.blocks);
 
   // Prefer other articles in the same theme, then top up from elsewhere.
   const sameTheme = getArticlesForCategory(cat.slug).filter(
@@ -68,6 +70,7 @@ export default async function ArticlePage({
         datePublished={article.datePublished}
         dateModified={article.dateModified}
       />
+      {faqPairs.length > 0 && <ArticleFaqJsonLd pairs={faqPairs} />}
       <BreadcrumbJsonLd
         items={[
           { name: "Leerstof", href: "/leerstof" },
