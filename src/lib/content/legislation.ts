@@ -184,6 +184,30 @@ export const legislation: LegislationEntry[] = [
     sourceUrl: "https://www.ejustice.just.fgov.be/eli/wet/2003/04/28/2003022481/justel",
     lastVerified: "2026-08-15",
   },
+  {
+    slug: "basisbankdienst",
+    title: "Je hebt recht op een basisbankdienst, ook zonder inkomen",
+    officialTitle: "Wetboek van Economisch Recht, Boek VII: Betalings- en kredietdiensten",
+    jurisdiction: "federaal",
+    topics: ["betalen"],
+    summary:
+      "Iedereen die legaal in de Europese Unie verblijft, heeft het recht om bij een Belgische bank een basisbankdienst te openen: een zichtrekening met een beperkt maar functioneel pakket, zoals een betaalkaart, overschrijvingen en domiciliëringen. Een bank mag de aanvraag alleen weigeren in wettelijk bepaalde gevallen, bijvoorbeeld als je al een gelijkaardige rekening hebt of om redenen die te maken hebben met de antiwitwaswetgeving. Voor deze dienst geldt een wettelijk begrensde jaarlijkse kost. Check het actuele maximumbedrag en de aanvraagprocedure via Wikifin.be, de voorlichtingswebsite van de FSMA, voor je een aanvraag indient.",
+    sourceUrl:
+      "https://www.ejustice.just.fgov.be/eli/wet/2013/03/19/2013011142/justel",
+    lastVerified: "2026-08-15",
+  },
+  {
+    slug: "aansprakelijkheid-verlies-diefstal-betaalkaart",
+    title: "Meld verlies of diefstal van je betaalkaart meteen: dat begrenst wat je zelf moet dragen",
+    officialTitle: "Wetboek van Economisch Recht, Boek VII: Betalings- en kredietdiensten",
+    jurisdiction: "federaal",
+    topics: ["betalen"],
+    summary:
+      "Wordt je betaalkaart verloren, gestolen of misbruikt, dan ben je voor niet-toegestane betalingen die daarna nog gebeuren wettelijk maar tot een beperkt bedrag zelf aansprakelijk, op voorwaarde dat je niet frauduleus handelde of grof nalatig was (bijvoorbeeld je pincode samen met je kaart bewaren). Zodra je het verlies, de diefstal of het misbruik meldt aan je bank, stopt in principe je aansprakelijkheid voor verdere transacties, behalve bij fraude van jouw kant. Het exacte grensbedrag vóór melding ligt wettelijk vast: check de actuele stand via je bank of de FOD Economie voor je op een concreet bedrag rekent.",
+    sourceUrl:
+      "https://www.ejustice.just.fgov.be/eli/wet/2013/03/19/2013011142/justel",
+    lastVerified: "2026-08-15",
+  },
 ];
 
 export function getLegislationForTopics(topics: string[]): LegislationEntry[] {

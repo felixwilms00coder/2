@@ -564,6 +564,50 @@ export const lexicon: LexiconEntry[] = [
       "Een verplicht document bij de verkoop of verhuur van een woning dat de energiezuinigheid ervan weergeeft, en dat mee de waarde en toekomstige verbouwingskosten kan beïnvloeden.",
     categorySlug: "woning-en-hypothecaire-lening",
   },
+
+  // Budget, betalen, lenen en verzekeren (aanvulling: zichtrekening en betaalkaarten)
+  {
+    slug: "zichtrekening",
+    term: "Zichtrekening",
+    uitleg:
+      "Een rekening voor je dagelijkse bankzaken: je loon of vervangingsinkomen komt er binnen, en je gebruikt ze om facturen, aankopen en overschrijvingen mee te betalen. In tegenstelling tot een spaarrekening is het geld erop meteen beschikbaar.",
+    categorySlug: "budget-betalen-lenen-en-verzekeren",
+  },
+  {
+    slug: "beheerskosten-rekening",
+    term: "Beheerskosten",
+    uitleg:
+      "De vaste kosten die een bank aanrekent voor het bijhouden en beheren van een rekening, meestal maandelijks of jaarlijks, los van hoeveel je de rekening gebruikt.",
+    categorySlug: "budget-betalen-lenen-en-verzekeren",
+  },
+  {
+    slug: "domiciliering",
+    term: "Domiciliëring",
+    uitleg:
+      "Een machtiging waarmee je een bedrijf of instelling toestemming geeft om terugkerende facturen, zoals energie of abonnementen, automatisch van je rekening af te schrijven.",
+    categorySlug: "budget-betalen-lenen-en-verzekeren",
+  },
+  {
+    slug: "debetkaart",
+    term: "Debetkaart",
+    uitleg:
+      "Een betaalkaart die het bedrag van een aankoop onmiddellijk van je zichtrekening afschrijft. Je kan normaal niet meer uitgeven dan er op de rekening staat, op een eventuele toegelaten roodstand na.",
+    categorySlug: "budget-betalen-lenen-en-verzekeren",
+  },
+  {
+    slug: "kredietkaart",
+    term: "Kredietkaart",
+    uitleg:
+      "Een betaalkaart gekoppeld aan een krediet: de uitgever betaalt de aankoop voor, en jij betaalt het opgenomen bedrag nadien terug, vaak tegen debetrente als je niet het volledige bedrag in één keer aflost.",
+    categorySlug: "budget-betalen-lenen-en-verzekeren",
+  },
+  {
+    slug: "contactloos-betalen",
+    term: "Contactloos betalen",
+    uitleg:
+      "Betalen door je kaart of toestel tegen de betaalterminal te houden, zonder de kaart in te steken. Vanaf een bepaald bedrag, of na een aantal opeenvolgende contactloze betalingen, vraagt de terminal alsnog je pincode als extra controle.",
+    categorySlug: "budget-betalen-lenen-en-verzekeren",
+  },
 ];
 
 export function getLexiconEntry(slug: string): LexiconEntry | undefined {
