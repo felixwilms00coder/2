@@ -8,6 +8,61 @@ import { BlogPost } from "./types";
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: "betaalkaart-verloren-of-gestolen-wettelijke-bescherming",
+    title: "Je betaalkaart kwijt of gestolen? Dit bepaalt de wet over wie de schade draagt",
+    summary:
+      "Raakt je betaalkaart kwijt of gestolen, dan ben je voor niet-toegestane betalingen nadien wettelijk maar tot een beperkt bedrag zelf aansprakelijk, tenzij je grof nalatig was. Zodra je het meldt aan je bank, stopt in principe je aansprakelijkheid voor verdere transacties.",
+    categorySlug: "budget-betalen-lenen-en-verzekeren",
+    publishedAt: "2026-08-16",
+    readMinutes: 3,
+    blocks: [
+      {
+        type: "p",
+        text: "Je betaalkaart valt uit je zak op de trein, of je portefeuille wordt gestolen. Je eerste gedachte gaat naar je papieren en cash, maar minstens even belangrijk: wat als iemand anders met die kaart begint te betalen voor je het doorhebt? De wet legt vast wie dan voor welk deel opdraait.",
+      },
+      { type: "h2", text: "Een wettelijke grens, geen volledige aansprakelijkheid" },
+      {
+        type: "p",
+        text: "Word je betaalkaart verloren, gestolen of misbruikt, dan ben je voor niet-toegestane betalingen die daarna nog gebeuren wettelijk aansprakelijk, maar slechts tot een beperkt bedrag. Je draagt dus niet automatisch de volledige schade zelf, op voorwaarde dat je niet frauduleus handelde of grof nalatig was.",
+      },
+      { type: "h2", text: "Wanneer ben je 'grof nalatig'?" },
+      {
+        type: "p",
+        text: "Grove nalatigheid is het scharnierpunt in deze regel: gedraag je je onvoorzichtig genoeg met je kaart of pincode, dan kan de wettelijke bescherming wegvallen. Het klassieke voorbeeld is je pincode samen met je kaart bewaren, bijvoorbeeld op een briefje in dezelfde portefeuille, of je kaartgegevens en pincode delen met iemand anders. In zulke gevallen kan je bank een groter deel van de schade bij jou leggen.",
+      },
+      { type: "h2", text: "Meld het meteen: dat is de sleutel" },
+      {
+        type: "p",
+        text: "Zodra je het verlies, de diefstal of het misbruik meldt aan je bank, stopt in principe je aansprakelijkheid voor alle transacties die daarna nog gebeuren, behalve als jijzelf frauduleus handelde. Hoe sneller je meldt, hoe korter de periode waarin je nog voor een deel van de schade kan opdraaien.",
+      },
+      {
+        type: "list",
+        items: [
+          "Blokkeer je kaart onmiddellijk via de app van je bank, of via het centrale kaartstopnummer (Card Stop).",
+          "Meld het verlies, de diefstal of het misbruik ook expliciet aan je bank zelf, niet enkel via Card Stop.",
+          "Overloop nadien je recente transacties en meld elke betaling die je niet zelf deed.",
+          "Bewaar een bevestiging van je melding: die kan later relevant zijn bij discussie over een transactie.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Het exacte grensbedrag staat hier bewust niet",
+        text: "FinEdu houdt zelf geen actueel maximumbedrag bij: dat ligt wettelijk vast, maar FinEdu verifieert dit cijfer niet zelf. Check de actuele stand bij je eigen bank of via de FOD Economie voor je op een concreet bedrag rekent.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Het verschil tussen een debet- en kredietkaart telt hier ook mee",
+        text: "Twijfel je over het verschil tussen een debetkaart en een kredietkaart, of hoe contactloos betalen precies werkt? Het financieel lexicon van FinEdu legt die begrippen apart uit.",
+      },
+      {
+        type: "p",
+        text: "Dit is algemene informatie op basis van de wet, geen bindend advies over jouw concrete situatie: bij discussie over een specifieke transactie met je bank kan je terecht bij je bank zelf, de Ombudsman in financiële geschillen, of bij twijfel over de regelgeving zelf bij de FOD Economie.",
+      },
+    ],
+  },
+  {
     slug: "rsz-bijdrage-financiert-meer-dan-je-pensioen",
     title: "Je RSZ-bijdrage betaalt niet enkel je eigen pensioen",
     summary:
