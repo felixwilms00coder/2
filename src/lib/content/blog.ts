@@ -8,6 +8,60 @@ import { BlogPost } from "./types";
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: "basisbankdienst-recht-op-een-rekening",
+    title: "Je hebt recht op een bankrekening, ook zonder inkomen: de basisbankdienst uitgelegd",
+    summary:
+      "Iedereen die legaal in de EU verblijft, heeft het wettelijk recht om bij een Belgische bank een basisbankdienst te openen: een eenvoudige zichtrekening met betaalkaart, overschrijvingen en domiciliëringen, tegen een wettelijk begrensde jaarlijkse kost.",
+    categorySlug: "budget-betalen-lenen-en-verzekeren",
+    publishedAt: "2026-08-17",
+    readMinutes: 3,
+    blocks: [
+      {
+        type: "p",
+        text: "Een zichtrekening openen lijkt vanzelfsprekend, tot een bank je aanvraag weigert: geen vast inkomen, geen kredietgeschiedenis, of gewoon geen klant die de bank 'interessant' vindt. Toch hoef je hier niet zomaar bij neer te leggen: de wet verplicht Belgische banken om iedereen die legaal in de EU verblijft, minstens een basisbankdienst aan te bieden.",
+      },
+      { type: "h2", text: "Wat is een basisbankdienst precies?" },
+      {
+        type: "p",
+        text: "De basisbankdienst is een eenvoudige zichtrekening met een beperkt maar functioneel pakket: een betaalkaart, de mogelijkheid om overschrijvingen te doen en te ontvangen, en domiciliëringen voor terugkerende facturen zoals energie of huur. Het is geen volwaardig pakket met alle extra's die een gewone zichtrekening kan hebben, maar wel genoeg om je dagelijkse geldzaken te regelen.",
+      },
+      { type: "h2", text: "Wanneer mag een bank weigeren?" },
+      {
+        type: "p",
+        text: "Een bank mag je aanvraag voor een basisbankdienst niet zomaar afwijzen. Weigeren mag enkel in wettelijk bepaalde gevallen, bijvoorbeeld als je al een gelijkaardige rekening bij een andere bank hebt, of om redenen die te maken hebben met de antiwitwaswetgeving. Buiten die uitzonderingen heeft elke wettelijk in de EU verblijvende persoon recht op deze dienst.",
+      },
+      { type: "h2", text: "Wat mag het kosten?" },
+      {
+        type: "p",
+        text: "Voor de basisbankdienst geldt een wettelijk begrensde jaarlijkse kost: een bank mag dus niet zomaar een willekeurig bedrag aanrekenen voor dit basispakket.",
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Het exacte maximumbedrag staat hier bewust niet",
+        text: "FinEdu houdt zelf geen actueel maximumbedrag bij. Check het actuele bedrag en de aanvraagprocedure via Wikifin.be, de voorlichtingswebsite van de FSMA, voor je een aanvraag indient.",
+      },
+      {
+        type: "list",
+        items: [
+          "Ga langs bij een Belgische bank naar keuze en vraag expliciet naar de 'basisbankdienst', niet naar een gewone zichtrekening.",
+          "Neem een identiteitsbewijs mee waaruit blijkt dat je legaal in de EU verblijft.",
+          "Wordt je aanvraag geweigerd zonder dat een van de wettelijke uitzonderingen van toepassing is? Vraag de bank naar de reden, en informeer je bij Wikifin.be of de FSMA over je vervolgstappen.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Weet je het verschil tussen een zichtrekening en de rest nog niet helemaal?",
+        text: "Het financieel lexicon van FinEdu legt zichtrekening en gerelateerde begrippen apart uit.",
+      },
+      {
+        type: "p",
+        text: "Dit is algemene informatie op basis van de wet, geen persoonlijk advies over jouw concrete situatie: bij een geschil met een bank over een basisbankdienst kan je terecht bij de bank zelf, de Ombudsman in financiële geschillen, of voor duiding over je rechten bij Wikifin.be of de FSMA.",
+      },
+    ],
+  },
+  {
     slug: "betaalkaart-verloren-of-gestolen-wettelijke-bescherming",
     title: "Je betaalkaart kwijt of gestolen? Dit bepaalt de wet over wie de schade draagt",
     summary:
