@@ -8,6 +8,56 @@ import { BlogPost } from "./types";
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: "roerende-voorheffing-op-dividenden-en-interest",
+    title: "Dividend of interest van je beleggingen? De roerende voorheffing is meestal al ingehouden",
+    summary:
+      "Krijg je dividenden of interest uit beleggingen, dan is de roerende voorheffing daar meestal al automatisch van afgehouden vóór het bedrag op je rekening komt. Voor de meeste particulieren is dat de eindbelasting: er moet dan niets meer in de belastingaangifte.",
+    categorySlug: "sparen-en-beleggen",
+    publishedAt: "2026-08-18",
+    readMinutes: 3,
+    blocks: [
+      {
+        type: "p",
+        text: "Beleg je in aandelen, obligaties of fondsen en krijg je een keer dividend of interest uitgekeerd? Vaak valt op dat het bedrag dat op je rekening verschijnt, lager ligt dan wat je in de jaarcijfers van het bedrijf of fonds zag staan. Dat verschil is meestal de roerende voorheffing, die al werd ingehouden voor het bedrag bij jou terechtkwam.",
+      },
+      { type: "h2", text: "Wie houdt de roerende voorheffing in, en wanneer?" },
+      {
+        type: "p",
+        text: "Op roerende inkomsten zoals dividenden en interest uit beleggingen houdt de uitkerende instelling — de bank, de broker of de fondsbeheerder — automatisch roerende voorheffing in, vóór ze het bedrag aan jou uitbetalen. Je hoeft daar zelf niets voor te doen: de inhouding gebeurt aan de bron, bij elke uitkering apart.",
+      },
+      { type: "h2", text: "Meestal de eindbelasting, maar niet altijd" },
+      {
+        type: "p",
+        text: "Voor de meeste particulieren is de roerende voorheffing de eindbelasting op dat inkomen: er moet in de regel niets meer aangegeven worden in de personenbelasting. Er bestaan wel situaties en vrijstellingen waarbij dat verschilt, dus check je eigen situatie voor je ervan uitgaat dat een inkomen daarmee volledig is afgehandeld.",
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Tarief en vrijstellingen wijzigen soms",
+        text: "FinEdu houdt zelf geen actueel tarief of overzicht van vrijstellingen bij. Check de actuele regels via FOD Financiën voor je cijfers baseert op wat je hier leest.",
+      },
+      { type: "h2", text: "Waar je dit concreet tegenkomt" },
+      {
+        type: "list",
+        items: [
+          "Dividend dat een onderneming uitkeert op aandelen die je aanhoudt.",
+          "Interest die je ontvangt op obligaties in je portefeuille.",
+          "Interest of dividend uitgekeerd door een beleggingsfonds waarin je belegt.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Begrippen of impact op langere termijn nog eens nalezen?",
+        text: "Het financieel lexicon van FinEdu legt aandeel, obligatie, dividend en roerende voorheffing apart uit, en de beleggingsplan-simulator toont wat periodiek beleggen op termijn kan opleveren, inclusief de impact van kosten.",
+      },
+      {
+        type: "p",
+        text: "Dit is algemene informatie op basis van de wet, geen persoonlijk fiscaal advies over jouw concrete situatie: voor een bindend antwoord over jouw beleggingsinkomsten raadpleeg je FOD Financiën of een erkend fiscalist.",
+      },
+    ],
+  },
+  {
     slug: "basisbankdienst-recht-op-een-rekening",
     title: "Je hebt recht op een bankrekening, ook zonder inkomen: de basisbankdienst uitgelegd",
     summary:
