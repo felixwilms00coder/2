@@ -8,6 +8,53 @@ import { BlogPost } from "./types";
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: "wettelijk-erfdeel-testament-grenzen",
+    title: "Je testament mag niet alles: het wettelijk erfdeel van je kinderen",
+    summary:
+      "Kinderen (en soms de partner) hebben altijd recht op een beschermd minimumdeel van een erfenis: de wettelijke reserve. Een testament kan dat deel niet wegnemen, ook niet als de overledene dat zou willen — enkel het beschikbaar deel dat overblijft, mag vrij verdeeld worden.",
+    categorySlug: "erven",
+    publishedAt: "2026-08-21",
+    readMinutes: 3,
+    blocks: [
+      {
+        type: "p",
+        text: "Een testament laat je toe om zelf te bepalen wie wat erft. Toch is die vrijheid niet onbeperkt: heb je kinderen, dan kan je hen niet volledig onterven, hoe je testament ook is opgesteld. De wet beschermt hen met een minimumdeel dat altijd van hen blijft.",
+      },
+      { type: "h2", text: "De reserve: een beschermd minimum" },
+      {
+        type: "p",
+        text: "Kinderen (en bij ontstentenis daarvan soms de partner) hebben altijd recht op een minimumdeel van de erfenis: de 'wettelijke reserve'. Een overledene kan dat deel niet wegschenken of via testament aan iemand anders toekennen, ook niet als hij of zij dat uitdrukkelijk zou willen.",
+      },
+      {
+        type: "list",
+        items: [
+          "Kinderen van de overledene.",
+          "Bij ontstentenis van kinderen, in bepaalde gevallen de partner.",
+        ],
+      },
+      { type: "h2", text: "Het beschikbaar deel: hier heb je wel vrije keuze" },
+      {
+        type: "p",
+        text: "Wat overblijft nadat de reserve is afgetrokken, heet het 'beschikbaar deel'. Dat deel mag wel vrij via testament worden verdeeld: aan een ander familielid, een goed doel, of wie je zelf kiest.",
+      },
+      { type: "h2", text: "Waarom dit ook als starter al meetelt" },
+      {
+        type: "p",
+        text: "Erven en testamenten lijken ver weg als je net aan je carrière begint, maar de logica van de reserve speelt soms al vroeger mee: bijvoorbeeld wanneer ouders een schenking overwegen, of wanneer je zelf nadenkt over een testament bij een nieuw samengesteld gezin. De reserve geldt ongeacht hoe een testament is opgesteld.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Meer begrippen rond erven?",
+        text: "Het financieel lexicon van FinEdu legt wettelijke reserve, legaat, nalatenschap en testament apart uit, en /wetgeving bundelt de wetgeving achter dit en andere FinEdu-onderwerpen.",
+      },
+      {
+        type: "p",
+        text: "Dit is algemene informatie op basis van de wet, geen bindend advies over jouw concrete situatie: voor een testament, schenking of vraag over je eigen erfenis raadpleeg je een notaris.",
+      },
+    ],
+  },
+  {
     slug: "roerende-voorheffing-op-dividenden-en-interest",
     title: "Dividend of interest van je beleggingen? De roerende voorheffing is meestal al ingehouden",
     summary:
