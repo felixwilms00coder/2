@@ -1,8 +1,12 @@
 import { fetchTrendingTickers } from "./stocktwits.js";
+import { fetchTrendingTickersFromReddit } from "./reddit.js";
+
+type Source = "stocktwits" | "reddit";
 
 function parseArgs(argv: string[]) {
   let limit = 30;
   let json = false;
+  let source: Source = "stocktwits";
 
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i];
@@ -14,15 +18,25 @@ function parseArgs(argv: string[]) {
         throw new Error("--limit expects a positive number");
       }
       limit = value;
+    } else if (arg === "--source") {
+      const value = argv[++i];
+      if (value !== "stocktwits" && value !== "reddit") {
+        throw new Error('--source must be "stocktwits" or "reddit"');
+      }
+      source = value;
     }
   }
 
-  return { limit, json };
+  return { limit, json, source };
 }
 
 async function main() {
-  const { limit, json } = parseArgs(process.argv.slice(2));
-  const tickers = (await fetchTrendingTickers()).slice(0, limit);
+  const { limit, json, source } = parseArgs(process.argv.slice(2));
+  const tickers = (
+    await (source === "reddit"
+      ? fetchTrendingTickersFromReddit()
+      : fetchTrendingTickers())
+  ).slice(0, limit);
 
   if (json) {
     console.log(JSON.stringify(tickers, null, 2));
