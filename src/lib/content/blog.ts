@@ -8,6 +8,60 @@ import { BlogPost } from "./types";
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: "beleggingsadvies-fsma-vergunning-checken",
+    title: "Iemand geeft je beleggingsadvies? Check eerst of die persoon een FSMA-vergunning heeft",
+    summary:
+      "Een concrete, persoonlijke aanbeveling geven over te kopen of verkopen beleggingen, of voor jou beleggingsbeslissingen nemen, is in België een gereglementeerde dienst: wie dat aanbiedt heeft een FSMA-vergunning nodig. Controleer dat op fsma.be voor je op een aanbeveling ingaat.",
+    categorySlug: "sparen-en-beleggen",
+    publishedAt: "2026-08-23",
+    readMinutes: 3,
+    blocks: [
+      {
+        type: "p",
+        text: "Krijg je van een kennis, iemand online, of iemand die zich voorstelt als 'beleggingsexpert' een concreet advies over welk aandeel of fonds je moet kopen? Voor je daarop ingaat, is er één simpele check die veel ellende kan voorkomen: is die persoon of dat bedrijf eigenlijk wel vergund om beleggingsadvies te geven?",
+      },
+      { type: "h2", text: "Wat telt als 'beleggingsadvies'?" },
+      {
+        type: "p",
+        text: "Een concrete, persoonlijke aanbeveling geven over te kopen of verkopen financiële instrumenten — dat is wat de wet 'beleggingsadvies' noemt. Neemt iemand anders in jouw plaats beleggingsbeslissingen, dan heet dat 'vermogensbeheer'. Beide zijn in België gereglementeerde diensten, geen vrijblijvende babbel.",
+      },
+      { type: "h2", text: "Waarom een vergunning verplicht is" },
+      {
+        type: "p",
+        text: "Wie beleggingsadvies of vermogensbeheer aanbiedt, heeft daarvoor een FSMA-vergunning nodig, en moet onder meer een geschiktheidstoets afnemen bij de klant: nagaan of een aanbeveling wel past bij jouw kennis, ervaring en risicobereidheid. Die verplichtingen bestaan net om je te beschermen tegen ondoordacht of zelfs frauduleus advies.",
+      },
+      { type: "h2", text: "Hoe check je dat zelf?" },
+      {
+        type: "p",
+        text: "Controleer op fsma.be of een aanbieder vergund is, voor je op een aanbeveling ingaat. Een vergunning garandeert geen goed advies of gegarandeerd rendement, maar het betekent wel dat de aanbieder onder toezicht staat en aan wettelijke verplichtingen moet voldoen.",
+      },
+      {
+        type: "list",
+        items: [
+          "Toezicht door de FSMA op de manier waarop de aanbieder werkt.",
+          "Een verplichte geschiktheidstoets voor je een persoonlijk advies krijgt.",
+          "Een aanbieder die je kan navragen en nakijken via het openbaar register op fsma.be.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Geen vergunning gevonden? Wees op je hoede",
+        text: "Dat betekent dat je geen van de wettelijke beschermingen geniet die met een vergunning gepaard gaan. Twijfel je over de betrouwbaarheid van een aanbod, dan gaat FinEdu's leerstof over beleggingsfraude herkennen dieper in op veelvoorkomende signalen.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Liever zelf een indicatie berekenen dan op advies van derden vertrouwen?",
+        text: "De beleggingsplan-simulator van FinEdu toont wat periodiek beleggen op termijn kan opleveren: een rekenmodel, geen advies.",
+      },
+      {
+        type: "p",
+        text: "Dit is algemene informatie op basis van de wet, geen persoonlijk beleggingsadvies: FinEdu is zelf niet FSMA-vergund en geeft dus ook geen aanbevelingen over specifieke beleggingen. Twijfel je over een concreet aanbod? Check de vergunning op fsma.be of raadpleeg een erkend, vergund adviseur.",
+      },
+    ],
+  },
+  {
     slug: "wettelijk-erfdeel-testament-grenzen",
     title: "Je testament mag niet alles: het wettelijk erfdeel van je kinderen",
     summary:
