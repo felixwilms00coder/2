@@ -1,8 +1,10 @@
 import { BrokerClient } from "../types.js";
 import { createIbkrClient } from "./ibkr.js";
+import { createRobinhoodClient } from "./robinhood.js";
 
 const registry: Record<string, BrokerClient> = {
   ibkr: createIbkrClient(),
+  robinhood: createRobinhoodClient(),
 };
 
 export function listBrokers(): BrokerClient[] {

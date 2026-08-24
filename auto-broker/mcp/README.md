@@ -1,20 +1,21 @@
 # Auto Broker MCP server
 
 A self-managed [MCP](https://modelcontextprotocol.io) server that connects
-**your own** IBKR account to an MCP client such as Claude Desktop or Claude
-Code. It is the same "software, not a service" architecture as the web
-app's own [`/agent`](../src/app/agent) feature (see
+**your own** IBKR and (experimental, unofficial) Robinhood accounts to an
+MCP client such as Claude Desktop or Claude Code. It is the same
+"software, not a service" architecture as the web app's own
+[`/agent`](../src/app/agent) feature (see
 [`docs/regulatory.md`](../docs/regulatory.md)), just reachable from an MCP
 client instead of a browser tab:
 
 - **Runs on your machine only.** You start this process yourself; it is not
   hosted by Auto Broker and Auto Broker never sees it run.
-- **Your own credentials only.** Every gateway session belongs to you,
-  never stored anywhere but this process's memory and (for the audit log
-  only) a local file under `~/.auto-broker-mcp`.
+- **Your own credentials only.** Every gateway session or login belongs to
+  you, never stored anywhere but this process's memory and (for the audit
+  log only) a local file under `~/.auto-broker-mcp`.
 - **No server in the order path.** Requests go straight from this process
-  to IBKR's own API. There is nothing multi-tenant here — if you want
-  someone else to use this, they run their own copy against their own
+  to each broker's own API. There is nothing multi-tenant here — if you
+  want someone else to use this, they run their own copy against their own
   account, they don't connect to yours.
 
 **This is not a broker, an investment adviser, or a portfolio manager.** It
@@ -24,6 +25,8 @@ position as writing your own script against a broker's API. See
 distinction matters under EU financial regulation (MiFID II) and
 where the line would move if this were ever turned into a hosted,
 multi-user, or fully-discretionary service — none of which this ships.
+**Robinhood specifically carries a second, separate risk on top of all
+that** — see its own section below before touching it.
 
 ## Safety model
 
@@ -105,6 +108,48 @@ anything about your actual account — that only a real paper account run
 locally against the real gateway can confirm. Do that before trusting
 this with `IBKR_MODE=live`.
 
+### Robinhood — UNOFFICIAL, EXPERIMENTAL, read this before using it
+
+**Robinhood now has an official path — check that first.** Robinhood hosts
+its own Agentic Trading MCP server (`https://agent.robinhood.com/mcp/trading`),
+sanctioned by the broker, no unofficial API involved. As of mid-2026 it was
+rolling out in a phased, US-first beta, and it's unconfirmed whether it
+extends to Robinhood Europe accounts. If it's available to you, it's the
+safer choice — see [Robinhood's own overview](https://robinhood.com/us/en/support/articles/agentic-trading-overview/).
+Everything below is this repo's own unofficial adapter, for when it isn't.
+
+Robinhood has never published a public trading API for third-party
+developers, in the US, EU or UK. This integration talks to the same
+private endpoints the classic Robinhood app uses, reverse-engineered by
+the open-source community. Concretely, that means:
+
+- **It violates Robinhood's Terms of Service.** Unlike IBKR, there is no
+  legitimate integration path here.
+- **It can break at any time**, without notice, whenever Robinhood changes
+  its app — there is no versioned contract to rely on.
+- **It risks the account it's connected to.** Automated access from an
+  unrecognised client is exactly the pattern brokerages' fraud/abuse
+  systems flag; accounts have been restricted or closed for this.
+- **There is no paper/simulation mode.** Every order placed through this
+  client is real.
+- **It's unverified against Robinhood Europe specifically.** Every known
+  reverse-engineering of this API (including the endpoints this client
+  uses) documents Robinhood's US mobile app. Robinhood Europe UAB is a
+  separate, Lithuania-regulated entity — nobody has published confirmation
+  it authenticates against the same backend. Test with `get_account` /
+  `get_positions` (read-only) before ever previewing an order.
+
+Because of that, this client refuses to run at all unless you set
+`ROBINHOOD_ACKNOWLEDGE_UNOFFICIAL_API=true` in addition to
+`ROBINHOOD_USERNAME` / `ROBINHOOD_PASSWORD` — a deliberate second opt-in on
+top of just having credentials configured. Robinhood's login flow has
+changed multiple times over the years (SMS challenge, device-verification
+workflow, in-app approval); `src/brokers/robinhood.ts` implements the
+classic `mfa_code` case (set `ROBINHOOD_MFA_CODE` if prompted). If your
+account uses a different challenge type, this will need updating — that
+instability is exactly why this stays labeled experimental rather than
+"beta".
+
 ## Wiring this into an MCP client
 
 Add an entry to your MCP client's config (e.g. Claude Desktop's
@@ -127,6 +172,10 @@ built server, with credentials in `env` rather than a checked-in file:
 }
 ```
 
+Only add `ROBINHOOD_USERNAME`, `ROBINHOOD_PASSWORD`, and
+`ROBINHOOD_ACKNOWLEDGE_UNOFFICIAL_API` to that same `env` block if you're
+deliberately enabling Robinhood — read its section above first.
+
 ## Tools
 
 | Tool | Sends an order? | Notes |
@@ -145,9 +194,9 @@ built server, with credentials in `env` rather than a checked-in file:
 ## Known limitations
 
 - **Currency is not converted.** `amountEur` is treated as an amount in
-  whatever currency the account actually trades in (IBKR defaults to USD).
-  Do not assume a euro amount buys exactly that many euros of stock on a
-  USD account.
+  whatever currency the account actually trades in (IBKR and Robinhood
+  both default to USD). Do not assume a euro amount buys exactly that many
+  euros of stock on a USD account.
 - **Fractional shares are not supported**; the client rounds down to whole
   units.
 - **No live-market validation was performed** as part of building this —

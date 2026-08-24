@@ -73,6 +73,21 @@ by construction: anyone who wants to use it runs their own copy with their
 own credentials, and nothing here is designed to serve multiple end users
 from one running instance. See `mcp/README.md` for the full safety model.
 
+### Robinhood — an added risk on top of the above
+
+Robinhood has no public trading API for third-party developers. The
+Robinhood integration in `mcp/` talks to the same private endpoints the
+Robinhood app itself uses, reverse-engineered by the open-source community
+— and only ever confirmed against Robinhood's US app; there's no published
+confirmation it even works the same way for a Robinhood Europe account.
+That's a **separate** risk from the regulatory question above: it violates
+Robinhood's Terms of Service, can break without notice whenever Robinhood
+changes its app, and risks the connected account being restricted or closed.
+It requires an explicit `ROBINHOOD_ACKNOWLEDGE_UNOFFICIAL_API=true` opt-in
+on top of credentials for exactly that reason. Robinhood's own **official**
+Agentic Trading MCP is the safer choice where it's available — see
+`mcp/README.md`'s Robinhood section for both.
+
 ### DEGIRO — not supported
 
 DEGIRO has no public API for third-party integrations. Rather than build

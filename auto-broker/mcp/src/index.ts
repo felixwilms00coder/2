@@ -50,7 +50,7 @@ server.registerTool(
   {
     title: "List brokers",
     description:
-      "Lists the broker connections this server knows about (IBKR), whether each is configured, and its current connection status.",
+      "Lists the broker connections this server knows about (IBKR, Robinhood), whether each is configured, and its current connection status.",
   },
   async () => {
     const brokers = await Promise.all(
@@ -100,7 +100,7 @@ server.registerTool(
   {
     title: "Get account summary",
     description: "Fetches account id, currency, cash and total value for one broker.",
-    inputSchema: { brokerId: z.enum(["ibkr"]) },
+    inputSchema: { brokerId: z.enum(["ibkr", "robinhood"]) },
   },
   async ({ brokerId }) => {
     try {
@@ -116,7 +116,7 @@ server.registerTool(
   {
     title: "Get positions",
     description: "Fetches current open positions for one broker.",
-    inputSchema: { brokerId: z.enum(["ibkr"]) },
+    inputSchema: { brokerId: z.enum(["ibkr", "robinhood"]) },
   },
   async ({ brokerId }) => {
     try {
@@ -128,12 +128,12 @@ server.registerTool(
 );
 
 const quoteShape = {
-  brokerId: z.enum(["ibkr"]),
+  brokerId: z.enum(["ibkr", "robinhood"]),
   symbol: z.string().min(1),
   instrumentId: z
     .string()
     .optional()
-    .describe("IBKR conid, if you already know it."),
+    .describe("Broker-specific instrument id (e.g. IBKR conid), if you already know it. Not used by Robinhood."),
   assetType: z.string().optional(),
 };
 
@@ -316,7 +316,7 @@ server.registerTool(
     title: "Cancel an open order",
     description: "Cancels a previously placed order by the broker's own order id (not a previewId).",
     inputSchema: {
-      brokerId: z.enum(["ibkr"]),
+      brokerId: z.enum(["ibkr", "robinhood"]),
       brokerOrderId: z.string().min(1),
     },
   },
@@ -348,7 +348,7 @@ server.registerTool(
   {
     title: "Get local order history",
     description: "Returns this machine's local audit log of previewed, filled, rejected, failed and cancelled orders.",
-    inputSchema: { brokerId: z.enum(["ibkr"]).optional() },
+    inputSchema: { brokerId: z.enum(["ibkr", "robinhood"]).optional() },
   },
   async ({ brokerId }) => {
     const log = readAuditLog();
