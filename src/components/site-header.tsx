@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Menu, X, ChevronDown, Search } from "lucide-react";
 import { categories } from "@/lib/content/categories";
 import { getArticle } from "@/lib/content/articles";
@@ -11,6 +12,7 @@ import { Container, ContentCard } from "@/components/ui";
 import { SearchBox } from "@/components/search-box";
 import { Logo } from "@/components/logo";
 import { LevelPill } from "@/components/progress-widgets";
+import { springDefault, reducedMotionTransition } from "@/lib/motion";
 
 const directLinks = [
   { href: "/tools", label: "Rekentools" },
@@ -27,6 +29,17 @@ export function SiteHeader() {
   const [openCategorySlug, setOpenCategorySlug] = useState<string | null>(null);
   const headerRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
+  const prefersReducedMotion = useReducedMotion();
+  const panelTransition = prefersReducedMotion
+    ? reducedMotionTransition
+    : springDefault;
+  const panelMotionProps = {
+    initial: { opacity: 0, scale: 0.96, y: -8 },
+    animate: { opacity: 1, scale: 1, y: 0 },
+    exit: { opacity: 0, scale: 0.96, y: -8 },
+    transition: panelTransition,
+    style: { transformOrigin: "top" as const },
+  };
 
   const closeAll = () => {
     setThemesOpen(false);
@@ -77,7 +90,7 @@ export function SiteHeader() {
   return (
     <header
       ref={headerRef}
-      className="sticky top-0 z-40 border-b border-border/70 bg-surface/95 backdrop-blur-xl supports-[backdrop-filter]:bg-surface/70"
+      className="sticky top-0 z-40 border-b border-border/70 bg-surface/95 backdrop-blur-xl backdrop-saturate-150 supports-[backdrop-filter]:bg-surface/70"
     >
       <Container>
         <div className="flex h-16 items-center justify-between gap-3">
@@ -182,21 +195,29 @@ export function SiteHeader() {
         </div>
       </Container>
 
-      {searchOpen && (
-        <div id="search-panel" className="border-t border-border bg-surface-muted">
-          <Container className="py-5">
-            <SearchBox autoFocus />
-          </Container>
-        </div>
-      )}
+      <AnimatePresence>
+        {searchOpen && (
+          <motion.div
+            id="search-panel"
+            className="border-t border-border bg-surface-muted"
+            {...panelMotionProps}
+          >
+            <Container className="py-5">
+              <SearchBox autoFocus />
+            </Container>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Desktop themes mega-panel */}
-      {themesOpen && (
-        <div
-          id="themes-panel"
-          className="hidden border-t border-border bg-surface shadow-lg md:block"
-        >
-          <Container className="py-8">
+      <AnimatePresence>
+        {themesOpen && (
+          <motion.div
+            id="themes-panel"
+            className="hidden border-t border-border bg-surface shadow-lg md:block"
+            {...panelMotionProps}
+          >
+            <Container className="py-8">
             <div className="grid gap-8 lg:grid-cols-[1.5fr_1fr]">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.14em] text-accent">
@@ -237,15 +258,18 @@ export function SiteHeader() {
               </div>
             </div>
           </Container>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Mobile panel */}
-      {mobileOpen && (
-        <div
-          id="mobile-panel"
-          className="max-h-[75vh] overflow-y-auto border-t border-border bg-surface md:hidden"
-        >
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            id="mobile-panel"
+            className="max-h-[75vh] overflow-y-auto border-t border-border bg-surface md:hidden"
+            {...panelMotionProps}
+          >
           <Container className="py-4">
             <nav aria-label="Mobiele navigatie">
               <ul className="divide-y divide-border">
@@ -317,8 +341,9 @@ export function SiteHeader() {
               </ul>
             </nav>
           </Container>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

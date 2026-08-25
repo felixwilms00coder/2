@@ -86,7 +86,7 @@ export function PageHero({
         <span className="inline-flex items-center rounded-full border border-accent/25 bg-accent-soft px-3 py-1 text-xs font-semibold uppercase tracking-[0.1em] text-accent">
           {eyebrow}
         </span>
-        <h1 className="mt-4 max-w-2xl font-serif text-4xl font-semibold tracking-[-0.02em] text-foreground sm:text-5xl lg:text-6xl">
+        <h1 className="mt-4 max-w-2xl font-serif text-[clamp(2.25rem,1.7rem+3vw,3.75rem)] font-semibold leading-[1.05] tracking-[-0.02em] text-foreground">
           {title}
         </h1>
         <p className="mt-4 max-w-2xl text-base text-muted sm:text-lg">
@@ -352,7 +352,7 @@ export function SectionHeading({
           {kicker}
         </p>
       )}
-      <h2 className="mt-2.5 font-serif text-3xl font-semibold tracking-[-0.02em] text-foreground sm:text-4xl">
+      <h2 className="mt-2.5 font-serif text-[clamp(1.875rem,1.6rem+1.5vw,2.25rem)] font-semibold leading-[1.1] tracking-[-0.02em] text-foreground">
         {title}
       </h2>
       {description && (

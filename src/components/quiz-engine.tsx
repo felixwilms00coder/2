@@ -1,16 +1,22 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ArrowRight, Check, Flame, RotateCcw, X } from "lucide-react";
 import { Quiz } from "@/lib/content/types";
 import { ButtonLink } from "@/components/ui";
 import { useProgress } from "@/components/progress-provider";
+import { springDefault, reducedMotionTransition } from "@/lib/motion";
 
 export function QuizEngine({ quiz }: { quiz: Quiz }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [answers, setAnswers] = useState<boolean[]>([]);
   const { recordQuiz } = useProgress();
+  const prefersReducedMotion = useReducedMotion();
+  const revealTransition = prefersReducedMotion
+    ? reducedMotionTransition
+    : springDefault;
 
   const total = quiz.questions.length;
   const question = quiz.questions[currentIndex];
@@ -81,7 +87,7 @@ export function QuizEngine({ quiz }: { quiz: Quiz }) {
         <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
           <button
             onClick={restart}
-            className="inline-flex min-h-11 items-center gap-2 rounded-full bg-accent px-5 text-sm font-semibold text-accent-contrast transition-colors hover:bg-accent-strong"
+            className="ease-smooth inline-flex min-h-11 items-center gap-2 rounded-full bg-accent px-5 text-sm font-semibold text-accent-contrast transition-all hover:bg-accent-strong active:scale-[0.97]"
           >
             <RotateCcw className="h-4 w-4" aria-hidden="true" />
             Opnieuw proberen
@@ -125,72 +131,92 @@ export function QuizEngine({ quiz }: { quiz: Quiz }) {
         />
       </div>
 
-      <h2 className="mt-7 font-display text-lg font-bold text-foreground sm:text-xl">
-        {question.question}
-      </h2>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentIndex}
+          initial={prefersReducedMotion ? false : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={prefersReducedMotion ? undefined : { opacity: 0 }}
+          transition={{ duration: 0.15 }}
+        >
+          <h2 className="mt-7 font-display text-lg font-bold text-foreground sm:text-xl">
+            {question.question}
+          </h2>
 
-      <div className="mt-5 space-y-3">
-        {question.options.map((option, i) => {
-          const isSelected = selectedOption === i;
-          const showResult = selectedOption !== null;
+          <div className="mt-5 space-y-3">
+            {question.options.map((option, i) => {
+              const isSelected = selectedOption === i;
+              const showResult = selectedOption !== null;
 
-          let state = "border-border bg-surface hover:border-accent hover:bg-accent-soft";
-          if (showResult && option.correct) {
-            state = "border-accent border-2 bg-accent-soft";
-          } else if (showResult && isSelected && !option.correct) {
-            state = "border-warning border-2 border-dashed bg-warning-light";
-          } else if (showResult) {
-            state = "border-border bg-surface opacity-60";
-          }
+              let state = "border-border bg-surface hover:border-accent hover:bg-accent-soft";
+              if (showResult && option.correct) {
+                state = "border-accent border-2 bg-accent-soft";
+              } else if (showResult && isSelected && !option.correct) {
+                state = "border-warning border-2 border-dashed bg-warning-light";
+              } else if (showResult) {
+                state = "border-border bg-surface opacity-60";
+              }
 
-          return (
-            <button
-              key={i}
-              onClick={() => selectOption(i)}
-              disabled={showResult}
-              className={`flex min-h-12 w-full items-center justify-between gap-3 rounded-2xl border p-4 text-left text-sm font-medium text-foreground transition-all ${state} ${
-                showResult ? "cursor-default" : "cursor-pointer"
-              }`}
-            >
-              <span>{option.text}</span>
-              {showResult && option.correct && (
-                <span className="flex shrink-0 items-center gap-1.5 text-xs font-bold text-accent">
-                  <Check className="h-4 w-4" aria-hidden="true" />
-                  Correct
-                </span>
-              )}
-              {showResult && isSelected && !option.correct && (
-                <span className="flex shrink-0 items-center gap-1.5 text-xs font-bold text-warning">
-                  <X className="h-4 w-4" aria-hidden="true" />
-                  Fout
-                </span>
-              )}
-            </button>
-          );
-        })}
-      </div>
-
-      <div aria-live="polite">
-        {selectedOption !== null && (
-          <div className="mt-5 rounded-2xl border-l-4 border-l-accent bg-surface-muted p-4">
-            <p className="text-sm font-bold text-foreground">
-              {question.options[selectedOption].correct
-                ? "Juist!"
-                : "Niet helemaal."}
-            </p>
-            <p className="mt-1.5 text-sm leading-relaxed text-foreground/90">
-              {question.explanation}
-            </p>
-            <button
-              onClick={next}
-              className="mt-4 inline-flex min-h-11 items-center gap-2 rounded-full bg-accent px-5 text-sm font-semibold text-accent-contrast transition-colors hover:bg-accent-strong"
-            >
-              {isLast ? "Bekijk resultaat" : "Volgende vraag"}
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </button>
+              return (
+                <button
+                  key={i}
+                  onClick={() => selectOption(i)}
+                  disabled={showResult}
+                  className={`ease-smooth flex min-h-12 w-full items-center justify-between gap-3 rounded-2xl border p-4 text-left text-sm font-medium text-foreground transition-all ${state} ${
+                    showResult ? "cursor-default" : "cursor-pointer active:scale-[0.97]"
+                  }`}
+                >
+                  <span>{option.text}</span>
+                  {showResult && option.correct && (
+                    <span className="flex shrink-0 items-center gap-1.5 text-xs font-bold text-accent">
+                      <Check className="h-4 w-4" aria-hidden="true" />
+                      Correct
+                    </span>
+                  )}
+                  {showResult && isSelected && !option.correct && (
+                    <span className="flex shrink-0 items-center gap-1.5 text-xs font-bold text-warning">
+                      <X className="h-4 w-4" aria-hidden="true" />
+                      Fout
+                    </span>
+                  )}
+                </button>
+              );
+            })}
           </div>
-        )}
-      </div>
+
+          <div aria-live="polite">
+            <AnimatePresence>
+              {selectedOption !== null && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={revealTransition}
+                  className="mt-5 overflow-hidden"
+                >
+                  <div className="rounded-2xl border-l-4 border-l-accent bg-surface-muted p-4">
+                    <p className="text-sm font-bold text-foreground">
+                      {question.options[selectedOption].correct
+                        ? "Juist!"
+                        : "Niet helemaal."}
+                    </p>
+                    <p className="mt-1.5 text-sm leading-relaxed text-foreground/90">
+                      {question.explanation}
+                    </p>
+                    <button
+                      onClick={next}
+                      className="ease-smooth mt-4 inline-flex min-h-11 items-center gap-2 rounded-full bg-accent px-5 text-sm font-semibold text-accent-contrast transition-all hover:bg-accent-strong active:scale-[0.97]"
+                    >
+                      {isLast ? "Bekijk resultaat" : "Volgende vraag"}
+                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    </button>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 }
