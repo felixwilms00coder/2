@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ArrowRight, PiggyBank, RotateCcw, Smile, Wallet } from "lucide-react";
 import { Game, GameEffect } from "@/lib/content/game";
 import { useProgress } from "@/components/progress-provider";
 import { ButtonLink } from "@/components/ui";
+import { springDefault, reducedMotionTransition } from "@/lib/motion";
 
 type Stats = {
   saldo: number;
@@ -56,6 +58,10 @@ export function KeuzespelEngine({ game }: { game: Game }) {
   const [picked, setPicked] = useState<number | null>(null);
   const [finished, setFinished] = useState(false);
   const { recordGame } = useProgress();
+  const prefersReducedMotion = useReducedMotion();
+  const revealTransition = prefersReducedMotion
+    ? reducedMotionTransition
+    : springDefault;
 
   const round = game.rounds[index];
   const isLastRound = index === game.rounds.length - 1;
@@ -173,7 +179,7 @@ export function KeuzespelEngine({ game }: { game: Game }) {
         <div className="mt-7 flex flex-wrap gap-3">
           <button
             onClick={restart}
-            className="inline-flex min-h-11 items-center gap-2 rounded-full bg-accent px-5 text-sm font-semibold text-accent-contrast transition-colors hover:bg-accent-strong"
+            className="ease-smooth inline-flex min-h-11 items-center gap-2 rounded-full bg-accent px-5 text-sm font-semibold text-accent-contrast transition-all hover:bg-accent-strong active:scale-[0.97]"
           >
             <RotateCcw className="h-4 w-4" aria-hidden="true" />
             Opnieuw spelen
@@ -242,63 +248,83 @@ export function KeuzespelEngine({ game }: { game: Game }) {
         </span>
       </div>
 
-      <h2 className="mt-6 font-display text-xl font-extrabold tracking-tight text-foreground">
-        {round.title}
-      </h2>
-      <p className="mt-2 leading-relaxed text-muted">{round.situation}</p>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={index}
+          initial={prefersReducedMotion ? false : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={prefersReducedMotion ? undefined : { opacity: 0 }}
+          transition={{ duration: 0.15 }}
+        >
+          <h2 className="mt-6 font-display text-xl font-extrabold tracking-tight text-foreground">
+            {round.title}
+          </h2>
+          <p className="mt-2 leading-relaxed text-muted">{round.situation}</p>
 
-      <div className="mt-5 grid gap-2.5">
-        {round.choices.map((choice, i) => {
-          const isPicked = picked === i;
-          let state =
-            "border-border bg-surface hover:border-accent hover:bg-accent-soft";
-          if (picked !== null && isPicked) {
-            state = "border-accent border-2 bg-accent-soft";
-          } else if (picked !== null) {
-            state = "border-border bg-surface opacity-55";
-          }
-          return (
-            <button
-              key={i}
-              onClick={() => choose(i)}
-              disabled={picked !== null}
-              className={`min-h-12 rounded-2xl border px-4 py-3 text-left text-sm font-medium text-foreground transition-all ${state} ${
-                picked === null ? "cursor-pointer" : "cursor-default"
-              }`}
-            >
-              {choice.label}
-            </button>
-          );
-        })}
-      </div>
-
-      <div aria-live="polite">
-        {picked !== null && (
-          <div className="mt-5 rounded-2xl border-l-4 border-l-accent bg-surface-muted p-4">
-            <p className="text-sm leading-relaxed text-foreground/90">
-              {round.choices[picked].feedback}
-            </p>
-            {round.leesMeer && (
-              <Link
-                href={round.leesMeer.href}
-                className="mt-3 inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-accent hover:underline"
-              >
-                Lees: {round.leesMeer.label}
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
-            )}
-            <div>
-              <button
-                onClick={next}
-                className="mt-2 inline-flex min-h-11 items-center gap-2 rounded-full bg-accent px-5 text-sm font-semibold text-accent-contrast transition-colors hover:bg-accent-strong"
-              >
-                {isLastRound ? "Bekijk je resultaat" : "Volgende situatie"}
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </button>
-            </div>
+          <div className="mt-5 grid gap-2.5">
+            {round.choices.map((choice, i) => {
+              const isPicked = picked === i;
+              let state =
+                "border-border bg-surface hover:border-accent hover:bg-accent-soft";
+              if (picked !== null && isPicked) {
+                state = "border-accent border-2 bg-accent-soft";
+              } else if (picked !== null) {
+                state = "border-border bg-surface opacity-55";
+              }
+              return (
+                <button
+                  key={i}
+                  onClick={() => choose(i)}
+                  disabled={picked !== null}
+                  className={`ease-smooth min-h-12 rounded-2xl border px-4 py-3 text-left text-sm font-medium text-foreground transition-all ${state} ${
+                    picked === null ? "cursor-pointer active:scale-[0.97]" : "cursor-default"
+                  }`}
+                >
+                  {choice.label}
+                </button>
+              );
+            })}
           </div>
-        )}
-      </div>
+
+          <div aria-live="polite">
+            <AnimatePresence>
+              {picked !== null && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={revealTransition}
+                  className="mt-5 overflow-hidden"
+                >
+                  <div className="rounded-2xl border-l-4 border-l-accent bg-surface-muted p-4">
+                    <p className="text-sm leading-relaxed text-foreground/90">
+                      {round.choices[picked].feedback}
+                    </p>
+                    {round.leesMeer && (
+                      <Link
+                        href={round.leesMeer.href}
+                        className="mt-3 inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-accent hover:underline"
+                      >
+                        Lees: {round.leesMeer.label}
+                        <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                      </Link>
+                    )}
+                    <div>
+                      <button
+                        onClick={next}
+                        className="ease-smooth mt-2 inline-flex min-h-11 items-center gap-2 rounded-full bg-accent px-5 text-sm font-semibold text-accent-contrast transition-all hover:bg-accent-strong active:scale-[0.97]"
+                      >
+                        {isLastRound ? "Bekijk je resultaat" : "Volgende situatie"}
+                        <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                      </button>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 }

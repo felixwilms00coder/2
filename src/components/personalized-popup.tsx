@@ -3,9 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { X, Mail, Loader2, CheckCircle2 } from "lucide-react";
 import { categories } from "@/lib/content/categories";
 import { useMounted } from "@/lib/use-mounted";
+import { springDefault, reducedMotionTransition } from "@/lib/motion";
 import {
   recordCategoryVisit,
   getTopCategory,
@@ -122,6 +124,7 @@ export function PersonalizedPopup() {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const shownThisSession = useRef(false);
+  const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
     const categorySlug = categorySlugFromPath(pathname);
@@ -172,18 +175,24 @@ export function PersonalizedPopup() {
     }
   }
 
-  if (!mounted || !copy) return null;
-
   return (
-    <div className="pointer-events-auto relative w-full max-w-sm rounded-2xl border border-border bg-surface p-4 shadow-lg">
-      <button
-        type="button"
-        onClick={() => setCopy(null)}
-        aria-label="Sluiten"
-        className="absolute right-3 top-3 rounded-full p-1 text-muted transition-colors hover:bg-surface-muted hover:text-foreground"
-      >
-        <X className="h-4 w-4" aria-hidden="true" />
-      </button>
+    <AnimatePresence>
+      {mounted && copy && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95, y: 16 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.95, y: 16 }}
+          transition={prefersReducedMotion ? reducedMotionTransition : springDefault}
+          className="pointer-events-auto relative w-full max-w-sm rounded-2xl border border-border bg-surface/90 p-4 shadow-lg backdrop-blur-xl [border-top-color:rgba(255,255,255,0.4)]"
+        >
+          <button
+            type="button"
+            onClick={() => setCopy(null)}
+            aria-label="Sluiten"
+            className="absolute right-3 top-3 rounded-full p-1 text-muted transition-colors hover:bg-surface-muted hover:text-foreground"
+          >
+            <X className="h-4 w-4" aria-hidden="true" />
+          </button>
 
       {status === "sent" ? (
         <div className="flex items-start gap-2.5 pr-6">
@@ -247,6 +256,8 @@ export function PersonalizedPopup() {
           </p>
         </>
       )}
-    </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
