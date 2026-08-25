@@ -8,6 +8,52 @@ import { BlogPost } from "./types";
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: "verzekeringsbemiddeling-fsma-registratie",
+    title: "Wie verzekeringen aanbeveelt of vergelijkt, moet daarvoor geregistreerd zijn bij de FSMA",
+    summary:
+      "Verzekeringen voorstellen, aanbevelen, vergelijken of voorbereidend werk doen richting een verzekeringscontract, is in België een gereglementeerde activiteit: wie dat als dienst aanbiedt moet geregistreerd zijn bij de FSMA als verzekeringstussenpersoon, ook zonder commissie te ontvangen.",
+    categorySlug: "budget-betalen-lenen-en-verzekeren",
+    publishedAt: "2026-08-25",
+    readMinutes: 3,
+    blocks: [
+      {
+        type: "p",
+        text: "Krijg je van een 'onafhankelijke vergelijkingssite', een kennis die 'goed thuis is in verzekeringen', of iemand online een concrete aanbeveling over welke polis je moet nemen? Ook hier geldt een wettelijke check die je zelf snel kan doen: is die partij eigenlijk geregistreerd om dat te doen?",
+      },
+      { type: "h2", text: "Wat is 'verzekeringsbemiddeling' precies?" },
+      {
+        type: "p",
+        text: "Verzekeringen voorstellen, aanbevelen, vergelijken, of voorbereidend werk doen richting het afsluiten van een verzekeringscontract: dat noemt de wet 'verzekeringsbemiddeling'. Het gaat dus niet enkel om wie uiteindelijk de polis verkoopt, maar ook om wie in dat traject actief adviseert of vergelijkt.",
+      },
+      { type: "h2", text: "Wanneer is een FSMA-registratie verplicht?" },
+      {
+        type: "p",
+        text: "Wie verzekeringsbemiddeling als dienst aanbiedt, moet geregistreerd zijn bij de FSMA als verzekeringstussenpersoon. Dat geldt ook als die partij daar zelf geen commissie voor ontvangt: het gaat om de activiteit zelf, niet om hoe ze eraan verdient.",
+      },
+      { type: "h2", text: "Hoe check je dat zelf?" },
+      {
+        type: "p",
+        text: "Consumenten kunnen die registratie nakijken via het openbaar register op fsma.be, voor ze op een aanbeveling ingaan. Een registratie garandeert geen goedkoopste of beste polis, maar wel dat de partij onder toezicht staat.",
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Waarom dit meer is dan formaliteit",
+        text: "Een niet-geregistreerde partij die toch verzekeringen aanbeveelt of vergelijkt, valt buiten het wettelijke toezichtskader. Dat betekent dat je bij een geschil minder houvast hebt dan bij een geregistreerde tussenpersoon.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Zelf vergelijken zonder op één aanbeveling te vertrouwen?",
+        text: "De verzekeringsoffertes-vergelijker van FinEdu vergelijkt tot vier offertes op verwachte totale jaarkost, op basis van cijfers die je zelf invult: geen eigen polisdata en geen rangschikking van verzekeraars.",
+      },
+      {
+        type: "p",
+        text: "Dit is algemene informatie op basis van de wet, geen persoonlijk verzekeringsadvies: FinEdu zelf is niet FSMA-geregistreerd en beveelt dus ook geen specifieke verzekeraar of polis aan. Twijfel je over een concreet aanbod? Check de registratie op fsma.be of raadpleeg een erkende verzekeringstussenpersoon.",
+      },
+    ],
+  },
+  {
     slug: "beleggingsadvies-fsma-vergunning-checken",
     title: "Iemand geeft je beleggingsadvies? Check eerst of die persoon een FSMA-vergunning heeft",
     summary:
