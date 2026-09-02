@@ -8,6 +8,60 @@ import { BlogPost } from "./types";
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: "ouderschapsverlof-thematisch-verlof-uitgelegd",
+    title: "Ouderschapsverlof: minder werken voor je kind, met behoud van je job",
+    summary:
+      "Ouderschapsverlof geeft werknemers met voldoende anciënniteit het recht om voor een jong kind tijdelijk te stoppen, deeltijds te werken of het ritme te verminderen, met een wettelijk recht om nadien terug te keren. Een vervangingsuitkering via de RVA dekt het gemiste loon, maar meestal niet volledig.",
+    categorySlug: "familie",
+    publishedAt: "2026-09-02",
+    readMinutes: 3,
+    blocks: [
+      {
+        type: "p",
+        text: "Een kind krijgen verandert niet enkel je privéleven, maar ook hoe je werk eruitziet. Veel starters weten niet dat ze daarvoor een wettelijk recht hebben op tijdelijk minder werken, zonder hun job te verliezen: ouderschapsverlof.",
+      },
+      { type: "h2", text: "Wat ouderschapsverlof precies inhoudt" },
+      {
+        type: "p",
+        text: "Ouderschapsverlof behoort tot de zogenaamde 'thematische verloven'. Heb je voldoende anciënniteit, dan kan je voor een jong kind tijdelijk volledig stoppen met werken, deeltijds gaan werken, of je arbeidsritme verminderen. De band met je werkgever blijft daarbij behouden.",
+      },
+      { type: "h2", text: "Je hebt recht op terugkeer naar je functie" },
+      {
+        type: "p",
+        text: "Een belangrijk element: je hebt een wettelijk recht om na je ouderschapsverlof terug te keren naar dezelfde functie, of een gelijkwaardige functie als de oorspronkelijke niet meer beschikbaar is. Je werkgever kan je dus niet zomaar vervangen tijdens die periode.",
+      },
+      { type: "h2", text: "Een vervangingsuitkering, geen volledig loon" },
+      {
+        type: "p",
+        text: "Voor het inkomen dat je tijdens het ouderschapsverlof misloopt, kan je een vervangingsuitkering aanvragen bij de RVA. Die uitkering dekt het gemiste loon in de regel niet volledig: hou er dus rekening mee dat je erop achteruitgaat, ook met de uitkering erbij.",
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "De voorwaarden wijzigen geregeld",
+        text: "De precieze voorwaarden — de leeftijdsgrens van het kind, de minimale anciënniteit, en de mogelijke opnamevormen — en het uitkeringsbedrag wijzigen geregeld. FinEdu houdt deze cijfers zelf niet bij: check de actuele regels bij de RVA voor je plannen maakt.",
+      },
+      {
+        type: "list",
+        items: [
+          "Vraag bij je werkgever na hoe je ouderschapsverlof formeel aanvraagt en welke opnamevormen mogelijk zijn.",
+          "Check je anciënniteit en of je aan de voorwaarden voldoet via de RVA.",
+          "Bereken vooraf wat de vervangingsuitkering ongeveer betekent voor je maandelijks budget, zodat je niet voor verrassingen komt te staan.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Andere financiële voorbereiding op een kind?",
+        text: "FinEdu's leerstof over een eerste kind financieel voorbereiden en de 50/30/20 budgetplanner helpen je breder in kaart brengen wat er verandert.",
+      },
+      {
+        type: "p",
+        text: "Dit is algemene informatie op basis van de wet, geen persoonlijk advies over jouw concrete situatie: voor de exacte voorwaarden en het actuele uitkeringsbedrag raadpleeg je de RVA, en voor vragen over jouw arbeidscontract je werkgever of een vakbond.",
+      },
+    ],
+  },
+  {
     slug: "verzekeringsbemiddeling-fsma-registratie",
     title: "Wie verzekeringen aanbeveelt of vergelijkt, moet daarvoor geregistreerd zijn bij de FSMA",
     summary:
