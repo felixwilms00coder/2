@@ -8,6 +8,55 @@ import { BlogPost } from "./types";
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: "wettelijk-pensioen-loopbaanjaren-opbouw",
+    title: "Je wettelijk pensioen is geen vast bedrag: het wordt jaar per jaar opgebouwd",
+    summary:
+      "Het wettelijk pensioen van werknemers is geen vast percentage van je laatste loon, maar wordt loopbaanjaar per loopbaanjaar opgebouwd: elk jaar telt je toenmalige loon mee, tot een wettelijk plafond. Ook bepaalde periodes van werkloosheid, ziekte of invaliditeit kunnen meetellen, als 'gelijkgestelde periodes'.",
+    categorySlug: "pensioen-en-pensioenvoorbereiding",
+    publishedAt: "2026-09-24",
+    readMinutes: 3,
+    blocks: [
+      {
+        type: "p",
+        text: "Veel starters denken dat hun pensioen later berekend wordt op hun laatste loon. Voor het wettelijk pensioen van werknemers klopt dat niet: het wordt jaar per jaar opgebouwd, over je hele loopbaan.",
+      },
+      { type: "h2", text: "Loopbaanjaar per loopbaanjaar, geen vast percentage" },
+      {
+        type: "p",
+        text: "Het wettelijk pensioen van werknemers wordt niet als één vast percentage van je laatste loon berekend, maar loopbaanjaar per loopbaanjaar opgebouwd: voor elk jaar telt het toenmalige loon mee, tot een wettelijk plafond. Een jaar met een hoger loon draagt dus meer bij aan je uiteindelijke pensioen dan een jaar met een lager loon.",
+      },
+      { type: "h2", text: "Niet-gewerkte periodes kunnen toch meetellen" },
+      {
+        type: "p",
+        text: "Naast effectief gewerkte jaren erkent de wet ook 'gelijkgestelde periodes': bepaalde vormen van werkloosheid, ziekte of invaliditeit die onder voorwaarden meetellen alsof je gewerkt had. Dat betekent dat een moeilijke periode in je loopbaan niet automatisch een gat slaat in je pensioenopbouw.",
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "De precieze regels wijzigen",
+        text: "Hoeveel loopbaanjaren nodig zijn voor een volledig pensioen en welke periodes precies gelijkgesteld worden, ligt vast in uitvoeringsbesluiten die kunnen wijzigen. FinEdu houdt deze regels zelf niet actueel bij: check je eigen loopbaanoverzicht en de actuele regels via mypension.be of de Federale Pensioendienst.",
+      },
+      {
+        type: "list",
+        items: [
+          "Maak een account aan op mypension.be en bekijk je eigen, actueel opgebouwde loopbaanoverzicht.",
+          "Check welke periodes in je loopbaan (bv. studentenwerk, tijdelijke werkloosheid) al meetellen.",
+          "Gebruik de aanvullend-pensioen-simulator van FinEdu om te zien wat apart sparen bovenop je wettelijk pensioen kan opleveren.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Wettelijk pensioen is meestal niet je enige pensioen",
+        text: "Naast het wettelijk pensioen (eerste pijler) bestaat er ook een aanvullend pensioen, via je werkgever of jezelf opgebouwd. Het financieel lexicon van FinEdu legt loopbaanjaren, gelijkgestelde periodes en aanvullend pensioen apart uit.",
+      },
+      {
+        type: "p",
+        text: "Dit is algemene informatie op basis van de wet, geen persoonlijk advies over jouw concrete pensioenopbouw: voor je eigen, exacte loopbaangegevens en pensioenraming raadpleeg je mypension.be of de Federale Pensioendienst.",
+      },
+    ],
+  },
+  {
     slug: "ouderschapsverlof-thematisch-verlof-uitgelegd",
     title: "Ouderschapsverlof: minder werken voor je kind, met behoud van je job",
     summary:
