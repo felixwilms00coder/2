@@ -8,6 +8,55 @@ import { BlogPost } from "./types";
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: "aanvullend-pensioen-minimumrendement-groepsverzekering",
+    title: "Aanvullend pensioen via je werkgever: de wet garandeert een minimumrendement",
+    summary:
+      "Bouw je via je werkgever een aanvullend pensioen op (bv. een groepsverzekering)? Dan garandeert de wet een minimumrendement op de gestorte bijdragen, ongeacht het werkelijke beleggingsresultaat. Het percentage zelf staat niet vast in de wet en kan wijzigen.",
+    categorySlug: "pensioen-en-pensioenvoorbereiding",
+    publishedAt: "2026-10-05",
+    readMinutes: 3,
+    blocks: [
+      {
+        type: "p",
+        text: "Heb je via je werkgever een groepsverzekering of een ander aanvullend pensioen? Dan geldt er een wettelijke bescherming op die bijdragen waar veel werknemers niet van weten.",
+      },
+      { type: "h2", text: "Aanvullend pensioen: de tweede pijler" },
+      {
+        type: "p",
+        text: "Naast het wettelijk pensioen (eerste pijler, opgebouwd via de sociale zekerheid) kan je werkgever voor jou een aanvullend pensioen opbouwen: de tweede pijler. Een groepsverzekering is daarvan de bekendste vorm. Dat is iets anders dan pensioensparen, waarbij je zelf een derde pijler opbouwt.",
+      },
+      { type: "h2", text: "De wet garandeert een minimumrendement" },
+      {
+        type: "p",
+        text: "De Wet Aanvullende Pensioenen (WAP) legt de spelregels vast voor dat aanvullend pensioen. Eén ervan: de werkgever of inrichter moet op de gestorte bijdragen een wettelijk minimumrendement garanderen, ongeacht het werkelijke beleggingsresultaat van de verzekeraar of het pensioenfonds. Haalt de belegging minder op, dan moet de werkgever het verschil bijpassen.",
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Het percentage zelf staat niet in de wet",
+        text: "Hoeveel dat minimumrendement precies bedraagt, ligt niet vast in de WAP zelf en kan wijzigen. Vraag de actuele stand na bij je pensioeninstelling of check de informatie bij de FSMA voor je verdere conclusies trekt.",
+      },
+      {
+        type: "list",
+        items: [
+          "Vraag je jaarlijkse pensioenfiche op bij je werkgever of pensioeninstelling.",
+          "Bekijk je opgebouwde aanvullend pensioen ook via mypension.be.",
+          "Gebruik de aanvullend-pensioen-tool van FinEdu om een beeld te krijgen van wat een aanvullend pensioen kan betekenen bovenop je wettelijk pensioen.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Tweede en derde pijler zijn niet hetzelfde",
+        text: "Een aanvullend pensioen via je werkgever (tweede pijler) is iets anders dan pensioensparen dat je zelf afsluit (derde pijler). Het financieel lexicon van FinEdu legt beide begrippen apart uit.",
+      },
+      {
+        type: "p",
+        text: "Dit is algemene informatie op basis van de wet, geen persoonlijk advies over jouw concrete pensioenplan: voor de exacte voorwaarden en het actuele rendement van jouw contract raadpleeg je je pensioeninstelling of de FSMA.",
+      },
+    ],
+  },
+  {
     slug: "wettelijk-pensioen-loopbaanjaren-opbouw",
     title: "Je wettelijk pensioen is geen vast bedrag: het wordt jaar per jaar opgebouwd",
     summary:
