@@ -8,6 +8,55 @@ import { BlogPost } from "./types";
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: "schenken-vs-erven-vlaamse-schenkbelasting",
+    title: "Schenken tijdens je leven kan fiscaal voordeliger zijn dan erven, als je de regels volgt",
+    summary:
+      "Een schenking van geld of effecten via de notaris wordt doorgaans belast tegen een vast, laag tarief. Een woning schenken volgt een apart, progressief tarief. Let op: een niet-geregistreerde schenking (zoals een handgift) kan bij overlijden binnen een bepaalde termijn toch als erfenis belast worden.",
+    categorySlug: "erven",
+    publishedAt: "2026-10-12",
+    readMinutes: 3,
+    blocks: [
+      {
+        type: "p",
+        text: "Wie nadenkt over vermogen doorgeven, hoort vaak dat schenken voordeliger is dan erven. Dat klopt, maar enkel als je de regels van de Vlaamse schenkbelasting volgt.",
+      },
+      { type: "h2", text: "Schenking versus erfenis" },
+      {
+        type: "p",
+        text: "Een schenking is het vrijwillig en kosteloos overdragen van een goed aan iemand anders tijdens je leven, in tegenstelling tot een erfenis die pas bij overlijden overgaat. Omdat je zelf kiest wanneer en hoeveel je schenkt, kan je daarmee spreiden in de tijd en vaak een gunstiger tarief krijgen dan erfbelasting achteraf.",
+      },
+      { type: "h2", text: "Roerend en onroerend: twee verschillende regimes" },
+      {
+        type: "p",
+        text: "Een schenking van roerende goederen, zoals geld of effecten, via de notaris wordt belast tegen een vast, doorgaans laag tarief. Een woning of ander onroerend goed schenken gebeurt altijd via de notaris en volgt een apart, progressief tarief: hoe meer je schenkt, hoe hoger het tarief op dat gedeelte.",
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Een handgift is niet zonder risico",
+        text: "Overlijdt de schenker binnen een bepaalde termijn na een niet-geregistreerde schenking (bijvoorbeeld een handgift, zonder notaris), dan kan de fiscus die schenking alsnog als erfenis belasten. De exacte termijn en tarieven wijzigen soms: laat dit altijd door een notaris bevestigen voor je schenkt.",
+      },
+      {
+        type: "list",
+        items: [
+          "Bespreek met een notaris of een schenking via notariële akte of een handgift past bij jouw situatie.",
+          "Vraag de actuele tarieven en termijnen na bij VLABEL of je notaris voor je een concreet bedrag schenkt.",
+          "Bekijk ook de pagina Erven op FinEdu voor hoe erfbelasting zich daar tegenover verhoudt.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Erfbelasting werkt ook met schijven",
+        text: "Erf je toch, dan betaal je erfbelasting volgens een progressief schijvenstelsel, met een tarief dat afhangt van je band met de overledene. Het financieel lexicon van FinEdu legt de begrippen schenking en erfbelasting apart uit.",
+      },
+      {
+        type: "p",
+        text: "Dit is algemene informatie op basis van de regelgeving, geen persoonlijk advies over jouw concrete successieplanning: voor de exacte tarieven, termijnen en de beste aanpak voor jouw situatie raadpleeg je een notaris of VLABEL.",
+      },
+    ],
+  },
+  {
     slug: "aanvullend-pensioen-minimumrendement-groepsverzekering",
     title: "Aanvullend pensioen via je werkgever: de wet garandeert een minimumrendement",
     summary:
