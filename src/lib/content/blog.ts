@@ -8,6 +8,55 @@ import { BlogPost } from "./types";
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: "vlaamse-erfbelasting-schijven-en-verwantschap",
+    title: "Erfbelasting in Vlaanderen: niet één tarief, maar schijven die afhangen van wie je bent voor de overledene",
+    summary:
+      "Wie erft in het Vlaamse Gewest, betaalt erfbelasting volgens een progressief schijvenstelsel: hoe groter het geërfde bedrag, hoe hoger het tarief op dat gedeelte. Het tarief hangt ook af van je band met de overledene: partners en kinderen betalen minder dan broers/zussen, en zij weer minder dan anderen.",
+    categorySlug: "erven",
+    publishedAt: "2026-10-13",
+    readMinutes: 3,
+    blocks: [
+      {
+        type: "p",
+        text: "\"Hoeveel erfbelasting betaal ik?\" is geen vraag met één antwoord. In Vlaanderen hangt dat af van twee dingen tegelijk: hoeveel je erft, en wie je bent voor de overledene.",
+      },
+      { type: "h2", text: "Een progressief schijvenstelsel" },
+      {
+        type: "p",
+        text: "Wie erft in het Vlaamse Gewest, betaalt erfbelasting volgens een progressief schijvenstelsel: hoe groter het geërfde bedrag, hoe hoger het tarief op dat gedeelte. Dat werkt zoals bij de personenbelasting: niet je hele erfenis wordt tegen één tarief belast, maar elke schijf van het bedrag krijgt zijn eigen tarief, oplopend naarmate het bedrag groter wordt.",
+      },
+      { type: "h2", text: "De band met de overledene telt mee" },
+      {
+        type: "p",
+        text: "Daarbovenop hangt het tarief ook af van wie erft. Partners en kinderen (de zogenaamde rechte lijn) betalen minder dan broers en zussen, en die betalen op hun beurt weer minder dan anderen, zoals verdere familie of niet-verwanten. Dezelfde erfenis kan dus heel verschillend belast worden, afhankelijk van wie ze ontvangt.",
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "De exacte schijven en percentages wijzigen soms",
+        text: "De precieze schijfgrenzen en tarieven liggen niet voor altijd vast en kunnen wijzigen. Check de actuele schijven en percentages bij VLABEL voor je zelf een concreet bedrag probeert te berekenen.",
+      },
+      {
+        type: "list",
+        items: [
+          "Ga na in welke verwantschapscategorie jij valt ten opzichte van de overledene (partner/kind, broer of zus, of anders).",
+          "Check de actuele schijven en tarieven bij VLABEL voor je een inschatting maakt.",
+          "Bekijk ook de FinEdu-pagina over schenken: schenken tijdens het leven kan de uiteindelijke erfbelasting beïnvloeden.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Erfbelasting en schenkbelasting hangen samen",
+        text: "Wie tijdens het leven al schenkt, kan daarmee soms vermijden dat eenzelfde vermogen later tegen een hoger erfbelastingtarief belast wordt. Het financieel lexicon van FinEdu legt de begrippen erfbelasting en schenking apart uit.",
+      },
+      {
+        type: "p",
+        text: "Dit is algemene informatie op basis van de regelgeving, geen persoonlijk advies over jouw concrete erfenis: voor de exacte schijven, tarieven en jouw eigen situatie raadpleeg je VLABEL of een notaris.",
+      },
+    ],
+  },
+  {
     slug: "schenken-vs-erven-vlaamse-schenkbelasting",
     title: "Schenken tijdens je leven kan fiscaal voordeliger zijn dan erven, als je de regels volgt",
     summary:
