@@ -8,6 +8,55 @@ import { BlogPost } from "./types";
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: "vruchtgebruik-en-blote-eigendom-uitgelegd",
+    title: "Vruchtgebruik en blote eigendom: waarom je soms wel in een huis mag wonen, maar het niet (helemaal) bezit",
+    summary:
+      "Vruchtgebruik en blote eigendom zijn een opsplitsing van eigendom: de vruchtgebruiker mag een goed gebruiken en de opbrengsten innen, terwijl de blote eigenaar pas volledig eigenaar wordt zodra het vruchtgebruik eindigt, vaak bij overlijden. Dit begrip duikt regelmatig op bij erfenissen.",
+    categorySlug: "erven",
+    publishedAt: "2026-10-14",
+    readMinutes: 3,
+    blocks: [
+      {
+        type: "p",
+        text: "Soms woont iemand in een huis, maar is die persoon niet de volledige eigenaar ervan. Dat klinkt tegenstrijdig, maar is precies wat vruchtgebruik en blote eigendom mogelijk maken: eigendom opgesplitst in twee delen.",
+      },
+      { type: "h2", text: "Twee rechten op hetzelfde goed" },
+      {
+        type: "p",
+        text: "Vruchtgebruik en blote eigendom zijn een opsplitsing van eigendom: de vruchtgebruiker mag een goed gebruiken en de opbrengsten ervan innen, terwijl de blote eigenaar pas volledige eigenaar wordt zodra het vruchtgebruik eindigt. Bij een huis betekent dat bijvoorbeeld dat de vruchtgebruiker er mag wonen of het mag verhuren en de huur mag innen, terwijl de blote eigenaar op papier al \"eigenaar\" is, maar het goed nog niet vrij kan gebruiken.",
+      },
+      { type: "h2", text: "Waar dit vaak opduikt: erfenissen" },
+      {
+        type: "p",
+        text: "Dit begrip duikt regelmatig op binnen een nalatenschap: alle bezittingen en schulden die iemand achterlaat bij overlijden. Een bekend voorbeeld is dat een langstlevende partner het vruchtgebruik van de gezinswoning krijgt, terwijl de kinderen de blote eigendom krijgen. Zo kan de partner in het huis blijven wonen, en worden de kinderen pas volledig eigenaar zodra het vruchtgebruik eindigt, vaak bij het overlijden van de langstlevende partner.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Niet elke erfenis moet je aanvaarden",
+        text: "Een erfgenaam is trouwens niet verplicht om een erfenis te aanvaarden. Het verwerpen van een erfenis is de keuze om ze niet te aanvaarden, bijvoorbeeld omdat de schulden groter zijn dan de bezittingen.",
+      },
+      {
+        type: "list",
+        items: [
+          "Check bij een erfenis met vruchtgebruik/blote eigendom goed wie precies welk recht krijgt, en wat dat concreet betekent (bv. mogen verhuren, mogen verkopen).",
+          "Bespreek met een notaris hoe vruchtgebruik en blote eigendom in jouw specifieke familiesituatie geregeld zijn of geregeld kunnen worden.",
+          "Bekijk ook de FinEdu-pagina's over erfbelasting en schenken: die kunnen mee bepalen hoe eigendom best verdeeld wordt.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Een wettelijke reserve blijft gelden",
+        text: "Ook bij constructies met vruchtgebruik en blote eigendom blijft de wettelijke reserve gelden: het deel van een nalatenschap dat wettelijk gereserveerd is voor bepaalde erfgenamen, zoals kinderen, ook als een testament anders zou bepalen. Check met een notaris of een geplande verdeling daarmee verenigbaar is.",
+      },
+      {
+        type: "p",
+        text: "Dit is algemene informatie op basis van hoe vruchtgebruik en blote eigendom doorgaans werken, geen persoonlijk advies over jouw concrete familiale of successieplanning: voor je eigen situatie raadpleeg je een notaris.",
+      },
+    ],
+  },
+  {
     slug: "vlaamse-erfbelasting-schijven-en-verwantschap",
     title: "Erfbelasting in Vlaanderen: niet één tarief, maar schijven die afhangen van wie je bent voor de overledene",
     summary:
