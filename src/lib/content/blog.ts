@@ -8,6 +8,55 @@ import { BlogPost } from "./types";
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: "jaarlijks-kostenpercentage-jkp-leningen-vergelijken",
+    title: "Leningen vergelijken? Kijk naar het JKP, niet enkel naar de rentevoet",
+    summary:
+      "Het jaarlijks kostenpercentage (JKP) geeft de totale kost van een lening weer: de rente plus alle verplichte bijkomende kosten, samen op jaarbasis. Twee leningen met dezelfde rentevoet kunnen daardoor toch een verschillende totale kost hebben.",
+    categorySlug: "budget-betalen-lenen-en-verzekeren",
+    publishedAt: "2026-10-25",
+    readMinutes: 3,
+    blocks: [
+      {
+        type: "p",
+        text: "Wie twee leningen vergelijkt, kijkt al snel enkel naar de rentevoet: welke lening heeft het laagste percentage? Dat is een vergissing die je geld kan kosten.",
+      },
+      { type: "h2", text: "Wat het JKP precies weergeeft" },
+      {
+        type: "p",
+        text: "Het jaarlijks kostenpercentage (JKP) is het percentage dat de totale kost van een lening weergeeft: rente plus alle verplichte bijkomende kosten, samen op jaarbasis. Daar kunnen bijvoorbeeld dossierkosten of andere verplichte kosten in zitten, afhankelijk van de lening. Twee leningen met exact dezelfde rentevoet kunnen daardoor een verschillend JKP hebben, en dus een verschillende werkelijke kost.",
+      },
+      { type: "h2", text: "Waarom de rentevoet alleen niet volstaat" },
+      {
+        type: "p",
+        text: "Een lening met een iets hogere rentevoet maar zonder bijkomende verplichte kosten kan uiteindelijk goedkoper uitvallen dan een lening met een lagere rentevoet maar hogere bijkomende kosten. Omdat het JKP al die elementen samenbrengt in één percentage, geeft het een eerlijkere basis om leningen onderling te vergelijken dan de rentevoet alleen.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Vergelijk op basis van het JKP, niet enkel de rentevoet",
+        text: "Vraag bij elk leningsvoorstel expliciet naar het JKP, en gebruik dat cijfer om aanbiedingen naast elkaar te leggen. De lening-vergelijker van FinEdu laat je zien hoe maandelijkse aflossing en totale kost per scenario kunnen verschillen.",
+      },
+      {
+        type: "list",
+        items: [
+          "Vraag bij elk leningsvoorstel het JKP op, niet enkel de rentevoet.",
+          "Leg het JKP van verschillende voorstellen naast elkaar voor je kiest.",
+          "Gebruik de lening-vergelijker van FinEdu om verschillende scenario's door te rekenen.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Dit is geen productadvies",
+        text: "Dit artikel legt uit wat het JKP betekent en waarom het nuttig is om op te letten, maar beveelt geen specifieke lening of aanbieder aan. Vergelijk altijd zelf meerdere concrete voorstellen voor je een lening afsluit.",
+      },
+      {
+        type: "p",
+        text: "Dit is algemene informatie over hoe het JKP werkt, geen persoonlijk leenadvies: voor jouw concrete situatie en de voorwaarden van een specifieke lening raadpleeg je de geldverstrekker of een FSMA-gecheckte adviseur.",
+      },
+    ],
+  },
+  {
     slug: "vruchtgebruik-en-blote-eigendom-uitgelegd",
     title: "Vruchtgebruik en blote eigendom: waarom je soms wel in een huis mag wonen, maar het niet (helemaal) bezit",
     summary:
