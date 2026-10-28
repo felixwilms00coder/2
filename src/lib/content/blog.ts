@@ -8,6 +8,153 @@ import { BlogPost } from "./types";
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: "jaarlijks-kostenpercentage-jkp-leningen-vergelijken",
+    title: "Leningen vergelijken? Kijk naar het JKP, niet enkel naar de rentevoet",
+    summary:
+      "Het jaarlijks kostenpercentage (JKP) geeft de totale kost van een lening weer: de rente plus alle verplichte bijkomende kosten, samen op jaarbasis. Twee leningen met dezelfde rentevoet kunnen daardoor toch een verschillende totale kost hebben.",
+    categorySlug: "budget-betalen-lenen-en-verzekeren",
+    publishedAt: "2026-10-25",
+    readMinutes: 3,
+    blocks: [
+      {
+        type: "p",
+        text: "Wie twee leningen vergelijkt, kijkt al snel enkel naar de rentevoet: welke lening heeft het laagste percentage? Dat is een vergissing die je geld kan kosten.",
+      },
+      { type: "h2", text: "Wat het JKP precies weergeeft" },
+      {
+        type: "p",
+        text: "Het jaarlijks kostenpercentage (JKP) is het percentage dat de totale kost van een lening weergeeft: rente plus alle verplichte bijkomende kosten, samen op jaarbasis. Daar kunnen bijvoorbeeld dossierkosten of andere verplichte kosten in zitten, afhankelijk van de lening. Twee leningen met exact dezelfde rentevoet kunnen daardoor een verschillend JKP hebben, en dus een verschillende werkelijke kost.",
+      },
+      { type: "h2", text: "Waarom de rentevoet alleen niet volstaat" },
+      {
+        type: "p",
+        text: "Een lening met een iets hogere rentevoet maar zonder bijkomende verplichte kosten kan uiteindelijk goedkoper uitvallen dan een lening met een lagere rentevoet maar hogere bijkomende kosten. Omdat het JKP al die elementen samenbrengt in één percentage, geeft het een eerlijkere basis om leningen onderling te vergelijken dan de rentevoet alleen.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Vergelijk op basis van het JKP, niet enkel de rentevoet",
+        text: "Vraag bij elk leningsvoorstel expliciet naar het JKP, en gebruik dat cijfer om aanbiedingen naast elkaar te leggen. De lening-vergelijker van FinEdu laat je zien hoe maandelijkse aflossing en totale kost per scenario kunnen verschillen.",
+      },
+      {
+        type: "list",
+        items: [
+          "Vraag bij elk leningsvoorstel het JKP op, niet enkel de rentevoet.",
+          "Leg het JKP van verschillende voorstellen naast elkaar voor je kiest.",
+          "Gebruik de lening-vergelijker van FinEdu om verschillende scenario's door te rekenen.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Dit is geen productadvies",
+        text: "Dit artikel legt uit wat het JKP betekent en waarom het nuttig is om op te letten, maar beveelt geen specifieke lening of aanbieder aan. Vergelijk altijd zelf meerdere concrete voorstellen voor je een lening afsluit.",
+      },
+      {
+        type: "p",
+        text: "Dit is algemene informatie over hoe het JKP werkt, geen persoonlijk leenadvies: voor jouw concrete situatie en de voorwaarden van een specifieke lening raadpleeg je de geldverstrekker of een FSMA-gecheckte adviseur.",
+      },
+    ],
+  },
+  {
+    slug: "vruchtgebruik-en-blote-eigendom-uitgelegd",
+    title: "Vruchtgebruik en blote eigendom: waarom je soms wel in een huis mag wonen, maar het niet (helemaal) bezit",
+    summary:
+      "Vruchtgebruik en blote eigendom zijn een opsplitsing van eigendom: de vruchtgebruiker mag een goed gebruiken en de opbrengsten innen, terwijl de blote eigenaar pas volledig eigenaar wordt zodra het vruchtgebruik eindigt, vaak bij overlijden. Dit begrip duikt regelmatig op bij erfenissen.",
+    categorySlug: "erven",
+    publishedAt: "2026-10-14",
+    readMinutes: 3,
+    blocks: [
+      {
+        type: "p",
+        text: "Soms woont iemand in een huis, maar is die persoon niet de volledige eigenaar ervan. Dat klinkt tegenstrijdig, maar is precies wat vruchtgebruik en blote eigendom mogelijk maken: eigendom opgesplitst in twee delen.",
+      },
+      { type: "h2", text: "Twee rechten op hetzelfde goed" },
+      {
+        type: "p",
+        text: "Vruchtgebruik en blote eigendom zijn een opsplitsing van eigendom: de vruchtgebruiker mag een goed gebruiken en de opbrengsten ervan innen, terwijl de blote eigenaar pas volledige eigenaar wordt zodra het vruchtgebruik eindigt. Bij een huis betekent dat bijvoorbeeld dat de vruchtgebruiker er mag wonen of het mag verhuren en de huur mag innen, terwijl de blote eigenaar op papier al \"eigenaar\" is, maar het goed nog niet vrij kan gebruiken.",
+      },
+      { type: "h2", text: "Waar dit vaak opduikt: erfenissen" },
+      {
+        type: "p",
+        text: "Dit begrip duikt regelmatig op binnen een nalatenschap: alle bezittingen en schulden die iemand achterlaat bij overlijden. Een bekend voorbeeld is dat een langstlevende partner het vruchtgebruik van de gezinswoning krijgt, terwijl de kinderen de blote eigendom krijgen. Zo kan de partner in het huis blijven wonen, en worden de kinderen pas volledig eigenaar zodra het vruchtgebruik eindigt, vaak bij het overlijden van de langstlevende partner.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Niet elke erfenis moet je aanvaarden",
+        text: "Een erfgenaam is trouwens niet verplicht om een erfenis te aanvaarden. Het verwerpen van een erfenis is de keuze om ze niet te aanvaarden, bijvoorbeeld omdat de schulden groter zijn dan de bezittingen.",
+      },
+      {
+        type: "list",
+        items: [
+          "Check bij een erfenis met vruchtgebruik/blote eigendom goed wie precies welk recht krijgt, en wat dat concreet betekent (bv. mogen verhuren, mogen verkopen).",
+          "Bespreek met een notaris hoe vruchtgebruik en blote eigendom in jouw specifieke familiesituatie geregeld zijn of geregeld kunnen worden.",
+          "Bekijk ook de FinEdu-pagina's over erfbelasting en schenken: die kunnen mee bepalen hoe eigendom best verdeeld wordt.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Een wettelijke reserve blijft gelden",
+        text: "Ook bij constructies met vruchtgebruik en blote eigendom blijft de wettelijke reserve gelden: het deel van een nalatenschap dat wettelijk gereserveerd is voor bepaalde erfgenamen, zoals kinderen, ook als een testament anders zou bepalen. Check met een notaris of een geplande verdeling daarmee verenigbaar is.",
+      },
+      {
+        type: "p",
+        text: "Dit is algemene informatie op basis van hoe vruchtgebruik en blote eigendom doorgaans werken, geen persoonlijk advies over jouw concrete familiale of successieplanning: voor je eigen situatie raadpleeg je een notaris.",
+      },
+    ],
+  },
+  {
+    slug: "vlaamse-erfbelasting-schijven-en-verwantschap",
+    title: "Erfbelasting in Vlaanderen: niet één tarief, maar schijven die afhangen van wie je bent voor de overledene",
+    summary:
+      "Wie erft in het Vlaamse Gewest, betaalt erfbelasting volgens een progressief schijvenstelsel: hoe groter het geërfde bedrag, hoe hoger het tarief op dat gedeelte. Het tarief hangt ook af van je band met de overledene: partners en kinderen betalen minder dan broers/zussen, en zij weer minder dan anderen.",
+    categorySlug: "erven",
+    publishedAt: "2026-10-13",
+    readMinutes: 3,
+    blocks: [
+      {
+        type: "p",
+        text: "\"Hoeveel erfbelasting betaal ik?\" is geen vraag met één antwoord. In Vlaanderen hangt dat af van twee dingen tegelijk: hoeveel je erft, en wie je bent voor de overledene.",
+      },
+      { type: "h2", text: "Een progressief schijvenstelsel" },
+      {
+        type: "p",
+        text: "Wie erft in het Vlaamse Gewest, betaalt erfbelasting volgens een progressief schijvenstelsel: hoe groter het geërfde bedrag, hoe hoger het tarief op dat gedeelte. Dat werkt zoals bij de personenbelasting: niet je hele erfenis wordt tegen één tarief belast, maar elke schijf van het bedrag krijgt zijn eigen tarief, oplopend naarmate het bedrag groter wordt.",
+      },
+      { type: "h2", text: "De band met de overledene telt mee" },
+      {
+        type: "p",
+        text: "Daarbovenop hangt het tarief ook af van wie erft. Partners en kinderen (de zogenaamde rechte lijn) betalen minder dan broers en zussen, en die betalen op hun beurt weer minder dan anderen, zoals verdere familie of niet-verwanten. Dezelfde erfenis kan dus heel verschillend belast worden, afhankelijk van wie ze ontvangt.",
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "De exacte schijven en percentages wijzigen soms",
+        text: "De precieze schijfgrenzen en tarieven liggen niet voor altijd vast en kunnen wijzigen. Check de actuele schijven en percentages bij VLABEL voor je zelf een concreet bedrag probeert te berekenen.",
+      },
+      {
+        type: "list",
+        items: [
+          "Ga na in welke verwantschapscategorie jij valt ten opzichte van de overledene (partner/kind, broer of zus, of anders).",
+          "Check de actuele schijven en tarieven bij VLABEL voor je een inschatting maakt.",
+          "Bekijk ook de FinEdu-pagina over schenken: schenken tijdens het leven kan de uiteindelijke erfbelasting beïnvloeden.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Erfbelasting en schenkbelasting hangen samen",
+        text: "Wie tijdens het leven al schenkt, kan daarmee soms vermijden dat eenzelfde vermogen later tegen een hoger erfbelastingtarief belast wordt. Het financieel lexicon van FinEdu legt de begrippen erfbelasting en schenking apart uit.",
+      },
+      {
+        type: "p",
+        text: "Dit is algemene informatie op basis van de regelgeving, geen persoonlijk advies over jouw concrete erfenis: voor de exacte schijven, tarieven en jouw eigen situatie raadpleeg je VLABEL of een notaris.",
+      },
+    ],
+  },
+  {
     slug: "schenken-vs-erven-vlaamse-schenkbelasting",
     title: "Schenken tijdens je leven kan fiscaal voordeliger zijn dan erven, als je de regels volgt",
     summary:
