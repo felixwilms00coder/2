@@ -8,6 +8,54 @@ import { BlogPost } from "./types";
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: "feitelijk-vs-wettelijk-samenwonen-vs-huwen",
+    title: "Samenwonen of trouwen? Feitelijk en wettelijk samenwonen bieden niet dezelfde bescherming",
+    summary:
+      "Feitelijk samenwonen is de eenvoudigste vorm, maar biedt de minste wettelijke bescherming. Wettelijk samenwonen brengt via een officiële verklaring wel een aantal rechten en plichten met zich mee, zonder te huwen. Een huwelijk gaat nog een stap verder, met een huwelijksvermogensstelsel dat bepaalt welk vermogen van wie is.",
+    categorySlug: "familie",
+    publishedAt: "2026-10-29",
+    readMinutes: 3,
+    blocks: [
+      {
+        type: "p",
+        text: "Samen gaan wonen voelt vaak als een gewone, praktische stap. Juridisch gezien is het dat niet: welke vorm je kiest, bepaalt mee hoeveel wettelijke bescherming je partner en jij hebben.",
+      },
+      { type: "h2", text: "Feitelijk samenwonen: eenvoudig, maar weinig bescherming" },
+      {
+        type: "p",
+        text: "Feitelijk samenwonen betekent samenwonen zonder dat te registreren bij de gemeente. Het is de eenvoudigste vorm, maar biedt ook de minste wettelijke bescherming voor beide partners. Er is geen officiële erkenning van je relatie die rechten of plichten vastlegt tussen jou en je partner.",
+      },
+      { type: "h2", text: "Wettelijk samenwonen: een officiële verklaring" },
+      {
+        type: "p",
+        text: "Wettelijk samenwonen gaat een stap verder: je legt een officiële verklaring af bij de burgerlijke stand. Dat brengt een aantal wettelijke rechten en plichten met zich mee, zonder dat je moet huwen. Het is dus een tussenvorm tussen feitelijk samenwonen en een huwelijk.",
+      },
+      { type: "h2", text: "Huwen: een volledig huwelijksvermogensstelsel" },
+      {
+        type: "p",
+        text: "Wie huwt, valt onder een huwelijksvermogensstelsel: de set regels die bepaalt welk vermogen van jou, van je partner, of gemeenschappelijk is tijdens en na het huwelijk. Dat regelt de vermogensrechtelijke kant van de relatie het meest uitgebreid van de drie vormen.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Welke vorm past bij jouw situatie?",
+        text: "Er is geen vorm die voor iedereen de beste is: het hangt af van jullie concrete situatie, bijvoorbeeld of jullie samen een woning kopen, kinderen hebben of financieel sterk van elkaar afhankelijk zijn. Een notaris kan de verschillen in jullie specifieke geval doornemen.",
+      },
+      {
+        type: "list",
+        items: [
+          "Ga na of jullie huidige samenwoonvorm (feitelijk, wettelijk, of geen) nog past bij jullie situatie, bijvoorbeeld na een grote aankoop of de geboorte van een kind.",
+          "Bespreek met een notaris wat wettelijk samenwonen of een huwelijkscontract concreet voor jullie zou betekenen.",
+          "Bekijk ook de FinEdu-pagina's over erven en schenken: de samenwoonvorm kan mee bepalen wat er gebeurt bij overlijden.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Dit is algemene informatie over de verschillen tussen deze vormen, geen persoonlijk advies over welke keuze bij jouw relatie past: voor je eigen situatie raadpleeg je een notaris.",
+      },
+    ],
+  },
+  {
     slug: "jaarlijks-kostenpercentage-jkp-leningen-vergelijken",
     title: "Leningen vergelijken? Kijk naar het JKP, niet enkel naar de rentevoet",
     summary:
