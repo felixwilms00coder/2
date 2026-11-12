@@ -8,6 +8,54 @@ import { BlogPost } from "./types";
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: "vaste-vs-variabele-rente-hypothecair-krediet",
+    title: "Vaste of variabele rente bij je hypothecair krediet: wat is het verschil?",
+    summary:
+      "Bij een vaste rente blijft je rentevoet gelijk over de hele looptijd van je hypothecair krediet. Bij een variabele rente kan ze periodiek stijgen of dalen volgens een referentie-index. Vervroegd terugbetalen kan daarbij een wederbeleggingsvergoeding met zich meebrengen.",
+    categorySlug: "woning-en-hypothecaire-lening",
+    publishedAt: "2026-11-12",
+    readMinutes: 3,
+    blocks: [
+      {
+        type: "p",
+        text: "Een hypothecair krediet afsluiten betekent ook kiezen tussen een vaste en een variabele rente. Dat is geen detail: het bepaalt hoe voorspelbaar je afbetalingen de komende jaren zijn.",
+      },
+      { type: "h2", text: "Wat is een hypothecair krediet precies?" },
+      {
+        type: "p",
+        text: "Een hypothecair krediet is een lening om een woning te kopen, bouwen of verbouwen, waarbij de woning zelf als onderpand (hypotheek) dient. Bij het afsluiten ervan moet je kiezen welk type rente je krijgt.",
+      },
+      { type: "h2", text: "Vaste rente: voorspelbaar, van begin tot eind" },
+      {
+        type: "p",
+        text: "Bij een vaste rente blijft je rentevoet gelijk over de hele looptijd van het krediet. Je weet dus vanaf de start exact wat je elke maand zal afbetalen, ongeacht hoe de rentemarkt zich daarna ontwikkelt.",
+      },
+      { type: "h2", text: "Variabele rente: kan stijgen of dalen" },
+      {
+        type: "p",
+        text: "Bij een variabele rente kan je rentevoet periodiek stijgen of dalen volgens een referentie-index. Je afbetaling ligt dus niet voor de volledige looptijd vast: ze kan op bepaalde momenten worden aangepast, in beide richtingen.",
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Vervroegd terugbetalen kan een vergoeding kosten",
+        text: "Wil je je hypothecair krediet vervroegd (gedeeltelijk) terugbetalen, dan mag de bank daarvoor een wederbeleggingsvergoeding aanrekenen: een vergoeding als compensatie voor de misgelopen rente-inkomsten. Check dit vooraf als vervroegde terugbetaling voor jou een optie is.",
+      },
+      {
+        type: "list",
+        items: [
+          "Vraag bij elk kredietvoorstel duidelijk of het om een vaste of variabele rente gaat, en onder welke voorwaarden die kan veranderen.",
+          "Informeer je over een eventuele wederbeleggingsvergoeding bij vervroegde terugbetaling, zeker als je dat op termijn overweegt.",
+          "Gebruik de lening-vergelijker van FinEdu om verschillende scenario's naast elkaar te bekijken.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Dit is algemene informatie over het verschil tussen vaste en variabele rente, geen persoonlijk leenadvies: voor de exacte voorwaarden van jouw hypothecair krediet raadpleeg je je kredietverstrekker of een FSMA-gecheckte adviseur.",
+      },
+    ],
+  },
+  {
     slug: "feitelijk-vs-wettelijk-samenwonen-vs-huwen",
     title: "Samenwonen of trouwen? Feitelijk en wettelijk samenwonen bieden niet dezelfde bescherming",
     summary:
