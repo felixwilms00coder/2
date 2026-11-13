@@ -8,6 +8,54 @@ import { BlogPost } from "./types";
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: "diversificatie-en-volatiliteit-risico-spreiden",
+    title: "Waarom 'niet alle eieren in één mandje' de kern is van verstandig beleggen",
+    summary:
+      "Diversificatie betekent je geld spreiden over verschillende beleggingen in plaats van alles in één aandeel of fonds te steken, om het risico te verlagen. Dat helpt vooral tegen volatiliteit: hoe sterk de waarde van een belegging op korte termijn kan schommelen.",
+    categorySlug: "sparen-en-beleggen",
+    publishedAt: "2026-11-13",
+    readMinutes: 3,
+    blocks: [
+      {
+        type: "p",
+        text: "\"Zet niet alle eieren in één mandje\" is een oud gezegde, maar het vat precies samen waarom diversificatie zo centraal staat in beleggen.",
+      },
+      { type: "h2", text: "Wat diversificatie betekent" },
+      {
+        type: "p",
+        text: "Diversificatie betekent je geld spreiden over verschillende beleggingen in plaats van alles in één aandeel of fonds te steken, om het risico te verlagen. Gaat het slecht met één belegging, dan raakt dat maar een deel van je portefeuille, niet het geheel.",
+      },
+      { type: "h2", text: "Waartegen diversificatie beschermt: volatiliteit" },
+      {
+        type: "p",
+        text: "Volatiliteit is hoe sterk de waarde van een belegging schommelt over een bepaalde periode: hoe hoger de volatiliteit, hoe onvoorspelbaarder de korte termijn. Een enkel aandeel kan sterk schommelen; een goed gespreide portefeuille voelt die schommelingen doorgaans minder hevig, omdat niet alles tegelijk in dezelfde richting beweegt.",
+      },
+      { type: "h2", text: "Een praktisch instrument om te spreiden: de ETF" },
+      {
+        type: "p",
+        text: "Een ETF (of tracker) is een beleggingsfonds dat een index, zoals de S&P 500, passief volgt, en dat je net als een aandeel op de beurs kan kopen en verkopen. Omdat een index vaak honderden onderliggende aandelen bevat, geeft één ETF al een vorm van spreiding, in plaats van dat je zelf tientallen individuele aandelen moet kopen.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Spreiding is geen garantie tegen verlies",
+        text: "Diversificatie verlaagt het risico, maar sluit verlies niet volledig uit: ook een gespreide portefeuille kan in waarde dalen, zeker op korte termijn. Gebruik de beleggingsplan-simulator van FinEdu om te zien wat regelmatig beleggen op langere termijn kan opleveren.",
+      },
+      {
+        type: "list",
+        items: [
+          "Ga na of je portefeuille (of de ETF die je overweegt) over verschillende aandelen, sectoren of regio's gespreid is.",
+          "Hou er rekening mee dat meer volatiliteit niet per se slecht is op lange termijn, maar wel vraagt om een langere beleggingshorizon.",
+          "Bekijk het financieel lexicon van FinEdu voor verwante begrippen zoals lopende kosten en beurstaks, die ook meespelen bij beleggen.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Dit is algemene informatie over diversificatie en volatiliteit, geen persoonlijk beleggingsadvies en geen aanbeveling van een specifiek product: voor advies op maat van jouw situatie raadpleeg je een FSMA-gecheckte adviseur.",
+      },
+    ],
+  },
+  {
     slug: "vaste-vs-variabele-rente-hypothecair-krediet",
     title: "Vaste of variabele rente bij je hypothecair krediet: wat is het verschil?",
     summary:
