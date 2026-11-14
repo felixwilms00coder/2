@@ -8,6 +8,49 @@ import { BlogPost } from "./types";
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: "tak21-vs-tak23-levensverzekering-sparen-beleggen",
+    title: "Tak 21 of Tak 23? Het verschil tussen 'gewaarborgd' en 'volledig afhankelijk van de markt'",
+    summary:
+      "Tak 21 is een levensverzekeringsproduct met een gewaarborgd rendement en kapitaalbescherming. Tak 23 belegt je premie in onderliggende fondsen zonder gewaarborgd rendement: de opbrengst (of het verlies) hangt volledig af van hoe die fondsen presteren.",
+    categorySlug: "sparen-en-beleggen",
+    publishedAt: "2026-11-14",
+    readMinutes: 3,
+    blocks: [
+      {
+        type: "p",
+        text: "Verzekeraars bieden niet alleen bescherming aan, maar ook spaar- en beleggingsproducten via een levensverzekering. Tak 21 en Tak 23 zijn daarvan de twee bekendste, en ze werken heel verschillend.",
+      },
+      { type: "h2", text: "Tak 21: gewaarborgd, met kapitaalbescherming" },
+      {
+        type: "p",
+        text: "Tak 21 is een levensverzekeringsproduct met een gewaarborgd rendement en kapitaalbescherming, door verzekeraars aangeboden als spaar- of beleggingsalternatief. Je weet dus op voorhand dat je ingelegd kapitaal beschermd is en dat er een minimaal rendement gegarandeerd wordt door de verzekeraar.",
+      },
+      { type: "h2", text: "Tak 23: geen garantie, wel marktrendement" },
+      {
+        type: "p",
+        text: "Tak 23 is een levensverzekeringsproduct waarbij je premie belegd wordt in onderliggende fondsen, zonder gewaarborgd rendement: de opbrengst (of het verlies) hangt volledig af van hoe die fondsen presteren. Er is dus geen kapitaalbescherming: in een slecht beursjaar kan de waarde van je Tak 23-contract dalen.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Check altijd het essentiële-informatiedocument (KID)",
+        text: "Voor beide types, en zeker voor Tak 23, moet je vóór aankoop een essentiële-informatiedocument (KID) kunnen inkijken: een verplicht, gestandaardiseerd document met de belangrijkste kenmerken, kosten en risico's. Daarop vind je ook de risico-indicator, een cijfer van 1 tot 7 dat aangeeft hoe risicovol het product is ten opzichte van andere producten.",
+      },
+      {
+        type: "list",
+        items: [
+          "Vraag altijd het essentiële-informatiedocument (KID) op voor je een Tak 21- of Tak 23-contract afsluit.",
+          "Bekijk de risico-indicator op dat document om in te schatten hoe risicovol het product is.",
+          "Vraag ook naar de lopende kosten en een eventuele beheersvergoeding: die kunnen het uiteindelijke rendement beïnvloeden.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Dit is algemene informatie over het verschil tussen Tak 21 en Tak 23, geen persoonlijk beleggingsadvies en geen aanbeveling van een specifiek contract: voor advies op maat van jouw situatie raadpleeg je een FSMA-gecheckte adviseur.",
+      },
+    ],
+  },
+  {
     slug: "diversificatie-en-volatiliteit-risico-spreiden",
     title: "Waarom 'niet alle eieren in één mandje' de kern is van verstandig beleggen",
     summary:
