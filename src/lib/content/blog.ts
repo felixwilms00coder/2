@@ -8,6 +8,54 @@ import { BlogPost } from "./types";
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: "beroepskosten-forfaitair-vs-werkelijke-kosten",
+    title: "Beroepskosten aftrekken: forfaitair of met bewijsstukken, wat is het verschil?",
+    summary:
+      "Beroepskosten zijn kosten die je maakt om je beroepsinkomen te verwerven of te behouden, en die je van je belastbaar inkomen kan aftrekken: forfaitair, of met bewijsstukken voor het werkelijke bedrag. De keuze tussen beide kan je belastingaangifte beïnvloeden.",
+    categorySlug: "belasting-werk-en-inkomen",
+    publishedAt: "2026-11-15",
+    readMinutes: 3,
+    blocks: [
+      {
+        type: "p",
+        text: "Bij je belastingaangifte duikt vroeg of laat de term 'beroepskosten' op. Veel starters weten niet dat ze daar eigenlijk een keuze in hebben.",
+      },
+      { type: "h2", text: "Wat zijn beroepskosten?" },
+      {
+        type: "p",
+        text: "Beroepskosten zijn kosten die je maakt om je beroepsinkomen te verwerven of te behouden, en die je van je belastbaar inkomen kan aftrekken. Denk aan kosten die rechtstreeks verbonden zijn met het uitoefenen van je job. Hoe meer beroepskosten je kan aantonen, hoe minder belastbaar inkomen er overblijft.",
+      },
+      { type: "h2", text: "Forfaitair: automatisch, zonder bewijs" },
+      {
+        type: "p",
+        text: "De eenvoudigste optie is de forfaitaire aftrek: de fiscus trekt automatisch een vast bedrag af van je beroepsinkomen, zonder dat je daarvoor bewijsstukken moet voorleggen. Je hoeft hier zelf niets voor te doen of te verzamelen.",
+      },
+      { type: "h2", text: "Werkelijke kosten: meer werk, mogelijk meer voordeel" },
+      {
+        type: "p",
+        text: "Wie kan aantonen dat zijn of haar werkelijke beroepskosten hoger liggen dan het forfaitaire bedrag, kan in plaats daarvan kiezen voor de werkelijke kosten, mits bewijsstukken. Dat vraagt meer administratie (bonnetjes en facturen bewaren), maar kan voordeliger zijn als je effectief veel beroepsgebonden kosten maakt.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Je maakt de keuze elk jaar opnieuw",
+        text: "Je bent niet voor altijd vastgeklikt aan één methode: bij elke belastingaangifte kan je opnieuw inschatten of het forfait of de werkelijke kosten voordeliger uitvallen voor dat jaar.",
+      },
+      {
+        type: "list",
+        items: [
+          "Hou doorheen het jaar bewijsstukken bij van beroepsgebonden kosten, zodat je achteraf kan vergelijken.",
+          "Vergelijk bij je aangifte of het forfait of de werkelijke kosten (met bewijs) voor jou voordeliger is.",
+          "Bekijk ook andere vormen van fiscaal voordeel, zoals bij pensioensparen of een hypothecair krediet, die je belastingaangifte ook kunnen beïnvloeden.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Dit is algemene informatie over hoe beroepskosten werken, geen persoonlijk fiscaal advies: voor jouw concrete aangifte en welke methode voordeliger is, raadpleeg je de FOD Financiën of een boekhouder.",
+      },
+    ],
+  },
+  {
     slug: "tak21-vs-tak23-levensverzekering-sparen-beleggen",
     title: "Tak 21 of Tak 23? Het verschil tussen 'gewaarborgd' en 'volledig afhankelijk van de markt'",
     summary:
