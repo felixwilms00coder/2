@@ -8,6 +8,49 @@ import { BlogPost } from "./types";
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: "onderverzekering-en-uitsluitingen-wat-je-polis-niet-dekt",
+    title: "Je verzekering dekt misschien minder dan je denkt: onderverzekering en uitsluitingen",
+    summary:
+      "Onderverzekering is wanneer het verzekerde bedrag lager ligt dan de werkelijke waarde van wat je verzekert, waardoor de verzekeraar bij schade verhoudingsgewijs minder uitkeert. Een uitsluiting is een situatie die een polis uitdrukkelijk niet dekt, ook al lijkt ze op het eerste zicht onder de dekking te vallen.",
+    categorySlug: "budget-betalen-lenen-en-verzekeren",
+    publishedAt: "2026-11-16",
+    readMinutes: 3,
+    blocks: [
+      {
+        type: "p",
+        text: "Een verzekering afsluiten voelt vaak als een vinkje zetten: polis genomen, probleem opgelost. Maar twee begrippen bepalen mee of je bij een schadegeval echt volledig gedekt bent.",
+      },
+      { type: "h2", text: "Onderverzekering: te weinig verzekerd bedrag" },
+      {
+        type: "p",
+        text: "Onderverzekering is wanneer het verzekerde bedrag lager ligt dan de werkelijke waarde van wat je verzekert. Bij een schadegeval kan de verzekeraar dan verhoudingsgewijs minder uitkeren dan de volledige schade, ook al dacht je volledig verzekerd te zijn. Dit kan bijvoorbeeld gebeuren als de waarde van wat je verzekert in de loop der tijd gestegen is, zonder dat het verzekerde bedrag mee aangepast werd.",
+      },
+      { type: "h2", text: "Uitsluitingen: wat expliciet niet gedekt is" },
+      {
+        type: "p",
+        text: "Een uitsluiting is een specifieke situatie of soort schade die een polis uitdrukkelijk niet dekt, ook al lijkt het schadegeval op het eerste zicht onder de algemene dekking te vallen. Uitsluitingen staan in de algemene of bijzondere voorwaarden van je contract, en worden pas echt belangrijk op het moment dat je ze nodig hebt.",
+      },
+      {
+        type: "callout",
+        tone: "warning",
+        title: "Lees de voorwaarden, niet enkel de samenvatting",
+        text: "De kernvoorwaarden van een polis geven vaak maar een beknopt beeld. De volledige lijst van uitsluitingen en de regels rond onderverzekering staan in de algemene en bijzondere voorwaarden, die je best doorneemt voor je een polis afsluit of een schadegeval meldt.",
+      },
+      {
+        type: "list",
+        items: [
+          "Controleer regelmatig of het verzekerde bedrag in je polis nog overeenkomt met de actuele waarde van wat je verzekert.",
+          "Vraag je verzekeraar of tussenpersoon expliciet naar de belangrijkste uitsluitingen voor jouw type polis.",
+          "Bewaar de algemene en bijzondere voorwaarden, en raadpleeg ze bij twijfel over wat wel en niet gedekt is.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Dit is algemene informatie over onderverzekering en uitsluitingen, geen persoonlijk verzekeringsadvies: voor de concrete dekking van jouw polis raadpleeg je je verzekeraar of een FSMA-geregistreerde verzekeringstussenpersoon.",
+      },
+    ],
+  },
+  {
     slug: "beroepskosten-forfaitair-vs-werkelijke-kosten",
     title: "Beroepskosten aftrekken: forfaitair of met bewijsstukken, wat is het verschil?",
     summary:
