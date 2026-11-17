@@ -8,6 +8,49 @@ import { BlogPost } from "./types";
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: "schuldsaldoverzekering-bij-hypothecair-krediet",
+    title: "Waarom een schuldsaldoverzekering vaak verplicht is bij een hypothecair krediet",
+    summary:
+      "Een schuldsaldoverzekering lost (een deel van) je resterende lening af als je overlijdt voor die volledig is terugbetaald, en is vaak verplicht bij een hypothecair krediet. Zo blijft je lening niet volledig op de schouders van wie achterblijft rusten.",
+    categorySlug: "budget-betalen-lenen-en-verzekeren",
+    publishedAt: "2026-11-17",
+    readMinutes: 3,
+    blocks: [
+      {
+        type: "p",
+        text: "Bij het afsluiten van een hypothecair krediet komt al snel een tweede contract om de hoek kijken: de schuldsaldoverzekering. Veel mensen weten niet goed waarom die er eigenlijk is.",
+      },
+      { type: "h2", text: "Wat een schuldsaldoverzekering doet" },
+      {
+        type: "p",
+        text: "Een schuldsaldoverzekering is een verzekering die (een deel van) je resterende lening aflost als je overlijdt voor die volledig is terugbetaald. Overlijd je tijdens de looptijd van je hypothecair krediet, dan betaalt de verzekeraar het nog openstaande saldo (of een deel ervan) rechtstreeks aan de kredietgever.",
+      },
+      { type: "h2", text: "Waarom ze vaak verplicht is" },
+      {
+        type: "p",
+        text: "Bij een hypothecair krediet is een schuldsaldoverzekering vaak verplicht, net omdat het om grote bedragen en lange looptijden gaat. Zonder die bescherming zou wie achterblijft (bijvoorbeeld een partner of de kinderen) de volledige resterende lening zelf verder moeten afbetalen, boven op het verlies dat ze al verwerken.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Niet elke schuldsaldoverzekering is identiek",
+        text: "Hoeveel van de lening precies gedekt is, en onder welke voorwaarden, kan verschillen van contract tot contract. Vraag dit expliciet na bij je verzekeraar of kredietgever voor je tekent.",
+      },
+      {
+        type: "list",
+        items: [
+          "Vraag duidelijk welk percentage van je resterende lening gedekt is door de schuldsaldoverzekering die je wordt aangeboden.",
+          "Informeer je ook naar de dossierkosten die je kredietgever aanrekent voor het opstellen van het hypothecair krediet.",
+          "Bekijk de lening-vergelijker van FinEdu om verschillende scenario's voor je hypothecair krediet door te rekenen.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Dit is algemene informatie over hoe een schuldsaldoverzekering werkt, geen persoonlijk verzekerings- of leenadvies: voor de concrete voorwaarden van jouw contract raadpleeg je je kredietverstrekker of een FSMA-gecheckte adviseur.",
+      },
+    ],
+  },
+  {
     slug: "onderverzekering-en-uitsluitingen-wat-je-polis-niet-dekt",
     title: "Je verzekering dekt misschien minder dan je denkt: onderverzekering en uitsluitingen",
     summary:
