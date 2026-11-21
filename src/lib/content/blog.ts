@@ -8,6 +8,54 @@ import { BlogPost } from "./types";
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: "wachttijd-vrijstelling-opzegtermijn-verzekering",
+    title: "Drie begrippen in de kleine lettertjes van je verzekering die je niet mag negeren",
+    summary:
+      "Een wachttijd is de periode net na het afsluiten van een verzekering waarin bepaalde schadegevallen nog niet gedekt zijn. Een vrijstelling is het bedrag dat je bij schade zelf betaalt. En de opzegtermijn bepaalt wanneer jij of de verzekeraar het contract kan stopzetten.",
+    categorySlug: "budget-betalen-lenen-en-verzekeren",
+    publishedAt: "2026-11-21",
+    readMinutes: 3,
+    blocks: [
+      {
+        type: "p",
+        text: "Een verzekeringspolis lees je meestal maar één keer echt grondig: bij het afsluiten. Drie begrippen in de kleine lettertjes verdienen dan extra aandacht.",
+      },
+      { type: "h2", text: "Wachttijd: niet elke schade is meteen gedekt" },
+      {
+        type: "p",
+        text: "Een wachttijd is de periode net na het afsluiten van een verzekering waarin bepaalde schadegevallen nog niet gedekt zijn. Dat betekent dat je, ook al heb je net getekend, voor sommige situaties nog niet onmiddellijk beschermd bent.",
+      },
+      { type: "h2", text: "Vrijstelling: het deel dat je zelf betaalt" },
+      {
+        type: "p",
+        text: "Een vrijstelling is het bedrag van een schadegeval dat je zelf betaalt, voor de verzekeraar de rest van de kosten op zich neemt. Een hogere vrijstelling betekent meestal een lagere premie, maar ook een grotere eigen bijdrage als er iets misgaat.",
+      },
+      { type: "h2", text: "Opzegtermijn: hoe je er weer vanaf komt" },
+      {
+        type: "p",
+        text: "De opzegtermijn is de periode die jij of de verzekeraar wettelijk in acht moet nemen om een verzekeringscontract stop te zetten, meestal geteld vanaf de jaarlijkse vervaldag. Wil je overstappen naar een andere verzekeraar, dan moet je met die termijn rekening houden.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Deze drie begrippen staan in de voorwaarden",
+        text: "Wachttijd, vrijstelling en opzegtermijn staan meestal duidelijk vermeld in de algemene of bijzondere voorwaarden van je polis. Vraag er expliciet naar als je een nieuw contract overweegt.",
+      },
+      {
+        type: "list",
+        items: [
+          "Check of er een wachttijd geldt voor de dekking die je nodig hebt, zeker bij ziekte- of hospitalisatieverzekeringen.",
+          "Vergelijk de vrijstelling van verschillende polissen: een lagere premie met hoge vrijstelling is niet altijd voordeliger.",
+          "Noteer de jaarlijkse vervaldag en opzegtermijn van je contracten, zodat je op tijd kan vergelijken of opzeggen.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Dit is algemene informatie over hoe deze begrippen doorgaans werken, geen persoonlijk verzekeringsadvies: voor de concrete voorwaarden van jouw polis raadpleeg je je verzekeraar of een FSMA-geregistreerde verzekeringstussenpersoon.",
+      },
+    ],
+  },
+  {
     slug: "schuldsaldoverzekering-bij-hypothecair-krediet",
     title: "Waarom een schuldsaldoverzekering vaak verplicht is bij een hypothecair krediet",
     summary:
